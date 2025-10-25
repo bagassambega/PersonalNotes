@@ -1,2 +1,4 @@
 # Contents
-[Algorithm Strategy](obsidian://open?vault=Resources&file=Algorithm%20Strategy)
+[Algorithm Strategy](Algorithm Strategy.md)
+[Discrete Mathematics](Discrete Mathematics.md)
+[Developer and Operations](Development and Operations.md)
