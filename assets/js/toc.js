@@ -199,9 +199,10 @@
       const childLink = document.createElement("a");
       childLink.href = `#${child.id}`;
       childLink.className =
-        "block px-4 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors ml-2 toc-link";
+        "block px-4 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors ml-2 toc-link text-left";
       childLink.textContent = child.text;
       childLink.dataset.target = child.id;
+      childLink.style.textAlign = "left";
       container.appendChild(childLink);
     });
 
