@@ -1,3 +1,11 @@
+---
+layout: page-with-toc
+title: Development and Operations
+description: Modern software development practices including DevOps, MLOps, DataOps, CI/CD pipelines, infrastructure as code, and cloud deployment strategies.
+permalink: /devops/
+github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/devops.md
+---
+
 # Perkenalan
 
 ## Definisi Devops, ML-Ops dan DataOps
@@ -10,81 +18,51 @@ Tidak error prone dan tidak konsisten. Hasilnya bisa beda-beda.
 Kenapa sebaiknya deployment ga dilakukan sekaligus di akhir (jangan pas beres dev baru di-deploy): karena beda environment, supaya error bisa di-mitigate di awal
 
 Incremental delta deployment: deploy tahap demi tahap dari awal dev. Supaya kalau ada error sedikit bisa di rollback. Usahain tiap 2 hari deploy
+
 ## Service Level Agreement
 
 - Service level agreement adalah janji layanan atau kualitas layanan yang diberikan
-    
--  Komponen utama SLA biasanya terdiri atas:
-    
+- Komponen utama SLA biasanya terdiri atas:
 
 - Service scope: layanan apa saja yang disediakan
-    
 - Tingkat kinerja (performance metrics): indikator kinerja sistem yang terukur, misalnya uptime/availability 99.9% per bulan, response time < 200ms untuk setiap request API, throughput minimal 1000 request per second
-    
-
-  
 
 # TOIL
 
 ## Definition
 
 - Toil: Operasi manual (sama manusia) yang dilakukan repetitif. Misalnya adalah nyala-matiin server, nulis laporan manual kalau ada suatu error, login ke server buat cek log, dsb
-    
 - Ciri:
-    
 
 1. Manual: membutuhkan manusia
-    
 2. Repetitif: dilakukan berulang
-    
 3. Automatable: bisa dilakukan mesin sebetulnya
-    
 4. Reactive: di-trigger oleh sesuatu (misal server mati, baru kita nyalain manual)
-    
 5. Tactical: interrupt-driven (ada gangguan), bukan strategic
-    
 6. No enduring value: tidak improve atau meningkatkan kapabilitas sistem
-    
 7. O(n) seiring perkembangan service: semakin berkembang mengikuti jumlah service
-    
 
 - Kenapa Toil harus dikurangi?
-    
 
 - Supaya engineer punya banyak waktu lain buat hal yang lebih beneficial (inovasi, engineering)
-    
 - Mencegah burnout dan career stagnation (ga perlu ada karyawan2 khusus lagi yang harus jaga server, karyawan bosen)
-    
 - Supaya bisa scaling teams secara sublinear (jumlah karyawan bisa ditekan)
-    
 - Mengurangi jumlah error karena inkonsistensi (karena manual, bisa aja langkah2 atau ada inkonsistensi)
-    
 - Mengurangi waktu response time (jadi kalau ada incident, otomatis dilakukan, response time nya lebih cepat)
-    
 
 - 50% rule:
-    
 
 - Tujuan: supaya waktu yang dihabiskan devops kurang dari 50% untuk Toil aja
-    
 - Kalaupun ada toil, cukup di angka 25-33%
-    
 
 - Jenis sumber Toil:
-    
 
 - Interrupts: non-urgent message, alerts
-    
 - On-call: urgent incident
-    
 - Releases & pushes: proses otomasi yang masih manual
-    
 
 - Cara identifikasi dan pengukuran Toil:
-    
 
 - Tool untuk task/ticket management (mis. Jira, jadi keliatan tugas2nya siapa dan bisa dianalisis seberapa lama dan banyak tasknya)
-    
 - Cek hot spot pada engineer tertentu (cek siapa yang paling sering mengerjakan toil)
-    
 - Identifikasi hasil apa yang bisa ditingkatkan kalau toil bisa dikurangi (opportunities for high impact toil reduction)

@@ -1,0 +1,107 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+#
+# If you need help with YAML syntax, here are some quick references for you:
+# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
+# https://learnxinyminutes.com/docs/yaml/
+#
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+
+title: Personal Notes
+email: bagassambega.dev@gmail.com
+description: >- # this means to ignore newlines until "baseurl:"
+  Personal notes contain all of college and IT knowledge resource needed to understanding IT world
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://bagassambega.github.io/PersonalNotes" # the base hostname & protocol for your site
+github_username: bagassambega
+
+# Repository information for GitHub Pages
+repository: bagassambega/PersonalNotes
+github:
+  repository_nwo: bagassambega/PersonalNotes
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    block:
+      line_numbers: true
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-postcss
+
+# PostCSS settings for TailwindCSS
+postcss:
+  cache: false
+
+# Permalink structure
+permalink: /:categories/:year/:month/:day/:title/
+
+# Default layouts
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: "index"
+    values:
+      layout: "home"
+
+# Collections (if needed in the future)
+collections:
+  notes:
+    output: true
+    permalink: /:collection/:name/
+
+# Sass configuration (not needed with TailwindCSS but kept for compatibility)
+sass:
+  style: compressed
+  load_paths:
+    - _sass
+    - node_modules
+
+# Exclude from processing
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - package.json
+  - package-lock.json
+  - tailwind.config.js
+  - postcss.config.js
+  - assets/css/main.css
+
+
+# Include files
+include:
+  - _pages

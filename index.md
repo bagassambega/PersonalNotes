@@ -4,20 +4,16 @@ description: "A curated collection of knowledge, insights, and resources across 
 layout: "home"
 ---
 
-# 📚 Personal Knowledge Base
-
-> **Welcome to My Digital Brain**  
+> **Welcome to My Digital Notes**  
 > _A curated collection of knowledge, insights, and resources across various domains of computer science and technology._
 
-## 📞 Contact & Contributions
+## 🗂️ Table of Contents
 
-Found an error or want to contribute? Feel free to:
+### [Algorithm Strategy](algorithm-strategy.md)
 
-- Open an issue on the repository
-- Submit a pull request with improvements
-- Suggest new topics or sections
+### [Discrete Mathematics](discrete-math.md)
 
----
+### [Development and Operations](devops.md)
 
 ## 🎓 Happy Learning
 
@@ -30,19 +26,11 @@ Found an error or want to contribute? Feel free to:
 - **Built with**: Markdown + Static Site Generator
 - **Last updated**: October 25, 2025
 
-## 🗂️ Table of Contents
-
-### [Algorithm Strategy](Algorithm%20Strategy.md)
-
-### [Discrete Mathematics](Discrete%20Mathematics.md)
-
-### [Development and Operations](Development%20and%20Operations.md)
-
 ---
 
 ## 📈 Quick Statistics
 
-```
+```md
 📚 Topics Covered:     3
 🔗 Cross-References:   ∞
 📝 Content Quality:    High
