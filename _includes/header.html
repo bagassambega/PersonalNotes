@@ -20,18 +20,55 @@
            class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors duration-200 {% if page.url == '/' %}text-primary-600 dark:text-primary-400{% endif %}">
           Home
         </a>
-        <a href="{{ '/algorithm-strategy' | relative_url }}" 
-           class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors duration-200 {% if page.url contains 'algorithm-strategy' %}text-primary-600 dark:text-primary-400{% endif %}">
-          Algorithms
-        </a>
-        <a href="{{ '/discrete-math' | relative_url }}" 
-           class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors duration-200 {% if page.url contains 'discrete-math' %}text-primary-600 dark:text-primary-400{% endif %}">
-          Math
-        </a>
-        <a href="{{ '/devops' | relative_url }}" 
-           class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors duration-200 {% if page.url contains 'devops' %}text-primary-600 dark:text-primary-400{% endif %}">
-          DevOps
-        </a>
+        
+        <!-- Resources Dropdown -->
+        <div class="relative group">
+          <button class="flex items-center space-x-1 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors duration-200">
+            <span>Resources</span>
+            <svg class="w-4 h-4 transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div class="absolute left-0 mt-2 w-64 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+            <div class="py-2">
+              {% for resource in site.data.resources %}
+                <a href="{{ resource.url | relative_url }}" 
+                   class="flex items-start space-x-3 px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200 {% if page.url contains resource.url %}bg-gray-50 dark:bg-gray-700 text-primary-600 dark:text-primary-400{% endif %}">
+                  <span class="text-primary-500 mt-0.5">{{ resource.icon }}</span>
+                  <div>
+                    <div class="font-medium">{{ resource.title }}</div>
+                    <div class="text-sm text-gray-500 dark:text-gray-400">{{ resource.description }}</div>
+                  </div>
+                </a>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+
+        <!-- Intermezzo Dropdown -->
+        <div class="relative group">
+          <button class="flex items-center space-x-1 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors duration-200">
+            <span>Intermezzo</span>
+            <svg class="w-4 h-4 transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div class="absolute left-0 mt-2 w-64 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+            <div class="py-2">
+              {% for item in site.data.intermezzo %}
+                <a href="{{ item.url | relative_url }}" 
+                   class="flex items-start space-x-3 px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200 {% if page.url contains item.url %}bg-gray-50 dark:bg-gray-700 text-primary-600 dark:text-primary-400{% endif %}">
+                  <span class="text-primary-500 mt-0.5">{{ item.icon }}</span>
+                  <div>
+                    <div class="font-medium">{{ item.title }}</div>
+                    <div class="text-sm text-gray-500 dark:text-gray-400">{{ item.description }}</div>
+                  </div>
+                </a>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+        
         <a href="{{ '/about' | relative_url }}" 
            class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors duration-200 {% if page.url contains 'about' %}text-primary-600 dark:text-primary-400{% endif %}">
           About
@@ -71,22 +108,37 @@
            class="block px-3 py-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors duration-200 {% if page.url == '/' %}bg-gray-100 dark:bg-gray-700 text-primary-600 dark:text-primary-400{% endif %}">
           Home
         </a>
-        <a href="{{ '/algorithm-strategy' | relative_url }}" 
-           class="block px-3 py-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors duration-200 {% if page.url contains 'algorithm-strategy' %}bg-gray-100 dark:bg-gray-700 text-primary-600 dark:text-primary-400{% endif %}">
-          Algorithms
-        </a>
-        <a href="{{ '/discrete-math' | relative_url }}" 
-           class="block px-3 py-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors duration-200 {% if page.url contains 'discrete-math' %}bg-gray-100 dark:bg-gray-700 text-primary-600 dark:text-primary-400{% endif %}">
-          Math
-        </a>
-        <a href="{{ '/devops' | relative_url }}" 
-           class="block px-3 py-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors duration-200 {% if page.url contains 'devops' %}bg-gray-100 dark:bg-gray-700 text-primary-600 dark:text-primary-400{% endif %}">
-          DevOps
-        </a>
-        <a href="{{ '/about' | relative_url }}" 
-           class="block px-3 py-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors duration-200 {% if page.url contains 'about' %}bg-gray-100 dark:bg-gray-700 text-primary-600 dark:text-primary-400{% endif %}">
-          About
-        </a>
+        
+        <!-- Mobile Resources Section -->
+        <div class="border-t border-gray-200 dark:border-gray-600 pt-2 mt-2">
+          <div class="px-3 py-1 text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">Resources</div>
+          {% for resource in site.data.resources %}
+            <a href="{{ resource.url | relative_url }}" 
+               class="flex items-center space-x-3 px-3 py-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200 {% if page.url contains resource.url %}bg-gray-100 dark:bg-gray-700 text-primary-600 dark:text-primary-400{% endif %}">
+              <span class="text-primary-500">{{ resource.icon }}</span>
+              <span class="font-medium">{{ resource.title }}</span>
+            </a>
+          {% endfor %}
+        </div>
+        
+        <!-- Mobile Intermezzo Section -->
+        <div class="border-t border-gray-200 dark:border-gray-600 pt-2 mt-2">
+          <div class="px-3 py-1 text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">Intermezzo</div>
+          {% for item in site.data.intermezzo %}
+            <a href="{{ item.url | relative_url }}" 
+               class="flex items-center space-x-3 px-3 py-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200 {% if page.url contains item.url %}bg-gray-100 dark:bg-gray-700 text-primary-600 dark:text-primary-400{% endif %}">
+              <span class="text-primary-500">{{ item.icon }}</span>
+              <span class="font-medium">{{ item.title }}</span>
+            </a>
+          {% endfor %}
+        </div>
+        
+        <div class="border-t border-gray-200 dark:border-gray-600 pt-2 mt-2">
+          <a href="{{ '/about' | relative_url }}" 
+             class="block px-3 py-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors duration-200 {% if page.url contains 'about' %}bg-gray-100 dark:bg-gray-700 text-primary-600 dark:text-primary-400{% endif %}">
+            About
+          </a>
+        </div>
       </div>
     </div>
     

@@ -3,7 +3,7 @@ layout: page-with-toc
 title: Discrete Mathematics
 description: Essential mathematical concepts for computer science including number theory, modular arithmetic, graph theory, combinatorics, and discrete structures.
 permalink: /discrete-math/
-github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/discrete-math.md
+github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/discrete-math.md
 ---
 
 # Teori Bilangan

@@ -56,10 +56,10 @@ permalink: /:categories/:year/:month/:day/:title/
 # Default layouts
 defaults:
   - scope:
-      path: ""
+      path: "_pages"
       type: "pages"
     values:
-      layout: "page"
+      layout: "page-with-toc"
   - scope:
       path: ""
       type: "posts"
@@ -69,6 +69,11 @@ defaults:
       path: "index"
     values:
       layout: "home"
+  - scope:
+      path: "about"
+      type: "pages"
+    values:
+      layout: "page"
 
 # Collections (if needed in the future)
 collections:

@@ -1,9 +1,9 @@
 ---
 layout: page-with-toc
 title: Rubik Cube
-description: Rubik Cube
+description: Complete guide to solving Rubik's cube including terminology, algorithms, and advanced techniques.
 permalink: /rubik/
-github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/rubik.md
+github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/rubic.md
 ---
 
 # Istilah Rubik

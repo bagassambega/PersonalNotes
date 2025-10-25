@@ -1,0 +1,14 @@
+- title: "Algorithm Strategy"
+  description: "Comprehensive notes on algorithmic strategies, complexity analysis, and problem-solving techniques"
+  url: "/algorithm-strategy/"
+  icon: "algorithm"
+  
+- title: "Discrete Mathematics"
+  description: "Essential mathematical concepts for computer science including number theory and graph theory"
+  url: "/discrete-math/"
+  icon: "math"
+  
+- title: "Development & Operations"
+  description: "Modern software development practices including DevOps, MLOps, and DataOps"
+  url: "/devops/"
+  icon: "devops"

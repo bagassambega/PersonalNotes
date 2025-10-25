@@ -3,7 +3,7 @@ layout: page-with-toc
 title: Algorithm Strategy
 description: Comprehensive notes on algorithmic strategies, complexity analysis, and problem-solving techniques including NP-Complete problems and optimization algorithms.
 permalink: /algorithm-strategy/
-github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/algorithm-strategy.md
+github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/algorithm-strategy.md
 ---
 
 # NP-Complete Problem
