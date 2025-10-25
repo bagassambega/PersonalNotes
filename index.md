@@ -13,7 +13,7 @@ layout: "home"
 
 ## 🗂️ Table of Contents
 
-### 🧠 [Algorithm Strategy](Algorithm%20Strategy.md)
+### 🧠 [Algorithm Strategy](Algorithm Strategy.md)
 
 ### 🔢 [Discrete Mathematics](Discrete%20Mathematics.md)
 
