@@ -152,12 +152,16 @@
     div.className = "toc-item";
 
     const hasChildren = item.children && item.children.length > 0;
+    
+    // Calculate indentation based on heading level
+    const indentClass = getIndentClass(item.level);
+    const fontSize = getFontSize(item.level);
+    const fontWeight = getFontWeight(item.level);
 
     if (hasChildren) {
       // Create expandable section
       const button = document.createElement("button");
-      button.className =
-        "w-full flex items-center justify-between px-4 py-2 text-sm font-medium hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors text-gray-900 dark:text-gray-100";
+      button.className = `w-full flex items-center justify-between px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors text-gray-900 dark:text-gray-100 ${indentClass} ${fontSize} ${fontWeight}`;
       button.innerHTML = `
         <span>${item.text}</span>
         <svg class="w-4 h-4 transition-transform transform ${
@@ -179,8 +183,7 @@
       // Create link
       const link = document.createElement("a");
       link.href = `#${item.id}`;
-      link.className =
-        "block px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors text-gray-700 dark:text-gray-300 toc-link";
+      link.className = `block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors text-gray-700 dark:text-gray-300 toc-link ${indentClass} ${fontSize} ${fontWeight}`;
       link.textContent = item.text;
       link.dataset.target = item.id;
       div.appendChild(link);
@@ -189,20 +192,60 @@
     return div;
   }
 
+  // Get indentation class based on heading level
+  function getIndentClass(level) {
+    const indents = {
+      1: "",
+      2: "ml-3",
+      3: "ml-6",
+      4: "ml-9",
+      5: "ml-12",
+      6: "ml-15"
+    };
+    return indents[level] || "";
+  }
+
+  // Get font size based on heading level
+  function getFontSize(level) {
+    const sizes = {
+      1: "text-base",
+      2: "text-sm",
+      3: "text-sm",
+      4: "text-xs",
+      5: "text-xs",
+      6: "text-xs"
+    };
+    return sizes[level] || "text-sm";
+  }
+
+  // Get font weight based on heading level
+  function getFontWeight(level) {
+    const weights = {
+      1: "font-semibold",
+      2: "font-medium",
+      3: "font-normal",
+      4: "font-normal",
+      5: "font-normal",
+      6: "font-normal"
+    };
+    return weights[level] || "font-normal";
+  }
+
   // Create children container
   function createChildrenContainer(children) {
     const container = document.createElement("div");
-    container.className =
-      "ml-2 border-l border-gray-200 dark:border-gray-600 toc-children";
+    container.className = "toc-children mt-1 space-y-1";
 
     children.forEach((child) => {
+      const indentClass = getIndentClass(child.level);
+      const fontSize = getFontSize(child.level);
+      const fontWeight = getFontWeight(child.level);
+      
       const childLink = document.createElement("a");
       childLink.href = `#${child.id}`;
-      childLink.className =
-        "block px-4 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors ml-2 toc-link text-left";
+      childLink.className = `block px-4 py-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors toc-link ${indentClass} ${fontSize} ${fontWeight}`;
       childLink.textContent = child.text;
       childLink.dataset.target = child.id;
-      childLink.style.textAlign = "left";
       container.appendChild(childLink);
     });
 
