@@ -4,122 +4,77 @@ description: "A curated collection of knowledge, insights, and resources across 
 layout: "home"
 ---
 
-> **Welcome to My Digital Notes**  
+> **Welcome to Digital Notes**  
 > _A curated collection of knowledge, insights, and resources across various domains of computer science and technology._
 
 ## 📁 Table of Contents
 
 <style>
   .toc-container {
-    margin: 2rem 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
+    @apply my-8 flex flex-col gap-3;
   }
 
   .toc-header {
-    display: grid;
+    @apply grid gap-4 p-4 font-semibold text-sm uppercase tracking-wider text-gray-600 dark:text-gray-400 border-b border-gray-200 dark:border-gray-700 mb-2;
     grid-template-columns: 60px 1fr 60px;
-    gap: 1rem;
-    padding: 1rem;
-    font-weight: 600;
-    font-size: 0.875rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: #666;
-    border-bottom: 1px solid #e5e5e5;
-    margin-bottom: 0.5rem;
+  }
+
+  .toc-header-no,
+  .toc-header-title,
+  .toc-header-link {
+    @apply flex items-center;
   }
 
   .toc-header-no {
-    text-align: center;
+    @apply justify-center;
   }
 
   .toc-header-title {
-    text-align: left;
+    @apply justify-start;
   }
 
   .toc-header-link {
-    text-align: center;
+    @apply justify-center;
   }
 
   .toc-item {
-    display: grid;
+    @apply grid gap-4 p-4 items-center border border-gray-200 dark:border-gray-700 rounded-lg transition-all duration-200 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-gray-300 dark:hover:border-gray-600 hover:shadow-sm;
     grid-template-columns: 60px 1fr 60px;
-    gap: 1rem;
-    padding: 1rem;
-    align-items: center;
-    border: 1px solid #f0f0f0;
-    border-radius: 6px;
-    transition: all 0.2s ease;
-    background: #fafafa;
-  }
-
-  .toc-item:hover {
-    background: #fff;
-    border-color: #e0e0e0;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
   }
 
   .toc-no {
-    text-align: center;
-    font-size: 0.875rem;
-    color: #999;
-    font-weight: 500;
+    @apply text-center text-sm text-gray-500 dark:text-gray-400 font-medium;
   }
 
   .toc-title {
-    text-align: left;
-    font-weight: 500;
-    color: #1a1a1a;
-  }
-
-  .toc-link {
-    text-align: center;
+    @apply text-left font-medium text-gray-900 dark:text-gray-100;
   }
 
   .toc-link a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 32px;
-    height: 32px;
-    border-radius: 4px;
-    transition: all 0.2s ease;
-    color: #2563eb;
-  }
-
-  .toc-link a:hover {
-    background: #f0f7ff;
+    @apply inline-flex items-center justify-center w-8 h-8 rounded transition-all duration-200 text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/30;
   }
 
   .toc-link svg {
-    width: 18px;
-    height: 18px;
-    stroke: currentColor;
-    stroke-width: 2;
+    @apply w-4.5 h-4.5 stroke-current stroke-2;
   }
 
   @media (max-width: 640px) {
     .toc-header {
+      @apply p-3 text-xs gap-3;
       grid-template-columns: 40px 1fr 40px;
-      padding: 0.75rem;
-      font-size: 0.75rem;
     }
 
     .toc-item {
+      @apply p-3 gap-3;
       grid-template-columns: 40px 1fr 40px;
-      padding: 0.75rem;
-      gap: 0.75rem;
     }
 
     .toc-title {
-      font-size: 0.9rem;
+      @apply text-sm;
     }
 
     .toc-link svg {
-      width: 16px;
-      height: 16px;
+      @apply w-4 h-4;
     }
   }
 </style>
@@ -149,6 +104,7 @@ layout: "home"
   </div>
   {% endfor %}
 </div>
+
 
 ## 🎓 Stats
 
