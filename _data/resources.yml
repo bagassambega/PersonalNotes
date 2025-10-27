@@ -1,14 +1,101 @@
+
 - title: "Algorithm Strategy"
   description: "Comprehensive notes on algorithmic strategies, complexity analysis, and problem-solving techniques"
   url: "/algorithm-strategy/"
   icon: "algorithm"
-  
+
 - title: "Discrete Mathematics"
   description: "Essential mathematical concepts for computer science including number theory and graph theory"
   url: "/discrete-math/"
   icon: "math"
-  
+
 - title: "Development & Operations"
   description: "Modern software development practices including DevOps, MLOps, and DataOps"
   url: "/devops/"
   icon: "devops"
+
+# Added from _pages/ (except rubic.md)
+- title: "About"
+  description: "About page."
+  url: "/about/"
+  icon: "info"
+
+- title: "Blockchain & DLT"
+  description: "Notes on blockchain and distributed ledger technologies."
+  url: "/blockchain-dlt/"
+  icon: "blockchain"
+
+- title: "Computer Architecture"
+  description: "Computer architecture concepts and notes."
+  url: "/computer-architecture/"
+  icon: "architecture"
+
+- title: "Computer Network"
+  description: "Computer networking principles and protocols."
+  url: "/computer-network/"
+  icon: "network"
+
+- title: "Cryptography"
+  description: "Cryptography fundamentals and applications."
+  url: "/cryptography/"
+  icon: "cryptography"
+
+- title: "Cybersecurity"
+  description: "Cybersecurity best practices and concepts."
+  url: "/cybersecurity/"
+  icon: "security"
+
+- title: "Distributed App & System Architecture"
+  description: "Distributed application and system architecture notes."
+  url: "/distributed-app-system-architecture/"
+  icon: "distributed"
+
+- title: "DSA (Data Structures & Algorithms)"
+  description: "Data structures and algorithms notes."
+  url: "/dsa/"
+  icon: "dsa"
+
+- title: "Glossary"
+  description: "Glossary of technical terms."
+  url: "/glossary/"
+  icon: "glossary"
+
+- title: "Linear Geometry & Algebra"
+  description: "Linear geometry and algebra notes."
+  url: "/linear-geometry-algebra/"
+  icon: "geometry"
+
+- title: "Linux"
+  description: "Linux operating system notes."
+  url: "/linux/"
+  icon: "linux"
+
+- title: "Native Development"
+  description: "Native development topics."
+  url: "/native-dev/"
+  icon: "native"
+
+- title: "Network System"
+  description: "Network system architecture and protocols."
+  url: "/network-system/"
+  icon: "network"
+
+- title: "Operating System"
+  description: "Operating system concepts and notes."
+  url: "/operating-system/"
+  icon: "os"
+
+- title: "Parallel & Distributed System"
+  description: "Parallel and distributed system notes."
+  url: "/parallel-distributed-system/"
+  icon: "parallel"
+
+- title: "Resources"
+  description: "Resource links and references."
+  url: "/resources/"
+  icon: "resources"
+
+- title: "Web-based Development"
+  description: "Web-based development notes."
+  url: "/web-based-dev/"
+  icon: "web"
