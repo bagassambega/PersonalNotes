@@ -11,7 +11,7 @@ layout: "home"
 ## 📁 Table of Contents
 
 <div style="margin:2rem 0;">
-<table style="width:100%;border-collapse:collapse;font-family:Inter,sans-serif;font-size:1rem;box-shadow:0 2px 8px rgba(0,0,0,0.03);border-radius:8px;overflow:hidden;">
+<table style="width:100%;border-collapse:collapse;font-family:Helvetica,Inter,sans-serif;font-size:1rem;box-shadow:0 2px 8px rgba(0,0,0,0.03);border-radius:8px;overflow:hidden;">
    <thead>
       <tr>
          <th style="padding:0.75em 1em;text-align:left;font-weight:600;border-bottom:1px solid #eee;">No.</th>
