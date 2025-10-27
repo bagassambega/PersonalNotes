@@ -14,12 +14,6 @@
   url: "/devops/"
   icon: "devops"
 
-# Added from _pages/ (except rubic.md)
-- title: "About"
-  description: "About page."
-  url: "/about/"
-  icon: "info"
-
 - title: "Blockchain & DLT"
   description: "Notes on blockchain and distributed ledger technologies."
   url: "/blockchain-dlt/"
