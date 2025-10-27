@@ -50,19 +50,6 @@ A modern, responsive knowledge base built with Jekyll and TailwindCSS, featuring
    npm install
    ```
 
-4. **Build TailwindCSS**
-
-   ```bash
-   npm run build-css
-   ```
-
-5. **Start the development server**
-   ```bash
-   bundle exec jekyll serve --livereload
-   ```
-
-The site will be available at `http://localhost:4000`.
-
 ### Development Commands
 
 - **Build CSS for development (with watch mode)**:
@@ -125,54 +112,3 @@ If you need to deploy manually:
 ### Navigation
 
 Update the navigation in `_includes/header.html` to add new main sections.
-
-<style>
-   .toc-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-family: Inter, sans-serif;
-      font-size: 1rem;
-      background: #fff;
-      color: #222;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
-      border-radius: 8px;
-      overflow: hidden;
-      margin: 2rem 0;
-   }
-   .toc-table thead {
-      background: #f8f9fa;
-   }
-   .toc-table th {
-      padding: 0.75em 1em;
-      text-align: left;
-      font-weight: 600;
-      border-bottom: 1px solid #eee;
-   }
-   .toc-table td {
-      padding: 0.5em 1em;
-      border-bottom: 1px solid #f0f0f0;
-   }
-   .toc-table a {
-      color: #2563eb;
-      text-decoration: none;
-   }
-   @media (prefers-color-scheme: dark) {
-      .toc-table {
-         background: #18181b;
-         color: #e5e7eb;
-         box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-      }
-      .toc-table thead {
-         background: #23232a;
-      }
-      .toc-table th {
-         border-bottom: 1px solid #333;
-      }
-      .toc-table td {
-         border-bottom: 1px solid #23232a;
-      }
-      .toc-table a {
-         color: #60a5fa;
-      }
-   }
-</style>
