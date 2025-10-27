@@ -13,19 +13,146 @@ A modern, responsive knowledge base built with Jekyll and TailwindCSS, featuring
 - **CI/CD**: Automated deployment to GitHub Pages
 - **Typography**: Beautiful typography with the Inter font family
 
-## 📁 Content Areas
+## 📁 Table of Contents
 
-### [Algorithm Strategy](algorithm-strategy.md)
-
-Comprehensive notes on algorithmic strategies, complexity analysis, and problem-solving techniques including NP-Complete problems and optimization algorithms.
-
-### [Discrete Mathematics](discrete-math.md)
-
-Essential mathematical concepts for computer science including number theory, modular arithmetic, graph theory, combinatorics, and discrete structures.
-
-### [Development & Operations](devops.md)
-
-Modern software development practices including DevOps, MLOps, DataOps, CI/CD pipelines, infrastructure as code, and cloud deployment strategies.
+<div style="margin:2rem 0;">
+<table style="width:100%;border-collapse:collapse;font-family:Inter,sans-serif;font-size:1rem;box-shadow:0 2px 8px rgba(0,0,0,0.03);border-radius:8px;overflow:hidden;">
+   <thead>
+      <tr>
+         <th style="padding:0.75em 1em;text-align:left;font-weight:600;border-bottom:1px solid #eee;">No.</th>
+         <th style="padding:0.75em 1em;text-align:left;font-weight:600;border-bottom:1px solid #eee;">Subject</th>
+         <th style="padding:0.75em 1em;text-align:left;font-weight:600;border-bottom:1px solid #eee;">Path</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td style="padding:0.5em 1em;">1</td>
+         <td>Strategi Algoritma</td>
+         <td><a href="/algorithm-strategy" style="color:#2563eb;text-decoration:none;">
+         <svg width="20px" height="20px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" stroke-width="3" stroke="#f0f0f0" fill="none"><path d="M55.4,32V53.58a1.81,1.81,0,0,1-1.82,1.82H10.42A1.81,1.81,0,0,1,8.6,53.58V10.42A1.81,1.81,0,0,1,10.42,8.6H32"/><polyline points="40.32 8.6 55.4 8.6 55.4 24.18"/><line x1="19.32" y1="45.72" x2="54.61" y2="8.91"/></svg>
+         </a></td>
+      </tr>
+      <tr>
+         <td style="padding:0.5em 1em;">2</td>
+         <td>Matematika Diskrit</td>
+         <td><a href="/discrete-math" style="color:#2563eb;text-decoration:none;">
+         <svg width="20px" height="20px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" stroke-width="3" stroke="#f0f0f0" fill="none"><path d="M55.4,32V53.58a1.81,1.81,0,0,1-1.82,1.82H10.42A1.81,1.81,0,0,1,8.6,53.58V10.42A1.81,1.81,0,0,1,10.42,8.6H32"/><polyline points="40.32 8.6 55.4 8.6 55.4 24.18"/><line x1="19.32" y1="45.72" x2="54.61" y2="8.91"/></svg>
+         </a></td>
+      </tr>
+      <tr>
+         <td style="padding:0.5em 1em;">3</td>
+         <td>Blockchain & DLT</td>
+         <td><a href="/blockchain-dlt" style="color:#2563eb;text-decoration:none;">
+         <svg width="20px" height="20px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" stroke-width="3" stroke="#f0f0f0" fill="none"><path d="M55.4,32V53.58a1.81,1.81,0,0,1-1.82,1.82H10.42A1.81,1.81,0,0,1,8.6,53.58V10.42A1.81,1.81,0,0,1,10.42,8.6H32"/><polyline points="40.32 8.6 55.4 8.6 55.4 24.18"/><line x1="19.32" y1="45.72" x2="54.61" y2="8.91"/></svg>
+         </a></td>
+      </tr>
+      <tr>
+         <td style="padding:0.5em 1em;">4</td>
+         <td>Computer Architecture</td>
+         <td><a href="/computer-architecture" style="color:#2563eb;text-decoration:none;">
+         <svg width="20px" height="20px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" stroke-width="3" stroke="#f0f0f0" fill="none"><path d="M55.4,32V53.58a1.81,1.81,0,0,1-1.82,1.82H10.42A1.81,1.81,0,0,1,8.6,53.58V10.42A1.81,1.81,0,0,1,10.42,8.6H32"/><polyline points="40.32 8.6 55.4 8.6 55.4 24.18"/><line x1="19.32" y1="45.72" x2="54.61" y2="8.91"/></svg>
+         </a></td>
+      </tr>
+      <tr>
+         <td style="padding:0.5em 1em;">5</td>
+         <td>Computer Network</td>
+         <td><a href="/computer-network" style="color:#2563eb;text-decoration:none;">
+         <svg width="20px" height="20px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" stroke-width="3" stroke="#f0f0f0" fill="none"><path d="M55.4,32V53.58a1.81,1.81,0,0,1-1.82,1.82H10.42A1.81,1.81,0,0,1,8.6,53.58V10.42A1.81,1.81,0,0,1,10.42,8.6H32"/><polyline points="40.32 8.6 55.4 8.6 55.4 24.18"/><line x1="19.32" y1="45.72" x2="54.61" y2="8.91"/></svg>
+         </a></td>
+      </tr>
+      <tr>
+         <td style="padding:0.5em 1em;">6</td>
+         <td>Cryptography</td>
+         <td><a href="/cryptography" style="color:#2563eb;text-decoration:none;">
+         <svg width="20px" height="20px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" stroke-width="3" stroke="#f0f0f0" fill="none"><path d="M55.4,32V53.58a1.81,1.81,0,0,1-1.82,1.82H10.42A1.81,1.81,0,0,1,8.6,53.58V10.42A1.81,1.81,0,0,1,10.42,8.6H32"/><polyline points="40.32 8.6 55.4 8.6 55.4 24.18"/><line x1="19.32" y1="45.72" x2="54.61" y2="8.91"/></svg>
+         </a></td>
+      </tr>
+      <tr>
+         <td style="padding:0.5em 1em;">7</td>
+         <td>Cybersecurity</td>
+         <td><a href="/cybersecurity" style="color:#2563eb;text-decoration:none;">
+         <svg width="20px" height="20px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" stroke-width="3" stroke="#f0f0f0" fill="none"><path d="M55.4,32V53.58a1.81,1.81,0,0,1-1.82,1.82H10.42A1.81,1.81,0,0,1,8.6,53.58V10.42A1.81,1.81,0,0,1,10.42,8.6H32"/><polyline points="40.32 8.6 55.4 8.6 55.4 24.18"/><line x1="19.32" y1="45.72" x2="54.61" y2="8.91"/></svg>
+         </a></td>
+      </tr>
+      <tr>
+         <td style="padding:0.5em 1em;">8</td>
+         <td>DevOps</td>
+         <td><a href="/devops" style="color:#2563eb;text-decoration:none;">
+         <svg width="20px" height="20px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" stroke-width="3" stroke="#f0f0f0" fill="none"><path d="M55.4,32V53.58a1.81,1.81,0,0,1-1.82,1.82H10.42A1.81,1.81,0,0,1,8.6,53.58V10.42A1.81,1.81,0,0,1,10.42,8.6H32"/><polyline points="40.32 8.6 55.4 8.6 55.4 24.18"/><line x1="19.32" y1="45.72" x2="54.61" y2="8.91"/></svg>
+         </a></td>
+      </tr>
+      <tr>
+         <td style="padding:0.5em 1em;">9</td>
+         <td>Distributed App & System Architecture</td>
+         <td><a href="/distributed-app-system-architecture" style="color:#2563eb;text-decoration:none;">
+         <svg width="20px" height="20px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" stroke-width="3" stroke="#f0f0f0" fill="none"><path d="M55.4,32V53.58a1.81,1.81,0,0,1-1.82,1.82H10.42A1.81,1.81,0,0,1,8.6,53.58V10.42A1.81,1.81,0,0,1,10.42,8.6H32"/><polyline points="40.32 8.6 55.4 8.6 55.4 24.18"/><line x1="19.32" y1="45.72" x2="54.61" y2="8.91"/></svg>
+         </a></td>
+      </tr>
+      <tr>
+         <td style="padding:0.5em 1em;">10</td>
+         <td>DSA (Data Structures & Algorithms)</td>
+         <td><a href="/dsa" style="color:#2563eb;text-decoration:none;">
+         <svg width="20px" height="20px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" stroke-width="3" stroke="#f0f0f0" fill="none"><path d="M55.4,32V53.58a1.81,1.81,0,0,1-1.82,1.82H10.42A1.81,1.81,0,0,1,8.6,53.58V10.42A1.81,1.81,0,0,1,10.42,8.6H32"/><polyline points="40.32 8.6 55.4 8.6 55.4 24.18"/><line x1="19.32" y1="45.72" x2="54.61" y2="8.91"/></svg>
+         </a></td>
+      </tr>
+      <tr>
+         <td style="padding:0.5em 1em;">11</td>
+         <td>Glossary</td>
+         <td><a href="/glossary" style="color:#2563eb;text-decoration:none;"><svg width="20px" height="20px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" stroke-width="3" stroke="#f0f0f0" fill="none"><path d="M55.4,32V53.58a1.81,1.81,0,0,1-1.82,1.82H10.42A1.81,1.81,0,0,1,8.6,53.58V10.42A1.81,1.81,0,0,1,10.42,8.6H32"/><polyline points="40.32 8.6 55.4 8.6 55.4 24.18"/><line x1="19.32" y1="45.72" x2="54.61" y2="8.91"/></svg></a></td>
+      </tr>
+      <tr>
+         <td style="padding:0.5em 1em;">12</td>
+         <td>Linear Geometry & Algebra</td>
+         <td><a href="/linear-geometry-algebra" style="color:#2563eb;text-decoration:none;"><svg width="20px" height="20px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" stroke-width="3" stroke="#f0f0f0" fill="none"><path d="M55.4,32V53.58a1.81,1.81,0,0,1-1.82,1.82H10.42A1.81,1.81,0,0,1,8.6,53.58V10.42A1.81,1.81,0,0,1,10.42,8.6H32"/><polyline points="40.32 8.6 55.4 8.6 55.4 24.18"/><line x1="19.32" y1="45.72" x2="54.61" y2="8.91"/></svg></a></td>
+      </tr>
+      <tr>
+         <td style="padding:0.5em 1em;">13</td>
+         <td>Linux</td>
+         <td><a href="/linux" style="color:#2563eb;text-decoration:none;"><svg width="20px" height="20px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" stroke-width="3" stroke="#f0f0f0" fill="none"><path d="M55.4,32V53.58a1.81,1.81,0,0,1-1.82,1.82H10.42A1.81,1.81,0,0,1,8.6,53.58V10.42A1.81,1.81,0,0,1,10.42,8.6H32"/><polyline points="40.32 8.6 55.4 8.6 55.4 24.18"/><line x1="19.32" y1="45.72" x2="54.61" y2="8.91"/></svg></a></td>
+      </tr>
+      <tr>
+         <td style="padding:0.5em 1em;">14</td>
+         <td>Native Development</td>
+         <td><a href="/native-dev" style="color:#2563eb;text-decoration:none;"><svg width="20px" height="20px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" stroke-width="3" stroke="#f0f0f0" fill="none"><path d="M55.4,32V53.58a1.81,1.81,0,0,1-1.82,1.82H10.42A1.81,1.81,0,0,1,8.6,53.58V10.42A1.81,1.81,0,0,1,10.42,8.6H32"/><polyline points="40.32 8.6 55.4 8.6 55.4 24.18"/><line x1="19.32" y1="45.72" x2="54.61" y2="8.91"/></svg></a></td>
+      </tr>
+      <tr>
+         <td style="padding:0.5em 1em;">15</td>
+         <td>Network System</td>
+         <td><a href="/network-system" style="color:#2563eb;text-decoration:none;"><svg width="20px" height="20px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" stroke-width="3" stroke="#f0f0f0" fill="none"><path d="M55.4,32V53.58a1.81,1.81,0,0,1-1.82,1.82H10.42A1.81,1.81,0,0,1,8.6,53.58V10.42A1.81,1.81,0,0,1,10.42,8.6H32"/><polyline points="40.32 8.6 55.4 8.6 55.4 24.18"/><line x1="19.32" y1="45.72" x2="54.61" y2="8.91"/></svg></a></td>
+      </tr>
+      <tr>
+         <td style="padding:0.5em 1em;">16</td>
+         <td>Operating System</td>
+         <td><a href="/operating-system" style="color:#2563eb;text-decoration:none;"><svg width="20px" height="20px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" stroke-width="3" stroke="#f0f0f0" fill="none"><path d="M55.4,32V53.58a1.81,1.81,0,0,1-1.82,1.82H10.42A1.81,1.81,0,0,1,8.6,53.58V10.42A1.81,1.81,0,0,1,10.42,8.6H32"/><polyline points="40.32 8.6 55.4 8.6 55.4 24.18"/><line x1="19.32" y1="45.72" x2="54.61" y2="8.91"/></svg></a></td>
+      </tr>
+      <tr>
+         <td style="padding:0.5em 1em;">17</td>
+         <td>Parallel & Distributed System</td>
+         <td><a href="/parallel-distributed-system" style="color:#2563eb;text-decoration:none;"><svg width="20px" height="20px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" stroke-width="3" stroke="#f0f0f0" fill="none"><path d="M55.4,32V53.58a1.81,1.81,0,0,1-1.82,1.82H10.42A1.81,1.81,0,0,1,8.6,53.58V10.42A1.81,1.81,0,0,1,10.42,8.6H32"/><polyline points="40.32 8.6 55.4 8.6 55.4 24.18"/><line x1="19.32" y1="45.72" x2="54.61" y2="8.91"/></svg></a></td>
+      </tr>
+      <tr>
+         <td style="padding:0.5em 1em;">18</td>
+         <td>Resources</td>
+         <td><a href="/resources" style="color:#2563eb;text-decoration:none;"><svg width="20px" height="20px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" stroke-width="3" stroke="#f0f0f0" fill="none"><path d="M55.4,32V53.58a1.81,1.81,0,0,1-1.82,1.82H10.42A1.81,1.81,0,0,1,8.6,53.58V10.42A1.81,1.81,0,0,1,10.42,8.6H32"/><polyline points="40.32 8.6 55.4 8.6 55.4 24.18"/><line x1="19.32" y1="45.72" x2="54.61" y2="8.91"/></svg></a></td>
+      </tr>
+      <tr>
+         <td style="padding:0.5em 1em;">19</td>
+         <td>Rubik</td>
+         <td><a href="/rubic" style="color:#2563eb;text-decoration:none;"><svg width="20px" height="20px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" stroke-width="3" stroke="#f0f0f0" fill="none"><path d="M55.4,32V53.58a1.81,1.81,0,0,1-1.82,1.82H10.42A1.81,1.81,0,0,1,8.6,53.58V10.42A1.81,1.81,0,0,1,10.42,8.6H32"/><polyline points="40.32 8.6 55.4 8.6 55.4 24.18"/><line x1="19.32" y1="45.72" x2="54.61" y2="8.91"/></svg></a></td>
+      </tr>
+      <tr>
+         <td style="padding:0.5em 1em;">20</td>
+         <td>Web-based Development</td>
+         <td><a href="/web-based-dev" style="color:#2563eb;text-decoration:none;"><svg width="20px" height="20px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" stroke-width="3" stroke="#f0f0f0" fill="none"><path d="M55.4,32V53.58a1.81,1.81,0,0,1-1.82,1.82H10.42A1.81,1.81,0,0,1,8.6,53.58V10.42A1.81,1.81,0,0,1,10.42,8.6H32"/><polyline points="40.32 8.6 55.4 8.6 55.4 24.18"/><line x1="19.32" y1="45.72" x2="54.61" y2="8.91"/></svg></a></td>
+      </tr>
+      <tr>
+         <td style="padding:0.5em 1em;">21</td>
+         <td>About</td>
+         <td><a href="/about" style="color:#2563eb;text-decoration:none;"><svg width="20px" height="20px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" stroke-width="3" stroke="#f0f0f0" fill="none"><path d="M55.4,32V53.58a1.81,1.81,0,0,1-1.82,1.82H10.42A1.81,1.81,0,0,1,8.6,53.58V10.42A1.81,1.81,0,0,1,10.42,8.6H32"/><polyline points="40.32 8.6 55.4 8.6 55.4 24.18"/><line x1="19.32" y1="45.72" x2="54.61" y2="8.91"/></svg></a></td>
+      </tr>
+   </tbody>
+</table>
+</div>
 
 ## 🛠️ Technology Stack
 
@@ -136,103 +263,57 @@ If you need to deploy manually:
    ---
    ```
 
-### Adding Blog Posts
-
-1. Create a new file in `_posts/` with format: `YYYY-MM-DD-title.markdown`
-2. Add frontmatter:
-   ```yaml
-   ---
-   layout: post
-   title: "Your Post Title"
-   description: "Post description"
-   date: 2025-10-25 12:00:00 +0000
-   categories: [category1, category2]
-   tags: [tag1, tag2]
-   ---
-   ```
-
 ### Navigation
 
 Update the navigation in `_includes/header.html` to add new main sections.
 
-## 🎨 Customization
-
-### Colors
-
-Modify the color scheme in `tailwind.config.js`:
-
-```javascript
-colors: {
-  primary: {
-    // Your custom primary colors
-  }
-}
-```
-
-### Typography
-
-The site uses the Inter font family. To change fonts, update:
-
-1. Font import in `assets/css/main.css`
-2. Font family in `tailwind.config.js`
-3. Font link in `_layouts/default.html`
-
-### Dark Mode
-
-Dark mode is implemented using Tailwind's `dark:` variant and JavaScript for theme persistence. The theme toggle cycles through:
-
-- System preference
-- Light mode
-- Dark mode
-
-## 🔧 Configuration
-
-### Site Settings
-
-Edit `_config.yml` to update:
-
-- Site title and description
-- Author information
-- Social links
-- Build settings
-
-### SEO Settings
-
-The site includes comprehensive SEO configuration:
-
-- Meta descriptions
-- Open Graph tags
-- Twitter Card tags
-- Structured data
-- XML sitemap (via jekyll-feed plugin)
-
-## 📱 Browser Support
-
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-- Mobile browsers (iOS Safari, Chrome Mobile)
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test locally
-5. Submit a pull request
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
-## 🙏 Acknowledgments
-
-- **Jekyll** team for the excellent static site generator
-- **TailwindCSS** team for the utility-first CSS framework
-- **GitHub** for Pages hosting and Actions CI/CD
-- **Inter** font family by Rasmus Andersson
-
----
-
-**Made with ❤️ by [bagassambega](https://github.com/bagassambega)**
+<style>
+   .toc-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: Inter, sans-serif;
+      font-size: 1rem;
+      background: #fff;
+      color: #222;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+      border-radius: 8px;
+      overflow: hidden;
+      margin: 2rem 0;
+   }
+   .toc-table thead {
+      background: #f8f9fa;
+   }
+   .toc-table th {
+      padding: 0.75em 1em;
+      text-align: left;
+      font-weight: 600;
+      border-bottom: 1px solid #eee;
+   }
+   .toc-table td {
+      padding: 0.5em 1em;
+      border-bottom: 1px solid #f0f0f0;
+   }
+   .toc-table a {
+      color: #2563eb;
+      text-decoration: none;
+   }
+   @media (prefers-color-scheme: dark) {
+      .toc-table {
+         background: #18181b;
+         color: #e5e7eb;
+         box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      }
+      .toc-table thead {
+         background: #23232a;
+      }
+      .toc-table th {
+         border-bottom: 1px solid #333;
+      }
+      .toc-table td {
+         border-bottom: 1px solid #23232a;
+      }
+      .toc-table a {
+         color: #60a5fa;
+      }
+   }
+</style>
