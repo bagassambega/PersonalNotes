@@ -11,70 +11,115 @@ layout: "home"
 
 <style>
   .toc-container {
-    @apply my-8 flex flex-col gap-3;
+    margin: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
   }
 
   .toc-header {
-    @apply grid gap-4 p-4 font-semibold text-sm uppercase tracking-wider text-gray-600 dark:text-gray-400 border-b border-gray-200 dark:border-gray-700 mb-2;
+    display: grid;
     grid-template-columns: 60px 1fr 60px;
-  }
-
-  .toc-header-no,
-  .toc-header-title,
-  .toc-header-link {
-    @apply flex items-center;
+    gap: 1rem;
+    padding: 1rem;
+    font-weight: 600;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    @apply text-gray-500 dark:text-gray-400;
+    @apply border-b border-gray-200 dark:border-gray-700;
+    margin-bottom: 0.5rem;
   }
 
   .toc-header-no {
-    @apply justify-center;
+    text-align: center;
   }
 
   .toc-header-title {
-    @apply justify-start;
+    text-align: left;
   }
 
   .toc-header-link {
-    @apply justify-center;
+    text-align: center;
   }
 
   .toc-item {
-    @apply grid gap-4 p-4 items-center border border-gray-200 dark:border-gray-700 rounded-lg transition-all duration-200 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-gray-300 dark:hover:border-gray-600 hover:shadow-sm;
+    display: grid;
     grid-template-columns: 60px 1fr 60px;
+    gap: 1rem;
+    padding: 1rem;
+    align-items: center;
+    @apply border border-gray-100 dark:border-gray-700;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    @apply bg-gray-50 dark:bg-gray-900;
+  }
+
+  .toc-item:hover {
+    @apply bg-white dark:bg-gray-800;
+    @apply border-gray-300 dark:border-gray-600;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
   }
 
   .toc-no {
-    @apply text-center text-sm text-gray-500 dark:text-gray-400 font-medium;
+    text-align: center;
+    font-size: 0.875rem;
+    @apply text-gray-400 dark:text-gray-500;
+    font-weight: 500;
   }
 
   .toc-title {
-    @apply text-left font-medium text-gray-900 dark:text-gray-100;
+    text-align: left;
+    font-weight: 500;
+    @apply text-gray-900 dark:text-gray-100;
+  }
+
+  .toc-link {
+    text-align: center;
   }
 
   .toc-link a {
-    @apply inline-flex items-center justify-center w-8 h-8 rounded transition-all duration-200 text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/30;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    @apply text-blue-600 dark:text-blue-400;
+  }
+
+  .toc-link a:hover {
+    @apply bg-blue-50 dark:bg-blue-900/20;
   }
 
   .toc-link svg {
-    @apply w-4.5 h-4.5 stroke-current stroke-2;
+    width: 18px;
+    height: 18px;
+    stroke: currentColor;
+    stroke-width: 2;
   }
 
   @media (max-width: 640px) {
     .toc-header {
-      @apply p-3 text-xs gap-3;
       grid-template-columns: 40px 1fr 40px;
+      padding: 0.75rem;
+      font-size: 0.75rem;
     }
 
     .toc-item {
-      @apply p-3 gap-3;
       grid-template-columns: 40px 1fr 40px;
+      padding: 0.75rem;
+      gap: 0.75rem;
     }
 
     .toc-title {
-      @apply text-sm;
+      font-size: 0.9rem;
     }
 
     .toc-link svg {
-      @apply w-4 h-4;
+      width: 16px;
+      height: 16px;
     }
   }
 </style>
@@ -104,7 +149,6 @@ layout: "home"
   </div>
   {% endfor %}
 </div>
-
 
 ## 🎓 Stats
 
