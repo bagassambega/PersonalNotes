@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_pages/rubic.md",
+                "file": "_pages/discrete-math.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "rubic"
+              "title": "discrete-math"
             }
           }
         ]
@@ -185,6 +185,7 @@
   },
   "active": "ff4c927f784fe958",
   "lastOpenFiles": [
+    "_pages/rubic.md",
     "_pages/devops.md",
     "_pages/parallel-distributed-system.md",
     "_pages/distributed-app-system-architecture.md",
@@ -216,7 +217,6 @@
     "_data/resources.yml",
     "_data",
     "rubic.md",
-    "_pages/rubic.md",
     "_pages/about.markdown",
     "assets/site.webmanifest",
     "assets/favicon_io/android-chrome-512x512.png",
