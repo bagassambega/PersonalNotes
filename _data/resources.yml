@@ -81,7 +81,7 @@
 
 - title: "Parallel & Distributed System"
   description: "Parallel and distributed system notes."
-  url: "/parallel-distributed-system/"
+  url: "/parallel-distributed/"
   icon: "parallel"
 
 - title: "Resources"
