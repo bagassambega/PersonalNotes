@@ -1,4 +1,4 @@
-// Table of Contents Generator
+// Table of Contents Generator - FIXED VERSION
 (function () {
   "use strict";
 
@@ -64,13 +64,14 @@
     initSmoothScrolling();
   }
 
-  // Generate TOC structure from headings
+  // ✅ FIXED: Generate TOC structure with proper parent tracking
   function generateTOCStructure(contentElement) {
     const headings = contentElement.querySelectorAll(CONFIG.headingSelectors);
     const items = [];
+    const stack = []; // Stack to track parent chain
     let idCounter = 0;
 
-    headings.forEach((heading, index) => {
+    headings.forEach((heading) => {
       // Generate ID if not present
       if (!heading.id) {
         heading.id =
@@ -84,26 +85,27 @@
         level: level,
         element: heading,
         children: [],
+        parent: null
       };
 
-      // Build hierarchical structure
-      if (level === 1 || items.length === 0) {
+      // Find appropriate parent using stack
+      // Remove items from stack that are at same or deeper level
+      while (stack.length > 0 && stack[stack.length - 1].level >= level) {
+        stack.pop();
+      }
+
+      if (stack.length === 0) {
+        // No parent, add to root
         items.push(item);
       } else {
-        // Find parent item
-        let parent = items[items.length - 1];
-        while (parent && parent.level >= level) {
-          parent = parent.parent;
-        }
-
-        if (parent && parent.level === level - 1) {
-          item.parent = parent;
-          parent.children.push(item);
-        } else {
-          // If no appropriate parent found, add to root
-          items.push(item);
-        }
+        // Add as child of the last item in stack
+        const parent = stack[stack.length - 1];
+        item.parent = parent;
+        parent.children.push(item);
       }
+
+      // Add current item to stack for potential children
+      stack.push(item);
     });
 
     return items;
@@ -141,71 +143,80 @@
     container.appendChild(separator);
 
     items.forEach((item) => {
-      const itemElement = createTOCItem(item);
+      const itemElement = createTOCItem(item, 0);
       container.appendChild(itemElement);
     });
   }
 
-  // Create TOC item element
-  function createTOCItem(item) {
+  // ✅ FIXED: Create TOC item with proper depth tracking and styling
+  function createTOCItem(item, depth) {
     const div = document.createElement("div");
     div.className = "toc-item";
 
     const hasChildren = item.children && item.children.length > 0;
     
-    // Calculate indentation based on heading level
+    // ✅ Use heading level for indentation (H1, H2, H3, etc.)
     const indentClass = getIndentClass(item.level);
     const fontSize = getFontSize(item.level);
     const fontWeight = getFontWeight(item.level);
 
     if (hasChildren) {
-      // Create expandable section
+      // Create expandable section with wrapper for indentation
+      const wrapper = document.createElement("div");
+      wrapper.className = indentClass;
+      
       const button = document.createElement("button");
-      button.className = `w-full flex items-center justify-between px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors text-gray-900 dark:text-gray-100 ${indentClass} ${fontSize} ${fontWeight}`;
+      button.className = `w-full flex items-center justify-between px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors text-gray-900 dark:text-gray-100 ${fontSize} ${fontWeight}`;
       button.innerHTML = `
-        <span>${item.text}</span>
-        <svg class="w-4 h-4 transition-transform transform ${
+        <span class="text-left flex-1">${item.text}</span>
+        <svg class="w-4 h-4 transition-transform transform flex-shrink-0 ml-2 ${
           expandedSections.has(item.id) ? "rotate-180" : ""
         }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
         </svg>
       `;
 
-      button.addEventListener("click", () => toggleSection(item.id, button));
-      div.appendChild(button);
+      button.addEventListener("click", () => toggleSection(item.id, button, item, depth));
+      wrapper.appendChild(button);
+      div.appendChild(wrapper);
 
-      // Create children container
+      // Create children container if expanded
       if (expandedSections.has(item.id)) {
-        const childrenContainer = createChildrenContainer(item.children);
-        div.appendChild(childrenContainer);
+        const childrenContainer = createChildrenContainer(item.children, depth + 1);
+        wrapper.appendChild(childrenContainer);
       }
     } else {
-      // Create link
+      // Create link with wrapper for indentation
+      const wrapper = document.createElement("div");
+      wrapper.className = indentClass;
+      
       const link = document.createElement("a");
       link.href = `#${item.id}`;
-      link.className = `block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors text-gray-700 dark:text-gray-300 toc-link ${indentClass} ${fontSize} ${fontWeight}`;
+      link.className = `block px-4 py-2 text-left hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors text-gray-700 dark:text-gray-300 toc-link ${fontSize} ${fontWeight}`;
       link.textContent = item.text;
       link.dataset.target = item.id;
-      div.appendChild(link);
+      
+      wrapper.appendChild(link);
+      div.appendChild(wrapper);
     }
 
     return div;
   }
 
-  // Get indentation class based on heading level
+  // ✅ IMPROVED: Indentation based on heading level (H1=0, H2=indent, H3=more, etc.)
   function getIndentClass(level) {
     const indents = {
-      1: "",
-      2: "ml-3",
-      3: "ml-6",
-      4: "ml-9",
-      5: "ml-12",
-      6: "ml-15"
+      1: "",        // H1: No indentation
+      2: "ml-4",    // H2: 1rem indentation
+      3: "ml-8",    // H3: 2rem indentation
+      4: "ml-12",   // H4: 3rem indentation
+      5: "ml-16",   // H5: 4rem indentation
+      6: "ml-20"    // H6: 5rem indentation
     };
     return indents[level] || "";
   }
 
-  // Get font size based on heading level
+  // ✅ IMPROVED: Better font size progression
   function getFontSize(level) {
     const sizes = {
       1: "text-base",
@@ -218,12 +229,12 @@
     return sizes[level] || "text-sm";
   }
 
-  // Get font weight based on heading level
+  // ✅ IMPROVED: Clearer visual hierarchy with font weights
   function getFontWeight(level) {
     const weights = {
-      1: "font-semibold",
-      2: "font-medium",
-      3: "font-normal",
+      1: "font-bold",
+      2: "font-semibold",
+      3: "font-medium",
       4: "font-normal",
       5: "font-normal",
       6: "font-normal"
@@ -231,39 +242,52 @@
     return weights[level] || "font-normal";
   }
 
-  // Create children container
-  function createChildrenContainer(children) {
+  // ✅ FIXED: Recursive children rendering with proper nesting
+  function createChildrenContainer(children, depth) {
     const container = document.createElement("div");
     container.className = "toc-children mt-1 space-y-1";
 
     children.forEach((child) => {
+      const childWrapper = document.createElement("div");
       const indentClass = getIndentClass(child.level);
       const fontSize = getFontSize(child.level);
       const fontWeight = getFontWeight(child.level);
       
+      childWrapper.className = indentClass;
+      
       const childLink = document.createElement("a");
       childLink.href = `#${child.id}`;
-      childLink.className = `block px-4 py-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors toc-link ${indentClass} ${fontSize} ${fontWeight}`;
+      childLink.className = `block px-4 py-2 text-left text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors toc-link ${fontSize} ${fontWeight}`;
       childLink.textContent = child.text;
       childLink.dataset.target = child.id;
-      container.appendChild(childLink);
+      
+      childWrapper.appendChild(childLink);
+      
+      // Recursively handle grandchildren if they exist
+      if (child.children && child.children.length > 0) {
+        const grandchildrenContainer = createChildrenContainer(child.children, depth + 1);
+        childWrapper.appendChild(grandchildrenContainer);
+      }
+      
+      container.appendChild(childWrapper);
     });
 
     return container;
   }
 
-  // Toggle section expansion
-  function toggleSection(sectionId, buttonElement) {
+  // ✅ FIXED: Toggle section with proper depth tracking
+  function toggleSection(sectionId, buttonElement, item, depth) {
     const isExpanded = expandedSections.has(sectionId);
     const svg = buttonElement.querySelector("svg");
-    const parentDiv = buttonElement.parentElement;
+    const wrapper = buttonElement.parentElement; // The wrapper div
+    const parentDiv = wrapper.parentElement; // The toc-item div
 
     if (isExpanded) {
       expandedSections.delete(sectionId);
       svg.classList.remove("rotate-180");
 
       // Remove children container
-      const childrenContainer = parentDiv.querySelector(".toc-children");
+      const childrenContainer = wrapper.querySelector(".toc-children");
       if (childrenContainer) {
         childrenContainer.remove();
       }
@@ -271,11 +295,10 @@
       expandedSections.add(sectionId);
       svg.classList.add("rotate-180");
 
-      // Add children container
-      const item = findItemById(sectionId);
+      // Add children container with proper depth
       if (item && item.children) {
-        const childrenContainer = createChildrenContainer(item.children);
-        parentDiv.appendChild(childrenContainer);
+        const childrenContainer = createChildrenContainer(item.children, depth + 1);
+        wrapper.appendChild(childrenContainer);
       }
     }
   }
