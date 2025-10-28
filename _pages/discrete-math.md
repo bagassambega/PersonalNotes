@@ -19,19 +19,19 @@ a mod b = x, a dibagi b bersisa x
 
 Misalkan m dan n bilangan bulat, n > 0. Jika m dibagi dengan n maka hasil pembagiannya adalah q (quotient/pengali) dan sisanya r (remainder), sedemikian sehingga:
 
-m= nq + r, 0 ≤ r < n
+*m*= *nq* + *r*, 0 ≤ *r* < *n*
 
 3001 / 3 = 1000, sisa 1
 
 3001 = 1000 \* 3 + 1
 
-m = 3001, n = 1000, q = 3, r = 1
+*m* = 3001, *n* = 1000, *q* = 3, *r* = 1
 
 -22 / 3 = 7, sisa -1
 
 Remainder harus positif, jadi ubah caranya jadi:
 
-m = (n+1)q + (r+q)
+*m* = (*n*+1)*q* + (r+q)
 
 Atau pas diproses, jadi -22 / 3 = 7 sisa -1, diubah jadi 8 sisa (-1 + 3) = 2
 
