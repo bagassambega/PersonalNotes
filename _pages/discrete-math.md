@@ -19,7 +19,7 @@ $$13\pmod{5} = 2$$
 
 ### Teorema Euclidean
 
-Misalkan m dan n bilangan bulat, n > 0. Jika m dibagi dengan n maka hasil pembagiannya adalah q (quotient/pengali) dan sisanya r (remainder), sedemikian sehingga:
+>Misalkan *m* dan *n* bilangan bulat, *n* > 0. Jika *m* dibagi dengan *n* maka hasil pembagiannya adalah *q* (*quotient*/pengali) dan sisanya *r* (remainder), sedemikian sehingga:
 
 $$ m = nq + r, 0 ≤ r < n $$
 $$ 3001 \div 3 = 1000, \text{sisa } 1 $$
