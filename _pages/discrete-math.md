@@ -12,7 +12,7 @@ github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/
 
 ### Definisi
 
-a mod b = x, a dibagi b bersisa x
+$$a mod b = x$$, a dibagi b bersisa x
 13 mod 5 = 2, 12 dibagi 5 itu 2 bersisa 2
 
 ### Teorema Euclidean
@@ -82,23 +82,17 @@ $$PBB(a, b)$$ bisa dinyatakan sebagai kombinasi linear seperti berikut:
 $$PBB(80, 12) = 4$$
 $$4 = (-1) \times 80 + 12$$
 
-**Teorema**. Misalkan a dan b bilangan bulat positif, maka terdapat
-
-bilangan bulat m dan n sedemikian sehingga PBB(a, b) = ma + nb.
+**Teorema**. Misalkan a dan b bilangan bulat positif, maka terdapat bilangan bulat *m* dan *n* sedemikian sehingga $$PBB(a, b) = ma + nb$$
 
 1. Nyatakan PBB(21, 45) sebagai kombinasi linier dari 21 dan 45.
-
-Penyelesaian:
-
-45 = 2  21 + 3 (i)
-
-21 = 7  3 + 0 (ii)
+**Penyelesaian**:
+$$45 = 2  21 + 3 (i)$$
+$$21 = 7  3 + 0 (ii)$$
 
 Sisa pembagian terakhir sebelum 0 adalah 3, maka PBB(45, 21) = 3
 
-Dari persamaan (i) dapat dituliskan:
-
-3 = 45 – 2  21 = 1  45 – 2  21
+Dari persamaan (*i*) dapat dituliskan:
+$$3 = 45 – 2  21 = 1  45 – 2  21$$
 
 2. Nyatakan PBB(312, 70) sebagai kombinasi linier 312 dan 70.
 
