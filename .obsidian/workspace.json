@@ -200,6 +200,8 @@
   },
   "active": "aa17d55cce8fe627",
   "lastOpenFiles": [
+    "_site/assets/js/tex-mml-chtml.js.js",
+    "assets/js/tex-mml-chtml.js.js",
     "index.md",
     "_pages/discrete-math.md",
     "_pages/rubic.md",
@@ -237,7 +239,6 @@
     "assets/favicon_io/android-chrome-512x512.png",
     "assets/favicon_io/favicon-32x32.png",
     "assets/favicon_io/apple-touch-icon.png",
-    "assets/favicon_io/favicon.ico",
     "assets/favicon_io/favicon-16x16.png",
     "assets/favicon_io/android-chrome-192x192.png",
     "Algorithm Strategy.md",
@@ -245,7 +246,6 @@
     "Development.md",
     "Discrete.md",
     "Development and Operations.md",
-    "Untitled.canvas",
-    "00 - Main.md"
+    "Untitled.canvas"
   ]
 }
