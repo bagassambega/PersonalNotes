@@ -77,12 +77,12 @@ Sisa pembagian terakhir sebelum 0 adalah 2, maka **PBB(312, 70) = 2**
 
 ### Kombinasi Linear
 
-$$PBB(a, b)$$ bisa dinyatakan sebagai kombinasi linear seperti berikut:  
-
+*PBB(a, b)* bisa dinyatakan sebagai kombinasi linear seperti berikut:  
 $$PBB(80, 12) = 4$$
 $$4 = (-1) \times 80 + 12$$
 
-**Teorema**. Misalkan a dan b bilangan bulat positif, maka terdapat bilangan bulat *m* dan *n* sedemikian sehingga $$PBB(a, b) = ma + nb$$
+>**Teorema**. Misalkan a dan b bilangan bulat positif, maka terdapat bilangan bulat *m* dan *n* sedemikian sehingga 
+>$$PBB(a, b) = ma + nb$$
 
 1. Nyatakan PBB(21, 45) sebagai kombinasi linier dari 21 dan 45.
 **Penyelesaian**:
@@ -90,7 +90,6 @@ $$45 = 2  21 + 3 (i)$$
 $$21 = 7  3 + 0 (ii)$$
 
 Sisa pembagian terakhir sebelum 0 adalah 3, maka PBB(45, 21) = 3
-
 Dari persamaan (*i*) dapat dituliskan:
 $$3 = 45 – 2  21 = 1  45 – 2  21$$
 
@@ -101,12 +100,11 @@ $$312 = 4  70 + 32 (i)$$
 $$70 = 2  32 + 6 (ii)$$
 $$32 = 5  6 + 2 (iii)$$
 $$6 = 3  2 + 0 (iv)$$
-Sisa pembagian terakhir sebelum 0 adalah 2, maka **PBB(312, 70) = 2**
+Sisa pembagian terakhir sebelum 0 adalah 2, maka PBB(312, 70) = 2
 
 Susun pembagian nomor (iii) dan (ii) masing-masing menjadi
 
-2 = 32 – 5  6 (iv)
-
+$$2 = 32 – 5  6 \textiv)$$
 6 = 70 – 2  32 (v)
 
 Sulihkan (v) ke dalam (iv) menjadi
