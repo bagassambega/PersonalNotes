@@ -13,7 +13,7 @@ github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/
 ### Definisi
 
 $$
-a \pmod{b}= x \label{eq:mod1}
+a \pmod{b}= x \tag{1}
 $$
 
 artinya ***a* dibagi *b* bersisa *x***
