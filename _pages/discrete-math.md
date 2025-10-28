@@ -20,14 +20,14 @@ a mod b = x, a dibagi b bersisa x
 Misalkan m dan n bilangan bulat, n > 0. Jika m dibagi dengan n maka hasil pembagiannya adalah q (quotient/pengali) dan sisanya r (remainder), sedemikian sehingga:
 
 $$ m = nq + r, 0 ≤ r < n $$
-$$ 3001 / 3 = 1000, sisa 1 $$
+$$ 3001 \div 3 = 1000, \text{sisa } 1 $$
 $$ 3001 = 1000 \times 3 + 1 $$
 $$ m = 3001, n = 1000, q = 3, r = 1 $$
-$$ -22 / 3 = 7, sisa -1 $$
+$$ -22 \div 3 = 7, \text{sisa } -1 $$
 
 Remainder harus positif, jadi ubah caranya jadi:
 
-$$ m = (n+1) q + (r+q) $$
+$$ m = (n+1)q + (r+q) $$
 
 Atau pas diproses, jadi -22 / 3 = 7 sisa -1, diubah jadi 8 sisa (-1 + 3) = 2
 
@@ -168,7 +168,6 @@ Susun pembagian nomor (i) menjadi
 
 32 = 312 – 4  70 (vii)
 
-
 Jadi, PBB(312, 70) = 2 = 11  312 – 49  70
 
 Jadi 3 merupakan kombinasi linier dari 45 dan 21
@@ -214,7 +213,6 @@ Jika a tidak kongruen dengan b dalam modulus m, maka ditulis a !≅ b (mod m) .
 Misalkan x ≅ 5 mod 11, maka semua x yang memenuhi adalah x-511 yang menghasilkan bilangan bulat, yaitu 16, 27. 38, dst
 
 Kalau bentuk lain (mis 58 ≅ 18 mod 20) dengan persamaan 58 ≅ 3x mod 20, bisa disederhanakan jadi 18 ≅ 3x mod 20 (58 mod 20 ≅ 18 mod 20, maka 18 ≅ 3x mod 20 (lihat [sifat komutatif](https://docs.google.com/document/d/1IS3ZYiWKAOwm_tbL2iZwnQh6amLIpN1ZiSLYdkCY92o/edit?tab=t.hc97psoycyvj#heading=h.gl21eoh5ahka))), kemudian 3x ≅ 18 mod 20 → x=18 + 20k3, k = 0 maka x = 6 (atau k = 3, x = 26, 26 mod 20 = 6)
-
 
 Misal ada operasi a ≅ b mod m, dengan m bilangan bulat positif dan c bilangan bulat, maka:
 
