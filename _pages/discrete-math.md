@@ -40,9 +40,7 @@ Pembagi terbesar yang sama untuk 2 atau lebih bilangan
 $$ PBB(18, 24) = 6 $$
 $$ m = nq + r , 0  r < n $$
 
-maka $$ PBB(m, n) = PBB(n, r) $$
-
-$$ 60 = 3 \times 18 + 6 $$
+maka $$ PBB(m, n) = PBB(n, r) $$$$ 60 = 3 \times 18 + 6 $$
 $$ m = 60, n = 18, q = 3, r = 6 $$
 $$ PBB(60, 18) = PBB(18, 6) = 6 $$
 $$ 18 = 3 \times 6 + 0 $$
@@ -62,7 +60,7 @@ a. Nyatakan PBB(21, 45) sebagai kombinasi linier dari 21 dan 45.
 **Penyelesaian**:
 $$45 = 2  21 + 3 (i)$$
 $$21 = 7  3 + 0 (ii)$$
-Sisa pembagian terakhir sebelum 0 adalah 3, maka PBB(45, 21) = 3
+Sisa pembagian terakhir sebelum 0 adalah 3, maka **PBB(45, 21) = 3**
 
 Dari persamaan (i) dapat dituliskan:
 $$3 = 45 – 2  21 = 1  45 – 2  21$$
@@ -75,34 +73,14 @@ $$70 = 2  32 + 6 (ii)$$
 $$32 = 5  6 + 2 (iii)$$
 $$6 = 3  2 + 0 (iv)$$
 
-Sisa pembagian terakhir sebelum 0 adalah 2, maka PBB(312, 70) = 2
-
-Susun pembagian nomor (iii) dan (ii) masing-masing menjadi
-
-2 = 32 – 5  6 (iv)
-
-6 = 70 – 2  32 (v)
-
-Sulihkan (v) ke dalam (iv) menjadi
-
-2 = 32 – 5(70 – 232) = 132 – 570 + 1032 = 11  32 – 5  70 (vi)
-
-Susun pembagian nomor (i) menjadi
-
-32 = 312 – 4  70 (vii)
-
-Sulihkan (vii) ke dalam (vi) menjadi
-
-2 = 11  32 – 5  70 = 11  (312 – 4  70) – 5  70 = 11 . 312 – 49  70
-
-Jadi, PBB(312, 70) = 2 = 11  312 – 49  70
+Sisa pembagian terakhir sebelum 0 adalah 2, maka **PBB(312, 70) = 2**
 
 ### Kombinasi Linear
 
-PBB(a, b) bisa dinyatakan sebagai kombinasi linear seperti berikut:  
-PBB(80, 12) = 4,
+$$PBB(a, b)$$ bisa dinyatakan sebagai kombinasi linear seperti berikut:  
 
-4 = (-1) \* 80 + 12
+$$PBB(80, 12) = 4$$
+$$4 = (-1) \times 80 + 12$$
 
 Teorema. Misalkan a dan b bilangan bulat positif, maka terdapat
 
