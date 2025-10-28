@@ -13,7 +13,6 @@ github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/
 ### Definisi
 
 a mod b = x, a dibagi b bersisa x
-
 13 mod 5 = 2, 12 dibagi 5 itu 2 bersisa 2
 
 ### Teorema Euclidean
