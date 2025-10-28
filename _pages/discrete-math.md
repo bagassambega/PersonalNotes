@@ -47,11 +47,21 @@ $$ (-8) \times 3 + 2 = -24 + 2 $$
 ## PBB/FPB (GCD, Greatest Common Divisor)
 
 Pembagi terbesar yang sama untuk 2 atau lebih bilangan
+
 $$ PBB(18, 24) = 6 $$
+
 $$ m = nq + r , 0  r < n $$
-maka $$ PBB(m, n) = PBB(n, r) $$$$ 60 = 3 \times 18 + 6 $$
+
+maka 
+
+$$ PBB(m, n) = PBB(n, r) $$
+
+$$ 60 = 3 \times 18 + 6 $$
+
 $$ m = 60, n = 18, q = 3, r = 6 $$
+
 $$ PBB(60, 18) = PBB(18, 6) = 6 $$
+
 $$ 18 = 3 \times 6 + 0 $$
 
 ### Algoritma Euclidean
@@ -60,7 +70,7 @@ Diberikan dua buah bilangan bulat tak-negatif *m* dan *n* (*m* ≥ *n*). Algorit
 
 **Algoritma Euclidean**
 
-1. Jika *n* = 0 maka *m* adalah, $$PBB(m, n)$$kemudian stop. Tetapi jika, $$ n \gt 0 $$lanjutkan ke langkah 2.
+1. Jika *n* = 0 maka *m* adalah, $$PBB(m, n)$$, kemudian stop. Tetapi jika, $$ n \gt 0 $$, lanjutkan ke langkah 2.
 2. Bagilah *m* dengan *n* dan misalkan *r* adalah sisanya.
 3. Ganti nilai *m* dengan nilai n dan nilai *n* dengan nilai *r*, lalu ulang kembali ke langkah 1.
 
