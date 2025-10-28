@@ -26,7 +26,8 @@ github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/
 - Oleh karenanya, dihapus sistem centralized ledger, dan dijadiin distributed.
 - Hal ini bikin biaya transaksi lebih rendah dan faster transaction reconciliation (penyamaan data transaksi antar pihak berlangsung lebih cepat)
 
-## Definisi
+## Definisi ^definisi-blockchain
+
 
 - Kumpulan/rantai blok yang berisi informasi. Saat suatu blok diisi oleh suatu informasi, informasi tersebut sangat sulit untuk diubah atau diganti-ganti
 
@@ -52,7 +53,7 @@ Artinya sistem mengatur dirinya sendiri secara otomatis melalui kode dan kriptog
 
 ### Chain
 
-- Rantai yang menghubungkan [blocks](https://docs.google.com/document/d/1IS3ZYiWKAOwm_tbL2iZwnQh6amLIpN1ZiSLYdkCY92o/edit?tab=t.w230vt95g0t8#heading=h.okwn2z8iqnng)
+- Rantai yang menghubungkan [blocks](#block-blockchain)
 - Komponen utama:
 
 1. Address
@@ -74,7 +75,7 @@ Artinya sistem mengatur dirinya sendiri secara otomatis melalui kode dan kriptog
 - Block paling awal yang menjadi dasar rantai/chain.
 - Bisa di-hardcode saat pertama kali dibuat
 
-### Block
+### Block {#block-blockchain}
 
 - Tersusun dari block header, block body, dan hash
 
