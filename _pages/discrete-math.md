@@ -25,7 +25,7 @@ Misalkan m dan n bilangan bulat, n > 0. Jika m dibagi dengan n maka hasil pembag
 
 3001 = 1000 \* 3 + 1
 
-*m* = 3001, *n* = 1000, *q* = 3, *r* = 1
+$$ m = 3001, n = 1000, q = 3, r = 1 $$
 
 -22 / 3 = 7, sisa -1
 
