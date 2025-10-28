@@ -53,35 +53,27 @@ Diberikan dua buah bilangan bulat tak-negatif m dan n (m ≥ n). Algoritma Eucli
 
 Algoritma Euclidean
 
-1. Jika *n* = 0 maka *m* adalah $$PBB(m, n)$$, kemudian stop.
-tetapi jika $$ n \gt 0 $$, lanjutkan ke langkah 2.
+1. Jika *n* = 0 maka *m* adalah, $$PBB(m, n)$$kemudian stop. Tetapi jika, $$ n \gt 0 $$lanjutkan ke langkah 2.
 2. Bagilah *m* dengan *n* dan misalkan *r* adalah sisanya.
-3. Ganti nilai *m* dengan nilai n dan nilai *n* dengan nilai r, lalu ulang kembali ke langkah 1.
+3. Ganti nilai *m* dengan nilai n dan nilai *n* dengan nilai *r*, lalu ulang kembali ke langkah 1.
 
 Contoh:
-Nyatakan PBB(21, 45) sebagai kombinasi linier dari 21 dan 45. Penyelesaian:
-
+a. Nyatakan PBB(21, 45) sebagai kombinasi linier dari 21 dan 45. 
+**Penyelesaian**:
 $$45 = 2  21 + 3 (i)$$
 $$21 = 7  3 + 0 (ii)$$
 Sisa pembagian terakhir sebelum 0 adalah 3, maka PBB(45, 21) = 3
 
 Dari persamaan (i) dapat dituliskan:
-
-3 = 45 – 2  21 = 1  45 – 2  21
-
+$$3 = 45 – 2  21 = 1  45 – 2  21$$
 Jadi 3 merupakan kombinasi linier dari 45 dan 21
 
-Nyatakan PBB(312, 70) sebagai kombinasi linier 312 dan 70.
-
-Jawaban: Terapkan algoritma Euclidean untuk memperoleh PBB(312, 70):
-
-312 = 4  70 + 32 (i)
-
-70 = 2  32 + 6 (ii)
-
-32 = 5  6 + 2 (iii)
-
-6 = 3  2 + 0 (iv)
+b. Nyatakan PBB(312, 70) sebagai kombinasi linier 312 dan 70.
+**Jawaban**: Terapkan algoritma Euclidean untuk memperoleh PBB(312, 70):
+$$312 = 4  70 + 32 (i)$$
+$$70 = 2  32 + 6 (ii)$$
+$$32 = 5  6 + 2 (iii)$$
+$$6 = 3  2 + 0 (iv)$$
 
 Sisa pembagian terakhir sebelum 0 adalah 2, maka PBB(312, 70) = 2
 
