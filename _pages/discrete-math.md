@@ -38,10 +38,8 @@ $$ (-8) \times 3 + 2 = -24 + 2 $$
 ## PBB/FPB (GCD, Greatest Common Divisor)
 
 Pembagi terbesar yang sama untuk 2 atau lebih bilangan
-
 $$ PBB(18, 24) = 6 $$
 $$ m = nq + r , 0  r < n $$
-
 maka $$ PBB(m, n) = PBB(n, r) $$$$ 60 = 3 \times 18 + 6 $$
 $$ m = 60, n = 18, q = 3, r = 6 $$
 $$ PBB(60, 18) = PBB(18, 6) = 6 $$
@@ -49,9 +47,9 @@ $$ 18 = 3 \times 6 + 0 $$
 
 ### Algoritma Euclidean
 
-Diberikan dua buah bilangan bulat tak-negatif m dan n (m ≥ n). Algoritma Euclidean berikut mencari pembagi bersama terbesar dari m dan n.
+Diberikan dua buah bilangan bulat tak-negatif *m* dan *n* (*m* ≥ *n*). Algoritma Euclidean berikut mencari pembagi bersama terbesar dari *m* dan *n*.
 
-Algoritma Euclidean
+**Algoritma Euclidean**
 
 1. Jika *n* = 0 maka *m* adalah, $$PBB(m, n)$$kemudian stop. Tetapi jika, $$ n \gt 0 $$lanjutkan ke langkah 2.
 2. Bagilah *m* dengan *n* dan misalkan *r* adalah sisanya.
@@ -99,16 +97,11 @@ $$3 = 45 – 2  21 = 1  45 – 2  21$$
 2. Nyatakan PBB(312, 70) sebagai kombinasi linier 312 dan 70.
 
 Jawaban: Terapkan algoritma Euclidean untuk memperoleh PBB(312, 70):
-
-312 = 4  70 + 32 (i)
-
-70 = 2  32 + 6 (ii)
-
-32 = 5  6 + 2 (iii)
-
-6 = 3  2 + 0 (iv)
-
-Sisa pembagian terakhir sebelum 0 adalah 2, maka PBB(312, 70) = 2
+$$312 = 4  70 + 32 (i)$$
+$$70 = 2  32 + 6 (ii)$$
+$$32 = 5  6 + 2 (iii)$$
+$$6 = 3  2 + 0 (iv)$$
+Sisa pembagian terakhir sebelum 0 adalah 2, maka **PBB(312, 70) = 2**
 
 Susun pembagian nomor (iii) dan (ii) masing-masing menjadi
 
