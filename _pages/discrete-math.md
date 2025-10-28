@@ -27,7 +27,7 @@ $$ m = 3001, n = 1000, q = 3, r = 1 $$
 
 Remainder harus positif, jadi ubah caranya jadi:
 
-*m* = (*n*+1)*q* + (r+q)
+_m_ = (_n_+1)_q_ + (r+q)
 
 Atau pas diproses, jadi -22 / 3 = 7 sisa -1, diubah jadi 8 sisa (-1 + 3) = 2
 
@@ -38,10 +38,6 @@ Atau pas diproses, jadi -22 / 3 = 7 sisa -1, diubah jadi 8 sisa (-1 + 3) = 2
 Pembagi terbesar yang sama untuk 2 atau lebih bilangan
 
 PBB(18, 24) = 6
-
-PBB(56, 28) = 28
-
-Misalkan m dan n bilangan bulat, dengan syarat n > 0 sedemikian sehingga
 
 m = nq + r , 0  r < n
 
@@ -172,9 +168,6 @@ Susun pembagian nomor (i) menjadi
 
 32 = 312 – 4  70 (vii)
 
-Sulihkan (vii) ke dalam (vi) menjadi
-
-2 = 11  32 – 5  70 = 11  (312 – 4  70) – 5  70 = 11 . 312 – 49  70
 
 Jadi, PBB(312, 70) = 2 = 11  312 – 49  70
 
@@ -216,27 +209,15 @@ Jika a tidak kongruen dengan b dalam modulus m, maka ditulis a !≅ b (mod m) .
 
 21 ≅ 9 mod 12 (12 habis membagi 21 - 9 = 12)
 
-a ≅ b mod m sama dengan a = b + km
-
-Sebagai contoh
-
 15 ≅ 3 mod 6 (15 dibagi 6 bersisa 3) → 15 = 3 + 6k, k yang memenuhi adalah 2 (3 + 2.6 = 15)
 
 Misalkan x ≅ 5 mod 11, maka semua x yang memenuhi adalah x-511 yang menghasilkan bilangan bulat, yaitu 16, 27. 38, dst
 
-Jadi kalau ada persamaan 5x ≅ 3 mod 6, ubah jadi 5x = 3 + 6k → x=6k+35, tugas kita nyari nilai k yang menghasilkan x bilangan bulat. Didapat k = 2, x = 3
-
 Kalau bentuk lain (mis 58 ≅ 18 mod 20) dengan persamaan 58 ≅ 3x mod 20, bisa disederhanakan jadi 18 ≅ 3x mod 20 (58 mod 20 ≅ 18 mod 20, maka 18 ≅ 3x mod 20 (lihat [sifat komutatif](https://docs.google.com/document/d/1IS3ZYiWKAOwm_tbL2iZwnQh6amLIpN1ZiSLYdkCY92o/edit?tab=t.hc97psoycyvj#heading=h.gl21eoh5ahka))), kemudian 3x ≅ 18 mod 20 → x=18 + 20k3, k = 0 maka x = 6 (atau k = 3, x = 26, 26 mod 20 = 6)
 
-### Persamaan Linear Kekongruenan n-Variabel
-
-### Sifat Kekongruenan Modulo
 
 Misal ada operasi a ≅ b mod m, dengan m bilangan bulat positif dan c bilangan bulat, maka:
 
-- (a + c) ≅ (b + c) mod m
-- (ac) ≅ (bc) mod m
-- ap ≅ bp mod m, dengan p bilangan bulat tak negatif
 - Jika a ≅ b mod m, maka b ≅ a mod m  
    Jika a ≅ b mod m, maka artinya a dibagi m akan memiliki sisa yang sama saat b dibagi m, artinya a dan b komutatif. Misal 20 ≅ 2 mod 3, hal ini berarti 20 mod 3 akan memiliki nilai yang sama dengan 2 mod 3, yaitu 2. Begitupun 20 ≅ 17 mod 3
 
