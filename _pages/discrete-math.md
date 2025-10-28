@@ -14,7 +14,8 @@ github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/
 
 $$
 a \pmod{b}= x
-$$artinya ***a* dibagi *b* bersisa *x***
+$$
+artinya ***a* dibagi *b* bersisa *x***
 
 $$13\pmod{5} = 2$$
 12 dibagi 5 itu 2 bersisa 2
