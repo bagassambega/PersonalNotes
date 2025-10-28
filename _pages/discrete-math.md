@@ -104,7 +104,7 @@ Sisa pembagian terakhir sebelum 0 adalah 2, maka PBB(312, 70) = 2
 
 Susun pembagian nomor (iii) dan (ii) masing-masing menjadi
 
-$$2 = 32 – 5  6 \textiv)$$
+$$2 = 32 – 5  6 \text{ (iv)}$$
 6 = 70 – 2  32 (v)
 
 Sulihkan (v) ke dalam (iv) menjadi
