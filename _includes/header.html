@@ -267,29 +267,46 @@
             class="resources-toggle w-full flex items-center justify-between px-3 py-2 text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md transition-colors duration-200"
           >
             <span>Resources</span>
-            <svg class="w-4 h-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            <svg
+              class="w-4 h-4 transition-transform duration-200"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"
+              />
             </svg>
           </button>
-          <div class="resources-content hidden max-h-[20vh] overflow-y-auto transition-all duration-300">
+          <div
+            class="resources-content hidden max-h-[20vh] overflow-y-auto transition-all duration-300"
+          >
             <div class="grid grid-cols-2 gap-2 mt-3 px-1">
               {% for resource in site.data.resources %}
               <a
                 href="{{ resource.url | relative_url }}"
                 class="px-2 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200 {% if page.url contains resource.url %}bg-gray-100 dark:bg-gray-700{% endif %}"
               >
-                <div class="font-medium text-xs text-gray-900 dark:text-gray-100">
+                <div
+                  class="font-medium text-xs text-gray-900 dark:text-gray-100"
+                >
                   {{ resource.title }}
                 </div>
                 {% if resource.description %}
-                <p class="text-xs text-gray-600 dark:text-gray-400 mt-1 line-clamp-2">
+                <p
+                  class="text-xs text-gray-600 dark:text-gray-400 mt-1 line-clamp-2"
+                >
                   {{ resource.description }}
                 </p>
-                {% endif %}
-                {% if resource.tags %}
+                {% endif %} {% if resource.tags %}
                 <div class="flex flex-wrap gap-1 mt-1">
                   {% for tag in resource.tags %}
-                  <span class="inline-block px-1.5 py-0.5 text-xs bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded">
+                  <span
+                    class="inline-block px-1.5 py-0.5 text-xs bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded"
+                  >
                     {{ tag }}
                   </span>
                   {% endfor %}
@@ -307,29 +324,46 @@
             class="intermezzo-toggle w-full flex items-center justify-between px-3 py-2 text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md transition-colors duration-200"
           >
             <span>Intermezzo</span>
-            <svg class="w-4 h-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            <svg
+              class="w-4 h-4 transition-transform duration-200"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"
+              />
             </svg>
           </button>
-          <div class="intermezzo-content hidden max-h-0 overflow-hidden transition-all duration-300">
+          <div
+            class="intermezzo-content hidden max-h-0 overflow-hidden transition-all duration-300"
+          >
             <div class="grid grid-cols-2 gap-2 mt-3 px-1">
               {% for item in site.data.intermezzo %}
               <a
                 href="{{ item.url | relative_url }}"
                 class="px-2 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200 {% if page.url contains item.url %}bg-gray-100 dark:bg-gray-700{% endif %}"
               >
-                <div class="font-medium text-xs text-gray-900 dark:text-gray-100">
+                <div
+                  class="font-medium text-xs text-gray-900 dark:text-gray-100"
+                >
                   {{ item.title }}
                 </div>
                 {% if item.description %}
-                <p class="text-xs text-gray-600 dark:text-gray-400 mt-1 line-clamp-2">
+                <p
+                  class="text-xs text-gray-600 dark:text-gray-400 mt-1 line-clamp-2"
+                >
                   {{ item.description }}
                 </p>
-                {% endif %}
-                {% if item.tags %}
+                {% endif %} {% if item.tags %}
                 <div class="flex flex-wrap gap-1 mt-1">
                   {% for tag in item.tags %}
-                  <span class="inline-block px-1.5 py-0.5 text-xs bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded">
+                  <span
+                    class="inline-block px-1.5 py-0.5 text-xs bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded"
+                  >
                     {{ tag }}
                   </span>
                   {% endfor %}
@@ -355,45 +389,62 @@
 </header>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener("DOMContentLoaded", function () {
     // Resources toggle
-    const resourcesToggle = document.querySelector('.resources-toggle');
-    const resourcesContent = document.querySelector('.resources-content');
-    const resourcesIcon = resourcesToggle.querySelector('svg');
+    const resourcesToggle = document.querySelector(".resources-toggle");
+    const resourcesContent = document.querySelector(".resources-content");
+    const resourcesIcon = resourcesToggle.querySelector("svg");
 
-    resourcesToggle.addEventListener('click', function() {
-      const isHidden = resourcesContent.classList.contains('hidden');
+    resourcesToggle.addEventListener("click", function () {
+      const isHidden = resourcesContent.classList.contains("hidden");
       if (isHidden) {
-        resourcesContent.classList.remove('hidden');
-        resourcesContent.style.maxHeight = '40vh';
-        resourcesIcon.style.transform = 'rotate(180deg)';
+        resourcesContent.classList.remove("hidden");
+        resourcesContent.style.maxHeight = "40vh";
+        resourcesIcon.style.transform = "rotate(180deg)";
       } else {
-        resourcesContent.style.maxHeight = '0';
-        resourcesIcon.style.transform = 'rotate(0deg)';
+        resourcesContent.style.maxHeight = "0";
+        resourcesIcon.style.transform = "rotate(0deg)";
         setTimeout(() => {
-          resourcesContent.classList.add('hidden');
+          resourcesContent.classList.add("hidden");
         }, 300);
       }
     });
 
     // Intermezzo toggle
-    const intermezzoToggle = document.querySelector('.intermezzo-toggle');
-    const intermezzoContent = document.querySelector('.intermezzo-content');
-    const intermezzoIcon = intermezzoToggle.querySelector('svg');
+    const intermezzoToggle = document.querySelector(".intermezzo-toggle");
+    const intermezzoContent = document.querySelector(".intermezzo-content");
+    const intermezzoIcon = intermezzoToggle.querySelector("svg");
 
-    intermezzoToggle.addEventListener('click', function() {
-      const isHidden = intermezzoContent.classList.contains('hidden');
+    intermezzoToggle.addEventListener("click", function () {
+      const isHidden = intermezzoContent.classList.contains("hidden");
       if (isHidden) {
-        intermezzoContent.classList.remove('hidden');
-        intermezzoContent.style.maxHeight = intermezzoContent.scrollHeight + 'px';
-        intermezzoIcon.style.transform = 'rotate(180deg)';
+        intermezzoContent.classList.remove("hidden");
+        intermezzoContent.style.maxHeight =
+          intermezzoContent.scrollHeight + "px";
+        intermezzoIcon.style.transform = "rotate(180deg)";
       } else {
-        intermezzoContent.style.maxHeight = '0';
-        intermezzoIcon.style.transform = 'rotate(0deg)';
+        intermezzoContent.style.maxHeight = "0";
+        intermezzoIcon.style.transform = "rotate(0deg)";
         setTimeout(() => {
-          intermezzoContent.classList.add('hidden');
+          intermezzoContent.classList.add("hidden");
         }, 300);
       }
     });
+  });
+</script>
+
+<script
+  type="text/javascript"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+></script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$'], ['\\[','\\]']],
+      processEscapes: true
+    }
   });
 </script>
