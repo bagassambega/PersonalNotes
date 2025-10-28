@@ -48,25 +48,21 @@ $$ (-8) \times 3 + 2 = -24 + 2 $$
 
 Pembagi terbesar yang sama untuk 2 atau lebih bilangan
 
-$$
-\begin{align}
-PBB(18, 24) = 6 \\
+$$ PBB(18, 24) = 6 \\ $$
 
-m = nq + r , 0 \le r < n \\
-\end{align}
-$$
+$$ m = nq + r , 0 \le r < n \\ $$
 
 maka 
 
-$$
-\begin{align}
-PBB(m, n) = PBB(n, r)  \\
-60 = 3 \times 18 + 6 \\
-m = 60, n = 18, q = 3, r = 6 \\
-PBB(60, 18) = PBB(18, 6) = 6 \\
-18 = 3 \times 6 + 0 \\
-\end{align}
-$$
+$$ PBB(m, n) = PBB(n, r) \\ $$
+
+$$ 60 = 3 \times 18 + 6 \\ $$
+
+$$ m = 60, n = 18, q = 3, r = 6 $$
+
+$$ PBB(60, 18) = PBB(18, 6) = 6 $$
+
+$$ 18 = 3 \times 6 + 0 $$
 
 ### Algoritma Euclidean
 

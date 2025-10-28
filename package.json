@@ -8,8 +8,8 @@
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.10",
-    "tailwindcss": "^3.4.0",
-    "autoprefixer": "^10.4.16"
+    "autoprefixer": "^10.4.16",
+    "tailwindcss": "^3.4.0"
   },
   "keywords": [
     "jekyll",
@@ -18,5 +18,8 @@
     "knowledge-base"
   ],
   "author": "bagassambega",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "mathjax-full": "^3.2.1"
+  }
 }
