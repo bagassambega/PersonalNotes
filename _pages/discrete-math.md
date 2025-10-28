@@ -23,11 +23,11 @@ $$ m = nq + r, 0 ≤ r < n $$
 $$ 3001 / 3 = 1000, sisa 1 $$
 $$ 3001 = 1000 \times 3 + 1 $$
 $$ m = 3001, n = 1000, q = 3, r = 1 $$
--22 / 3 = 7, sisa -1
+$$ -22 / 3 = 7, sisa -1 $$
 
 Remainder harus positif, jadi ubah caranya jadi:
 
-_m_ = (_n_+1)_q_ + (r+q)
+$$ m = (n+1) q + (r+q) $$
 
 Atau pas diproses, jadi -22 / 3 = 7 sisa -1, diubah jadi 8 sisa (-1 + 3) = 2
 
