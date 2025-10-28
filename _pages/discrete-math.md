@@ -48,9 +48,14 @@ $$ (-8) \times 3 + 2 = -24 + 2 $$
 
 Pembagi terbesar yang sama untuk 2 atau lebih bilangan
 
-$$ PBB(18, 24) = 6 $$
+$$
+\begin{aligned}
+PBB(18, 24) = 6 \\
 
-$$ m = nq + r , 0 \le r < n $$
+m = nq + r , 0 \le r < n
+\end{aligned}
+$$
+
 
 maka 
 
