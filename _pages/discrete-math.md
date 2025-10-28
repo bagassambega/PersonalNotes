@@ -52,12 +52,13 @@ $$
 \begin{aligned}
 PBB(18, 24) = 6 \\
 
-m = nq + r , 0 \le r < n
+m = nq + r , 0 \le r < n \\
 \end{aligned}
 $$
 
-
 maka 
+
+\\
 
 $$ PBB(m, n) = PBB(n, r) $$
 
