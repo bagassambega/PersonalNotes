@@ -21,7 +21,6 @@ artinya ***a* dibagi *b* bersisa *x***
 $$13\pmod{5} = 2$$
 
 12 dibagi 5 itu 2 bersisa 2
-
 ### Teorema Euclidean
 
 >Misalkan *m* dan *n* bilangan bulat, *n* > 0. Jika *m* dibagi dengan *n* maka hasil pembagiannya adalah *q* (*quotient*/pengali) dan sisanya *r* (remainder), sedemikian sehingga:
@@ -29,9 +28,13 @@ $$13\pmod{5} = 2$$
 > $$ m = nq + r, 0 ≤ r < n $$
 
 $$ 3001 \div 3 = 1000, \text{sisa } 1 $$
+
 $$ 3001 = 1000 \times 3 + 1 $$
+
 $$ m = 3001, n = 1000, q = 3, r = 1 $$
+
 $$ -22 \div 3 = 7, \text{sisa } -1 $$
+
 
 Remainder harus positif, jadi ubah caranya jadi:
 
