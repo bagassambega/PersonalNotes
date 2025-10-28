@@ -82,7 +82,7 @@ $$PBB(a, b)$$ bisa dinyatakan sebagai kombinasi linear seperti berikut:
 $$PBB(80, 12) = 4$$
 $$4 = (-1) \times 80 + 12$$
 
-Teorema. Misalkan a dan b bilangan bulat positif, maka terdapat
+**Teorema**. Misalkan a dan b bilangan bulat positif, maka terdapat
 
 bilangan bulat m dan n sedemikian sehingga PBB(a, b) = ma + nb.
 
