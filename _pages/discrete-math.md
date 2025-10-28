@@ -50,7 +50,7 @@ Pembagi terbesar yang sama untuk 2 atau lebih bilangan
 
 $$ PBB(18, 24) = 6 $$
 
-$$ m = nq + r , 0  r < n $$
+$$ m = nq + r , 0 \le r < n $$
 
 maka 
 
@@ -129,7 +129,7 @@ $$3 = 45 – 2  21 = 1  45 – 2  21$$
 2. Nyatakan PBB(312, 70) sebagai kombinasi linier 312 dan 70.
 Jawaban: Terapkan algoritma Euclidean untuk memperoleh PBB(312, 70):
 
-$$312 = 4  70 + 32 (i)$$
+$$ 312 = 4  70 + 32 (i)$$
 
 $$70 = 2  32 + 6 (ii)$$
 
