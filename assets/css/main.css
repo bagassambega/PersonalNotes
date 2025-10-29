@@ -83,44 +83,44 @@
   }
 
   /* MathJax container overflow handling */
-  /* wrapper yang memberi scroll hanya pada block LaTeX */
   .latex-scroll {
     display: block;
     width: 100%;
     max-width: 100%;
-    overflow-x: auto;
+    overflow-x: scroll;
+    overflow-y: hidden; /* Add this */
     -webkit-overflow-scrolling: touch;
     box-sizing: border-box;
-    padding: 0.25rem 0;
+    padding: 0.5rem 0; /* Slightly more padding */
+    margin: 1rem 0; /* Add vertical spacing */
   }
 
-  /* pastikan element MathJax menjadi block dalam wrapper */
-  .latex-scroll > mjx-math,
-  .latex-scroll mjx-math {
+  /* Target mjx-container instead of mjx-math */
+  .latex-scroll > mjx-container {
     display: block !important;
     max-width: 100% !important;
     box-sizing: border-box !important;
-    margin: 0 auto; /* tetap center */
+    margin: 0 auto;
   }
 
-  /* timpa aturan internal yang memberi min-width besar */
+  /* Override MathJax's internal min-width */
+  .latex-scroll mjx-container[display="true"] {
+    width: auto !important;
+    min-width: 0 !important;
+  }
+
   .latex-scroll mjx-mtable,
   .latex-scroll mjx-table,
-  .latex-scroll mjx-itable,
   .latex-scroll mjx-labels {
     min-width: 0 !important;
     width: auto !important;
-    display: block !important;
   }
 
-  /* pastikan konten SVG/teks di dalam mengikuti lebar container */
-  .latex-scroll mjx-math * {
-    max-width: none !important;
-  }
-
-  /* sembunyikan assistive MathML jika mengacaukan layout (opsional) */
-  .latex-scroll mjx-assistive-mml {
-    display: none !important;
+  /* Ensure horizontal scroll appears on mobile */
+  @media (max-width: 768px) {
+    .latex-scroll {
+      padding: 0.75rem 0;
+    }
   }
 
   /* TOC Sidebar scrollbar */
