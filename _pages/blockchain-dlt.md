@@ -26,7 +26,7 @@ github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/
 - Oleh karenanya, dihapus sistem centralized ledger, dan dijadiin distributed.
 - Hal ini bikin biaya transaksi lebih rendah dan faster transaction reconciliation (penyamaan data transaksi antar pihak berlangsung lebih cepat)
 
-## Definisi ^definisi-blockchain
+## Definisi
 
 
 - Kumpulan/rantai blok yang berisi informasi. Saat suatu blok diisi oleh suatu informasi, informasi tersebut sangat sulit untuk diubah atau diganti-ganti

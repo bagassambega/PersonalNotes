@@ -82,6 +82,25 @@
     display: block !important;
   }
 
+  /* MathJax container overflow handling */
+  mjx-container {
+    overflow-x: auto;
+    overflow-y: hidden;
+    max-width: 100%;
+    display: block !important;
+    padding: 0.25rem 0;
+  }
+
+  mjx-container > svg {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  mjx-container.MathJax_Display {
+    text-align: center; /* tetap di tengah */
+    padding: 0.5rem 0;
+  }
+
   /* TOC Sidebar scrollbar */
   #toc-sidebar {
     @apply custom-scrollbar;
