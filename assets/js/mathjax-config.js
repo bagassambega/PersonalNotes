@@ -25,6 +25,17 @@ window.MathJax = {
       return MathJax.startup.defaultPageReady().then(() => {
         // Wrap all display math with scrollable container
         wrapDisplayMath();
+
+        // Set up observer for dynamically added math
+        const observer = new MutationObserver(() => {
+          wrapDisplayMath();
+        });
+
+        // Observe for dynamically added math
+        observer.observe(document.body, {
+          childList: true,
+          subtree: true,
+        });
       });
     },
   },
@@ -32,39 +43,26 @@ window.MathJax = {
 
 // Function to wrap display math equations with scrollable div
 function wrapDisplayMath() {
-  const displayMath = document.querySelectorAll('mjx-container[display="true"]');
-  
+  const displayMath = document.querySelectorAll(
+    'mjx-container[display="true"]'
+  );
+
   displayMath.forEach((math) => {
     // Skip if already wrapped
-    if (math.parentElement.classList.contains('latex-scroll')) {
+    if (math.parentElement.classList.contains("latex-scroll")) {
       return;
     }
-    
+
     // Create wrapper
-    const wrapper = document.createElement('div');
-    wrapper.className = 'latex-scroll';
-    
+    const wrapper = document.createElement("div");
+    wrapper.className = "latex-scroll";
+
     // Insert wrapper before math element
     math.parentNode.insertBefore(wrapper, math);
-    
+
     // Move math into wrapper
     wrapper.appendChild(math);
   });
-  
-  console.log('Display math equations wrapped with latex-scroll');
-}
 
-// Re-wrap after dynamic typesetting
-if (typeof MathJax !== 'undefined') {
-  MathJax.startup.promise.then(() => {
-    const observer = new MutationObserver(() => {
-      wrapDisplayMath();
-    });
-    
-    // Observe for dynamically added math
-    observer.observe(document.body, {
-      childList: true,
-      subtree: true
-    });
-  });
+  console.log("Display math equations wrapped with latex-scroll");
 }
