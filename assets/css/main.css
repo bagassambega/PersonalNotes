@@ -83,22 +83,44 @@
   }
 
   /* MathJax container overflow handling */
-  mjx-container {
-    overflow-x: auto;
-    overflow-y: hidden;
+  /* wrapper yang memberi scroll hanya pada block LaTeX */
+  .latex-scroll {
+    display: block;
+    width: 100%;
     max-width: 100%;
-    display: block !important;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    box-sizing: border-box;
     padding: 0.25rem 0;
   }
 
-  mjx-container > svg {
+  /* pastikan element MathJax menjadi block dalam wrapper */
+  .latex-scroll > mjx-math,
+  .latex-scroll mjx-math {
+    display: block !important;
     max-width: 100% !important;
-    height: auto !important;
+    box-sizing: border-box !important;
+    margin: 0 auto; /* tetap center */
   }
 
-  mjx-container.MathJax_Display {
-    text-align: center; /* tetap di tengah */
-    padding: 0.5rem 0;
+  /* timpa aturan internal yang memberi min-width besar */
+  .latex-scroll mjx-mtable,
+  .latex-scroll mjx-table,
+  .latex-scroll mjx-itable,
+  .latex-scroll mjx-labels {
+    min-width: 0 !important;
+    width: auto !important;
+    display: block !important;
+  }
+
+  /* pastikan konten SVG/teks di dalam mengikuti lebar container */
+  .latex-scroll mjx-math * {
+    max-width: none !important;
+  }
+
+  /* sembunyikan assistive MathML jika mengacaukan layout (opsional) */
+  .latex-scroll mjx-assistive-mml {
+    display: none !important;
   }
 
   /* TOC Sidebar scrollbar */
