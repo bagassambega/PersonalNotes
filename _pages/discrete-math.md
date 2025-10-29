@@ -79,7 +79,7 @@ Contoh:
 a. Nyatakan PBB(21, 45) sebagai kombinasi linier dari 21 dan 45. 
 **Penyelesaian**:
 
-$$45 = 2  21 + 3 (i)$$
+$$45 = 2 x 21 + 3 (i)$$
 
 $$21 = 7  3 + 0 (ii)$$
 
