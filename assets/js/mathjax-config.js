@@ -10,6 +10,20 @@ window.MathJax = {
     ],
     processEscapes: true,
     processEnvironments: true,
+    packages: { "[+]": ["ams", "newcommand", "configmacros"] },
+    tags: "ams",
+    tagSide: "right",
+    tagIndent: "0.8em",
+    useLabelIds: true,
+    multlineWidth: "85%",
+    macros: {
+      pmod: ["\\left(\\bmod{#1}\\right)", 1],
+      bmod: ["\\mbox{ mod }{#1}", 1],
+    },
+  },
+  chtml: {
+    displayAlign: "center",
+    displayIndent: "0",
   },
   options: {
     skipHtmlTags: ["script", "noscript", "style", "textarea", "pre", "code"],

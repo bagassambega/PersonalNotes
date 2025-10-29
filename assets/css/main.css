@@ -87,12 +87,12 @@
     display: block;
     width: 100%;
     max-width: 100%;
-    overflow-x: scroll;
-    overflow-y: hidden; /* Add this */
+    overflow-x: auto;
+    overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
     box-sizing: border-box;
-    padding: 0.5rem 0; /* Slightly more padding */
-    margin: 1rem 0; /* Add vertical spacing */
+    padding: 0.5rem 0;
+    margin: 1rem 0;
   }
 
   /* Target mjx-container instead of mjx-math */
@@ -109,11 +109,54 @@
     min-width: 0 !important;
   }
 
+  /* Allow tables to be flexible but not labels */
   .latex-scroll mjx-mtable,
-  .latex-scroll mjx-table,
-  .latex-scroll mjx-labels {
+  .latex-scroll mjx-table {
     min-width: 0 !important;
     width: auto !important;
+  }
+
+  /* Fix equation tags (labels) - DO NOT collapse them */
+  .latex-scroll mjx-labels {
+    display: block !important;
+    position: relative !important;
+    width: 100% !important;
+    min-width: auto !important;
+  }
+
+  /* Position the label table to the right */
+  .latex-scroll mjx-labels mjx-itable {
+    display: block !important;
+    text-align: right !important;
+    float: right !important;
+  }
+
+  /* Style the tag text */
+  .latex-scroll mjx-labels mjx-mtext {
+    font-size: 0.85em;
+    color: #666;
+    padding: 0 0.5rem;
+  }
+
+  .dark .latex-scroll mjx-labels mjx-mtext {
+    color: #999;
+  }
+
+  /* Ensure proper layout for tagged equations */
+  .latex-scroll mjx-mtable[side="right"] {
+    display: table !important;
+    width: 100% !important;
+  }
+
+  .latex-scroll mjx-mtable[side="right"] > mjx-table {
+    display: table !important;
+    width: auto !important;
+    margin: 0 auto;
+  }
+
+  /* Prevent tag text from wrapping */
+  .latex-scroll mjx-mtd[id^="mjx-eqn:"] {
+    white-space: nowrap;
   }
 
   /* Lazy loading images */

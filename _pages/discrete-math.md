@@ -224,8 +224,6 @@ xa ≅ 1 (mod m)
 
 ![Soal invers modulo 1](https://i.imgur.com/zq51PwH.png)
 
-
-
 - Cara lain: formula
 
 Ingat kalau invers a mod m itu: ax = 1 mod m. Maka x = 1 + kma
