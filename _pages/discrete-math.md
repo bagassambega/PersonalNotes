@@ -223,10 +223,10 @@ kemudian $3x \equiv 18\pmod{20}$ → $x = \frac{18 + 20k}{3}$,
 - Jika $a \equiv b \pmod{m}$, maka $b \equiv a \pmod{m}$
    Jika $a \equiv b\pmod{m}$, maka artinya *a* dibagi *m* akan memiliki sisa yang sama saat *b* dibagi *m*, artinya a dan b komutatif. Misal 20 ≅ 2 mod 3, hal ini berarti 20 mod 3 akan memiliki nilai yang sama dengan 2 mod 3, yaitu 2. Begitupun 20 ≅ 17 mod 3
 
-2. Jika a ≅ b mod m, dan c ≅ d mod m, maka:
+2. Jika $a \equiv b \pmod m$, dan $c \equiv d \pmod m$, maka:
 
-- (a + c) ≅ (b + d) mod m
-- (ac) ≅ (bd) mod m
+- $(a + c) \equiv (b + d) \pmod m$
+- $(ac) \equiv (bd) \pmod m$
 
 ### Invers Modulo
 
