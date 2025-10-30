@@ -6,7 +6,7 @@ permalink: /cryptography/
 github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/cryptography.md
 ---
 
-# Perkenalan
+# Perkenalan {#perkenalan-kriptografi}
 
 - Kriptografi: Ilmu pengamanan data
 
@@ -44,9 +44,9 @@ github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/
 
 - Aljabar abstrak
 
-# Cipher Klasik
+# Cipher Klasik {#cipher-klasik}
 
-## Klasifikasi Cipher
+## Klasifikasi Cipher {#klasifikasi-cipher-klasik}
 
 Berdasarkan tekniknya:
 
