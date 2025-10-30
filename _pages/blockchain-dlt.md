@@ -53,22 +53,26 @@ github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/
 - Komponen utama:
 
 1. Address
-- Unique identifiers yang merujuk pada sender/recipient, dan dirujuk dalam transaksi sebagai alamat penerima/pengirim.
-- Menggunakan Base58 encoding.
-- Base58 digunakan supaya kemungkinan value tetap banyak tapi tetap bisa dibaca manusia, dengan menghilangkan karakter ambigu dan mirip, misalnya angka 0 dan huruf O besar, I kapital dan angka 1
+   - Unique identifiers yang merujuk pada sender/recipient, dan dirujuk dalam transaksi sebagai alamat penerima/pengirim.
+   - Menggunakan Base58 encoding.
+   - Base58 digunakan supaya kemungkinan value tetap banyak tapi tetap bisa dibaca manusia, dengan menghilangkan karakter ambigu dan mirip, misalnya angka 0 dan huruf O besar, I kapital dan angka 1
+
 2. Transaction
-- Representasi transaksi atau transfer value dari satu address ke address lainnya 
+   - Representasi transaksi atau transfer value dari satu address ke address lainnya
+
 3. Block
-- Tersusun dari block header dan beberapa transaksi yang disimpan di satu blok yang sama
+   - Tersusun dari block header dan beberapa transaksi yang disimpan di satu blok yang sama
+
 4. Genesys block
-- Block paling awal yang menjadi dasar rantai/chain.
-- Bisa di-hardcode saat pertama kali dibuat
+   - Block paling awal yang menjadi dasar rantai/chain.
+   - Bisa di-hardcode saat pertama kali dibuat
 
 ### Block {#block-blockchain}
 
 - Tersusun dari block header, block body, dan hash
 
 #### Block Header {#block-header-blockchain}
+
 1. Version: blockchain protocol version
 2. Previous block hash: link ke block sebelumnya
 3. Merkle root: hash dari seluruh transaksi di dalam block. Ingat kalau dalam satu block itu nyimpen banyak transaksi
@@ -77,6 +81,7 @@ github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/
 6. Nonce: random number yang sangat besar dan digunakan untuk mining. Nonce ini yang angkanya akan digunakan oleh miner-miner untuk menghasilkan hash yang valid dan kalau berhasil ditemukan nonce yang dapat menghasilkan hash yang valid, dapat reward. Lihat [mining proof of work](#mining-proof-of-work)
 
 #### Block Body {#block-body-blockchain}
+
 - Berisi list of all transactions di dalam block
 
 #### Hash {#hash-blockchain}
@@ -180,44 +185,42 @@ github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/
 1. Miner mengumpulkan transaksi dari [mempool](#alur-transaksi-blockchain) dan menggabungkannya menjadi satu candidate block
 2. Miner membuat [merkle tree](#block-header-blockchain) dan disimpan di candidate block header
 3. Miner mencari nonce yang tepat supaya hash dari candidate block header < target difficulty (ibarat nonce itu seed saat hash). Nonce di-bruteforce atau ditebak
-- Jadi memang pada awal block dibuat, nonce itu belum ditemukan dan belum ada di block. Miner bertugas mencari nonce supaya hasil dari hash itu harus selalu berada di bawah target difficulty (bentuknya seperti menghasilkan hash dengan sejumlah nol di awal, misal 000000abc…)
-- Mining begitu sulit karena fungsi [hash](#hash-blockchain) menghasilkan nilai yang sangat tidak bisa diprediksi, dengan rentang (pada [Bitcoin](#bitcoin)) 0 - 2256, sementara target bisa saja lebih rendah dari 2220. Probabilitas valid hanya 1 banding 1020.
-- Difficulty target (nBits) berasal dari jaringan Bitcoin itu sendiri. Semua node menghitung target yang sama berdasarkan aturan konsensus: Setiap 2016 blok (~2 minggu), jaringan menyesuaikan target agar rata-rata waktu antar-blok tetap 10 menit.
-- Jadi setiap miner tahu nilai target difficulty yang sedang berlaku.
-- Field nBits pada header berisi encoded difficulty target dari blok sebelumnya. Miner membaca nBits dari block terakhir yang valid di chain → itulah difficulty target yang harus dikalahkan oleh hash block berikutnya.
-- Target dikodekan dalam field nBits di header block sebelumnya. Bitcoin menyesuaikan difficulty setiap 2016 blok (sekitar 2 minggu, karena target waktu 1 blok = 10 menit).
-- Rumus dasar difficulty target:  
+   - Jadi memang pada awal block dibuat, nonce itu belum ditemukan dan belum ada di block. Miner bertugas mencari nonce supaya hasil dari hash itu harus selalu berada di bawah target difficulty (bentuknya seperti menghasilkan hash dengan sejumlah nol di awal, misal 000000abc…)
+   - Mining begitu sulit karena fungsi [hash](#hash-blockchain) menghasilkan nilai yang sangat tidak bisa diprediksi, dengan rentang (pada [Bitcoin](#bitcoin)) 0 - 2256, sementara target bisa saja lebih rendah dari 2220. Probabilitas valid hanya 1 banding 1020.
+   - Difficulty target (nBits) berasal dari jaringan Bitcoin itu sendiri. Semua node menghitung target yang sama berdasarkan aturan konsensus: Setiap 2016 blok (~2 minggu), jaringan menyesuaikan target agar rata-rata waktu antar-blok tetap 10 menit.
+   - Jadi setiap miner tahu nilai target difficulty yang sedang berlaku.
+   - Field nBits pada header berisi encoded difficulty target dari blok sebelumnya. Miner membaca nBits dari block terakhir yang valid di chain → itulah difficulty target yang harus dikalahkan oleh hash block berikutnya.
+   - Target dikodekan dalam field nBits di header block sebelumnya. Bitcoin menyesuaikan difficulty setiap 2016 blok (sekitar 2 minggu, karena target waktu 1 blok = 10 menit).
+   - Rumus dasar difficulty target:  
 
-   $$\text{new target} = \text{old target} \times \frac{\text{actual time to mine 2016 blocks}}{2016 \times 10 \text{ menit}}$$
+      $$\text{new target} = \text{old target} \times \frac{\text{actual time to mine 2016 blocks}}{2016 \times 10 \text{ menit}}$$
 
-- Batas maksimum perubahan hanya 4× naik atau ¼× turun.
-- Jika jaringan lebih cepat → difficulty naik.
-- Jika lambat → difficulty turun.
-- Jika setelah 2 minggu (2016 blok) belum juga tercapai jumlah blok yang diharapkan, maka:
+   - Batas maksimum perubahan hanya 4× naik atau ¼× turun.
+   - Jika jaringan lebih cepat → difficulty naik.
+   - Jika lambat → difficulty turun.
+   - Jika setelah 2 minggu (2016 blok) belum juga tercapai jumlah blok yang diharapkan, maka:
+   - Difficulty tidak langsung berubah.
+   - Penyesuaian baru akan dilakukan setelah block ke-2016 berikutnya berhasil ditemukan, tidak peduli berapa lama waktunya.
+   - Baru setelah itu target berikutnya dihitung ulang memakai total waktu yang dibutuhkan untuk 2016 blok tersebut.
+   - Format nBits: nBits = \[exponent (1 byte)] \[coefficient (3 bytes)]
+   - Rumus konversi nBits
 
-1. Difficulty tidak langsung berubah.
-2. Penyesuaian baru akan dilakukan setelah block ke-2016 berikutnya berhasil ditemukan, tidak peduli berapa lama waktunya.
-3. Baru setelah itu target berikutnya dihitung ulang memakai total waktu yang dibutuhkan untuk 2016 blok tersebut.
+   $$ \text{target} = \text{coefficient} \times 2^{\,8 \,\times (exponent \,-\, 3)}  $$
 
-- Format nBits: nBits = \[exponent (1 byte)] \[coefficient (3 bytes)]
-- Rumus konversi nBits
+   Contoh: Jika nBits = 0x1b0404cb, maka exponent = 0x1b, coefficient = 0x0404cb. Maka
+   target = $\text{0x0404cb} \times 2^{(8 \;\times\; (\text{0x1b}\;−\;3))}$
 
-$$ \text{target} = \text{coefficient} \times 2^{\,8 \,\times (exponent \,-\, 3)}  $$
+   - Nonce adalah bilangan 32-bit (0 – 4,294,967,295).
+   - Miner memilihnya sendiri dan mengubah-ubahnya untuk mencari hash valid.
+   - Jika semua kemungkinan nonce sudah dicoba tapi hash block masih belum < target:
 
-Contoh: Jika nBits = 0x1b0404cb, maka exponent = 0x1b, coefficient = 0x0404cb. Maka 
-target = $\text{0x0404cb} \times 2^{(8 \;\times\; (\text{0x1b}\;−\;3))}$
+   - Miner bisa mengubah nilai timestamp (beberapa detik maju) karena timestamp termasuk dalam header → hash berubah total.
+   - Miner juga bisa mengubah coinbase transaction (transaksi pertama di blok, tempat reward dan pesan unik disimpan).
 
-- Nonce adalah bilangan 32-bit (0 – 4,294,967,295).
-- Miner memilihnya sendiri dan mengubah-ubahnya untuk mencari hash valid.
-- Jika semua kemungkinan nonce sudah dicoba tapi hash block masih belum < target:
-
-1. Miner bisa mengubah nilai timestamp (beberapa detik maju) karena timestamp termasuk dalam header → hash berubah total.
-2. Miner juga bisa mengubah coinbase transaction (transaksi pertama di blok, tempat reward dan pesan unik disimpan).
-
-- Coinbase transaction adalah transaksi pertama di setiap block, dan dibuat oleh miner itu sendiri, bukan pengguna biasa. Karena transaksi ini belum ada di jaringan  sebelum block dibuat, miner bebas membuat coinbase nya sendiri, selama total reward ≤ block reward yang diizinkan.
-- Coinbase transaction memberikan block reward kepada miner yang menemukan block tersebut (sejumlah BTC reward + biaya transaksi)
-- Coinbase transaction memengaruhi Merkle root, yang juga bagian dari block header, sehingga hash berubah lagi.
-- Dengan dua parameter ini, ruang pencarian hampir tak terbatas.
+   - Coinbase transaction adalah transaksi pertama di setiap block, dan dibuat oleh miner itu sendiri, bukan pengguna biasa. Karena transaksi ini belum ada di jaringan  sebelum block dibuat, miner bebas membuat coinbase nya sendiri, selama total reward ≤ block reward yang diizinkan.
+   - Coinbase transaction memberikan block reward kepada miner yang menemukan block tersebut (sejumlah BTC reward + biaya transaksi)
+   - Coinbase transaction memengaruhi Merkle root, yang juga bagian dari block header, sehingga hash berubah lagi.
+   - Dengan dua parameter ini, ruang pencarian hampir tak terbatas.
 
 4. Jika miner berhasil menemukan nonce yang tepat, block itu akan jadi miliknya. Miner dapat block rewards (dulu 50 BTC, tapi karena kena halving seiring semakin banyak ditemukannya block, sekarang kisaran 3.125 BTC) + seluruh transaction fees yang ada pada block body tersebut
 5. Block kemudian akan di-announce ke seluruh ledger/node untuk diverifikasi dan ditambahkan ke jaringan. Syarat: block valid dan seluruh transaksi di dalamnya valid (termasuk verifikasi digital signature untuk melihat output transaksi)
@@ -270,21 +273,21 @@ Di PoS modern, finality bisa deterministik, ditentukan oleh suara validator.
 ### Tipe PoS {#tipe-proof-of-stake}
 
 1. Simple PoS
-- Stake yang dimiliki node betul-betul menentukan peluang dia terpilih
+   - Stake yang dimiliki node betul-betul menentukan peluang dia terpilih
 
-1. Delegated PoS
-- Pemilik token memilih delegasi (validator) melalui voting.
-- Hanya sejumlah kecil validator terpilih (mis. 21–100) yang berhak membuat blok.
-- Proses blok berlangsung cepat karena sedikit node aktif, efisien, Partisipasi ‘demokratik’
-- Kekurangan: Sentralisasi, Kolusi
-- Contoh: EOS, Tron, Steem, BitShares.
+2. Delegated PoS
+   - Pemilik token memilih delegasi (validator) melalui voting.
+   - Hanya sejumlah kecil validator terpilih (mis. 21–100) yang berhak membuat blok.
+   - Proses blok berlangsung cepat karena sedikit node aktif, efisien, Partisipasi ‘demokratik’
+   - Kekurangan: Sentralisasi, Kolusi
+   - Contoh: EOS, Tron, Steem, BitShares.
 
-1. Casper
-- Campuran PoS dan [PoW](#proof-of-work)
-- Tidak ada voting publik; siapa pun bisa menjadi validator dengan staking langsung (32 ETH minimal)
-- Semua validator berpartisipasi proporsional terhadap jumlah stake.
-- Kelebihan: keamanan tinggi, finality deterministik, lebih desentralistik dibanding DPoS.
-- Kelemahan: throughput lebih rendah dibanding DPoS.
+3. Casper
+   - Campuran PoS dan [PoW](#proof-of-work)
+   - Tidak ada voting publik; siapa pun bisa menjadi validator dengan staking langsung (32 ETH minimal)
+   - Semua validator berpartisipasi proporsional terhadap jumlah stake.
+   - Kelebihan: keamanan tinggi, finality deterministik, lebih desentralistik dibanding DPoS.
+   - Kelemahan: throughput lebih rendah dibanding DPoS.
 
 ### Recovery {#recovery-proof-of-stake}
 
@@ -374,8 +377,7 @@ contract SimpleToken {
 }
 ```
 
-
-### Alur dan Implementasi {#alur-dan-implementasi-smart-contract}
+## Alur dan Implementasi {#alur-dan-implementasi-smart-contract}
 
 - Cara kerja:
 
@@ -386,14 +388,12 @@ contract SimpleToken {
 - Implementasi:
 
 1. Deploy
-
-- Pengembang mengirim bytecode kontrak ke blockchain melalui transaksi.
-- Setelah transaksi dikonfirmasi, kontrak tersimpan permanen di blockchain dan memiliki alamat unik.
+   - Pengembang mengirim bytecode kontrak ke blockchain melalui transaksi.
+   - Setelah transaksi dikonfirmasi, kontrak tersimpan permanen di blockchain dan memiliki alamat unik.
 
 2. Interaksi
-
-- Pengguna berinteraksi dengan kontrak (mis. memanggil transfer) lewat transaksi blockchain.
-- Node eksekusi (EVM) menjalankan kode kontrak di semua node, memverifikasi hasil identik, lalu mencatat perubahan (mis. saldo).
+   - Pengguna berinteraksi dengan kontrak (mis. memanggil transfer) lewat transaksi blockchain.
+   - Node eksekusi (EVM) menjalankan kode kontrak di semua node, memverifikasi hasil identik, lalu mencatat perubahan (mis. saldo).
 
 - Contoh:
 
@@ -402,7 +402,7 @@ contract SimpleToken {
 3. Saat blok diproses, semua node menjalankan bytecode kontrak dan memperbarui state.
 4. Hasil tersimpan di ledger, diverifikasi seluruh jaringan.
 
-### Oracle {#oracle-blockchain}
+## Oracle {#oracle-blockchain}
 
 - Jembatan data antara blockchain dan dunia luar.
 - Blockchain bersifat tertutup dan hanya mengenali data internal (on-chain), sedangkan oracle menyediakan data eksternal (off-chain) agar dapat digunakan oleh smart contract.
@@ -422,7 +422,7 @@ contract SimpleToken {
 
 - Contoh kasus: Misal, smart contract asuransi cuaca: Kontrak membayar klaim otomatis jika curah hujan > 100 mm → Oracle mengirim data cuaca dari BMKG ke blockchain → Smart contract membaca nilai itu dan mengeksekusi pembayaran jika kondisi terpenuhi.
 
-### Development Best Practice {#development-best-practice-smart-contract}
+## Development Best Practice {#development-best-practice-smart-contract}
 
 - Use the latest compiler version
 - Limit Contract Size and Complexity: Large contracts are harder to audit and more expensive to deploy
@@ -464,6 +464,7 @@ function withdraw(uint amount) public {
   require(success);
 }
 ```
+
 # dApps dan Token {#dapps-dan-token-blockchain}
 
 ## dApps {#dapps}
@@ -603,7 +604,6 @@ function withdraw(uint amount) public {
 - Sebuah node bisa menunjuk hingga 8 future nodes (8 node selanjutnya)
 - Transaksi dikonfirmasi jika memiliki setidaknya 2 future nodes (di-reference oleh 2 node lainnya)
 - Berbeda dengan blockchain yang semakin banyak user semakin lama proses validasi transaksinya (karena seluruh block harus validasi transaksinya), di IOTA, semakin banyak usernya semakin cepat validasinya karena semakin banyak node yang memungkinkan untuk memvalidasi node sebelumnya
-
 
 # IPFS
 
