@@ -10,7 +10,7 @@ github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/
 
 - Distributed ledger tuh mendistribusikan database dan log transaksi
 - Ledger: catatan data dan transaksi
-- Untuk dasar konsep distribusi, lihat [Sister](/parallel-distributed)
+- Untuk dasar konsep distribusi, lihat [Sister]({{ "/parallel-distributed/" | relative_url }})
 
 # Perkenalan Blockchain
 
@@ -27,7 +27,6 @@ github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/
 - Hal ini bikin biaya transaksi lebih rendah dan faster transaction reconciliation (penyamaan data transaksi antar pihak berlangsung lebih cepat)
 
 ## Definisi
-
 
 - Kumpulan/rantai blok yang berisi informasi. Saat suatu blok diisi oleh suatu informasi, informasi tersebut sangat sulit untuk diubah atau diganti-ganti
 
