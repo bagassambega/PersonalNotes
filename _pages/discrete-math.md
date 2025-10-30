@@ -160,7 +160,7 @@ Jadi, PBB(312, 70) = 2 = $11 \times 312 \;–\; 49 \times 70$
 
 ## Aritmatika Modulo
 
-### Relatif Prima
+### Relatif Prima {#relatif-prima}
 
 > Dua buah bilangan bulat *a* dan *b* dikatakan relatif prima jika **PBB(*a*, *b*) = 1**.
 
@@ -221,38 +221,42 @@ kemudian $3x \equiv 18\pmod{20}$ → $x = \frac{18 + 20k}{3}$,
 - $(ac) \equiv (bc) \pmod m$
 - $ap \equiv bp \pmod m$, dengan *p* bilangan bulat tak negatif
 - Jika $a \equiv b \pmod{m}$, maka $b \equiv a \pmod{m}$
-   Jika $a \equiv b\pmod{m}$, maka artinya *a* dibagi *m* akan memiliki sisa yang sama saat *b* dibagi *m*, artinya a dan b komutatif. Misal 20 ≅ 2 mod 3, hal ini berarti 20 mod 3 akan memiliki nilai yang sama dengan 2 mod 3, yaitu 2. Begitupun 20 ≅ 17 mod 3
+   Jika $a \equiv b\pmod{m}$, maka artinya *a* dibagi *m* akan memiliki sisa yang sama saat *b* dibagi *m*, artinya *a* dan *b* komutatif. Misal $20 \equiv 2 \pmod 3$, hal ini berarti 20 mod 3 akan memiliki nilai yang sama dengan 2 mod 3, yaitu 2. Begitupun $20 \equiv 17 \pmod 3$
 
 2. Jika $a \equiv b \pmod m$, dan $c \equiv d \pmod m$, maka:
 
 - $(a + c) \equiv (b + d) \pmod m$
 - $(ac) \equiv (bd) \pmod m$
 
-### Invers Modulo
+### Invers Modulo {#invers-modulo}
 
-- Ingat: misal a = 4, maka invers a = a-1 = ¼, karena a \* a-1 = 1
-- Syarat: Jika a dan m relatif prima dan m > 1, maka balikan (invers) dari a (mod m) ada.
-- Balikan dari a (mod m) adalah bilangan bulat x sedemikian sehingga:
+- Ingat: misal *a* = 4, maka $\text{invers } a = a^{-1} = ¼$, karena $a \times a^{-1} = 1$
+- Syarat: Jika *a* dan *m* [relatif prima](#relatif-prima) dan *m* > 1, maka balikan (invers) dari *a* (mod *m*) ada.
+- Balikan dari *a* (mod *m*) adalah bilangan bulat *x* sedemikian sehingga:
 
-xa ≅ 1 (mod m)
+$$xa \equiv 1 \pmod m$$
+#### Metode Bruteforce
 
-- Dalam notasi lainnya, a–1 (mod m) = x
-- Misal 4 mod 9, 4 dan 9 relatif prima (PBB nya 1), nah angka pengali berapa buat ngebikin 4x = 1 mod 9? Nilainya yaitu -2 (4 _ -2 = -8, sisa 1 kalau di mod 9), 7 (4 _ 7 = 28, 28 mod 9 = 1), 16, dst
-- Cara lain selain bruteforce: pakai kekongruenan linear
+- Dalam notasi lainnya, $a^{–1} \pmod m = x$
+
+- Misal 4 mod 9, 4 dan 9 relatif prima (PBB nya 1), nah angka pengali berapa buat ngebikin 4x = 1 mod 9? Nilainya yaitu -2 ($4 \times (-2) = -8$, sisa 1 kalau di mod 9), 7 ($4 \times 7 = 28$, 28 mod 9 = 1), 16, dst
+
+#### Metode Kekongruenan Linear
 
 ![Soal invers modulo 1](https://i.imgur.com/zq51PwH.png)
 
-- Cara lain: formula
+#### Metode Formula
 
-Ingat kalau invers a mod m itu: ax = 1 mod m. Maka x = 1 + kma
+Ingat kalau invers a = p mod m itu adalah $ax = 1 \pmod m$. Maka $ax = 1 \pmod m \implies x = 1 + kma$
 
-Cara lain: pakai invers modulo dan sifat modulo (ac) = (bc) mod m
+Cara lain: pakai [invers modulo](#invers-modulo) dan [sifat modulo](#sifat-kekongruenan-modulo) $(ac) = (bc) \pmod m$
 
 ## Akar Primitif dan Logaritma Diskrit
 
 ### Akar Primitif
 
-- Jika diketahui n adalah bilangan bulat, maka a disebut akar primitif dari n jika perpangkatan a, a2., …, aϕ(n) (dalam modulus n) menghasilkan nilai yang berbeda dan semuanya relatif prima dengan n
+> Jika diketahui *n* adalah bilangan bulat, maka *a* disebut **akar primitif** dari *n* jika perpangkatan $a, a_2., …, a_{ϕ(n)}$ (dalam modulus n) menghasilkan nilai yang berbeda dan semuanya [relatif prima](#relatif-prima) dengan *n*
+
 - Secara khusus, jika p adalah bilangan prima, maka a disebut akar primitif dari p jika perpangkatan a, a2, …, ap-1 (dalam modulus p) menghasilkan nilai yang berbeda (lihat fungsi [toitient Euler](https://docs.google.com/document/d/1IS3ZYiWKAOwm_tbL2iZwnQh6amLIpN1ZiSLYdkCY92o/edit?tab=t.hc97psoycyvj#heading=h.ju5sh58cur38))
 - Contoh: misalkan p = 7, maka a = 3 adalah akar primitif dari 7 karena,  
    31 mod 7 = 3; 32 mod 7 = 2, 33 mod 7 = 6, 34 mod 7 = 4, 35 mod 7 = 5, 36 mod 7 = 1
