@@ -172,23 +172,13 @@
 
   /* Placeholder while loading */
   img[loading="lazy"]:not(.loaded) {
-    background: linear-gradient(
-      90deg,
-      #f0f0f0 25%,
-      #e0e0e0 50%,
-      #f0f0f0 75%
-    );
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
     background-size: 200% 100%;
     animation: shimmer 1.5s infinite;
   }
 
   .dark img[loading="lazy"]:not(.loaded) {
-    background: linear-gradient(
-      90deg,
-      #2a2a2a 25%,
-      #1a1a1a 50%,
-      #2a2a2a 75%
-    );
+    background: linear-gradient(90deg, #2a2a2a 25%, #1a1a1a 50%, #2a2a2a 75%);
     background-size: 200% 100%;
   }
 
@@ -248,13 +238,25 @@
     @apply bg-transparent text-gray-100 p-0;
   }
 
+  /* Ensure code blocks are displayed as blocks, not tables */
+  .prose pre,
+  .prose code {
+    display: block;
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Consolas,
+      "Liberation Mono", Menlo, monospace;
+  }
+
+  .prose :not(pre) > code {
+    display: inline;
+  }
+
   /* Table improvements */
   .prose table {
     @apply border-collapse border border-gray-300 dark:border-gray-600;
   }
 
   .prose th {
-    @apply border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 px-4 py-2;
+    @apply border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 px-4 py-2 text-gray-900 dark:text-gray-100 font-semibold;
   }
 
   .prose td {
@@ -289,6 +291,20 @@
   /* Text utilities */
   .text-balance {
     text-wrap: balance;
+  }
+
+  /* Prose dark mode table header override */
+  .prose.dark\:prose-dark:is(.dark *) th,
+  .dark .prose th {
+    color: rgb(243 244 246) !important; /* text-gray-100 */
+    font-weight: 600 !important;
+  }
+
+  /* Ensure code elements don't render as tables */
+  .prose pre,
+  .prose code {
+    table-layout: auto !important;
+    border-collapse: separate !important;
   }
 }
 
