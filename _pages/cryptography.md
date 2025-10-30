@@ -1203,7 +1203,7 @@ D_AESK(CM) = M
 - Fungsi hash H() bersifat many to one, artinya beberapa value bisa di-hash jadi satu value yang sama
     
 
-## Digital Signature
+## Digital Signature {#digital-signature}
 
 - Penggunaan hash bisa dikombinasikan dengan algoritma public key supaya selain integritas pesan terjamin, orang yang tidak berhak ga mudah buat nge-bruteforce value yang kemungkinan bakal menghasilkan hash yang sama
     

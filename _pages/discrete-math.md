@@ -321,9 +321,9 @@ Cara lain: pakai [invers modulo](#invers-modulo) dan [sifat modulo](#sifat-kekon
 
 ## Jenis Graf
 
-### Graf Berarah
+### Graf Berarah {#graf-berarah}
 
-#### Graf Asiklik
+#### Graf Asiklik {#graf-asiklik}
 
 
 ### Graf Tidak Berarah
