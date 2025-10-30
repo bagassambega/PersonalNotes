@@ -1,38 +1,108 @@
-document.addEventListener("DOMContentLoaded", () => {
-  // Fetch glossary page once
-  fetch("/glossary")
-    .then(res => res.text())
-    .then(html => {
-      // Create a virtual DOM to search glossary definitions
-      const parser = new DOMParser();
-      const doc = parser.parseFromString(html, "text/html");
-      const terms = {};
-      doc.querySelectorAll("h2").forEach(h2 => {
-        const term = h2.textContent.trim();
-        let def = "";
-        let el = h2.nextElementSibling;
-        while (el && el.tagName !== "H2") {
-          def += el.outerHTML;
-          el = el.nextElementSibling;
-        }
-        terms[term.toLowerCase()] = {
-          href: `/glossary#${h2.id}`,
-          definition: def.replace(/<[^>]+>/g, "").trim()
-        };
-      });
+/**
+ * Glossary Terms Handler
+ * Converts <term> tags into interactive glossary links with tooltips
+ */
 
-      // Scan current page for matching words
-      document.querySelectorAll("p, li").forEach(el => {
-        let html = el.innerHTML;
-        for (const term in terms) {
-          const t = terms[term];
-          const re = new RegExp(`\\b${term}\\b`, "gi");
-          html = html.replace(
-            re,
-            `<a href="${t.href}" class="glossary-term" data-tooltip="${t.definition}">${term}</a>`
-          );
+document.addEventListener("DOMContentLoaded", async () => {
+  // Fetch glossary definitions once
+  let glossaryTerms = {};
+  
+  try {
+    const response = await fetch("/PersonalNotes/glossary/");
+    const html = await response.text();
+    
+    // Parse the glossary page
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(html, "text/html");
+    
+    // Extract all h2 headings as glossary terms
+    doc.querySelectorAll("h2").forEach(h2 => {
+      const termName = h2.textContent.trim();
+      const termId = h2.id;
+      
+      // Get the definition (all content until next h2 or hr)
+      let definition = "";
+      let el = h2.nextElementSibling;
+      
+      while (el && el.tagName !== "H2" && el.tagName !== "HR") {
+        if (el.tagName === "P") {
+          definition += el.textContent.trim() + " ";
         }
-        el.innerHTML = html;
-      });
+        el = el.nextElementSibling;
+      }
+      
+      glossaryTerms[termId] = {
+        name: termName,
+        definition: definition.trim()
+      };
     });
+  } catch (error) {
+    console.error("Failed to load glossary:", error);
+    return;
+  }
+  
+  // Find all <term> elements and convert them
+  document.querySelectorAll("term").forEach(termElement => {
+    const href = termElement.getAttribute("href");
+    const text = termElement.textContent;
+    
+    if (!href) return;
+    
+    // Extract the hash/anchor from href
+    const hashMatch = href.match(/#(.+)$/);
+    if (!hashMatch) return;
+    
+    const termId = hashMatch[1];
+    const termData = glossaryTerms[termId];
+    
+    // Create the replacement link element
+    const link = document.createElement("a");
+    link.href = href;
+    link.textContent = text;
+    link.className = "glossary-term";
+    
+    // Add tooltip if definition exists
+    if (termData && termData.definition) {
+      link.setAttribute("data-tooltip", termData.definition);
+      link.setAttribute("aria-label", termData.definition);
+    }
+    
+    // Replace <term> with <a>
+    termElement.parentNode.replaceChild(link, termElement);
+  });
+  
+  // Create tooltip element
+  const tooltip = document.createElement("div");
+  tooltip.className = "glossary-tooltip";
+  tooltip.style.display = "none";
+  document.body.appendChild(tooltip);
+  
+  // Handle tooltip display
+  document.querySelectorAll(".glossary-term").forEach(term => {
+    term.addEventListener("mouseenter", (e) => {
+      const definition = term.getAttribute("data-tooltip");
+      if (!definition) return;
+      
+      tooltip.textContent = definition;
+      tooltip.style.display = "block";
+      
+      // Position tooltip
+      const rect = term.getBoundingClientRect();
+      tooltip.style.left = rect.left + "px";
+      tooltip.style.top = (rect.bottom + window.scrollY + 5) + "px";
+    });
+    
+    term.addEventListener("mouseleave", () => {
+      tooltip.style.display = "none";
+    });
+    
+    // Update tooltip position on scroll
+    term.addEventListener("mousemove", (e) => {
+      if (tooltip.style.display === "block") {
+        const rect = term.getBoundingClientRect();
+        tooltip.style.left = rect.left + "px";
+        tooltip.style.top = (rect.bottom + window.scrollY + 5) + "px";
+      }
+    });
+  });
 });
