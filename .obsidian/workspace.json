@@ -93,7 +93,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "eae7378820369924",
@@ -157,27 +158,17 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Discrete Mathematics.md",
+                "file": "_pages/discrete-math.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Discrete Mathematics"
-            }
-          },
-          {
-            "id": "07e61608e9a580ba",
-            "type": "leaf",
-            "state": {
-              "type": "git-view",
-              "state": {},
-              "icon": "git-pull-request",
-              "title": "Source Control"
+              "title": "Outline of discrete-math"
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -199,7 +190,7 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "aa17d55cce8fe627",
+  "active": "8310cfc3787cdd80",
   "lastOpenFiles": [
     "_pages/blockchain-dlt.md",
     "Block.md",

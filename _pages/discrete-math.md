@@ -39,7 +39,7 @@ $$ -22 \div 3 = 7, \text{sisa } -1 $$
 
 Remainder harus positif, jadi ubah caranya jadi:
 
-$$ m = (n+1)q + (r+q) $$
+$$ m = (n+1)\;q + (r+q) $$
 
 Atau pas diproses, jadi -22 / 3 = 7 sisa -1, diubah jadi 8 sisa (-1 + 3) = 2
 
@@ -79,28 +79,28 @@ Contoh:
 a. Nyatakan PBB(21, 45) sebagai kombinasi linier dari 21 dan 45. 
 **Penyelesaian**:
 
-$$45 = 2 \times 21 + 3 (i)$$
+$$45 = 2 \times 21 + 3 \tag{1}$$
 
-$$21 = 7  3 + 0 (ii)$$
+$$21 = 7 \times 3 + 0 \tag{2}$$
 
 Sisa pembagian terakhir sebelum 0 adalah 3, maka **PBB(45, 21) = 3**
 
 Dari persamaan (i) dapat dituliskan:
 
-$$3 = 45 – 2  21 = 1  45 – 2  21$$
+$$3 = 45 \;–\; 2 \times 21 = 1 \times 45 \;–\; 2 \times 21$$
 
 Jadi 3 merupakan kombinasi linier dari 45 dan 21
 
 b. Nyatakan PBB(312, 70) sebagai kombinasi linier 312 dan 70.
 **Jawaban**: Terapkan algoritma Euclidean untuk memperoleh PBB(312, 70):
 
-$$312 = 4  70 + 32 (i)$$
+$$312 = 4 \times 70 + 32 \tag{i}$$
 
-$$70 = 2  32 + 6 (ii)$$
+$$70 = 2 \times 32 + 6 \tag{ii}$$
 
-$$32 = 5  6 + 2 (iii)$$
+$$32 = 5 \times 6 + 2 \tag{iii}$$
 
-$$6 = 3  2 + 0 (iv)$$
+$$6 = 3 \times 2 + 0 \tag{iv}$$
 
 Sisa pembagian terakhir sebelum 0 adalah 2, maka **PBB(312, 70) = 2**
 
@@ -118,19 +118,19 @@ $4 = (-1) \times 80 + 12$
 1. Nyatakan PBB(21, 45) sebagai kombinasi linier dari 21 dan 45.
 **Penyelesaian**:
 
-$$45 = 2  21 + 3 (i)$$
+$$45 = 2 \times 21 + 3 \tag{i}$$
 
-$$21 = 7  3 + 0 (ii)$$
+$$21 = 7 \times 3 + 0 \tag{ii}$$
 
 Sisa pembagian terakhir sebelum 0 adalah 3, maka PBB(45, 21) = 3
 Dari persamaan (*i*) dapat dituliskan:
 
-$$3 = 45 – 2  21 = 1  45 – 2  21$$
+$$3 = 45 \;–\; 2 \times 21 = 1 \times 45 \;–\; 2 \times 21$$
 
 2. Nyatakan PBB(312, 70) sebagai kombinasi linier 312 dan 70.
 Jawaban: Terapkan algoritma Euclidean untuk memperoleh PBB(312, 70):
 
-$$ 312 = 4  70 + 32 (i)$$
+$$ 312 = 4 \times 70 + 32 \tag{i}$$
 
 $$70 = 2  32 + 6 (ii)$$
 
