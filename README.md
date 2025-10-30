@@ -75,6 +75,8 @@ A modern, responsive knowledge base built with Jekyll and TailwindCSS, featuring
   bundle exec jekyll serve --livereload
   ```
 
+- All image are uploaded to [Imgur](https://imgur.com/upload)
+
 ## 🚀 Deployment
 
 The site automatically deploys to GitHub Pages when changes are pushed to the `main` branch. The deployment process:

@@ -107,8 +107,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "eae7378820369924",
@@ -201,9 +200,10 @@
   },
   "active": "aa17d55cce8fe627",
   "lastOpenFiles": [
+    "README.md",
     "_pages/blockchain-dlt.md",
-    "_pages/discrete-math.md",
     "index.md",
+    "_pages/discrete-math.md",
     "Block.md",
     "node_modules/@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-zero.woff2",
     "node_modules/@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-vx.woff2",
@@ -232,7 +232,6 @@
     "_pages/cryptography.md",
     "_pages/computer-architecture.md",
     "_pages/algorithm-strategy.md",
-    "README.md",
     "_site/assets/favicon_io/favicon-32x32.png",
     "_site/assets/favicon_io/favicon-16x16.png",
     "_site/assets/favicon_io/apple-touch-icon.png",

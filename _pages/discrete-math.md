@@ -245,11 +245,36 @@ $$xa \equiv 1 \pmod m$$
 
 ![Soal invers modulo 1](https://i.imgur.com/zq51PwH.png)
 
+![Contoh invers modulo metode kekongruenan](https://i.imgur.com/lgBx1JD.png)
 #### Metode Formula
 
 Ingat kalau invers a = p mod m itu adalah $ax = 1 \pmod m$. Maka $ax = 1 \pmod m \implies x = 1 + kma$
 
+
+**Contoh**
+
+![Contoh invers metode bruteforce formula](https://i.imgur.com/GUnHjxD.png)
+
+
+## Kekongruenan Linear
+
+> Bentuk:
+> $$ax \equiv b \pmod m$$
+> dengan *m* > 0, *a* dan *b* bilangan bulat, dan *x* adalah variabel
+
+
+Pemecahan: 
+
+$$ax \equiv b + km \implies x = b + kma$$
+
+, dengan mencoba *k* = 0, 1, 2, dst
+
+Contoh:
+
+![Contoh penyelesaian kekongruenan linear memakai bruteforce](https://i.imgur.com/OQB4duu.png)
+
 Cara lain: pakai [invers modulo](#invers-modulo) dan [sifat modulo](#sifat-kekongruenan-modulo) $(ac) = (bc) \pmod m$
+![Penyelesaian kekongruenan memakai invers modulo](https://i.imgur.com/jxHnbE1.png)
 
 ## Akar Primitif dan Logaritma Diskrit
 
@@ -257,31 +282,40 @@ Cara lain: pakai [invers modulo](#invers-modulo) dan [sifat modulo](#sifat-kekon
 
 > Jika diketahui *n* adalah bilangan bulat, maka *a* disebut **akar primitif** dari *n* jika perpangkatan $a, a_2., …, a_{ϕ(n)}$ (dalam modulus n) menghasilkan nilai yang berbeda dan semuanya [relatif prima](#relatif-prima) dengan *n*
 
-- Secara khusus, jika p adalah bilangan prima, maka a disebut akar primitif dari p jika perpangkatan a, a2, …, ap-1 (dalam modulus p) menghasilkan nilai yang berbeda (lihat fungsi [toitient Euler](https://docs.google.com/document/d/1IS3ZYiWKAOwm_tbL2iZwnQh6amLIpN1ZiSLYdkCY92o/edit?tab=t.hc97psoycyvj#heading=h.ju5sh58cur38))
-- Contoh: misalkan p = 7, maka a = 3 adalah akar primitif dari 7 karena,  
-   31 mod 7 = 3; 32 mod 7 = 2, 33 mod 7 = 6, 34 mod 7 = 4, 35 mod 7 = 5, 36 mod 7 = 1
+- Secara khusus, jika *p* adalah bilangan prima, maka *a* disebut **akar primitif** dari *p* jika perpangkatan $a, a_2, …, a_{p-1}$ (dalam modulus *p*) menghasilkan nilai yang berbeda (lihat fungsi [toitient Euler](#teorema-euler-modulo))
+
+- Contoh: misalkan *p* = 7, maka *a* = 3 adalah akar primitif dari 7 karena,  
+
+| Sisa modulo       | $3^x \pmod 7$     |
+| ----------------- | ----------------- |
+| $3^1 \pmod 7 = 3$ | $3^4 \pmod 7 = 4$ |
+| $3^2 \pmod 7 = 2$ | $3^5 \pmod 7 = 5$ |
+| $3^3 \pmod 7 = 6$ | $3^6 \pmod 7 = 1$ |
+
 - Jadi semua perpangkatan dari 3 menghasilkan nilai-nilai yang berbeda-beda saat diberikan modulus 7 (3, 2, 6, 4, 5, 1)
-- Biasanya siklus perulangannya bakal ditemukan lagi di setiap p - 1 kali
-- Untuk menemukan semua akar primitif dari p harus di-bruteforce
+- Biasanya siklus perulangannya bakal ditemukan lagi di setiap *p - 1* kali
+- Untuk menemukan semua [akar primitif](#akar-primitif) dari *p* harus di-bruteforce
 
 ### Logaritma Diskrit
 
-- Jika p adalah bilangan prima dan g dan y adalah sembarang bilangan bulat, carilah nilai x yang memenuhi:
+> Jika *p* adalah bilangan prima dan *g* dan *y* adalah sembarang bilangan bulat, carilah nilai x yang memenuhi:
+> 
+> $$ g^x \;\equiv\; y \pmod p $$
 
-gx ≅ y (mod p)
+- Contoh: Carilah nilai x yang memenuhi $7x \equiv 15 \pmod 41$
 
-- Contoh: Carilah nilai x yang memenuhi 7x ≅ 15 (mod 41)
-- Definisi: jika a adalah [akar primitif](https://docs.google.com/document/d/1IS3ZYiWKAOwm_tbL2iZwnQh6amLIpN1ZiSLYdkCY92o/edit?tab=t.hc97psoycyvj#heading=h.4dz127vyf14t) dari bilangan prima p, maka untuk bilangan bulat b kita dapat menemukan pangkat nilai x sedemikian sehingga
 
-b ≅ ax (mod p), 0 ≤ x ≤ (p - 1)
+> **Definisi**: jika *a* adalah [akar primitif](#akar-primitif) dari bilangan prima p, maka untuk bilangan bulat b kita dapat menemukan pangkat nilai x sedemikian sehingga
+> 
+> $$b \;\equiv\; a^x \pmod p, \tag{0 ≤ x ≤ (p - 1)}$$
 
-- Pangkat x adalah logaritma diskrit dari b untuk basis a (mod p)
-- Contoh: 7 adalah akar primitif dari bilangan prima p = 41, maka carilah x sedemikian sehingga 15 ≅ 7x (mod 41)  
-   Jawab: x = 3, karena 73 = 343 ≅ 15 mod 41
+- Pangkat *x* adalah logaritma diskrit dari *b* untuk basis *a* (mod *p*)
+- Contoh: 7 adalah akar primitif dari bilangan prima *p* = 41, maka carilah *x* sedemikian sehingga $15 \equiv 7^x \pmod 41$  
+- Jawab: *x* = 3, karena $7^3 = 343 \equiv 15 \pmod 41$
 
 # Teorema
 
-## Teorema Euler
+## Teorema Euler {#teorema-euler-modulo}
 
 # Graf
 
