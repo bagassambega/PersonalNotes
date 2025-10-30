@@ -24,6 +24,10 @@ A distributed ledger technology for recording transactions across multiple compu
 
 ---
 
+## Ciphertext
+
+Plainteks (teks asli) yang sudah dienkripsi dan diamankan
+
 ## Consent {#consent}
 
 A patient's authorization for sharing medical data with healthcare providers or third parties.

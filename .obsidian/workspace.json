@@ -220,7 +220,6 @@
   },
   "active": "19c9ba006b16019b",
   "lastOpenFiles": [
-    "assets/js/glossary-tooltip.js",
     "_site/README.md",
     "_site/feed.xml",
     "_site/_pages/resources/index.html",
@@ -231,8 +230,8 @@
     "_site/assets/js/mathjax/es5/output/chtml/fonts/woff-v2/MathJax_Vector-Regular.woff",
     "_site/assets/js/mathjax/es5/output/chtml/fonts/woff-v2/MathJax_Vector-Bold.woff",
     "_site/assets/js/mathjax/es5/output/chtml/fonts/woff-v2/MathJax_Typewriter-Regular.woff",
-    "_site/assets/js/mathjax/es5/output/chtml/fonts/woff-v2/MathJax_Size4-Regular.woff",
     "_site/assets/js/mathjax/es5/output/chtml/fonts/woff-v2/MathJax_Size3-Regular.woff",
+    "_site/assets/js/mathjax/es5/output/chtml/fonts/woff-v2/MathJax_Size4-Regular.woff",
     "_site/assets/images/screenshots/mathematics/Logo_Institut_Teknologi_Bandung.png",
     "_site/assets/favicon_io/favicon-32x32.png",
     "_site/assets/favicon_io/favicon-16x16.png",

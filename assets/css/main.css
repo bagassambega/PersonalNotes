@@ -269,6 +269,40 @@
   .prose blockquote {
     @apply border-l-4 border-primary-500 bg-primary-50 dark:bg-primary-900/20 pl-4 py-2 italic;
   }
+
+  /* Glossary Term Styles */
+  .glossary-term {
+    color: #2563eb; /* Blue color */
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-decoration-color: #93c5fd;
+    cursor: help;
+    position: relative;
+    transition: all 0.2s ease;
+  }
+
+  .glossary-term:hover {
+    color: #1d4ed8;
+    text-decoration-color: #2563eb;
+    text-decoration-style: solid;
+  }
+
+  /* Glossary Tooltip */
+  .glossary-tooltip {
+    position: absolute;
+    background-color: #1f2937;
+    color: #f9fafb;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    max-width: 300px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+      0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    z-index: 1000;
+    pointer-events: none;
+    animation: fadeIn 0.2s ease;
+  }
 }
 
 @layer utilities {
@@ -303,14 +337,15 @@
   }
 
   /* Ensure code elements don't render as tables */
-  .prose pre, .prose code {
-  table-layout: initial !important;
-  border-collapse: initial !important;
-  display: block !important;
-}
-.prose :not(pre) > code {
-  display: inline !important;
-}
+  .prose pre,
+  .prose code {
+    table-layout: initial !important;
+    border-collapse: initial !important;
+    display: block !important;
+  }
+  .prose :not(pre) > code {
+    display: inline !important;
+  }
 }
 
 /* Keyframe animations */
@@ -354,6 +389,17 @@
   }
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* Print styles */
 @media print {
   .no-print {
@@ -386,5 +432,41 @@
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+}
+
+/* Glossary Page Specific Styles */
+.glossary-page h2 {
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  color: #1f2937;
+  font-weight: 600;
+}
+
+.glossary-page h2:target {
+  background-color: #fef3c7;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+}
+
+/* Dark mode support (optional) */
+@media (prefers-color-scheme: dark) {
+  .glossary-term {
+    color: #60a5fa;
+    text-decoration-color: #3b82f6;
+  }
+
+  .glossary-term:hover {
+    color: #93c5fd;
+    text-decoration-color: #60a5fa;
+  }
+
+  .glossary-tooltip {
+    background-color: #374151;
+    color: #f3f4f6;
+  }
+
+  .glossary-page h2:target {
+    background-color: #451a03;
   }
 }

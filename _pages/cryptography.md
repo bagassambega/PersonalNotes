@@ -20,7 +20,7 @@ github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/
 
 - **Key** (K): kunci buat melakukan enkripsi
 
-- **Kriptogram**: Potongan <term link="#">ciphertext</term>
+- **Kriptogram**: Potongan <term link="/PersonalNotes/glossary#ciphertext">ciphertext</term>
 
 - **Cryptanalysis**: Analisis untuk mencari kunci/plaintext dari ciphertext yang diketahui, tapi plaintext dan key nya ga diketahui
 
