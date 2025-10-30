@@ -127,42 +127,42 @@ Dari persamaan (*i*) dapat dituliskan:
 
 $$3 = 45 \;–\; 2 \times 21 = 1 \times 45 \;–\; 2 \times 21$$
 
+Jadi 3 merupakan kombinasi linier dari 45 dan 21
+
 2. Nyatakan PBB(312, 70) sebagai kombinasi linier 312 dan 70.
 Jawaban: Terapkan algoritma Euclidean untuk memperoleh PBB(312, 70):
 
 $$ 312 = 4 \times 70 + 32 \tag{i}$$
 
-$$70 = 2  32 + 6 (ii)$$
+$$70 = 2 \times 32 + 6 \tag{ii}$$
 
-$$32 = 5  6 + 2 (iii)$$
+$$32 = 5 \times 6 + 2 \tag{iii}$$
 
-$$6 = 3  2 + 0 (iv)$$
+$$6 = 3 \times 2 + 0 \tag{iv}$$
 
 Sisa pembagian terakhir sebelum 0 adalah 2, maka PBB(312, 70) = 2
 
-Susun pembagian nomor (iii) dan (ii) masing-masing menjadi
+Susun pembagian nomor (*iii*) dan (*ii*) masing-masing menjadi
 
-$$2 = 32 – 5  6 \text{ (iv)}$$
+$$2 = 32 \;–\; 5 \times 6 \tag{v}$$
 
-$$6 = 70 – 2  32 (v)$$
+$$6 = 70 – 2 \times 32 \tag{vi}$$
 
-Sulihkan (v) ke dalam (iv) menjadi
+Sulihkan (*vi*) ke dalam (*v*) menjadi
 
-$$2 = 32 – 5(70 – 232) = 132 – 570 + 1032 = 11  32 – 5  70 (vi)$$
+$$2 = 32 \;–\; 5\;(70 – 232) = 132 \;–\; 570 + 1032 = 11 \times 32 \;–\; 5 \times 70 \tag{vii}$$
 
-Susun pembagian nomor (i) menjadi
+Susun pembagian nomor (*i*) menjadi
 
-$$32 = 312 – 4  70 (vii)$$
+$$32 = 312 \;–\; 4 \times 70 \tag{viii}$$
 
-Jadi, PBB(312, 70) = 2 = 11  312 – 49  70
-
-Jadi 3 merupakan kombinasi linier dari 45 dan 21
+Jadi, PBB(312, 70) = 2 = $11 \times 312 \;–\; 49 \times 70$
 
 ## Aritmatika Modulo
 
 ### Relatif Prima
 
-Dua buah bilangan b≠ulat a dan b dikatakan relatif prima jika PBB(a, b) = 1.
+> Dua buah bilangan bulat *a* dan *b* dikatakan relatif prima jika **PBB(*a*, *b*) = 1**.
 
 Contoh:
 
@@ -172,40 +172,58 @@ Contoh:
 
 (iii) 31 dan 0 tidak relative prima sebab PBB(31, 0) = 31
 
-Dikaitkan dengan kombinasi linier, jika a dan b relatif prima, maka
+Dikaitkan dengan kombinasi linier, jika a dan b relatif prima, maka terdapat bilangan bulat m dan n sedemikian sehingga
 
-terdapat bilangan bulat m dan n sedemikian sehingga
-
-ma + nb = 1
+> $$ ma + nb = 1 $$
 
 • Contoh 10. Bilangan 20 dan 3 adalah relatif prima karena PBB(20, 3) =1,
 
 atau dapat ditulis
 
-2 . 20 + (–13) . 3 = 1 (m = 2, n = –13)
+$$ 2 \times 20 + (–13) \times 3 = 1 \tag{m = 2, n = –13} $$
 
 ### Kekongruenan Modulo
 
-Misalkan a dan b bilangan bulat dan m adalah bilangan > 0, maka a ≅ b (mod m) jika dan hanya jika m | (a – b) (dibaca m bisa dibagi atau memiliki keterbagian terhadap (a - b))
+> Misalkan *a* dan *b* bilangan bulat dan *m* adalah bilangan > 0, maka $a \equiv b \pmod{m}$ jika dan hanya jika $m \mid (a \;–\; b)$ (dibaca *m* bisa dibagi atau memiliki keterbagian terhadap (*a* - *b*))
 
-Jika a tidak kongruen dengan b dalam modulus m, maka ditulis a !≅ b (mod m) .
+> Jika a tidak kongruen dengan b dalam modulus m, maka ditulis $a \not\equiv b\pmod{m}$
 
-17 ≅ 2 mod 3 (3 habis membagi 17 - 2 = 15)
+$$17 \equiv 2 \pmod{3} \tag{3 habis membagi 17 - 2 = 15}$$
 
-21 ≅ 9 mod 12 (12 habis membagi 21 - 9 = 12)
+$$21 \equiv 9\pmod{12} \tag{12 habis membagi 21 - 9 = 12}$$
 
-15 ≅ 3 mod 6 (15 dibagi 6 bersisa 3) → 15 = 3 + 6k, k yang memenuhi adalah 2 (3 + 2.6 = 15)
+$$15 \equiv 3 \pmod{6} \tag{15 dibagi 6 bersisa 3}$$
+atau 
+$$15 = 3 + 6k$$
 
-Misalkan x ≅ 5 mod 11, maka semua x yang memenuhi adalah x-511 yang menghasilkan bilangan bulat, yaitu 16, 27. 38, dst
+k yang memenuhi adalah 2
 
-Kalau bentuk lain (mis 58 ≅ 18 mod 20) dengan persamaan 58 ≅ 3x mod 20, bisa disederhanakan jadi 18 ≅ 3x mod 20 (58 mod 20 ≅ 18 mod 20, maka 18 ≅ 3x mod 20 (lihat [sifat komutatif](https://docs.google.com/document/d/1IS3ZYiWKAOwm_tbL2iZwnQh6amLIpN1ZiSLYdkCY92o/edit?tab=t.hc97psoycyvj#heading=h.gl21eoh5ahka))), kemudian 3x ≅ 18 mod 20 → x=18 + 20k3, k = 0 maka x = 6 (atau k = 3, x = 26, 26 mod 20 = 6)
+$$(3 + 2 \times 6 = 15)$$
 
-Misal ada operasi a ≅ b mod m, dengan m bilangan bulat positif dan c bilangan bulat, maka:
+Misalkan $x \equiv 5 \pmod{11}$, maka semua *x* yang memenuhi adalah $\frac{x-5}{11}$yang menghasilkan bilangan bulat, yaitu 16, 27. 38, dst
 
-- Jika a ≅ b mod m, maka b ≅ a mod m  
-   Jika a ≅ b mod m, maka artinya a dibagi m akan memiliki sisa yang sama saat b dibagi m, artinya a dan b komutatif. Misal 20 ≅ 2 mod 3, hal ini berarti 20 mod 3 akan memiliki nilai yang sama dengan 2 mod 3, yaitu 2. Begitupun 20 ≅ 17 mod 3
+Kalau bentuk lain (mis $58 \equiv 18 \pmod{20}$) dengan persamaan $58 \equiv 3x \pmod{20}$, 
+bisa disederhanakan jadi $18 \equiv 3x \pmod{20}$ ($58 \pmod{20} \equiv 18\pmod{20}$, 
+maka $18 \equiv 3x \pmod{20}$ (lihat [sifat komutatif](#sifat-kekongruenan-modulo))), 
+kemudian $3x \equiv 18\pmod{20}$ → $x = \frac{18 + 20k}{3}$, 
+*k* = 0 maka *x* = 6 
+(atau *k* = *3*, *x* = 26, 26 mod 20 = 6)
 
-Jika a ≅ b mod m, dan c ≅ d mod m, maka:
+### Persamaan Linear Kekongruenan n-Variabel
+
+
+
+### Sifat Kekongruenan Modulo {#sifat-kekongruenan-modulo}
+
+1. Misal ada operasi $a \equiv b\pmod{m}$, dengan *m* bilangan bulat positif dan *c* bilangan bulat, maka:
+
+- $(a + c) \equiv (b + c) \pmod m$
+- $(ac) \equiv (bc) \pmod m$
+- $ap \equiv bp \pmod m$, dengan *p* bilangan bulat tak negatif
+- Jika $a \equiv b \pmod{m}$, maka $b \equiv a \pmod{m}$
+   Jika $a \equiv b\pmod{m}$, maka artinya *a* dibagi *m* akan memiliki sisa yang sama saat *b* dibagi *m*, artinya a dan b komutatif. Misal 20 ≅ 2 mod 3, hal ini berarti 20 mod 3 akan memiliki nilai yang sama dengan 2 mod 3, yaitu 2. Begitupun 20 ≅ 17 mod 3
+
+2. Jika a ≅ b mod m, dan c ≅ d mod m, maka:
 
 - (a + c) ≅ (b + d) mod m
 - (ac) ≅ (bd) mod m
