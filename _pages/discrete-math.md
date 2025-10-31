@@ -182,7 +182,7 @@ atau dapat ditulis
 
 $$ 2 \times 20 + (–13) \times 3 = 1 \tag{m = 2, n = –13} $$
 
-### Kekongruenan Modulo
+### Kekongruenan Modulo {#kekongruenan-modulo}
 
 > Misalkan *a* dan *b* bilangan bulat dan *m* adalah bilangan > 0, maka $a \equiv b \pmod{m}$ jika dan hanya jika $m \mid (a \;–\; b)$ (dibaca *m* bisa dibagi atau memiliki keterbagian terhadap (*a* - *b*))
 
@@ -216,17 +216,15 @@ kemudian $3x \equiv 18\pmod{20}$ → $x = \frac{18 + 20k}{3}$,
 ### Sifat Kekongruenan Modulo {#sifat-kekongruenan-modulo}
 
 1. Misal ada operasi $a \equiv b\pmod{m}$, dengan *m* bilangan bulat positif dan *c* bilangan bulat, maka:
-
-- $(a + c) \equiv (b + c) \pmod m$
-- $(ac) \equiv (bc) \pmod m$
-- $ap \equiv bp \pmod m$, dengan *p* bilangan bulat tak negatif
-- Jika $a \equiv b \pmod{m}$, maka $b \equiv a \pmod{m}$
-   Jika $a \equiv b\pmod{m}$, maka artinya *a* dibagi *m* akan memiliki sisa yang sama saat *b* dibagi *m*, artinya *a* dan *b* komutatif. Misal $20 \equiv 2 \pmod 3$, hal ini berarti 20 mod 3 akan memiliki nilai yang sama dengan 2 mod 3, yaitu 2. Begitupun $20 \equiv 17 \pmod 3$
+	- $(a + c) \equiv (b + c) \pmod m$
+	- $(ac) \equiv (bc) \pmod m$
+	- $ap \equiv bp \pmod m$, dengan *p* bilangan bulat tak negatif
+	- Jika $a \equiv b \pmod{m}$, maka $b \equiv a \pmod{m}$
+	   Jika $a \equiv b\pmod{m}$, maka artinya *a* dibagi *m* akan memiliki sisa yang sama saat *b* dibagi *m*, artinya *a* dan *b* komutatif. Misal $20 \equiv 2 \pmod 3$, hal ini berarti 20 mod 3 akan memiliki nilai yang sama dengan 2 mod 3, yaitu 2. Begitupun $20 \equiv 17 \pmod 3$
 
 2. Jika $a \equiv b \pmod m$, dan $c \equiv d \pmod m$, maka:
-
-- $(a + c) \equiv (b + d) \pmod m$
-- $(ac) \equiv (bd) \pmod m$
+	- $(a + c) \equiv (b + d) \pmod m$
+	- $(ac) \equiv (bd) \pmod m$
 
 ### Invers Modulo {#invers-modulo}
 

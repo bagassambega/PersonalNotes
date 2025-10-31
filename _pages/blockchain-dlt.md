@@ -20,8 +20,8 @@ github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/
 - Di sistem kita sekarang, kita mempercayakan data dan transaksi kita ke suatu pihak (third party) yang berperan sebagai pihak yang kita percayai
 - Sistem lama kaya gini butuh:
 
-- Intermediary trust: third party dipercayakan buat bikin keputusan yang adil dan rasional
-- Issuance trust: third party dipercayakan buat jaga keamanan data kita
+	- Intermediary trust: third party dipercayakan buat bikin keputusan yang adil dan rasional
+	- Issuance trust: third party dipercayakan buat jaga keamanan data kita
 
 - Oleh karenanya, dihapus sistem centralized ledger, dan dijadiin distributed.
 - Hal ini bikin biaya transaksi lebih rendah dan faster transaction reconciliation (penyamaan data transaksi antar pihak berlangsung lebih cepat)
@@ -32,16 +32,17 @@ github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/
 
 - Blockchain adalah teknologi yang dibuat untuk membuat suatu sistem yang dapat dipercaya, bukan orang/organisasi yang dapat dipercaya.
 - Memakai kriptografi untuk mengotomasi dan membangun integritas data
+
 - Karakteristik (DFPIAT):
 
-1. [Distributed]({{ "/parallel-distributed/" | relative_url }}): Ledger disimpan di banyak node dalam jaringan. Semua node memiliki salinan yang sama dan berpartisipasi dalam validasi transaksi. Tidak ada server pusat, sehingga data tersebar merata di seluruh jaringan.
-2. Fault-tolerant: satu down, yang lain bisa handle. [Konsensus](#konsensus-blockchain) memastikan ledger tetap konsisten walau sebagian node bermasalah.
-3. (Pseudo)-privacy: Blockchain publik tidak anonim penuh, tetapi pseudonymous: Identitas pengguna diwakili oleh alamat publik (public key / wallet address), bukan nama asli. Transaksi dapat dilacak antar alamat, tetapi tidak langsung terhubung ke identitas dunia nyata kecuali pengguna mengungkapkannya.
-4. Immutable: data yang sudah di-write amat sangat sulit diubah karena harus nge-rewrite seluruh node terkait. Setiap blok berisi hash dari blok sebelumnya. Mengubah satu data akan mengubah hash dan memutus rantai, sehingga deteksi perubahan langsung  terlihat.Sementara itu transaksi ga bisa diubah (non-tampered) (ibarat write sama read only, ga bisa update/delete). Hasilnya: data yang sudah dikonfirmasi tidak bisa diubah atau dihapus tanpa mengubah seluruh rantai dan mendapatkan konsensus baru.
-5. Autonomy: tidak ada node pusat. Aturan ditentukan oleh protokol dan konsensus algoritma, bukan oleh lembaga tunggal. 
-   Setiap node: Dapat memverifikasi transaksi sendiri, dapat berpartisipasi dalam konsensus, tidak bergantung pada izin dari entitas tertentu.
-   Artinya sistem mengatur dirinya sendiri secara otomatis melalui kode dan kriptografi, bukan perintah manusia.
-6. Transparent: Semua transaksi yang telah divalidasi dapat dilihat oleh semua node. Ledger publik seperti Bitcoin dan Ethereum memungkinkan siapapun memverifikasi isi transaksi dan saldo tanpa otoritas pusat.
+	1. [Distributed]({{ "/parallel-distributed/" | relative_url }}): Ledger disimpan di banyak node dalam jaringan. Semua node memiliki salinan yang sama dan berpartisipasi dalam validasi transaksi. Tidak ada server pusat, sehingga data tersebar merata di seluruh jaringan.
+	2. Fault-tolerant: satu down, yang lain bisa handle. [Konsensus](#konsensus-blockchain) memastikan ledger tetap konsisten walau sebagian node bermasalah.
+	3. (Pseudo)-privacy: Blockchain publik tidak anonim penuh, tetapi pseudonymous: Identitas pengguna diwakili oleh alamat publik (public key / wallet address), bukan nama asli. Transaksi dapat dilacak antar alamat, tetapi tidak langsung terhubung ke identitas dunia nyata kecuali pengguna mengungkapkannya.
+	4. Immutable: data yang sudah di-write amat sangat sulit diubah karena harus nge-rewrite seluruh node terkait. Setiap blok berisi hash dari blok sebelumnya. Mengubah satu data akan mengubah hash dan memutus rantai, sehingga deteksi perubahan langsung  terlihat.Sementara itu transaksi ga bisa diubah (non-tampered) (ibarat write sama read only, ga bisa update/delete). Hasilnya: data yang sudah dikonfirmasi tidak bisa diubah atau dihapus tanpa mengubah seluruh rantai dan mendapatkan konsensus baru.
+	5. Autonomy: tidak ada node pusat. Aturan ditentukan oleh protokol dan konsensus algoritma, bukan oleh lembaga tunggal. 
+	   Setiap node: Dapat memverifikasi transaksi sendiri, dapat berpartisipasi dalam konsensus, tidak bergantung pada izin dari entitas tertentu.
+	   Artinya sistem mengatur dirinya sendiri secara otomatis melalui kode dan kriptografi, bukan perintah manusia.
+	6. Transparent: Semua transaksi yang telah divalidasi dapat dilihat oleh semua node. Ledger publik seperti Bitcoin dan Ethereum memungkinkan siapapun memverifikasi isi transaksi dan saldo tanpa otoritas pusat.
 
 ## Struktur {#struktur-blockchain}
 
@@ -53,19 +54,19 @@ github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/
 - Komponen utama:
 
 1. Address
-   - Unique identifiers yang merujuk pada sender/recipient, dan dirujuk dalam transaksi sebagai alamat penerima/pengirim.
-   - Menggunakan Base58 encoding.
-   - Base58 digunakan supaya kemungkinan value tetap banyak tapi tetap bisa dibaca manusia, dengan menghilangkan karakter ambigu dan mirip, misalnya angka 0 dan huruf O besar, I kapital dan angka 1
+	   - Unique identifiers yang merujuk pada sender/recipient, dan dirujuk dalam transaksi sebagai alamat penerima/pengirim.
+	   - Menggunakan Base58 encoding.
+	   - Base58 digunakan supaya kemungkinan value tetap banyak tapi tetap bisa dibaca manusia, dengan menghilangkan karakter ambigu dan mirip, misalnya angka 0 dan huruf O besar, I kapital dan angka 1
 
 2. Transaction
-   - Representasi transaksi atau transfer value dari satu address ke address lainnya
+	   - Representasi transaksi atau transfer value dari satu address ke address lainnya
 
 3. Block
-   - Tersusun dari block header dan beberapa transaksi yang disimpan di satu blok yang sama
+	   - Tersusun dari block header dan beberapa transaksi yang disimpan di satu blok yang sama
 
 4. Genesys block
-   - Block paling awal yang menjadi dasar rantai/chain.
-   - Bisa di-hardcode saat pertama kali dibuat
+	   - Block paling awal yang menjadi dasar rantai/chain.
+	   - Bisa di-hardcode saat pertama kali dibuat
 
 ### Block {#block-blockchain}
 
@@ -91,16 +92,16 @@ github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/
 - Cek [digital signature]({{ "/cryptography#digital-signature" | relative_url }}) di [kriptografi]({{ "/cryptography/" | relative_url }})
 - Signature ini juga bisa ada beragam:
 
-1. Blind signature: cek autentikasi tapi dia ga memberitahu siapa orang yang nge-sign itu. Yang penting sistem tau itu dari orang asli dan orang yang tepat. Sistem ini bagus misalnya pada sistem editorial jurnal. Supaya editor dan verifikator tau kalau jurnalnya valid, pakai signature ini. Tapi kalau editor tau siapa yang bikin jurnal itu, bisa aja penilaiannya jadi bias. Makanya pakai blind signature supaya ga ketauan itu jurnal siapa
-2. Multi-signature: beberapa sign sekaligus atau beberapa orang sign sekaligus. Contoh: openchain, multichain
-3. Threshold signature: skema tanda tangan digital terdistribusi di mana k dari n pihak yang berwenang harus berkolaborasi untuk menghasilkan tanda tangan yang valid.
-4. Key generation:  
-   Kunci privat dibagi menggunakan secret sharing (mis. Shamir’s Secret Sharing). Tiap peserta menyimpan satu share dari kunci.
-5. Signing:  
-   Minimal t peserta membuat partial signature. Partial signatures digabung → membentuk satu signature utuh yang identik dengan hasil tanda tangan dari kunci privat asli.
-6. Verification:  
-   Pihak penerima hanya melihat satu signature normal, tidak tahu bahwa itu dibuat secara kolaboratif. Signature diverifikasi menggunakan public key biasa.
-7. Aggregate signature: menggabungkan beberapa tanda tangan digital dari banyak penanda tangan dan/atau banyak pesan menjadi satu tanda tangan tunggal yang bisa diverifikasi secara kolektif. Biasanya, jika ada n pesan dari n penanda tangan, verifikasi biasa butuh n tanda tangan terpisah. Dengan aggregate signature, semua tanda tangan dapat digabung → menghasilkan satu signature. Verifikasi cukup dilakukan sekali terhadap signature gabungan itu.
+	1. Blind signature: cek autentikasi tapi dia ga memberitahu siapa orang yang nge-sign itu. Yang penting sistem tau itu dari orang asli dan orang yang tepat. Sistem ini bagus misalnya pada sistem editorial jurnal. Supaya editor dan verifikator tau kalau jurnalnya valid, pakai signature ini. Tapi kalau editor tau siapa yang bikin jurnal itu, bisa aja penilaiannya jadi bias. Makanya pakai blind signature supaya ga ketauan itu jurnal siapa
+	2. Multi-signature: beberapa sign sekaligus atau beberapa orang sign sekaligus. Contoh: openchain, multichain
+	3. Threshold signature: skema tanda tangan digital terdistribusi di mana k dari n pihak yang berwenang harus berkolaborasi untuk menghasilkan tanda tangan yang valid.
+	4. Key generation:  
+	   Kunci privat dibagi menggunakan secret sharing (mis. Shamir’s Secret Sharing). Tiap peserta menyimpan satu share dari kunci.
+	5. Signing:  
+	   Minimal t peserta membuat partial signature. Partial signatures digabung → membentuk satu signature utuh yang identik dengan hasil tanda tangan dari kunci privat asli.
+	6. Verification:  
+	   Pihak penerima hanya melihat satu signature normal, tidak tahu bahwa itu dibuat secara kolaboratif. Signature diverifikasi menggunakan public key biasa.
+	7. Aggregate signature: menggabungkan beberapa tanda tangan digital dari banyak penanda tangan dan/atau banyak pesan menjadi satu tanda tangan tunggal yang bisa diverifikasi secara kolektif. Biasanya, jika ada n pesan dari n penanda tangan, verifikasi biasa butuh n tanda tangan terpisah. Dengan aggregate signature, semua tanda tangan dapat digabung → menghasilkan satu signature. Verifikasi cukup dilakukan sekali terhadap signature gabungan itu.
 
 ## Architectural Layer
 
@@ -143,9 +144,9 @@ github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/
 ### Transaksi {#transaksi-cryptocurrency-blockchain}
 
 - Transaksi pada cryptocurrency seperti [Bitcoin](#bitcoin) biasanya menghasilkan output yang bisa dijadikan input untuk transaksi selanjutnya (ibarat ngasih informasi sisa berapa duitnya. Sisa duit itu bisa dipakai di transaksi selanjutnya)
-- Output transaksi yang belum terpakai disebut sebagai unspent
-- Output transaksi yang sudah terpakai disebut sebagai spent
-- Unspent Transaction Outputs (UTXO) adalah kumpulan semua output transaksi yang belum terpakai
+- Output transaksi yang belum terpakai disebut sebagai **unspent**
+- Output transaksi yang sudah terpakai disebut sebagai **spent**
+- **Unspent Transaction Outputs** (**UTXO**) adalah kumpulan semua output transaksi yang belum terpakai
 - Node akan memverifikasi transaksi juga dengan mengecek apakah input yang digunakan pada transaksi tersebut masih ada di UTXO atau tidak untuk mencegah [double spending](#konsensus-blockchain)
 
 ### Wallet {#wallet-cryptocurrency-blockchain}
@@ -161,11 +162,11 @@ github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/
 - Berguna untuk mencegah double spending (sebuah transaksi terjadi dua kali. Misal Andi punya uang 10000, mau transfer uang ke orang lain sebanyak 4000. Transfer ini dieksekusi oleh dua node secara bersamaan, jadinya saldonya berkurangnya malah 8000 alias ke transfer dua kali), memastikan data integrity, dan keamanan jaringan blockchain
 - Algoritma utama:
 
-1. Transaksi baru di-broadcast ke seluruh nodes
-2. Setiap node menerima transaksi baru ke blok yang dimilikinya
-3. Untuk setiap round selanjutnya, random node broadcast block yang dimiliki dia
-4. Node-node lain ngecek block itu hanya jika semua transaksi di dalamnya valid (signature valid, unspent)
-5. Node-node kemudian menyatakan kalau block diterima. Block selanjutnya yang akan dibuatnya akan memakai hash block yang diterima tersebut
+	1. Transaksi baru di-broadcast ke seluruh nodes
+	2. Setiap node menerima transaksi baru ke blok yang dimilikinya
+	3. Untuk setiap round selanjutnya, random node broadcast block yang dimiliki dia
+	4. Node-node lain ngecek block itu hanya jika semua transaksi di dalamnya valid (signature valid, unspent)
+	5. Node-node kemudian menyatakan kalau block diterima. Block selanjutnya yang akan dibuatnya akan memakai hash block yang diterima tersebut
 
 ## Proof of Work {#proof-of-work}
 
@@ -173,10 +174,9 @@ github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/
 - Kalaupun ada attacker, dia harus ngeluarin cost juga.
 - Mining != membuat bitcoin baru
 - Ciri PoW:
-
-- Security: prone to attack, karena membutuhkan computational power yang besar, sulit bagi attacker untuk mengubah blockchain
-- Decentralized dan tahan terhadap censorship karena tidak ada otoritas pusat
-- Sangat boros tenaga, karena mining sangat berat
+	- Security: prone to attack, karena membutuhkan computational power yang besar, sulit bagi attacker untuk mengubah blockchain
+	- Decentralized dan tahan terhadap censorship karena tidak ada otoritas pusat
+	- Sangat boros tenaga, karena mining sangat berat
 
 - Contoh: [Bitcoin](#blockchain)
 
@@ -243,7 +243,7 @@ github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/
 - Mekanismenya: validator adalah orang yang akan membuat block. Validator dipilih oleh sistem secara pseudo-random dengan pertimbangan utama yaitu banyak koin yang di-deposit/disimpan oleh validator di dalam sistem (stake, kepemilikan). Semakin banyak koin yang dimiliki oleh validator, peluangnya terpilih menjadi validator suatu block semakin besar.
 - Contoh: Ethereum
 - Genesys block dibuat oleh developer dan berisi total token awal
-- Finality adalah keadaan ketika suatu blok dianggap tidak dapat dibatalkan atau digantikan oleh cabang lain. Setelah blok mencapai finality, seluruh transaksi di dalamnya dianggap permanen dan tidak bisa di-reorganize.
+- <b><term href="/PersonalNotes/glossary#finality">Finality</term></b> adalah keadaan ketika suatu blok dianggap tidak dapat dibatalkan atau digantikan oleh cabang lain. Setelah blok mencapai finality, seluruh transaksi di dalamnya dianggap permanen dan tidak bisa di-reorganize.
 - Di PoW, finality bersifat probabilistik (semakin banyak blok baru di atasnya, semakin kecil peluang dibatalkan).
 
 Di PoS modern, finality bisa deterministik, ditentukan oleh suara validator.
@@ -339,10 +339,9 @@ Di PoS modern, finality bisa deterministik, ditentukan oleh suara validator.
 - Validator masih dipilih berdasarkan stake (PoS), tetapi PoH mempercepat urutan blok dan meminimalkan komunikasi antar-node.
 - Kombinasi PoH + PoS memungkinkan throughput sangat tinggi (ribuan TPS).
 - Batasan:
-
-- Memerlukan sinkronisasi waktu yang sangat presisi antar-node.
-- Bergantung pada leader node untuk menjaga urutan hash, sehingga bisa terjadi ketergantungan sementara.
-- Keamanan tetap bergantung pada PoS validator dan tanda tangan digital.
+	- Memerlukan sinkronisasi waktu yang sangat presisi antar-node.
+	- Bergantung pada leader node untuk menjaga urutan hash, sehingga bisa terjadi ketergantungan sementara.
+	- Keamanan tetap bergantung pada PoS validator dan tanda tangan digital.
 
 # Smart Contract {#smart-contract-blockchain}
 
@@ -396,11 +395,10 @@ contract SimpleToken {
    - Node eksekusi (EVM) menjalankan kode kontrak di semua node, memverifikasi hasil identik, lalu mencatat perubahan (mis. saldo).
 
 - Contoh:
-
-1. Alice memanggil fungsi transfer(bob, 100) lewat wallet.
-2. Transaksi dikirim ke mempool, lalu dimasukkan ke blok oleh validator.
-3. Saat blok diproses, semua node menjalankan bytecode kontrak dan memperbarui state.
-4. Hasil tersimpan di ledger, diverifikasi seluruh jaringan.
+	1. Alice memanggil fungsi transfer(bob, 100) lewat wallet.
+	2. Transaksi dikirim ke mempool, lalu dimasukkan ke blok oleh validator.
+	3. Saat blok diproses, semua node menjalankan bytecode kontrak dan memperbarui state.
+	4. Hasil tersimpan di ledger, diverifikasi seluruh jaringan.
 
 ## Oracle {#oracle-blockchain}
 
@@ -408,17 +406,17 @@ contract SimpleToken {
 - Blockchain bersifat tertutup dan hanya mengenali data internal (on-chain), sedangkan oracle menyediakan data eksternal (off-chain) agar dapat digunakan oleh smart contract.
 - Smart contract tidak bisa langsung mengakses API, web, atau sensor karena tidak ada koneksi keluar dari blockchain. Oracle memecahkan masalah ini dengan:
 
-- Mengambil data dari sumber eksternal (harga, cuaca, hasil pertandingan, dsb).
-- Memverifikasi dan mengirimkannya ke blockchain dalam bentuk transaksi.
-- Smart contract membaca data tersebut dan mengeksekusi logika yang tergantung pada nilainya.
+	- Mengambil data dari sumber eksternal (harga, cuaca, hasil pertandingan, dsb).
+	- Memverifikasi dan mengirimkannya ke blockchain dalam bentuk transaksi.
+	- Smart contract membaca data tersebut dan mengeksekusi logika yang tergantung pada nilainya.
 
 - Jenis:
 
-- Software oracle: ambil data digital (API, situs web).
-- Hardware oracle: ambil data dari sensor fisik atau IoT.
-- Inbound oracle: membawa data dari luar ke blockchain.
-- Outbound oracle: mengirim data dari blockchain ke dunia luar (misal memicu pembayaran fiat).
-- Decentralized oracle: data diverifikasi oleh banyak node oracle untuk mencegah manipulasi (contoh: Chainlink, Band Protocol).
+	- Software oracle: ambil data digital (API, situs web).
+	- Hardware oracle: ambil data dari sensor fisik atau IoT.
+	- Inbound oracle: membawa data dari luar ke blockchain.
+	- Outbound oracle: mengirim data dari blockchain ke dunia luar (misal memicu pembayaran fiat).
+	- Decentralized oracle: data diverifikasi oleh banyak node oracle untuk mencegah manipulasi (contoh: Chainlink, Band Protocol).
 
 - Contoh kasus: Misal, smart contract asuransi cuaca: Kontrak membayar klaim otomatis jika curah hujan > 100 mm → Oracle mengirim data cuaca dari BMKG ke blockchain → Smart contract membaca nilai itu dan mengeksekusi pembayaran jika kondisi terpenuhi.
 
@@ -528,11 +526,10 @@ function withdraw(uint amount) public {
 | Fungibility    | Selalu fungible (1 ETH = 1 ETH)                                          | Bisa fungible (misal ERC-20) atau non-fungible (misal ERC-721)              |
 
 - Use case token:
-
-- Cryptocurrencies – Tokens can serve as digital currencies for transactions.
-- Utility Tokens – Provide access to a product or service within a blockchain ecosystem.
-- Security Tokens – Represent ownership in an asset, such as shares in a company.
-- Governance Tokens – Allow holders to participate in the decision-making process of a decentralized organization.
+	- Cryptocurrencies – Tokens can serve as digital currencies for transactions.
+	- Utility Tokens – Provide access to a product or service within a blockchain ecosystem.
+	- Security Tokens – Represent ownership in an asset, such as shares in a company.
+	- Governance Tokens – Allow holders to participate in the decision-making process of a decentralized organization.
 
 ### Tipe Token {#tipe-token-blockchain}
 

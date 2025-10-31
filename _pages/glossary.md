@@ -32,6 +32,14 @@ Plainteks (teks asli) yang sudah dienkripsi dan diamankan
 
 A patient's authorization for sharing medical data with healthcare providers or third parties.
 
+# F
+
+---
+
+## Finality
+
+Keadaan ketika suatu blok dianggap tidak dapat dibatalkan atau digantikan oleh cabang lain. Setelah blok mencapai finality, seluruh transaksi di dalamnya dianggap permanen dan tidak bisa di-reorganize.
+
 # I
 
 ---

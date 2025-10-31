@@ -38,9 +38,13 @@ github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/
 
 - Entropi sistem kriptografi adalah ukuran kunci, K.
 
+![Entropi](https://i.imgur.com/ttx5cCC.png)
+
 - Misal, sistem kriptografi dengan kunci 64-bit mempunyai entropi 64 bit.
 
 - Makin besar entropi, makin sulit memecahkan cipherteks.
+
+![Contoh entropi](https://i.imgur.com/VSVKRY6.png)
 
 - Aljabar abstrak
 
@@ -56,48 +60,57 @@ Berdasarkan tekniknya:
 
 - Product cipher/super-enkripsi = cipher substitusi + cipher transposisi
 
-### Cipher Substitusi
+### Cipher Substitusi {#cipher-substitusi}
 
-- Monoalphabetic substitution cipher (cipher abjad tunggal): Suatu plainteks dienkripsi pake huruf yang sama semua. Contoh: [Caesar Cipher](https://docs.google.com/document/d/1IS3ZYiWKAOwm_tbL2iZwnQh6amLIpN1ZiSLYdkCY92o/edit?tab=t.2dxd14c185hr#heading=h.i8ov6niw2jjy)
+- **Monoalphabetic substitution cipher** (cipher abjad tunggal): Suatu plainteks dienkripsi pake huruf yang sama semua. Contoh: [Caesar Cipher](#caesar-cipher)
 
-- Homophonic substitution cipher (cipher substitusi homofonik): Setiap huruf plaintext diganti dengan salah satu huruf atau pasangan huruf yang mungkin. Jadi hubungannya one to many. Misal huruf E dikodekan menjadi AB, TQ, YT, UX (satu bisa jadi banyak saat enkripsi, tapi dekripsi hanya bisa menghasilkan satu. AB hanya bisa menjadi hasil enkripsi satu huruf)
+- **Homophonic substitution cipher** (cipher substitusi homofonik): Setiap huruf plaintext diganti dengan salah satu huruf atau pasangan huruf yang mungkin. Jadi hubungannya one to many. Misal huruf E dikodekan menjadi AB, TQ, YT, UX (satu bisa jadi banyak saat enkripsi, tapi dekripsi hanya bisa menghasilkan satu. AB hanya bisa menjadi hasil enkripsi satu huruf)
 
-- Polyalphabetic substitution cipher (cipher abjad majemuk): Setiap huruf plainteks diganti menggunakan kunci yang berbeda. Contoh: [Vigenere Cipher](https://docs.google.com/document/d/1IS3ZYiWKAOwm_tbL2iZwnQh6amLIpN1ZiSLYdkCY92o/edit?tab=t.2dxd14c185hr#heading=h.pzurqhey8nzb)
+- **Polyalphabetic substitution cipher** (cipher abjad majemuk): Setiap huruf plainteks diganti menggunakan kunci yang berbeda. Contoh: [Vigenere Cipher](#vigenere-cipher)
 
-- Polygram substitution cipher (cipher substitusi poligram): Kumpulan huruf plaintext diganti dengan kumpulan huruf plaintext lagi. Misalnya AS → RT, BY → SL
+![Contoh polyalphabetic substitution](https://i.imgur.com/nFrPQFa.png)
 
-### Cipher Transposisi
+- **Polygram substitution cipher** (cipher substitusi poligram): Kumpulan huruf plaintext diganti dengan kumpulan huruf plaintext lagi. Misalnya AS → RT, BY → SL
+
+### Cipher Transposisi {#cipher-transposisi}
 
 - Mengubah posisi huruf pada plaintext dengan melakukan transpose terhadap rangkaian huruf di dalam plaintext
 
 - Biasa disebut cipher permutasi
 
-#### Columnar Transposition Cipher
+#### Columnar Transposition Cipher {#columnar-transposition-cipher}
+![Columnar cipher transposition 1](https://i.imgur.com/JGyzX8h.png)
+![Columnar cipher transposition 2](https://i.imgur.com/w7i1zuB.png)
 
-#### Rail Fence Transposition Cipher
+#### Rail Fence Transposition Cipher {#rail-fence-transposition-cipher}
+![Rail fence transposition cipher](https://i.imgur.com/8r3plV3.png)
 
-### Super-enkripsi
+### Super-enkripsi {#super-enkripsi}
 
 - Gabungan cipher substitusi dan transposisi (product cipher)
 
 - Alur: pesan dienkripsi pakai cipher substitusi → baru enkripsi pakai transposisi. Bisa sebaliknya juga
 
-## Caesar Cipher
+![Contoh super cipher](https://i.imgur.com/os0WKK1.png)
+
+## Caesar Cipher {#caesar-cipher}
 
 - Cipher abjad tunggal, satu huruf diganti satu huruf dengan cara digeser nilainya sejauh k huruf. Misal k = 2, huruf A → C, B → D, Z → B
 
 - Bisa juga digesernya ga berpola pakai tabel substitusi custom. Kemungkinan banyak tabel substitusi: 26!
 
-### Enkripsi
+### Enkripsi {#caesar-cipher-enkripsi}
 
 - Kalau pakai k (bukan tabel substitusi), enkripsi:  
     C = (P + k) mod 26
 
 - Kalau pakai tabel substitusi, misal tabelnya:
 
+![Contoh tabel substitusi](https://i.imgur.com/G4mqSka.png)
+
 Kata “AKU” dienkripsi jadi “IWN”
 
-### Dekripsi
+### Dekripsi {#caesar-cipher-dekripsi}
 
 - Kalau pakai k (bukan tabel susbtitusi), dekripsi:
 
@@ -105,13 +118,15 @@ P = (C - k) mod 26
 
 - Kalau pakai tabel substitusi, misal tabelnya:  
 
+![Contoh tabel substitusi](https://i.imgur.com/G4mqSka.png)
+
 Ciphertext “IWN” didekripsi jadi “AKU”
 
-### Cryptanalysis
+### Cryptanalysis {#caesar-cipher-cryptanalysis}
 
 Kalau ga tau key ataupun plaintext, kita bisa menerka/menganalisis plaintext nya apa menggunakan:
 
-#### Frequency Analysis
+#### Frequency Analysis {#caesar-cipher-frequency-analysis}
 
 - Karena satu karakter plaintext hanya bakal dikodekan ke satu karakter ciphertext saja (hasilnya pasti sama), kita bisa menebak karakter itu apa berdasarkan frekuensi kemunculannya
 
@@ -123,25 +138,27 @@ Kalau ga tau key ataupun plaintext, kita bisa menerka/menganalisis plaintext nya
 
 - Misalnya suatu teks bahasa Inggris dienkripsi, dan dari analisis yang sudah ada, karakter E, T, H, dan A adalah karakter yang paling sering muncul di teks bahasa Inggris. Setelah dienkripsi, karakter yang paling sering muncul adalah V, C, Z, dan G. Maka kemungkinan E dikodekan jadi V, T jadi C, dst
 
-- Lihat: lampiran [most frequent letters](https://docs.google.com/document/d/1IS3ZYiWKAOwm_tbL2iZwnQh6amLIpN1ZiSLYdkCY92o/edit?tab=t.2dxd14c185hr#heading=h.h6qi2codgvj3)
+- Lihat: lampiran [most frequent letters](#mosto-frequent-n-gram)
 
-## Vigenere Cipher
+## Vigenere Cipher {#vigenere-cipher}
 
-- Cipher abjad-majemuk ([polyalphabetic substitution cipher](https://docs.google.com/document/d/1IS3ZYiWKAOwm_tbL2iZwnQh6amLIpN1ZiSLYdkCY92o/edit?tab=t.2dxd14c185hr#heading=h.kboocw2b9qeb))
+- Cipher abjad-majemuk ([polyalphabetic substitution cipher](#cipher-substitusi))
 
 - Menggunakan matriks Vigenere untuk enkripsi dan dekripsi, namun sebetulnya sama seperti Caesar, bisa memakai (n + p) mod 26
+
+![Tabel Vigenere](https://i.imgur.com/NN7u4c3.png)
 
 - Ciri: key defined, tapi misalkan plaintext lebih panjang daripada key, maka key nya diulang-ulang sampai bisa mengenkripsi seluruh karakter di plaintext
 
 - Misal: key = test, plaintext = halohalobandung, maka untuk enkripsi key nya adalah testtesttesttes
 
-### Enkripsi
+### Enkripsi {#vigenere-cipher-enkripsi}
 
 - Enkripsi karakter per karakter
 
 - Dapat menggunakan formula substitusi biasa atau matriks Vigenere
 
-- Formula: Misal diketahui plainteks P terdiri dari kumpulan karakter p1, p2, p3, … dan key K terdiri dari k1, k2, k3, …, maka ciphertext C = c1, c2, c3, …, di mana ci = pi + ki (mod 26).
+- Formula: Misal diketahui plainteks ***P*** terdiri dari kumpulan karakter $p_1, p_2, p_3, …$ dan key ***K*** terdiri dari $k_1, k_2, k_3, …,$ maka ciphertext ***C*** = $c_1, c_2, c_3, …,$ di mana $c_i = p_i + k_i \pmod{26}$.
 
 - Kalau pakai matriks Vigenere, tinggal cocokkin aja plainteks atas, dipakein kunci yang di kiri
 
@@ -153,17 +170,17 @@ Plainteks: hidupjokowi
 
 Maka kunci yang digunakan: kuncikuncik
 
-### Dekripsi
+### Dekripsi {#vigenere-cipher-dekripsi}
 
 - Dekripsi karakter per karakter
 
-- Formula: Misal diketahui ciphertext C dari kumpulan karakter c1, c2, c3, …, dan key K terdiri dari k1, k2, k3, …, maka plaintext P = p1, p2, p3, …, di mana pi = (ci - ki) mod 26
+- Formula: Misal diketahui ciphertext ***C*** dari kumpulan karakter $c_1, c_2, c_3, …,$ dan key ***K*** terdiri dari $k_1, k_2, k_3, …,$ maka plaintext ***P*** = $p_1, p_2, p_3, …,$ di mana **$p_i = (c_i - k_i) \pmod{26}$**
 
-- Kalau kata kunci lebih pendek dari plaintext, key diulang sampai sepanjang plaintext seperti pada [enkripsi](https://docs.google.com/document/d/1IS3ZYiWKAOwm_tbL2iZwnQh6amLIpN1ZiSLYdkCY92o/edit?tab=t.2dxd14c185hr#heading=h.utgk1py00okt)
+- Kalau kata kunci lebih pendek dari plaintext, key diulang sampai sepanjang plaintext seperti pada [enkripsi](#vigenere-cipher-enkripsi)
 
-### Cryptanalisis
+### Cryptanalisis {#vigenere-cipher-cryptanalysis}
 
-#### Kasiski Method
+#### Kasiski Method {#vigenere-cipher-kasiski-method}
 
 - Pola kunci bisa ditemukan dengan menemukan perulangan huruf atau beberapa huruf di ciphertext
 
@@ -173,29 +190,33 @@ Maka kunci yang digunakan: kuncikuncik
 
 - Ada kemungkinan menghasilkan ciphertext yang memiliki kriptogram berulang, misal di plaintext ada THEYSHOTTHEM, terus ketemu ciphertext SONYSONYSONY, trigram THE di “THEY” dan “THEM” bakal dienkripsi oleh key “SON”, jadi hasilnya sama
 
-- Kalau kita lihat, jarak antara perulangan kriptogram “CSASTP” di ciphertext itu 16 huruf (antara C dengan C nya), sementara itu kita tau kalau kuncinya itu perulangan dari key 4 karakter. 16 merupakan perulangan/faktor dari 4. Makanya ketika ada perulangan kriptogram dengan jarak n, ada kemungkinan key nya itu salah satu faktor dari n
+![Contoh Kasiski method](https://i.imgur.com/0oqx5l8.png)
 
-- Metode menemukan kemungkinan panjang key disebut Kasiski Method
+- Kalau kita lihat, jarak antara perulangan kriptogram “CSASTP” di ciphertext itu 16 huruf (antara C dengan C nya), sementara itu kita tau kalau kuncinya itu perulangan dari key 4 karakter. 16 merupakan perulangan/faktor dari 4. Makanya ketika ada perulangan kriptogram dengan jarak *n*, ada **kemungkinan** key nya itu salah satu faktor dari *n*
 
-- Algoritma:
+- Metode menemukan kemungkinan panjang key disebut **Kasiski Method**
 
-1. Tentukan semua kriptogram berulang yang ada di ciphertext
+- **Algoritma**:
 
-2. Hitung jarak antar kriptogram yang berulang
-
-3. Hitung semua faktor dari jarak tersebut
-
-4. Tentukan irisan dari semua faktor pembagi tersebut. Nilai irisan tersebut kemungkinan adalah panjang kunci
+	1. Tentukan semua kriptogram berulang yang ada di ciphertext
+	
+	2. Hitung jarak antar kriptogram yang berulang
+	
+	3. Hitung semua faktor dari jarak tersebut
+	
+	4. Tentukan irisan dari semua faktor pembagi tersebut. Nilai irisan tersebut kemungkinan adalah panjang kunci
 
 - Contoh:
 
-#### Frequency Analysis
+![Contoh Kasiski Method](https://i.imgur.com/9mYChq2.png)
+
+#### Frequency Analysis {#vigenere-cipher-frequency-analysis}
 
 - Setelah menemukan kemungkinan panjang kunci, tinggal cari kemungkinan value key nya apa
 
 - Bisa aja pake exhaustive search (bruteforce), tapi lebih gampang frequency analysis
 
-- Metodenya sama dengan frequency analysis seperti di [Caesar Cipher](https://docs.google.com/document/d/1IS3ZYiWKAOwm_tbL2iZwnQh6amLIpN1ZiSLYdkCY92o/edit?tab=t.2dxd14c185hr#heading=h.jnvyaoxu442x)
+- Metodenya sama dengan frequency analysis seperti di [Caesar Cipher](#caesar-cipher-frequency-analysis)
 
 - Algoritma:
 
@@ -203,35 +224,49 @@ Maka kunci yang digunakan: kuncikuncik
 
 2. Kelompokkan setiap huruf ke-n bersama-sama sehingga menjadi n-buah potongan pesan yang baru
 
-3. Masing-masing pesan ini dienkripsi memakai huruf yang sama semua, jadi metode cryptanalysis untuk tiap pesan pakai [monoalphabetic substitution](https://docs.google.com/document/d/1IS3ZYiWKAOwm_tbL2iZwnQh6amLIpN1ZiSLYdkCY92o/edit?tab=t.2dxd14c185hr#heading=h.kboocw2b9qeb), sama dengan Caesar Cipher
+3. Masing-masing pesan ini dienkripsi memakai huruf yang sama semua, jadi metode cryptanalysis untuk tiap pesan pakai [monoalphabetic substitution](#cipher-substitusi), sama dengan Caesar Cipher
 
 4. Cari huruf-huruf atau kriptogram yang paling sering muncul di satu atau setiap pesannya, terus tinggal try and error
 
 - Contoh:
 
-### Varian
+![Contoh frequency analysis vigenere](https://i.imgur.com/hJgpeEp.png)
 
-#### Full Vigenere Cipher
+![Contoh freq analysis vigenere](https://i.imgur.com/SXmpLnz.png)
+
+![Contoh freq analysis Vigenere](https://i.imgur.com/s2uyDjU.png)
+
+### Varian {#varian-vigenere-cipher}
+
+#### Full Vigenere Cipher {#full-vigenere-cipher}
 
 - Matriks Vigenere juga teracak, tidak berurutan hasil enkripsinya
 
-#### Auto-Key Vigenere Cipher
+![Matriks full vigenere](https://i.imgur.com/L09onmL.png)
+
+#### Auto-Key Vigenere Cipher {#auto-key-vigenere-cipher}
 
 - Kalau panjang key < panjang plaintext, si key disambung dengan plaintext itu sendiri
 
-#### Running-Key Vigenere Cipher
+![Auto key vigenere](https://i.imgur.com/9nmQUjg.png)
+
+#### Running-Key Vigenere Cipher {#running-key-vigenere-cipher}
 
 - Kunci diambil dari teks lain yang juga punya makna. Kalau kunci kepanjangan, dipotong supaya panjangnya sama dengan plaintext
 
-## Playfair Cipher
+![Running key vigenere](https://i.imgur.com/IMjT1lv.png)
+
+## Playfair Cipher {#playfair-cipher}
 
 - Polygram cipher
 
 - Enkripsi bigram (dua huruf-dua huruf)
 
-### Enkripsi
+### Enkripsi {#playfair-cipher-enkripsi}
 
 - Kunci kriptografi berbentuk bujur sangkar ukuran 5x5 (25 buah) dengan huruf J dibuang
+
+![Matriks playfair](https://i.imgur.com/dPkjtHC.png)
 
 - Kunci juga bisa berasal dari input, misalnya kata kuncinya JALAN GANESHA SEPULUH
 
@@ -240,6 +275,8 @@ Maka kunci yang digunakan: kuncikuncik
 2. Tambahkan sisa huruf yang belum ada (berurutan alfabetikal: ALNGESHPUBCDFKMOQRTVWXYZ
 
 3. Masukkan ke bujur sangkar kunci (terurut penuhin satu baris dulu)
+
+![Matriks playfair](https://i.imgur.com/WtP8I5d.png)
 
 - Langkah enkripsi:
 
@@ -257,7 +294,12 @@ Maka kunci yang digunakan: kuncikuncik
 
 - Jika dua huruf terdapat pada baris kunci yang sama maka tiap huruf diganti dengan huruf di kanannya (bersifat siklik).
 
+![Matriks siklik 1](https://i.imgur.com/ATRu9OA.png)
+
 - Jika dua huruf terdapat pada kolom yang sama maka tiap huruf diganti dengan huruf di bawahnya
+
+![Matriks siklik 2](https://i.imgur.com/vFr9jrF.png)
+
 
 - Jika dua huruf tidak terletak di baris dan kolkom yang sama, maka:
 
@@ -265,21 +307,25 @@ Maka kunci yang digunakan: kuncikuncik
 
 2. Huruf ciphertext kedua berasal dari huruf yang menjadi titik perpotongan kolom huruf pertama dengan baris huruf kedua
 
-- Contoh: plaintext ‘temui iibu nanti malam’, kunci: ‘jalan ganesha sepuluh’
+![Matriks perpotongan playfair](https://i.imgur.com/na7Sso7.png)
+
+- Contoh: plaintext ‘temui ibu nanti malam’, kunci: ‘jalan ganesha sepuluh’
 
 1. Hapus semua karakter j di plaintext dan hapus spasi, bentuk jadi bigram
 
-te mu ii bu na nt im al am
+`te mu ii bu na nt im al am`
 
 2. Ada huruf berulang ii, sisipkan x di tengahnya
 
-te mu ix ib un an ti ma la m
+`te mu ix ib un an ti ma la m`
 
 3. Bigram terakhir ganjil, kita tambah huruf x di akhir
 
 4. Gunakan metode algoritma matriks seperti di atas
 
-### Dekripsi
+![Contoh playfair enkripsi](https://i.imgur.com/QywIf6y.png)
+
+### Dekripsi {#playfair-cipher-dekripsi}
 
 1. Jika dua huruf terdapat pada baris bujursangkar yang sama maka tiap huruf diganti dengan huruf di kirinya.
 
@@ -289,9 +335,9 @@ te mu ix ib un an ti ma la m
 
 4. Buanglah huruf X yang tidak mengandung makna.
 
-### Cryptanalysis
+### Cryptanalysis {#playfair-cipher-cryptanalysis}
 
-#### Frequency Analysis
+#### Frequency Analysis {#playfair-cipher-frequency-analysis}
 
 - Pakai metode bigram untuk lihat bigram mana yang paling sering muncul
 
@@ -299,61 +345,67 @@ te mu ix ib un an ti ma la m
 
 - Kelemahan lainnya, bigram dan kebalikannya (misal AB dan BA) akan didekripsi menjadi pola huruf plainteks yang sama (misal RE dan ER). Di dalam bahasa Inggris terdapat banyak kata yang mengandung bigram terbalik seperti REceivER dan DEpartED.
 
-## Affine Cipher
+## Affine Cipher {#affine-cipher}
 
-### Enkripsi
+### Enkripsi {#affine-cipher-enkripsi}
 
-- Enkripsi: C ≅ mP + b (mod n), di mana n adalah ukuran alfabet (biasanya 26), m adalah bilangan bulat yang [relatif prima](https://docs.google.com/document/d/1IS3ZYiWKAOwm_tbL2iZwnQh6amLIpN1ZiSLYdkCY92o/edit?tab=t.hc97psoycyvj#heading=h.mhr4cbmh1a2s) terhadap n, dan b adalah jumlah pergeseran
+- Enkripsi: $C \equiv mP + b \pmod n$, di mana *n* adalah ukuran alfabet (biasanya 26), *m* adalah bilangan bulat yang [relatif prima]({{ "/discrete-math#relatif-prima" | relative_url }}) terhadap *n*, dan *b* adalah jumlah pergeseran
 
-- [Caesar cipher](https://docs.google.com/document/d/1IS3ZYiWKAOwm_tbL2iZwnQh6amLIpN1ZiSLYdkCY92o/edit?tab=t.2dxd14c185hr#heading=h.i8ov6niw2jjy) adalah bentuk khusus dari Affine cipher dengan m = 1
+![Contoh enkripsi affine cipher](https://i.imgur.com/HFvlYTF.png)
 
-### Dekripsi
+- [Caesar cipher](#caesar-cipher) adalah bentuk khusus dari [Affine cipher](#affine-cipher) dengan *m* = 1
 
-- P ≅ m-1 (C - b) (mod n), di mana m-1 adalah [inversi](https://docs.google.com/document/d/1IS3ZYiWKAOwm_tbL2iZwnQh6amLIpN1ZiSLYdkCY92o/edit?tab=t.hc97psoycyvj#heading=h.nqitvwtrpueo) m (mod n)
+### Dekripsi {#affine-cipher-dekripsi}
 
-- Untuk mendekripsi dibutuhkan nilai m dan b
+- $P \equiv m^{-1} \; (C - b) \pmod n$, di mana m-1 adalah [inversi]({{ "/discrete-math#invers-modulo" | relative_url }}) m (mod n)
 
-### Cryptanalysis
+- Untuk mendekripsi dibutuhkan nilai *m* dan *b*
 
-#### Known Plaintext Attack
+### Cryptanalysis {#affine-cipher-cryptanalysis}
 
-- Untuk mengetahui nilai m dan n, diperlukan setidaknya dua [kekongruenan](https://docs.google.com/document/d/1IS3ZYiWKAOwm_tbL2iZwnQh6amLIpN1ZiSLYdkCY92o/edit?tab=t.hc97psoycyvj#heading=h.45uafo9r13ct) variabel:
+#### Known Plaintext Attack {#affine-cipher-known-plaintext-attack}
 
-C1 ≅ mP1 + b (mod n)
+- Untuk mengetahui nilai *m* dan *n*, diperlukan setidaknya dua [kekongruenan]({{ "/discrete-math#kekongruenan-modulo" | relative_url }}) variabel:
 
-C2 ≅ mP2 + b (mod n)
+$$C_1 \equiv mP_1 + b \pmod n$$
 
-- Eliminasi jadi (C1 + C2) = (P1 + P2) m (mod n)
+$$C_2 \equiv mP_2 + b \pmod n$$
 
-- Setelah solve m, substitusi dan cari nilai n
+- Eliminasi jadi $(C_1 + C_2) = (P_1 + P_2) \, m \pmod n$
 
-## Hill Cipher
+- Setelah solve *m*, substitusi dan cari nilai *n*
 
-### Enkripsi
+## Hill Cipher {$hill-cipher}
+
+### Enkripsi {#hill-cipher-enkripsi}
 
 - Menggunakan kunci berbentuk matriks
 
-- Melakukan enkripsi untuk setiap m buah karakter, menggunakan kunci berbentuk matriks persegi berukuran m x m
+- Melakukan enkripsi untuk setiap *m* buah karakter, menggunakan kunci berbentuk matriks persegi berukuran m x m
 
-- Formula: C = KP (mod 26)
+- Formula:  **$C = KP \pmod{26}$**
 
 - Misal enkripsi setiap 3 huruf (m = 3), maka persamaannya:
 
-- Contoh
+![Contoh enkripsi Hill Cipher](https://i.imgur.com/CdqondN.png)
 
-### Dekripsi
+### Dekripsi {#hill-cipher-dekripsi}
 
-- Formula: P = K-1C (mod 26)
+- Formula: $P = K^{-1}C \pmod{26}$
 
-- Perlu mencari [invers matriks](https://docs.google.com/document/d/1IS3ZYiWKAOwm_tbL2iZwnQh6amLIpN1ZiSLYdkCY92o/edit?tab=t.67u77g919b2g#heading=h.lqwelv8wyw4p)
+- Perlu mencari [invers matriks]({{ "/discrete-math#invers-modulo" | relative_url }})
 
-- Jika salah satu nilai P atau K-1 lebih dari 26, modulo dulu dengan 26
+- Jika salah satu nilai ***P*** atau $K^{-1}$ lebih dari 26, modulo dulu dengan 26
 
-- Contoh: dekripsi LNS (lihat contoh [enkripsi](https://docs.google.com/document/d/1IS3ZYiWKAOwm_tbL2iZwnQh6amLIpN1ZiSLYdkCY92o/edit?tab=t.2dxd14c185hr#heading=h.bpuyuabb62xj)) memakai matriks K yang sama
+![Contoh dekripsi Hill cipher](https://i.imgur.com/vakh0AX.png)
 
-### Cryptanalysis
+![Contoh dekripsi Hill Cipher](https://i.imgur.com/DhBAUSf.png)
 
-#### Known Plaintext Attack
+- Contoh: dekripsi `LNS` (lihat contoh [enkripsi](#hill-cipher-enkripsi)) memakai matriks ***K*** yang sama
+
+### Cryptanalysis {#hill-cipher-cryptanalysis}
+
+#### Known Plaintext Attack {#hill-cipher-known-plaintext-attack}
 
 - Kita cukup temukan sebuah known plaintext dan hasil enkripsinya untuk nanti menemukan key-nya
 
@@ -361,17 +413,17 @@ C2 ≅ mP2 + b (mod n)
 
 - Coba semua kemungkinan dengan memakai m dari 1..m. Jika tidak ada yang memenuhi, coba temukan plaintext dan ciphertext yang lebih besar
 
-- Ingat bahwa C = KP, maka K = CP-1 mod 26
+- Ingat bahwa $C = KP$, maka **$K = CP^{-1} \pmod{26}$**
 
 - Contoh: [13522071_13522091_Tucil1_IF4020.pdf](https://drive.google.com/file/d/11VvgWBMuAUB-hES9bah-fPluB7i13TA5/view?usp=sharing)
 
-## Enigma Cipher
+## Enigma Cipher {#enigma-cipher}
 
-# One Time Pad dan Keamanan Kriptografi
+# One Time Pad dan Keamanan Kriptografi {otp-dan-keamanan-kriptografi}
 
-## One Time Pad
+## One Time Pad {#one-time-pad}
 
-### Unbreakable Cipher
+### Unbreakable Cipher {#unbreakable-cipher}
 
 - Unbreakable cipher adalah klaim yang disematkan kriptografer terhadap algoritma kriptografi yang diciptakannya
 
@@ -387,13 +439,13 @@ C2 ≅ mP2 + b (mod n)
 
 - Karena point 1 dan 2, ciphertext yang dihasilkan pasti berbeda
 
-### One Time Pad
+### One Time Pad {#otp}
 
-- Satu-satunya algoritma kriptografi sempurna aman ([perfect secrecy](https://docs.google.com/document/d/1IS3ZYiWKAOwm_tbL2iZwnQh6amLIpN1ZiSLYdkCY92o/edit?tab=t.2dxd14c185hr#heading=h.srxy26qf5h22)) sehingga tidak dapat dipecahkan
+- Satu-satunya algoritma kriptografi sempurna aman ([perfect secrecy](#unbreakable-cipher)) sehingga tidak dapat dipecahkan
 
 - Panjang key = panjang plaintext
 
-- Algoritma enkripsi-dekripsi: [Vigenere cipher](https://docs.google.com/document/d/1IS3ZYiWKAOwm_tbL2iZwnQh6amLIpN1ZiSLYdkCY92o/edit?tab=t.2dxd14c185hr#heading=h.pzurqhey8nzb)
+- Algoritma enkripsi-dekripsi: [Vigenere cipher](#vigenere-cipher)
 
 - Setelah kunci terpakai, kunci di-destroy
 
@@ -411,19 +463,19 @@ C2 ≅ mP2 + b (mod n)
 
 2. Kunci tidak bisa dibangkitkan oleh penerima
 
-## Serangan terhadap Kriptografi
+## Serangan terhadap Kriptografi {#serangan-terhadap-kriptografi}
 
-- Keseluruhan point dari kriptografi adalah menjaga kerahasiaan pesan atau kunci dari penyadap ([eavesdropper](https://docs.google.com/document/d/1IS3ZYiWKAOwm_tbL2iZwnQh6amLIpN1ZiSLYdkCY92o/edit?tab=t.0#heading=h.nevdltuli71i)) atau dari kriptanalis (cryptanalyst)
+- Keseluruhan point dari kriptografi adalah menjaga kerahasiaan pesan atau kunci dari penyadap ([eavesdropper]({{ "/cybersecurity/#eavesdropper" | relative_url }})) atau dari kriptanalis (cryptanalyst)
 
 - Serangan adalah usaha yang dilakukan cryptanalysis untuk menemukan kunci atau menemukan plaintext dari ciphertext-nya
 
-- Prinsip Kerchoff: semua algoritma kriptografi harua publik, kuncinya yang privat
+- **Prinsip Kerchoff**: semua algoritma kriptografi harus publik, kuncinya yang privat
 
-- Lebih lanjut: [Type of Attack - Cybersecurity](https://docs.google.com/document/d/1IS3ZYiWKAOwm_tbL2iZwnQh6amLIpN1ZiSLYdkCY92o/edit?tab=t.0#heading=h.4qumvih0rmuu)
+- Lebih lanjut: [Type of Attack - Cybersecurity]({{ "/cybersecurity#type-of-attack" | relative_url }})
 
-# Steganografi
+# Steganografi {#steganografi}
 
-## Definisi dan Terminologi
+## Definisi dan Terminologi {#definisi-terminologi-steganografi}
 
 ### Definisi
 
@@ -449,13 +501,13 @@ C2 ≅ mP2 + b (mod n)
 
 ### Kriteria Steganografi
 
-- Imperceptible: Keberadaan pesan rahasia tidak dapat dipersepsi secara visual atau secara audial
+- **Imperceptible**: Keberadaan pesan rahasia tidak dapat dipersepsi secara visual atau secara audial
 
-- Fidelity: Kualitas cover-object tidak jauh berubah akibat penyisipan pesan rahasia.
+- **Fidelity**: Kualitas cover-object tidak jauh berubah akibat penyisipan pesan rahasia.
 
-- Recovery: Pesan yang disembunyikan harus dapat diekstraksi kembali.
+- **Recovery**: Pesan yang disembunyikan harus dapat diekstraksi kembali.
 
-- Capacity: Ukuran pesan yang disembunyikan sedapat mungkin besar (supaya muat embedded text nya sebanyak mungkin)
+- **Capacity**: Ukuran pesan yang disembunyikan sedapat mungkin besar (supaya muat embedded text nya sebanyak mungkin)
 
 ## Metode LSB
 
@@ -1048,7 +1100,7 @@ D_AESK(CM) = M
 
 -
 
-# LAMPIRAN: Most Frequent N-Gram
+# LAMPIRAN: Most Frequent N-Gram {#most-frequent-n-gram}
 
 ## English
 

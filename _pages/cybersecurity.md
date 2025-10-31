@@ -173,9 +173,9 @@ Setup maintain dan inspect tabel dari paket filter rules untuk IP di Linux Kerne
 - Sistem mekanisme antrian untuk mengatur cara paket diterima dan dikirimkan pada perangkat jaringan
 
 
-# LAMPIRAN: Type of Attacks
+# LAMPIRAN: Type of Attacks {#type-of-attacks}
 
-## STRIDE Attack
+## STRIDE Attack {#stride-attack}
 
 Spoofing: problem of authentication (a situation in which a person or program successfully identifies as another by falsifying data, to gain an illegitimate advantage)
 
@@ -189,15 +189,15 @@ Denial of Service: problem of availability (membuat service ga bisa diakses)
 
 Elevation of privilege: problem of authorization (a process in which a user or process in a system or application gains higher privileges than originally intended)
 
-## Replay Attack
+## Replay Attack {#replay-attack}
 
 A replay attack is a cyberattack where a malicious actor intercepts a valid data transmission, such as login credentials or session tokens, and then retransmits it to deceive a system into granting unauthorized access or performing an unauthorized action.
 
-## Sniffing Attack
+## Sniffing Attack {#sniffing-attack}
 
-Sniffing refers to the process of intercepting and inspecting data packets as they travel across a network. It's like eavesdropping on a conversation between devices, allowing you to see the information being exchanged. Form of [eavesdropping](https://docs.google.com/document/d/1IS3ZYiWKAOwm_tbL2iZwnQh6amLIpN1ZiSLYdkCY92o/edit?tab=t.0#heading=h.nevdltuli71i)
+Sniffing refers to the process of intercepting and inspecting data packets as they travel across a network. It's like eavesdropping on a conversation between devices, allowing you to see the information being exchanged. Form of [eavesdropping](#eavesdropping-attack)
 
-## Eavesdropping Attack
+## Eavesdropping Attack {#eavesdropping-attack}
 
 Eavesdropping is used by cyberattackers to intercept communication and steal sensitive data in transit. Eavesdropping is the broad act of secretly intercepting and listening to another's communications, while sniffing is a technical method of eavesdropping that involves using a packet sniffer to capture and analyze data packets as they travel across a network
 
