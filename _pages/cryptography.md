@@ -592,6 +592,8 @@ $$C_2 \equiv mP_2 + b \pmod n$$
 
 - Menggunakan operasi [bitwise](https://docs.google.com/document/d/1IS3ZYiWKAOwm_tbL2iZwnQh6amLIpN1ZiSLYdkCY92o/edit?tab=t.jpr3u1wrmv9s#heading=h.totf3uqow7h) (kunci, plaintext, ciphertext diproses dalam rangkaian bit, dan operasi yang biasa digunakan adalah XOR)
 
+![Algoritma kriptografi modern](https://i.imgur.com/4xl2Yel.png)
+
 - Teknik dasar yang digunakan tetap sama: teknik [substitusi](https://docs.google.com/document/d/1IS3ZYiWKAOwm_tbL2iZwnQh6amLIpN1ZiSLYdkCY92o/edit?tab=t.2dxd14c185hr#heading=h.j5sznqfcf6uw) dan teknik [transposisi](https://docs.google.com/document/d/1IS3ZYiWKAOwm_tbL2iZwnQh6amLIpN1ZiSLYdkCY92o/edit?tab=t.2dxd14c185hr#heading=h.oxatpjuoieao)
 
 - Teknik lain yang digunakan: rotasi, kompresi, ekspansi, penjumlahan modulo, dll
@@ -600,17 +602,13 @@ $$C_2 \equiv mP_2 + b \pmod n$$
 
 - Cipher bitwise dibagi 2:
 
-1. Cipher alir (stream cipher)
+	1. Cipher alir (stream cipher)
+	- Beroperasi pada bit individual
+	- Enkripsi/dekripsi pesan secara bit per bit memakai operasi XOR
 
-- Beroperasi pada bit individual
-
-- Enkripsi/dekripsi pesan secara bit per bit memakai operasi XOR
-
-2. Cipher block (block cipher)
-
-- Operasinya dilakukan per sekumpulan bit (blok-blok bit)
-
-- Enkripsi/dekripsi pesan dilakukan secara blok per blok bit (misal setiap 128-bit)
+	2. Cipher block (block cipher)
+	- Operasinya dilakukan per sekumpulan bit (blok-blok bit)
+	- Enkripsi/dekripsi pesan dilakukan secara blok per blok bit (misal setiap 128-bit)
 
 ## Stream Cipher
 
