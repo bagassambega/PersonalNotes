@@ -300,7 +300,7 @@ Cara lain: pakai [invers modulo](#invers-modulo) dan [sifat modulo](#sifat-kekon
 > 
 > $$ g^x \;\equiv\; y \pmod p $$
 
-- Contoh: Carilah nilai x yang memenuhi $7x \equiv 15 \pmod 41$
+- Contoh: Carilah nilai x yang memenuhi $7^x \equiv 15 \pmod{41}$
 
 
 > **Definisi**: jika *a* adalah [akar primitif](#akar-primitif) dari bilangan prima p, maka untuk bilangan bulat b kita dapat menemukan pangkat nilai x sedemikian sehingga

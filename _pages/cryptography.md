@@ -409,9 +409,9 @@ $$C_2 \equiv mP_2 + b \pmod n$$
 
 - Kita cukup temukan sebuah known plaintext dan hasil enkripsinya untuk nanti menemukan key-nya
 
-- Misal known plaintext adalah serangkaian karakter dengan panjang n, maka kemungkinan ukuran m adalah m yang memenuhi m x m ≤ n
+- Misal known plaintext adalah serangkaian karakter dengan panjang *n*, maka **kemungkinan** ukuran *m* adalah *m* yang memenuhi $m \times m \le n$
 
-- Coba semua kemungkinan dengan memakai m dari 1..m. Jika tidak ada yang memenuhi, coba temukan plaintext dan ciphertext yang lebih besar
+- Coba semua kemungkinan dengan memakai *m* dari 1..*m*. Jika tidak ada yang memenuhi, coba temukan plaintext dan ciphertext yang lebih besar
 
 - Ingat bahwa $C = KP$, maka **$K = CP^{-1} \pmod{26}$**
 
@@ -425,7 +425,7 @@ $$C_2 \equiv mP_2 + b \pmod n$$
 
 ### Unbreakable Cipher {#unbreakable-cipher}
 
-- Unbreakable cipher adalah klaim yang disematkan kriptografer terhadap algoritma kriptografi yang diciptakannya
+- **Unbreakable cipher** adalah klaim yang disematkan kriptografer terhadap algoritma kriptografi yang diciptakannya
 
 - Namun faktanya kebanyakan algoritma kriptografi yang ditemukan itu breakable cipher
 
@@ -441,14 +441,10 @@ $$C_2 \equiv mP_2 + b \pmod n$$
 
 ### One Time Pad {#otp}
 
-- Satu-satunya algoritma kriptografi sempurna aman ([perfect secrecy](#unbreakable-cipher)) sehingga tidak dapat dipecahkan
-
+- Satu-satunya algoritma kriptografi **sempurna aman** ([perfect secrecy](#unbreakable-cipher)) sehingga tidak dapat dipecahkan
 - Panjang key = panjang plaintext
-
 - Algoritma enkripsi-dekripsi: [Vigenere cipher](#vigenere-cipher)
-
 - Setelah kunci terpakai, kunci di-destroy
-
 - Pengirim dan penerima harus memiliki salinan pad yang sama
 
 - Kelebihan:
@@ -477,29 +473,32 @@ $$C_2 \equiv mP_2 + b \pmod n$$
 
 ## Definisi dan Terminologi {#definisi-terminologi-steganografi}
 
-### Definisi
+### Definisi {#definisi-steganografi}
 
 - Ilmu yang mempelajari cara menyembunyikan pesan di dalam suatu media/media pesan lainnya
 
 - Misalnya kita menyembunyikan teks di dalam sebuah file audio, atau teks di sebuah gambar
 
-- Kalau kriptografi menyembunyikan makna dari sebuah pesan, steganografi menyembunyikan keberadaan sebuah pesan
+- Kalau kriptografi **menyembunyikan makna** dari sebuah pesan, steganografi **menyembunyikan keberadaan** sebuah pesan
 
 - Sebagai contoh: ada pesan “MARI KABUR”, itu disembunyikan dalam kalimat “Makan Ayam Rebus Itu Kemahalan Ah. Beli Udang Rebus Di Alfamart Rembang”. Setiap karakter pesan disembunyikan di awal kata pesan yang dikirim
 
-### Terminologi
+### Terminologi {#terminologi-steganografi}
 
-- Embedded message: Pesan yang akan disisipkan
+- ***Embedded message***: Pesan yang akan disisipkan
 
-- Cover-object (covertext): Media yang akan dipakai untuk menyembunyikan pesan (bisa teks, gambar, video, audio)
+- ***Cover-object*** (covertext): Media yang akan dipakai untuk menyembunyikan pesan (bisa teks, gambar, video, audio)
 
-- Stego-object (stego-text): Cover-object yang sudah disisipi pesan
+- ***Stego-object*** (stego-text): Cover-object yang sudah disisipi pesan
 
-- Stego-key: Kunci yang digunakan untuk menyisipkan dan mengekstraksi pesan dari stego-text
+- ***Stego-key***: Kunci yang digunakan untuk menyisipkan dan mengekstraksi pesan dari stego-text
 
-### Proses Pembuatan
+### Proses Pembuatan {#proses-pembuatan-steganografi}
 
-### Kriteria Steganografi
+
+![Diagram pembuatan steganografi](https://i.imgur.com/OpuRryN.png)
+
+### Kriteria Steganografi {#kriteria-steganografi}
 
 - **Imperceptible**: Keberadaan pesan rahasia tidak dapat dipersepsi secara visual atau secara audial
 
@@ -509,13 +508,13 @@ $$C_2 \equiv mP_2 + b \pmod n$$
 
 - **Capacity**: Ukuran pesan yang disembunyikan sedapat mungkin besar (supaya muat embedded text nya sebanyak mungkin)
 
-## Metode LSB
+## Metode LSB {#metode-lsb-steganografi}
 
-- Menyimpan satu data di bagian least significant byte (byte yang kalau diubah nilainya, paling kecil pengaruhnya). Misal ada byte 1001 0011. Maka LSB nya adalah angka 1 di paling kanan, karena kalau kita ubah value nya jadi 1001 0010, awalnya 147 → 146
+- <b>Menyimpan satu data di bagian <term href="/PersonalNotes/glossary#lsb">least significant byte</term></b> (byte yang kalau diubah nilainya, paling kecil pengaruhnya). Misal ada byte 1001 0011. Maka LSB nya adalah angka 1 di paling kanan, karena kalau kita ubah value nya jadi 1001 0010, awalnya 147 → 146
 
-- Kebalikan: MSB (most significant byte). Byte yang pengaruhnya paling besar (kalau contoh di atas angka 1 di paling kiri, selisihnya 128 kalau diubah: 1001 0010 → 0001 0010 berarti 147 → 18)
+- Kebalikan: <term href="/PersonalNotes/glossary#msb">MSB</term> (most significant byte). Byte yang pengaruhnya paling besar (kalau contoh di atas angka 1 di paling kiri, selisihnya 128 kalau diubah: 1001 0010 → 0001 0010 berarti 147 → 18)
 
-### LSB pada Citra Digital
+### LSB pada Citra Digital {#lsb-citra-digital}
 
 - Pada gambar monokrom (hitam putih), 1 pixel hanya menyimpan 2 buah value: 0 dan 1 (1 bit)
 
@@ -523,27 +522,39 @@ $$C_2 \equiv mP_2 + b \pmod n$$
 
 - Pada gambar berwarna (RGB), ada 24 bit value (R 0-255, G 0-255, B 0-255)
 
+![RGB](https://i.imgur.com/rEibigD.png)
+
 - Misalkan sebuah image 24-bit memiliki sebuah pixel sebagai berikut:
+
+![Pemecahan RGB LSB](https://i.imgur.com/alV2JIY.png)
 
 - Ekstraksi pesan dari stego-image:
 
+![Ekstraksi pesan dari embedded message](https://i.imgur.com/0kAFxh5.png)
+
 - Ukuran pesan yang bisa disembunyikan bergantung pada ukuran cover-object
 
-### Varian LSB
+![Maximum stego size](https://i.imgur.com/LOwXTG9.png)
 
-#### Sequential
+### Varian LSB {#varian-lsb}
+
+#### Sequential {#sequential-lsb}
 
 - Bit-bit pesan disembunyikan secara sekuensial pada pixel-pixel citra.
 
 - Ekstraksi pesan: pixel-pixel dibaca secara sekuensial dari pixel pertama sampai terakhir. Ambil setiap byte dari pixel, ekstraksi bit LSB-nya, lalu satukan
 
-#### Acak
+![Sequential LSB](https://i.imgur.com/L3X91pK.png)
+
+#### Acak {#random-lsb}
 
 - Supaya lebih aman, bit-bit pesan tidak disimpan di pixel yang berurutan, tapi dipilih secara acak
 
-- Pembangkit bilangan acak-semu (PRNG: pseudo-random number generator) digunakan untuk membangkitkan bilangan acak.
+![Random LSB](https://i.imgur.com/cYucsDs.png)
 
-- Umpan (seed) untuk pembangkit bilangan acak berlaku sebagai kunci (stego-key).
+- Pembangkit bilangan acak-semu (**PRNG: pseudo-random number generator**) digunakan untuk membangkitkan bilangan acak.
+
+- **Umpan** (seed) untuk pembangkit bilangan acak berlaku sebagai kunci (stego-key).
 
 - Ekstraksi: Posisi pixel yang menyimpan bit pesan dapat diketahui dari bilangan acak yang dibangkitkan oleh PRNG.
 
@@ -551,7 +562,7 @@ $$C_2 \equiv mP_2 + b \pmod n$$
 
 - Dengan demikian, bit-bit pesan yang bertaburan di dalam citra dapat dikumpulkan kembali.
 
-#### m-bit LSB
+#### m-bit LSB {#m-bit-lsb}
 
 - Untuk meningkatkan ukuran pesan yang disembunyikan, maka digunakan lebih dari 1 bit LSB untuk setiap byte.
 
@@ -561,7 +572,7 @@ $$C_2 \equiv mP_2 + b \pmod n$$
 
 - Pesan dapat disembunyikan secara sekuensial atau secara acak pada pixel-pixel di dalam citra.
 
-#### Enkripsi
+#### Enkripsi {#enkripsi-lsb}
 
 - Pesan dapat dienkripsi terlebih dahulu sebelum disembunyikan ke dalam citra.
 
@@ -573,7 +584,7 @@ $$C_2 \equiv mP_2 + b \pmod n$$
 
 - Jika dipakai teknik acak dalam memilih pixel-pixel, maka ada dua stego-key: satu untuk pembangkitan bit-bit kunci, satu lagi untuk pembangkitan posisi pixel yang dipilih untuk menyembunyikan pesan.
 
-# Algoritma Kriptografi Modern
+# Algoritma Kriptografi Modern {#kriptografi-modern}
 
 - Kriptografi setelah menemukan komputer digital
 

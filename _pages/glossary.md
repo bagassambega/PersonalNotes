@@ -24,7 +24,7 @@ A distributed ledger technology for recording transactions across multiple compu
 
 ---
 
-## Ciphertext
+## Ciphertext {#ciphertext}
 
 Plainteks (teks asli) yang sudah dienkripsi dan diamankan
 
@@ -36,7 +36,7 @@ A patient's authorization for sharing medical data with healthcare providers or 
 
 ---
 
-## Finality
+## Finality {#finality}
 
 Keadaan ketika suatu blok dianggap tidak dapat dibatalkan atau digantikan oleh cabang lain. Setelah blok mencapai finality, seluruh transaksi di dalamnya dianggap permanen dan tidak bisa di-reorganize.
 
@@ -51,5 +51,24 @@ A distributed ledger designed for the Internet of Things (IoT), using the Tangle
 # J
 
 ---
+
+
+# L
+
+---
+
+## LSB {#lsb}
+
+**Least significant bit**. Bagian dari bit yang nilainya paling kecil (insignifikan) dan perubahannya tidak membuat value berubah drastis. Contoh: $255 \;(1111 \;1111) \rightarrow 254 \;(1111 \;1110)$, digit paling kanan adalah LSB.
+Antonim: [MSB](#msb)
+
+# M
+
+---
+
+## MSB {#msb}
+
+**Most significant bit**. Bagian dari bit yang nilainya paling besar (signifikan) dan perubahannya membuat value berubah drastis. Contoh: $255 \;(1111 \;1111) \rightarrow 127 \;(0111 \;1111)$, digit paling kiri adalah MSB.
+Antonim: [LSB](#lsb)
 
 </div>

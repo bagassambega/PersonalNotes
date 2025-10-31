@@ -129,7 +129,7 @@ Message digest: [https://www.geeksforgeeks.org/computer-networks/message-digest-
 - Setiap pohon menunjukkan CARA bagaimana attacker menyebabkan suatu insiden. Tiap path pada attack tree menunjukkan attack yang unik dan berbeda pula. Sebuah sistem bisa memiliki forest (numerous trees) yang menunjukkan kumpulan attack tree
 - Attack tree bisa didekomposisi memakai AND-decomposition (semua path harus berhasil dulu baru attack bisa dilaksanakan) atau OR-decomposition (salah satu path cukup)
 
-[Replay attack](https://docs.google.com/document/d/1IS3ZYiWKAOwm_tbL2iZwnQh6amLIpN1ZiSLYdkCY92o/edit?tab=t.0#heading=h.ovkhp49ejyfb): A replay attack is a cyberattack where a malicious actor intercepts a valid data transmission, such as login credentials or session tokens, and then retransmits it to deceive a system into granting unauthorized access or performing an unauthorized action.
+[Replay attack](#replay-attack): A replay attack is a cyberattack where a malicious actor intercepts a valid data transmission, such as login credentials or session tokens, and then retransmits it to deceive a system into granting unauthorized access or performing an unauthorized action.
 
 ### Attack Surface
 
