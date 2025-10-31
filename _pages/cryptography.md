@@ -667,41 +667,49 @@ $$C_2 \equiv mP_2 + b \pmod n$$
 
 ### RC4 {#rc4}
 
+![RC4](https://i.imgur.com/4aDxOYL.png)
+
 - Ron code/rivest cipher, cipher stream paling populer
 
 - Digunakan dalam: protokol SSL (Secure Socket Layer), TLS (Transport Layer Security), standar IEEE 802.11 wireless LAN (WEP, Wired Equivalent Privacy), WPA (Wi-Fi Protocol Access) untuk wireless
 
-- Secret key (sebagai umpan) memiliki panjang maksimal 256 karakter (dengan 1 karakter = 1 byte). Jika secret key yang digunakan panjangnya < 256, akan diulang secara periodik (kaya [Vigenere](https://docs.google.com/document/d/1IS3ZYiWKAOwm_tbL2iZwnQh6amLIpN1ZiSLYdkCY92o/edit?tab=t.2dxd14c185hr#heading=h.pzurqhey8nzb))
+- Secret key (sebagai umpan) memiliki panjang maksimal 256 karakter (dengan 1 karakter = 1 byte). Jika secret key yang digunakan panjangnya < 256, akan diulang secara periodik (kaya [Vigenere](#vigenere-cipher))
 
-- RC4 menghasilkan [keystream](https://docs.google.com/document/d/1IS3ZYiWKAOwm_tbL2iZwnQh6amLIpN1ZiSLYdkCY92o/edit?tab=t.2dxd14c185hr#heading=h.rbd9661bzck) dalam satuan byte setiap kalinya, lalu di XOR dengan byte plaintext memakai operasi bitwise XOR
+- RC4 menghasilkan <term href="/PersonalNotes/glossary#keystream">keystream</term> dalam satuan byte setiap kalinya, lalu di XOR dengan byte plaintext memakai operasi bitwise XOR
+
+![Alur RC4 dasar](https://i.imgur.com/2WS593y.png)
 
 - RC4 cocok digunakan untuk mengenkripsi file citra (image) tanpa merusak header filenya, karena citra terdiri atas sejumlah pixel, setiap pixel berukuran 1 byte (grayscale image) sampai 3 byte (color image)
 
 - Untuk membangkitkan kunci-alir, cipher menggunakan status internal yang terdiri dari:
 
-1.  Permutasi angka 0 sampai 255 di dalam array S (S0, S1, .., S255). Permutasi merupakan fungsi dari kunci rahasia K dengan panjang variabel
+1.  Permutasi angka 0 sampai 255 di dalam array $S (S_0, S_1, .., S_{255}$). Permutasi merupakan fungsi dari kunci rahasia K dengan panjang variabel
 
-2. Dua buah iterator, i dan j
+2. Dua buah iterator, *i* dan *j*
 
 - RC4 terdiri dari dua subproses:
 
-1. Key-Scheduling Algorithm ([KSA](https://docs.google.com/document/d/1IS3ZYiWKAOwm_tbL2iZwnQh6amLIpN1ZiSLYdkCY92o/edit?tab=t.2dxd14c185hr#heading=h.3xzl12i14261))
+1. Key-Scheduling Algorithm ([KSA](#key-scheduling-algorithm))
 
-2. Pseudo-random Generation Algorithm ([PRGA](https://docs.google.com/document/d/1IS3ZYiWKAOwm_tbL2iZwnQh6amLIpN1ZiSLYdkCY92o/edit?tab=t.2dxd14c185hr#heading=h.77dppgmijbjw))
+2. Pseudo-random Generation Algorithm ([PRGA](#pseudo-random-generator-algorithm))
 
-#### Key-Scheduling Algorithm
+#### Key-Scheduling Algorithm {#key-scheduling-algorithm}
 
-1. Inisialisasi array S: S0 = -, S1 = 1, …, S255 = 255
+1. Inisialisasi array $S: S_0 = 0, S_1 = 1, …, S_{255} = 255$
 
 2. Lakukan pengacakan (permutasi) nilai-nilai dalam array S berdasarkan kunci rahasia K (kunci eksternal dari pengguna sebagai seed)
 
-- K[i mod length(K)] menyatakan karakter-karakter kunci diulang secara periodik jika panjangnya kurang dari 256
+![Permutasi array KSA](https://i.imgur.com/WUDkLmV.png)
 
-#### Pseudo-random Generator Algorithm
+- $K[i \pmod{length(K)}]$ menyatakan karakter-karakter kunci diulang secara periodik jika panjangnya kurang dari 256
 
-- PRGA membangkitkan keystream dengan cara mengambil nilai S[i] dan S[j], mempertukarkannya, lalu menjumlahkan keduanya dalam modulus 256
+#### Pseudo-random Generator Algorithm {#pseudo-random-generator-algorithm}
+
+- PRGA membangkitkan keystream dengan cara mengambil nilai *S*\[*i*\] dan *S*\[*j*\], mempertukarkannya, lalu menjumlahkan keduanya dalam modulus 256
 
 - Keystream kemudian di-XOR-kan dengan sebuah karakter plainteks
+
+![Algoritma PRGA](https://i.imgur.com/FCYCjPM.png)
 
 #### Keamanan RC4
 
@@ -709,7 +717,7 @@ $$C_2 \equiv mP_2 + b \pmod n$$
 
 - Untuk mengatasinya, biasanya direkomendasikan membuang 256-512 byte keystream awal
 
-- Tidak kuat terhadap [flip-bit attack](https://docs.google.com/document/d/1IS3ZYiWKAOwm_tbL2iZwnQh6amLIpN1ZiSLYdkCY92o/edit?tab=t.0#heading=h.2bdcgeie6q4u) maupun serangan-serangan stream lainnya
+- Tidak kuat terhadap [flip-bit attack]({{ "/cybersecurity#flip-bit-attack" | relative_url }}) maupun serangan-serangan stream lainnya
 
 - RC4 resmi dilarang penggunaannya dalam TLS karena bisa dipecahkan dalam hitungan jam atau hari (RFC 7465)
 

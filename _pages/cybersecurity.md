@@ -213,9 +213,9 @@ Honeypot
 
 ## DNS Poisoning
 
-## Man in The Middle Attack (MITM)
+## Man in The Middle Attack (MITM) {#mitm}
 
-## Flip-Bit Attack
+## Flip-Bit Attack {#flip-bit-attack}
 
 - Serangan terhadap kriptografi [stream cipher](https://docs.google.com/document/d/1IS3ZYiWKAOwm_tbL2iZwnQh6amLIpN1ZiSLYdkCY92o/edit?tab=t.2dxd14c185hr#heading=h.rv1ybovolip1)
 - Mengubah bit tertentu sehingga hasil dekripsinya berubah (dengan membolak-balikkan value bit nya)
