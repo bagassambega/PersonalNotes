@@ -6,11 +6,11 @@ permalink: /discrete-math/
 github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/discrete-math.md
 ---
 
-# Teori Bilangan
+# Teori Bilangan {#teori-bilangan}
 
-## Modulo
+## Modulo {#modulo}
 
-### Definisi
+### Definisi {#definisi-modulo}
 
 $$
 a \pmod{b}= x \tag{Definisi modulo}
@@ -22,7 +22,7 @@ $$13\pmod{5} = 2$$
 
 12 dibagi 5 itu 2 bersisa 2
 
-### Teorema Euclidean
+### Teorema Euclidean {#teorema-euclidean}
 
 >Misalkan *m* dan *n* bilangan bulat, *n* > 0. Jika *m* dibagi dengan *n* maka hasil pembagiannya adalah *q* (*quotient*/pengali) dan sisanya *r* (remainder), sedemikian sehingga:
 >
@@ -45,7 +45,7 @@ Atau pas diproses, jadi -22 / 3 = 7 sisa -1, diubah jadi 8 sisa (-1 + 3) = 2
 
 $$ (-8) \times 3 + 2 = -24 + 2 $$
 
-## PBB/FPB (GCD, Greatest Common Divisor)
+## PBB/FPB (GCD, Greatest Common Divisor) {#pbb}
 
 Pembagi terbesar yang sama untuk 2 atau lebih bilangan
 
@@ -65,7 +65,7 @@ $$ PBB(60, 18) = PBB(18, 6) = 6 $$
 
 $$ 18 = 3 \times 6 + 0 $$
 
-### Algoritma Euclidean
+### Algoritma Euclidean {#algoritma-euclidean}
 
 Diberikan dua buah bilangan bulat tak-negatif *m* dan *n* (*m* ≥ *n*). Algoritma Euclidean berikut mencari pembagi bersama terbesar dari *m* dan *n*.
 
@@ -104,7 +104,7 @@ $$6 = 3 \times 2 + 0 \tag{iv}$$
 
 Sisa pembagian terakhir sebelum 0 adalah 2, maka **PBB(312, 70) = 2**
 
-### Kombinasi Linear
+### Kombinasi Linear {#kombinasi-linear}
 
 *PBB(a, b)* bisa dinyatakan sebagai kombinasi linear seperti berikut:  $PBB(80, 12) = 4$
 
@@ -158,7 +158,7 @@ $$32 = 312 \;–\; 4 \times 70 \tag{viii}$$
 
 Jadi, PBB(312, 70) = 2 = $11 \times 312 \;–\; 49 \times 70$
 
-## Aritmatika Modulo
+## Aritmatika Modulo {#aritmatika-modulo}
 
 ### Relatif Prima {#relatif-prima}
 
@@ -209,7 +209,7 @@ kemudian $3x \equiv 18\pmod{20}$ → $x = \frac{18 + 20k}{3}$,
 *k* = 0 maka *x* = 6 
 (atau *k* = *3*, *x* = 26, 26 mod 20 = 6)
 
-### Persamaan Linear Kekongruenan n-Variabel
+### Persamaan Linear Kekongruenan n-Variabel {#persamaan-linear-kekongruenan-n-variabel}
 
 
 
@@ -254,7 +254,7 @@ Ingat kalau invers a = p mod m itu adalah $ax = 1 \pmod m$. Maka $ax = 1 \pmod m
 ![Contoh invers metode bruteforce formula](https://i.imgur.com/GUnHjxD.png)
 
 
-## Kekongruenan Linear
+## Kekongruenan Linear {#kekongruenan-linear}
 
 > Bentuk:
 > $$ax \equiv b \pmod m$$
@@ -276,7 +276,7 @@ Cara lain: pakai [invers modulo](#invers-modulo) dan [sifat modulo](#sifat-kekon
 
 ## Akar Primitif dan Logaritma Diskrit
 
-### Akar Primitif
+### Akar Primitif {#akar-primitif}
 
 > Jika diketahui *n* adalah bilangan bulat, maka *a* disebut **akar primitif** dari *n* jika perpangkatan $a, a_2., …, a_{ϕ(n)}$ (dalam modulus n) menghasilkan nilai yang berbeda dan semuanya [relatif prima](#relatif-prima) dengan *n*
 
@@ -294,7 +294,7 @@ Cara lain: pakai [invers modulo](#invers-modulo) dan [sifat modulo](#sifat-kekon
 - Biasanya siklus perulangannya bakal ditemukan lagi di setiap *p - 1* kali
 - Untuk menemukan semua [akar primitif](#akar-primitif) dari *p* harus di-bruteforce
 
-### Logaritma Diskrit
+### Logaritma Diskrit {#logaritma-diskrit}
 
 > Jika *p* adalah bilangan prima dan *g* dan *y* adalah sembarang bilangan bulat, carilah nilai x yang memenuhi:
 > 

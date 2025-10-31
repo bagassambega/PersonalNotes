@@ -11,34 +11,29 @@ github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/
 
 ### Operasi Dasar
 
-- Penjumlahan pengurangan
+- **Penjumlahan pengurangan**
+
+	- Syarat: ukuran matriks A dan B sama
+	    
+	- Jumlahkan saja semua cells yang corresponding di $A_{ij} + B_{ij}$
+
+- **Perkalian matriks**
+
+	- Syarat: Matriks $A_{(m \times n)}$ dan $B_{(o \times p)}$, dengan syarat $n = o$
+	    
+	- Hasil: Matriks $A_{(m x n)} \times B_{(n \times p)} = C_{(m \times p)}$
     
 
-- Syarat: ukuran matriks A dan B sama
-    
-- Jumlahkan saja semua cells yang corresponding di Aij + Bij
-    
 
-- Perkalian matriks
-    
+Misal $A_{(2 \times 3)}$:
 
-- Syarat: Matriks A (m x n) dan B (o x p), n = o
-    
-- Hasil: Matriks A (m x n) x B (n x p) = C (m x p)
-    
+| p   | q   | r   |
+| --- | --- | --- |
+| s   | t   | u   |
 
   
 
-Misal A (2 x 3):
-
-|   |   |   |
-|---|---|---|
-|p|q|r|
-|s|t|u|
-
-  
-
-Matriks B (3 x 4):
+Matriks $B_{(3 \times 4)}$:
 
 |   |   |   |   |
 |---|---|---|---|
@@ -48,18 +43,18 @@ Matriks B (3 x 4):
 
   
 
-= C (2 x 4)
+$= C_{(2 \times 4)}$
 
 |   |   |   |   |
 |---|---|---|---|
 |pa + qe + ri|pb + qf + rj|pc + qg + rk|pd + qh + rl|
 |sa + te + ui|sb + tf + uj|sc + tg + uk|sd + th + ul|
 
-### Transpose
+### Transpose {#transpose-matriks}
 
 - Baris → kolom, kolom → matriks
     
-- Transpose matriks B = AT : bij = aij
+- Transpose matriks $B = A^T : b_{ij} = a_{ji}$
     
 - Sifat:
     
@@ -125,7 +120,7 @@ Metode lain: Determinan matriks [metode kofaktor](https://docs.google.com/docume
 
 ### Minor
 
-Mij  = minor untuk entri aij
+$M_{ij}$  = minor untuk entri $a_{ij}$
 
  = Determinan submatriks yang elemen-elemennya tidak berada di baris i dan j
 
@@ -135,8 +130,6 @@ i, j dimulai dari 0
 
 Matriks minor: kumpulan dari minor entri
 
-  
-
 |   |   |   |
 |---|---|---|
 |M11|M12|M13|
@@ -145,21 +138,17 @@ Matriks minor: kumpulan dari minor entri
 
   
 
-## Matriks Kofaktor
+## Kofaktor dan Matriks Kofaktor
 
 ### Kofaktor
 
-Cij = kofaktor untuk entri aij
+$C_{ij}$ = kofaktor untuk entri $a_{ij} = (-1)^{i+j} M_{ij}$
 
- = (-1)i+j Mij
-
-Mij  adalah minor untuk baris i dan kolom j, i j dimulai dari 0
+$M_{ij}$  adalah minor untuk baris *i* dan kolom *j*, *i* dan *j* dimulai dari 0
 
 ### Matriks Kofaktor
 
 Kumpulan dari kofaktor
-
-  
 
 |   |   |   |
 |---|---|---|
@@ -181,7 +170,7 @@ Ada tambahan: tanda untuk perhitungan:
 
 ## Matriks Adjoint
 
-[Transpose](https://docs.google.com/document/d/1IS3ZYiWKAOwm_tbL2iZwnQh6amLIpN1ZiSLYdkCY92o/edit?tab=t.67u77g919b2g#heading=h.6dd7bg3g04hu) dari matriks [kofaktor](https://docs.google.com/document/d/1IS3ZYiWKAOwm_tbL2iZwnQh6amLIpN1ZiSLYdkCY92o/edit?tab=t.67u77g919b2g#heading=h.i91eg17ifauy)
+[Transpose](https://docs.google.com/document/d/1IS3ZYiWKAOwm_tbL2iZwnQh6amLIpN1ZiSLYdkCY92o/edit?tab=t.67u77g919b2g#heading=h.6dd7bg3g04hu) dari matriks [kofaktor](#matriks-kofaktor)
 
 ## Invers Matriks
 
@@ -203,21 +192,21 @@ Untuk matriks 2x2:
 
   
 
-Invers = 1det(A)x
+$Invers = \frac{1}{det(A)} \times$
 
-|   |   |
-|---|---|
-|-d|b|
-|c|a|
+|     |     |
+| --- | --- |
+| -d  | b   |
+| c   | a   |
 
   
   
 
 Untuk matriks 3x3 dan lebih:
 
-Invers = 1det(A)x adj(A)
+$Invers = \frac{1}{det(A)} \times adj(A)$
 
-Dengan Adj = [adjoint](https://docs.google.com/document/d/1IS3ZYiWKAOwm_tbL2iZwnQh6amLIpN1ZiSLYdkCY92o/edit?tab=t.67u77g919b2g#heading=h.25x7fusvjn2i) matriks A
+Dengan Adj = [adjoint](#matriks-adjoint) matriks A
 
   
 

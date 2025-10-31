@@ -99,7 +99,7 @@ Tugas: masalah apa saja yang bisa muncul kalau kita punya marketplace namanya Bl
 
 - Technique for threat analysis:
 
-1. [STRIDE](https://docs.google.com/document/d/1IS3ZYiWKAOwm_tbL2iZwnQh6amLIpN1ZiSLYdkCY92o/edit?tab=t.0#heading=h.gahbghvccp1h)
+1. [STRIDE](#stride)
 2. Attack tree
 3. Attack surface
 4. Abuse case
@@ -145,17 +145,15 @@ If you want to attack an enemy target, the target must be visible or exposed
 
 Abuse and misuse cases are security techniques that document how an application or system could be used maliciously or incorrectly to exploit vulnerabilities, leading to a negative outcome for the system or users. They involve defining scenarios from an attacker's perspective, contrasting with traditional "use cases" that focus on legitimate operations, to uncover security weaknesses and drive the design of robust security controls and countermeasures.
 
-Misuse Cases
+#### Misuse Cases
 
-specifically describe the unintended or malicious use of a system that results in a loss or negative impact. Contoh: orang yang punya akses ke akun orang lain bakal ngegunain akun itu buat beli barang ilegal
+Penyalahgunaan sistem namun sebetulnya tidak ada larangan untuk melakukan hal tersebut. Contoh: pas lagi rebutan promo olshop, kita memakai bot. Ga ada larangan, tapi itu penyalahgunaan
 
-Abuse Cases
+#### Abuse Cases
 
-are a related concept that focuses on describing malicious or abusive interactions with a system to find security flaws.
+- Penyalahgunaan sistem yang merusak atau mengganggu sistem. Contoh: DDoS, hijacking
+- Contoh: nge-hack ke akun orang lain
 
-Purpose:
-
-They serve as a tool to identify security requirements, test systems against potential threats, and create a more secure product by understanding how attackers might exploit it.
 
 # Firewall
 

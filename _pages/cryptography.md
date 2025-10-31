@@ -711,7 +711,7 @@ $$C_2 \equiv mP_2 + b \pmod n$$
 
 ![Algoritma PRGA](https://i.imgur.com/FCYCjPM.png)
 
-#### Keamanan RC4
+#### Keamanan RC4 {#keamanan-rc4}
 
 - Kelemahan: beberapa byte-byte awal pada keystream sangat berkorelasi dengan beberapa byte awal kunci
 
@@ -721,27 +721,26 @@ $$C_2 \equiv mP_2 + b \pmod n$$
 
 - RC4 resmi dilarang penggunaannya dalam TLS karena bisa dipecahkan dalam hitungan jam atau hari (RFC 7465)
 
-### A5
+### A5 {#a5}
 
 - Stream cipher yang digunakan untuk mengenkripsi transmisi sinyal percakapan dari standard sinyal telepon seluler GSM (Group Special Mobile)
-
-- Sinyal GSM dikirim dalam barisan frame, satu frame panjangnya 228 bit dan dikirim setiap 4.6 milidetik
+- Sinyal GSM dikirim dalam barisan frame, **satu frame panjangnya 228 bit** dan dikirim setiap 4.6 milidetik
 
 - A5 menghasilkan keystream sepanjang 228 bit yang kemudian bit-bitnya di-XOR-kan dengan bit-bit frame pesan sepanjang 228 bit juga.
 
 - Kunci eksternal (external session, seed) panjangnya 64 bit
 
-- A5 terdiri dari 3 buah [LFSR](https://docs.google.com/document/d/1IS3ZYiWKAOwm_tbL2iZwnQh6amLIpN1ZiSLYdkCY92o/edit?tab=t.2dxd14c185hr#heading=h.q7ztxcrwnox2), masing-masing [panjangnya](https://docs.google.com/document/d/1IS3ZYiWKAOwm_tbL2iZwnQh6amLIpN1ZiSLYdkCY92o/edit?tab=t.2dxd14c185hr#heading=h.87ijbox6gsdu) 19, 22, dan 23 bit (total 19+22+23 = 64 bit)
+- A5 terdiri dari 3 buah [LFSR](#linear-feedback-shift-register), masing-masing panjangnya 19, 22, dan 23 bit (total 19+22+23 = 64 bit)
 
-- Bit-bit di dalam register diindeks di mana bit paling tidak penting ([LSB](https://docs.google.com/document/d/1IS3ZYiWKAOwm_tbL2iZwnQh6amLIpN1ZiSLYdkCY92o/edit?tab=t.2dxd14c185hr#heading=h.ogca79jh5z9w)) diindeks dengan 0 (elemen paling kanan, yang akan keluar duluan)
+- Bit-bit di dalam register diindeks di mana bit paling tidak penting (<term href="/PersonalNotes/glossary#lsb">LSB</term>) diindeks dengan 0 (elemen paling kanan, yang akan keluar duluan)
 
 - Luaran dari A5 adalah hasil XOR ketiga buah LSFR ini
 
-## Block Cipher
+## Block Cipher {#block-cipher}
 
-# Algoritma Block Cipher
+# Algoritma Block Cipher {#algoritma-block-cipher}
 
-## Data Encryption Standard (DES)
+## Data Encryption Standard (DES) {#data-encryption-standard}
 
 - Algoritma: Data Encryption Algorithm (DEA)
 
@@ -755,89 +754,90 @@ $$C_2 \equiv mP_2 + b \pmod n$$
 
 - Kunci internal sepanjang 48-bit dibangkitkan dari kunci eksternal
 
-- Setiap blok plainteks mengalami permutasi awal (IP), 16 kali putaran enciphering, dan inversi permutasi awal (IP-1)
+- Setiap blok plainteks mengalami permutasi awal ($IP$), 16 kali putaran enciphering, dan inversi permutasi awal ($IP^{-1}$)
 
-## Advanced Encryption Standard (AES)
+![[Algoritma DES](https://i.imgur.com/ZyEhXKa.png)
 
-# Algoritma Kunci-Publik
+## Advanced Encryption Standard (AES) {#advanced-encryption-standard}
+
+# Algoritma Kunci-Publik {#algoritma-kunci-publik}
 
 - Di algoritma zaman dulu, kunci enkripsi dan dekripsi biasanya sama. Jadi kalau kunci enkripsi ketahuan, otomatis orang itu bisa mendekripsi pesan juga
 
-- Jika kunci enkripsi = kunci dekripsi, disebut sebagai kunci simetri (symmetrical key)
+- Jika kunci enkripsi = kunci dekripsi, disebut sebagai **kunci simetri** (**symmetrical key**)
 
-- Algoritma kunci publik: ada kunci publik yang digunakan untuk mengenkripsi, dan kunci privat yang digunakan untuk mendekripsi
+- Algoritma kunci publik: ada **kunci publik** yang digunakan untuk **mengenkripsi**, dan **kunci privat** yang digunakan untuk **mendekripsi**
 
-- Dua kunci yang berbeda untuk enkripsi dan dekripsi: kunci asimetri (asymmetrical key)
+- Dua kunci yang berbeda untuk enkripsi dan dekripsi: **kunci asimetri** (**asymmetrical key**)
 
-- Kunci publik: disebar bersama message, kunci privat: dimiliki target penerima pesan supaya bisa dekripsi
+- **Kunci publik**: disebar bersama message, kunci privat: dimiliki target penerima pesan supaya bisa dekripsi
 
-- Signed message: message yang sudah dienkripsi oleh public key
+- **Signed message**: message yang sudah dienkripsi oleh public key
 
-- Algoritma ini bisa dikombinasikan dengan hash menjadi [digital signature](https://docs.google.com/document/d/1IS3ZYiWKAOwm_tbL2iZwnQh6amLIpN1ZiSLYdkCY92o/edit?tab=t.2dxd14c185hr#heading=h.q5rbk1nnw231)
+- Algoritma ini bisa dikombinasikan dengan hash menjadi [digital signature]({{ "/discrete-math#digital-signature" | relative_url }})
 
-- Hybrid cryptography
+## Algoritma RSA {#algoritma-rsa}
 
-## Algoritma RSA
+- [Algoritma kunci-publik](#algoritma-kunci-publik) paling terkenal dan paling banyak aplikasinya
 
-- [Algoritma kunci-publik](https://docs.google.com/document/d/1IS3ZYiWKAOwm_tbL2iZwnQh6amLIpN1ZiSLYdkCY92o/edit?tab=t.2dxd14c185hr#heading=h.jseieyi8vtim) paling terkenal dan paling banyak aplikasinya
+- Berdasarkan kepada [teorema Euler]({{  "/discrete-math#teorema-euler-modulo" | relative_url }})
 
-- Berdasarkan kepada [teorema Euler](https://docs.google.com/document/d/1IS3ZYiWKAOwm_tbL2iZwnQh6amLIpN1ZiSLYdkCY92o/edit?tab=t.hc97psoycyvj#heading=h.ju5sh58cur38)
+- Algoritma ini menggunakan dua buah bilangan prima, ***p*** dan ***q*** (sebaiknya *p* ≠ *q*)
 
-- Algoritma ini menggunakan dua buah bilangan prima, p dan q (sebaiknya p ≠ q)
+- Kunci publik: ***e***, kunci privat: ***d***
 
-- Kunci publik: e, kunci privat: d
+### Pembangkitan Kunci {#pembangkitan-kunci-algoritma-rsa}
 
-### Pembangkitan Kunci
+1. Tentukan bilangan prima ***p*** dan ***q*** (sebaiknya p ≠ q)
 
-1. Tentukan bilangan prima p dan q (sebaiknya p ≠ q)
+2. Hitung nilai **$n = pq$**
 
-2. Hitung nilai n = pq
+3. Hitung $\phi(n) = (p - 1)(q - 1)$
 
-3. Hitung ϕ(n) = (p - 1)(q - 1)
+4. Pilih sebuah bilangan ***e*** sebagai kunci publik, dan *e* harus [relatif prima]({{ "/discrete-math#relatif-prima" | relative_url }}) terhadap $\phi(n)$
 
-4. Pilih sebuah bilangan e sebagai kunci publik, dan e harus [relatif prima](https://docs.google.com/document/d/1IS3ZYiWKAOwm_tbL2iZwnQh6amLIpN1ZiSLYdkCY92o/edit?tab=t.hc97psoycyvj#heading=h.mhr4cbmh1a2shttps://docs.google.com/document/d/1IS3ZYiWKAOwm_tbL2iZwnQh6amLIpN1ZiSLYdkCY92o/edit?tab=t.hc97psoycyvj#heading=h.mhr4cbmh1a2s) terhadap ϕ(n)
+5. Hitung kunci dekripsi (privat) *d* dengan persamaan:
 
-5. Hitung kunci dekripsi (privat) d dengan persamaan:
+$$ed \equiv 1 \pmod{\phi(n)}$$
 
-ed ≅ 1 (mod ϕ(n)) → d ≅ e-1 (mod ϕ(n))
+$$d \equiv e^{-1} \pmod{\phi(n)}$$
 
 - Hasil dari pembangkitan kunci:
-
-- Kunci publik adalah pasangan (e, n)
-
-- Kunci privat adalah pasangan (d, n)
+	- **Kunci publik** adalah pasangan (***e**, **n***)
+	- **Kunci privat** adalah pasangan (***d**, **n***)
 
 - Komponen:
+	- *p* dan *q* adalah bilangan prima (*rahasia*)
+	- *n = pq* (tidak rahasia)
+	
+	- $\phi(n) = (p - 1)(q - 1)$ (*rahasia*)
+	
+	- *e* (kunci enkripsi, [PBB]({{ "/discrete-math#pbb" | relative_url }})(e, ϕ(n)) = 1) (antara e dan ϕ(n) relatif prima) (tidak rahasia)
+	
+	- *d* (kunci dekripsi), didapat dari $d \equiv e^{-1} \pmod{\phi(n)}$) (*rahasia*)
+	
+	- *m* (plainteks) (*rahasia*)
+	
+	- *c* (ciphertext) (*tidak rahasia*)
 
-- p dan q adalah bilangan prima (rahasia)
+### Enkripsi {#algoritma-rsa-enkripsi}
 
-- n = pq (tidak rahasia)
+- Jika pesan berukuran besar, nyatakan pesan menjadi blok-blok plainteks yang lebih kecil: $m_1, m_2, m_3, …$ dengan syarat ($0 \le m_i \lt n -1$)
 
-- ϕ(n) = (p - 1)(q - 1) (rahasia)
+- Hitung cipherteks $c_i$ untuk plainteks $m_i$ menggunakan kunci publik *e* dengan persamaan:
 
-- e (kunci enkripsi, [PBB](https://docs.google.com/document/d/1IS3ZYiWKAOwm_tbL2iZwnQh6amLIpN1ZiSLYdkCY92o/edit?tab=t.hc97psoycyvj#heading=h.fdvppp46evjb)(e, ϕ(n) = 1, antara e dan ϕ(n) relatif prima) (tidak rahasia)
+$$c_i = {m_{i}}^{e} \pmod{n}$$ 
+dengan *m* adalah plainteks, *c* adalah cipherteks, *e* adalah kunci publik, dan *n* adalah *pq*
 
-- d (kunci dekripsi), didapat dari d ≅ e-1 (mod ϕ(n)) (rahasia)
+### Dekripsi {#algoritma-rsa-dekripsi}
 
-- m (plainteks) (rahasia)
+- Misalkan cipherteks $c_1, c_2, c_3, …$
 
-- c (ciphertext) (tidak rahasia)
+- Plainteks 
+$$m_i = {c_i}^d \pmod n$$
+, di mana *m* adalah plainteks, *c* adalah cipherteks, *d* adalah kunci privat, dan *n* adalah *pq*
 
-### Enkripsi
-
-- Jika pesan berukuran besar, nyatakan pesan menjadi blok-blok plainteks yang lebih kecil: m1, m2, m3, … dengan syarat (0 ≤ mi < n -1)
-
-- Hitung cipherteks ci untuk plainteks mi menggunakan kunci publik e dengan persamaan:
-
-ci = mie mod n dengan m adalah plainteks, c adalah cipherteks, e adalah kunci publik, dan n adalah pq
-
-### Dekripsi
-
-- Misalkan cipherteks c1, c2, c3, …
-
-- Plainteks mi = cid mod n, di mana m adalah plainteks, c adalah cipherteks, d adalah kunci privat, dan n adalah pq
-
-### Keamanan
+### Keamanan {#algoritma-rsa-keamanan}
 
 - Terletak pada kesulitan memfaktorkan bilangan bulat n menjadi faktor-faktor prima p dan q
 
@@ -845,116 +845,121 @@ ci = mie mod n dengan m adalah plainteks, c adalah cipherteks, e adalah kunci pu
 
 - Usaha untuk mencari faktor bilangan 200 digit: membutuhkan waktu komputasi 4 miliar tahun
 
-### Kelemahan
+### Kelemahan {#algoritma-rsa-kelemahan}
 
-- RSA lebih lambat daripada algoritma kriptografi kunci simetri seperti [DES](https://docs.google.com/document/d/1IS3ZYiWKAOwm_tbL2iZwnQh6amLIpN1ZiSLYdkCY92o/edit?tab=t.2dxd14c185hr#heading=h.e7q9z7t1k5xf) dan [AES](https://docs.google.com/document/d/1IS3ZYiWKAOwm_tbL2iZwnQh6amLIpN1ZiSLYdkCY92o/edit?tab=t.2dxd14c185hr#heading=h.t04m42jm4irh)
+- RSA lebih lambat daripada algoritma kriptografi kunci simetri seperti [DES](#data-encryption-standard) dan [AES](#advanced-encryption-standard)
 
 - Dalam prakteknya, RSA tidak digunakan untuk mengenkripsi pesan berukuran besar, melainkan untuk mengenkripsi kunci simetri yang digunakan untuk mengenkripsi pesan
 
 - Kombinasi kunci simetri dan kunci asimetri: hybrid cryptography
 
-- Masalah lain: [man in the middle attack](https://docs.google.com/document/d/1IS3ZYiWKAOwm_tbL2iZwnQh6amLIpN1ZiSLYdkCY92o/edit?tab=t.0#heading=h.rwe7eh1fk3yt) untuk mendapatkan kunci publik seseorang, lalu berpura-pura mengirimkan pesan menggunakan public key tersebut
+- Masalah lain: [man in the middle attack]({{ "/cybersecurity#mitm" | relative_url}}) untuk mendapatkan kunci publik seseorang, lalu berpura-pura mengirimkan pesan menggunakan public key tersebut
 
-## Algoritma Elgamal
+## Algoritma Elgamal {#algoritma-elgamal}
 
-- Memakai persoalan [logaritma diskrit](https://docs.google.com/document/d/1IS3ZYiWKAOwm_tbL2iZwnQh6amLIpN1ZiSLYdkCY92o/edit?tab=t.hc97psoycyvj#heading=h.rdfcqg8nshu5) dan [akar primitif](https://docs.google.com/document/d/1IS3ZYiWKAOwm_tbL2iZwnQh6amLIpN1ZiSLYdkCY92o/edit?tab=t.hc97psoycyvj#heading=h.4dz127vyf14t)
+- Memakai persoalan [logaritma diskrit]({{ "discrete-math#logaritma-diskrit" | relative_url }}) dan [akar primitif]({{ "/discrete-math#akar-primitif" | relative_url }})
 
 - Properti algoritma Elgamal:
+	- Bilangan prima *p* (*tidak rahasia*)
 
-- Bilangan prima p (tidak rahasia)
+	- Bilangan acak *g* ($g \lt p$, *g* adalah [akar primitif]({{ "/discrete-math#akar-primitif" | relative_url }}) dari *p*) (tidak rahasia)
+	
+	- Bilangan acak *x* ($2 \le x \le p - 2$) (*rahasia*, **kunci privat**)
 
-- Bilangan acak g (g < p, g adalah akar primitif dari p) (tidak rahasia)
+	- $y = gx \pmod p$ (tidak rahasia, **kunci publik**)
 
-- Bilangan acak x (2 ≤ x ≤ p - 2) (rahasia, kunci privat)
+	- *m* (plainteks) (*rahasia*)
+	
+	- *a* dan *b* (ciphertext) (tidak rahasia)
 
-- y = gx mod p (tidak rahasia, kunci publik)
+### Pembangkitan Kunci {#algoritma-elgamal-pembangkitan-kunci}
 
-- m (plainteks) (rahasia)
+1. Pilih sembarang bilangan prima *p* (*p* bisa dikirim)
 
-- a dan b (ciphertext) (tidak rahasia)
+2. Pilih dua bilangan acak, *g* dan *x*, dengan syarat $g \lt p$, *g* [akar primitif]({{ "/discrete-math#akar-primitif" | relative_url}}) dari *p*, dan $2 \le x \le p - 2$
 
-### Pembangkitan Kunci
-
-1. Pilih sembarang bilangan prima p (p bisa dikirim)
-
-2. Pilih dua bilangan acak, g dan x, dengan syarat g < p, g [akar primitif](https://docs.google.com/document/d/1IS3ZYiWKAOwm_tbL2iZwnQh6amLIpN1ZiSLYdkCY92o/edit?tab=t.hc97psoycyvj#heading=h.4dz127vyf14t) dari p, dan 2 ≤ x ≤ p - 2
-
-3. Hitung y = gx mod p (kunci publik)
+3. Hitung $y = gx \pmod p$ (kunci publik)
 
 - Hasil dari pembangkitan kunci:
 
-- Kunci publik: tripel (y, g, p)
+	- **Kunci publik**: tripel (*y, g, p*)
+	
+	- **Kunci privat:** pasangan (*x, p*)
 
-- Kunci privat: pasangan (x, p)
+### Enkripsi {#algoritma-elgamal-enkripsi}
 
-### Enkripsi
+- Susun plaintext menjadi blok-blok $m_1, m_2, …,$ (nilai setiap blok harus berada di dalam selang \[0, *p* - 1\])
 
-- Susun plaintext menjadi blok-blok m1, m2, …, (nilai setiap blok harus berada di dalam selang [0, p - 1])
+- Pilih bilangan acak *k* ($1 \le k \le p - 1$)
 
-- Pilih bilangan acak k (1 ≤ k ≤ p - 1)
+- Setiap blok *m* dienkripsi dengan rumus
 
-- Setiap blok m dienkripsi dengan rumus
+	1. $a = g^k \pmod p$
+	
+	2. $b = y^km \pmod p$
 
-1. a = gk mod p
+- Pasangan *a* dan *b* adalah ciphertext hasil blok pesan *m*, jadi ukuran ciphertext 2 kali ukuran plaintext nya
 
-2. b = ykm mod p
+### Dekripsi {#algoritma-elgamal-dekripsi}
 
-- Pasangan a dan b adalah ciphertext hasil blok pesan m, jadi ukuran ciphertext 2 kali ukuran plaintext nya
+- Gunakan kunci privat *x* untuk menghitung $(a^x)^{-1} = a^{p-1-x} \pmod p$
 
-### Dekripsi
+- Hitung plainteks *m* dengan persamaan: $m = b(a^x)^{-1} \pmod p$
 
-- Gunakan kunci privat x untuk menghitung (ax)-1 = ap-1-x mod p
+![Bukti dekripsi Elgamal](https://i.imgur.com/yOJAbmF.png)
 
-- Hitung plainteks m dengan persamaan: m = b(ax)-1 mod p
+![Contoh Elgamal](https://i.imgur.com/q2tX36g.png)
 
-## Algoritma Kriptografi Knapsack
+## Algoritma Kriptografi Knapsack {#algoritma-knapsack}
 
-- Menggunakan persoalan [Knapsack problem](https://docs.google.com/document/d/1IS3ZYiWKAOwm_tbL2iZwnQh6amLIpN1ZiSLYdkCY92o/edit?tab=t.3bbgwzv4vylk#heading=h.u468rfp7hbq8)
+- Menggunakan persoalan [Knapsack problem]({{ "/algorithm-strategy#knapsack-problem" | relative_url }})
 
-- Setiap bobot wi adalah kunci rahasia, dan bit-bit plainteks menyatakan bi
+- Setiap bobot $w_i$ adalah kunci rahasia, dan bit-bit plainteks menyatakan $b_i$
 
-- Misalkan n = 6 dan w1 = 1, w2 = 5, w3 = 6, w4 = 11, w5 = 14, dan w6 = 20, plainteks = 111001010110000000011000. Plainteks dibagi menjadi blok yang panjangnya 6 (n), kemudian setiap bit di dalam blok dikalikan dengan wi
+- Misalkan *n* = 6 dan $w_1 = 1, w_2 = 5, w_3 = 6, w_4 = 11, w_5 = 14$, dan $w_6 = 20$, plainteks = $111001010110000000011000$. Plainteks dibagi menjadi blok yang panjangnya 6 (***n***), kemudian setiap bit di dalam blok **dikalikan dengan $w_i$**
+
+![Contoh enkripsi Knapsack dasar](https://i.imgur.com/Dy8nBAN.png)
 
 - Metode di atas cuman bisa buat enkripsi aja, ga bisa dekripsi
 
-### Superincreasing Knapsack
+### Superincreasing Knapsack {#superincreasing-knapsack}
 
-- Solusi supaya persoalan knapsack bisa diselesaikan jadi orde O(n) (polinomial), tapi efeknya bukan menjadi kriptografi yang kuat
+- Solusi supaya persoalan knapsack bisa diselesaikan jadi orde $O(n)$ (polinomial), tapi efeknya bukan menjadi kriptografi yang kuat
 
-- Barisan superincreasing: suatu barisan di mana setiap nilai di dalam barisan lebih besar daripada jumlah semua nilai sebelumnya
+- **Barisan superincreasing**: suatu barisan di mana setiap nilai di dalam barisan lebih besar daripada jumlah semua nilai sebelumnya
 
 - Contoh: {1, 3, 6, 13, 27, 52} → barisan superincreasing,  
     {1, 3, 4, 9, 15, 25} → bukan barisan superincreasing
 
-- Barisan superincreasing ada di bobot-bobotnya (array w), dan kita solve mencari array bit-nya (b)
+- Barisan superincreasing ada di bobot-bobotnya (array *w*), dan kita solve mencari array bit-nya (*b*)
 
 - Algoritma penyelesaian:
 
-1. Jumlahkan semua bobot di dalam barisan
+	1. Jumlahkan semua bobot di dalam barisan
+	
+	2. Bandingkan bobot total dengan bobot terbesar di dalam barisan. Jika bobot terbesar lebih kecil atau sama dengan bobot total, maka ia dimasukkan ke dalam knapsack, jika tidak, maka ia tidak dimasukkan (jadi lihat dari paling belakang)
+	
+	3. Kurangi bobot total dengan bobot yang telah dimasukkan, kemudian bandingkan bobot total sekarang dengan bobot terbesar selanjutnya. Demikian seterusnya sampai seluruh bobot di dalam barisan selesai dibandingkan
+	
+	4. Jika bobot total menjadi nol, maka terdapat solusi persoalan superincreasing knapsack , tetapi jika tidak nol, maka tidak ada solusinya
 
-2. Bandingkan bobot total dengan bobot terbesar di dalam barisan. Jika bobot terbesar lebih kecil atau sama dengan bobot total, maka ia dimasukkan ke dalam knapsack, jika tidak, maka ia tidak dimasukkan (jadi lihat dari paling belakang)
+- Contoh: Misalkan bobot-bobot yang membentuk barisan superincreasing adalah {2, 3, 6, 13, 27, 52}, dan diketahui bobot knapsack (*M*) = 70. Kita akan mencari $b_1, b_2, …, b_6$ sedemikian sehingga $70 = 2b_1 + 3b_2 + 6b_3 + 13b_4 + 27b_5 + 52b_6$
 
-3. Kurangi bobot total dengan bobot yang telah dimasukkan, kemudian bandingkan bobot total sekarang dengan bobot terbesar selanjutnya. Demikian seterusnya sampai seluruh bobot di dalam barisan selesai dibandingkan
+- Bandingkan 70 dengan bobot terbesar, yaitu 52. Karena 52 ≤ 70, maka 52 dimasukkan ke dalam knapsack ($b_6 = 1$)
 
-4. Jika bobot total menjadi nol, maka terdapat solusi persoalan superincreasing knapsack , tetapi jika tidak nol, maka tidak ada solusinya
+- Bobot total sekarang menjadi 70 – 52 = 18. Bandingkan 18 dengan bobot terbesar kedua, yaitu 27. Karena 27 > 18, maka 27 tidak dimasukkan ke dalam knapsack ($b_5 = 0$)
 
-- Contoh: Misalkan bobot-bobot yang membentuk barisan superincreasing adalah {2, 3, 6, 13, 27, 52}, dan diketahui bobot knapsack (M) = 70. Kita akan mencari b1, b2, …, b6 sedemikian sehingga 70 = 2b1 + 3b2 + 6b3 + 13b4 + 27b5 + 52b6
-
-- Bandingkan 70 dengan bobot terbesar, yaitu 52. Karena 52 ≤ 70, maka 52 dimasukkan ke dalam knapsack (b6 = 1)
-
-- Bobot total sekarang menjadi 70 – 52 = 18. Bandingkan 18 dengan bobot terbesar kedua, yaitu 27. Karena 27 > 18, maka 27 tidak dimasukkan ke dalam knapsack (b5 = 0)
-
-- Bandingkan 18 dengan bobot terbesar berikutnya, yaitu 13. Karena 13 ≤ 18, maka 13 dimasukkan ke dalam knapsack (b4 = 1)
+- Bandingkan 18 dengan bobot terbesar berikutnya, yaitu 13. Karena 13 ≤ 18, maka 13 dimasukkan ke dalam knapsack ($b_4 = 1$)
 
 - Bobot total sekarang menjadi 18 – 13 = 5
 
-- Bandingkan 5 dengan bobot terbesar kedua, yaitu 6. Karena 6 > 5, maka 6 tidak dimasukkan ke dalam knapsack (b3 = 0)
+- Bandingkan 5 dengan bobot terbesar kedua, yaitu 6. Karena 6 > 5, maka 6 tidak dimasukkan ke dalam knapsack ($b_3 = 0$)
 
-- Bandingkan 5 dengan bobot terbesar berikutnya, yaitu 3. Karena 3 ≤ 5, maka 3 dimasukkan ke dalam knapsack (b2 = 1)
+- Bandingkan 5 dengan bobot terbesar berikutnya, yaitu 3. Karena 3 ≤ 5, maka 3 dimasukkan ke dalam knapsack ($b_2 = 1$)
 
 - Bobot total sekarang menjadi 5 – 3 = 2
 
-- Bandingkan 2 dengan bobot terbesar berikutnya, yaitu 2. Karena 2 ≤ 2, maka 2 dimasukkan ke dalam knapsack (b1 = 0)
+- Bandingkan 2 dengan bobot terbesar berikutnya, yaitu 2. Karena 2 ≤ 2, maka 2 dimasukkan ke dalam knapsack ($b_1 = 0$)
 
 - Bobot total sekarang menjadi 2 – 2 = 0
 
@@ -962,7 +967,7 @@ ci = mie mod n dengan m adalah plainteks, c adalah cipherteks, e adalah kunci pu
 
 - Sehingga 70 = (1 x 2) + (1 x 3) + (0 x 6) + (1 x 13) + (0 x 27) + (1 x 52) Dengan kata lain, plainteks dari kriptogram 70 adalah 110101
 
-### Algoritma Knapsack Kunci Publik
+### Algoritma Knapsack Kunci Publik {#algoritma-knapsack-kunci-publik}
 
 - Algoritma superincreasing knapsack adalah algoritma yang lemah, karena cipherteks dapat didekripsi menjadi plainteksnya secara mudah dalam waktu linear
 
@@ -970,33 +975,37 @@ ci = mie mod n dengan m adalah plainteks, c adalah cipherteks, e adalah kunci pu
 
 - Namun, superincreasing knapsack dapat dimodifikasi menjadi non-superincreasing knapsack dengan menggunakan kunci publik (untuk enkripsi) dan kunci privat (untuk dekripsi)
 
-- Kunci publik merupakan barisan non-superincreasing, sedangkan kunci privat tetap merupakan barisan superincreasing
+- **Kunci publik** merupakan **barisan non-superincreasing**, sedangkan **kunci privat** tetap merupakan **barisan superincreasing**
 
-#### Pembangkitan Kunci
+#### Pembangkitan Kunci {#algoritma-knapsack-kunci-publik-pembangkitan-kunci}
 
 1. Tentukan barisan superincreasing
 
-2. Kalikan setiap elemen di dalam barisan tersebut dengan n (mod m) (Modulus m seharusnya angka yang lebih besar daripada jumlah semua elemen di dalam barisan, sedangkan pengali n seharusnya tidak mempunyai faktor persekutuan dengan m, atau PBB(n, m) = 1 atau n [relatif prima](https://docs.google.com/document/d/1IS3ZYiWKAOwm_tbL2iZwnQh6amLIpN1ZiSLYdkCY92o/edit?tab=t.hc97psoycyvj#heading=h.mhr4cbmh1a2s) terhadap m)
+2. Kalikan setiap elemen di dalam barisan tersebut dengan $n \pmod m$ (Modulus *m* seharusnya angka yang lebih besar daripada jumlah semua elemen di dalam barisan, sedangkan pengali *n* seharusnya tidak mempunyai faktor persekutuan dengan *m*, atau PBB(*n, m*) = 1 atau *n* [relatif prima]({{ "/discrete-math#relatif-prima" | relative_url }}) terhadap *m*)
 
 3. Hasil perkalian akan menjadi kunci publik sedangkan barisan superincreasing semula menjadi kunci privat
 
-#### Enkripsi
+![Contoh pembangkitan kunci algoritma knapsack kunci publik](https://i.imgur.com/OrPBvp2.png)
 
-- Enkripsi dilakukan dengan cara yang sama seperti [algoritma knapsack](https://docs.google.com/document/d/1IS3ZYiWKAOwm_tbL2iZwnQh6amLIpN1ZiSLYdkCY92o/edit?tab=t.2dxd14c185hr#heading=h.az7ptxc034en) sebelumnya.
+#### Enkripsi {#algoritma-knapsack-kunci-publik-enkripsi}
+
+- Enkripsi dilakukan dengan cara yang sama seperti [algoritma knapsack](#algoritma-knapsack) sebelumnya.
 
 - Mula-mula plainteks dipecah menjadi blok bit yang panjangnya sama dengan kardinalitas barisan kunci publik.
 
 - Kalikan setiap bit di dalam blok dengan elemen yang berkoresponden di dalam barisan kunci publik
 
-#### Dekripsi
+#### Dekripsi {#algoritma-knapsack-kunci-publik-dekripsi}
 
 - Memakai kunci privat
 
-- Awalnya penerima pesan menghitung n-1 (invers n mod m) supaya nn-1 ≌ 1 mod m
+- Awalnya penerima pesan menghitung $n^{-1}$ (invers $n \pmod m$) supaya $n \times n^{-1} \equiv 1 \pmod m$
 
-- Kalikan setiap kriptogram dengan n-1 lalu nyatakan hasil kalinya sebagai  penjumlahan elemen-elemen kunci privat untuk memperoleh plainteks dengan menggunakan algoritma pencarian solusi superincreasing knapsack
+- Kalikan setiap kriptogram dengan *n*-1 lalu nyatakan hasil kalinya sebagai penjumlahan elemen-elemen kunci privat untuk memperoleh plainteks dengan menggunakan algoritma pencarian solusi superincreasing knapsack
 
-#### Implementasi Knapsack Kriptografi
+![Contoh dekripsi algoritma Knapsack kunci publik](https://i.imgur.com/QngmAjI.png)
+
+#### Implementasi Knapsack Kriptografi {#algoritma-knapsack-kunci-publik-implementasi}
 
 - Ukuran cipherteks yang dihasilkan lebih besar daripada plainteksnya, karena enkripsi dapat menghasilkan kriptogram yang nilai desimalnya lebih besar daripada nilai desimal blok plainteks yang dienkripsikan.
 
@@ -1004,7 +1013,7 @@ ci = mie mod n dengan m adalah plainteks, c adalah cipherteks, e adalah kunci pu
 
 - Dengan nilai-nilai knapsack sepanjang itu, dibutuhkan 1046 tahun untuk menemukan kunci secara brute force, dengan asumsi satu juta percobaan setiap detik.
 
-# Algoritma Hybrid Cryptography
+# Algoritma Hybrid Cryptography {#algoritma-hybrid-cryptography}
 
 - Misalkan Alice dan Bob berkirim pesan. Mereka sepakat mengenkripsi dan mendekripsi pesan dengan algoritma kriptografi simetri (misalkan AES)
 
@@ -1012,99 +1021,108 @@ ci = mie mod n dengan m adalah plainteks, c adalah cipherteks, e adalah kunci pu
 
 - Solusinya adalah dengan menggunakan hybrid cryptography
 
-- Hybrid cryptography: menggabungkan kriptografi kunci-simetri (misalkan AES) dengan kriptografi kunci-publik (misalkan RSA)
+- **Hybrid cryptography**: menggabungkan kriptografi kunci-simetri (misalkan AES) dengan kriptografi kunci-publik (misalkan RSA)
 
-- Jadi yang dienkripsi pakai kunci publik-privat itu kunci simetrinya. Nanti si encrypted kunci simetri (CK) dikirim bersamaan dengan encrypted message nya (CM, CM dienkripsi pakai kunci simetri)
+- Jadi **yang dienkripsi pakai kunci publik-privat itu kunci simetrinya**. 
+- Nanti si **encrypted kunci simetri** (*CK*) dikirim bersamaan dengan encrypted **message nya** (*CM*, *CM* dienkripsi pakai kunci simetri)
 
-## Algoritma Umum
+## Algoritma Umum {#algoritma-dasar-hybrid-cryptography}
 
-1. Alice memiliki sepasang kunci privat (SKAlice) dan kunci publik (PKAlice) miliknya.
+1. Alice memiliki sepasang kunci privat ($SK_{Alice}$) dan kunci publik ($PK_{Alice}$) miliknya.
 
-2. Bob juga memiliki sepasang kunci privat (SKBob) dan kunci publik (PKBob) miliknya.
+2. Bob juga memiliki sepasang kunci privat ($SK_{Bob}$) dan kunci publik ($PK_{Bob}$) miliknya.
 
-3. Alice membangkitkan kunci rahasia (K) untuk enkripsi pesan dengan AES
+3. Alice membangkitkan kunci rahasia (*K*) untuk enkripsi pesan dengan AES
 
-4. Alice mengenkripsi K dengan RSA menggunakan kunci publik Bob (PKBob)
+4. Alice mengenkripsi *K* dengan [RSA](#algoritma-rsa) menggunakan kunci publik Bob ($PK_{Bob}$)
 
-E_RSAPKbob(K) = CK
+$$E_{RSA_{PK_{bob}}}(K) = CK$$
 
-5. Alice mengenkripsi pesan M dengan AES menggunakan K,
+5. Alice mengenkripsi pesan *M* dengan [AES](#advanced-encryption-system) menggunakan *K*,
 
-E_AESK(M) = CM
+$$E_{AES(K)}(M) = CM$$
 
-lalu mengirim CK dan CM kepada Bob
+lalu mengirim *CK* dan *CM* kepada Bob
 
-6. Bob mendekripsi CK dengan RSA menggunakan kunci privatnya (SKBob)
+6. Bob mendekripsi *CK* dengan *[RSA](#algoritma-rsa)* menggunakan kunci privatnya ($SK_{Bob}$)
 
-D_RSASKbob(CK) = K
+$$D_{RSA_{SK_{bob}}}(CK) = K$$
 
-7. Selanjutnya Bob mendekripsi pesan CM dengan AES menggunakan K
+7. Selanjutnya Bob mendekripsi pesan *CM* dengan *AES* menggunakan *K*
 
-D_AESK(CM) = M
+$$D_{AES(K)}(CM) = M$$
 
-## Algoritma Pertukaran Kunci Diffie-Hellman
+## Algoritma Pertukaran Kunci Diffie-Hellman {#algoritma-diffie-hellman}
 
 - Protokol untuk berbagi kunci simetri antara dua entitas
 
 - Keamanan algoritma DH didasarkan pada sulit menghitung logaritma diskrit dari sebuah bilangan bulat besar
 
-### Algoritma Pertukaran
+![Analogi Diffie Hellman](https://i.imgur.com/DklQpR6.png)
 
-- Pada awalnya Alice dan Bob menyepakati sebuah bilangan prima p dan bilangan bulat g di mana g < p dan g adalah [akar primitif](https://docs.google.com/document/d/1IS3ZYiWKAOwm_tbL2iZwnQh6amLIpN1ZiSLYdkCY92o/edit?tab=t.hc97psoycyvj#heading=h.4dz127vyf14t) dari p
+### Algoritma Pertukaran {#algoritma-pertukaran-diffie-hellman}
 
-- Nilai g dan p tidak perlu rahasia (warna kuning)
+- Pada awalnya Alice dan Bob menyepakati sebuah bilangan prima *p* dan bilangan bulat *g* di mana *g* < *p* dan *g* adalah [akar primitif]({{ "/discrete-math#akar-primitif" | relative_url }}) dari *p*
 
-1. Alice membangkitkan bilangan bulat acak a dan mengirim hasil perhitungan A = ga mod p, di mana a adalah kunci privat Alice dan A adalah kunci publik Alice
+- Nilai *g* dan *p* tidak perlu rahasia (warna kuning)
 
-2. Bob membangkitkan bilangan bulat acak b dan mengirim hasil perhitungan B = gb mod p, di mana b adalah kunci privat Bob dan B adalah kunci publik Bob
+	1. Alice membangkitkan bilangan bulat acak *a* dan mengirim hasil perhitungan 
+	   $$A = g^a \pmod p$$
+	   , di mana *a* adalah **kunci privat Alice** dan *A* adalah **kunci publik Alice**
+	
+	2. Bob membangkitkan bilangan bulat acak *b* dan mengirim hasil perhitungan 
+	   $$B = g^b \pmod p$$
+	   , di mana *b* adalah **kunci privat Bob** dan *B* adalah **kunci publik Bob**
+	
+	3. Alice menerima *B* kemudian menghitung 
+	   $$K = B^a \pmod p$$
+	   Hal ini sama dengan $K = g^{ab} \pmod p$
+	
+	4. Bob menerima *A* kemudian menghitung $K = A^b \pmod p$
 
-3. Alice menerima B kemudian menghitung K = Ba mod p. Hal ini sama dengan K = gab mod p
+- *K* ini adalah kunci simetri yang dihasilkan (bisa dipakai sebagai seed untuk pembangkitan kunci simetri dengan algoritma apapun)
 
-4. Bob menerima A kemudian menghitung K = Ab mod p
+### Algoritma Pertukaran Tiga Pihak {#algoritma-pertukaran-tiga-pihak-diffie-hellman}
 
-- K ini adalah kunci simetri yang dihasilkan (bisa dipakai sebagai seed untuk pembangkitan kunci simetri dengan algoritma apapun)
+1. Alice, Bob, dan Carol menyepakati *p* dan *g*
 
-### Algoritma Pertukaran Tiga Pihak
+2. Alice, Bob, dan Carol membangkitkan kunci privat masing-masing, *a, b,* dan *c*
 
-1. Alice, Bob, dan Carol menyepakati p dan g
+3. Alice menghitung $$g^a \pmod p$$ dan mengirimkannya kepada Bob
 
-2. Alice, Bob, dan Carol membangkitkan kunci privat masing-masing, a, b, dan c
+4. Bob menghitung $(g^a)^b \pmod p = g^{ab} \pmod p$ dan mengirimkannya kepada Carol
 
-3. Alice menghitung ga mod p dan mengirimkannya kepada Bob
+5. Carol menghitung $K = (g^{ab})^c \pmod p = g^{abc} \pmod p$
 
-4. Bob menghitung (ga)b mod p = gab mod p dan mengirimkannya kepada Carol
+6. Bob menghitung $g^b \pmod p$ dan mengirimkannya kepada Carol
 
-5. Carol menghitung K = (gab)c mod p = gabc mod p
+7. Carol menghitung $(g^b)^c \pmod p = g^{bc} \pmod p$ dan mengirimkannya kepada Alice
 
-6. Bob menghitung gb mod p dan mengirimkannya kepada Carol
+8. Alice menghitung $K = (g^{bc})^a \pmod p = g^{bca} \pmod p = g^{abc} \pmod p$
 
-7. Carol menghitung (gb)c mod p = gbc mod p dan mengirimkannya kepada Alice
+9. Carol menghitung $g^c \pmod p$ dan mengirimkannya kepada Alice.
 
-8. Alice menghitung K = (gbc)a mod p = gbca mod p = gabc mod p
+10. Alice menghitung $(g^c)^a \pmod p = g^{ca} \pmod p$ dan mengirimkannya kepada Bob
 
-9. Carol menghitung gc mod p dan mengirimkannya kepada Alice.
+11. Bob menghitung $K = (g^{ca})^b \pmod p = g^{cab} \pmod p = g^{abc} mod p$
 
-10. Alice menghitung (gc)a mod p = gca mod p dan mengirimkannya kepada Bob
+12. Sekarang Alice, Bob, dan Carol sudah memiliki kunci rahasia yang sama, yaitu *K*
 
-11. Bob menghitung K = (gca)b mod p = gcab mod p = gabc mod p
+# Message Digest {#message-digest}
 
-12. Sekarang Alice, Bob, dan Carol sudah memiliki kunci rahasia yang sama, yaitu K
+- **Digital fingerprint** dari suatu message
 
-# Message Digest
+- Di-generate oleh **fungsi hash**
 
-- Digital fingerprint dari suatu message
+- Nilai dari message yang sudah di-hash **tidak bisa dikembalikan ke nilai aslinya**
 
-- Di-generate oleh fungsi hash
-
-- Nilai dari message yang sudah di-hash tidak bisa dikembalikan ke nilai aslinya
-
-- Berfungsi sebagai penjaga integritas untuk memastikan message tidak berubah dari nilai aslinya.
+- Berfungsi sebagai **penjaga integritas** untuk memastikan message tidak berubah dari nilai aslinya.
 
 - Kalau message yang dikirim dihitung kembali hash-nya dan berbeda dengan hash aslinya, maka ketahuan kalau message nya diubah
 
-- Disebut juga sebagai message signature
+- Disebut juga sebagai **message signature**
 
-- Fungsi hash H() bersifat many to one, artinya beberapa value bisa di-hash jadi satu value yang sama
+- Fungsi hash H() bersifat ***many to one***, artinya beberapa value bisa di-hash jadi satu value yang sama
 
 ## Digital Signature {#digital-signature}
 
@@ -1113,10 +1131,12 @@ D_AESK(CM) = M
 - Proses enkripsi:  
     Menghitung hash dari pesan, kemudian si hash nya ini dienkripsi pakai public key
 
+![Digital signature encryption](https://i.imgur.com/HWflOwH.png)
+
 - Proses dekripsi:  
     Ambil encrypted hash, dekripsi pakai kunci privat, lalu hitung hash dari message yang diterima, bandingkan dengan decrypted hash yang dikirim. Kalau sama, berarti message masih bagus
 
--
+![Digital signature decryption](https://i.imgur.com/9YnhvE3.png)
 
 # LAMPIRAN: Most Frequent N-Gram {#most-frequent-n-gram}
 

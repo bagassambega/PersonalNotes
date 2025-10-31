@@ -72,7 +72,7 @@ Last/Top/Third Layer:
 
 Position:
 
-Lihat [layer](https://docs.google.com/document/d/1IS3ZYiWKAOwm_tbL2iZwnQh6amLIpN1ZiSLYdkCY92o/edit?tab=t.uvg9o3nj9rse#heading=h.v55cqo53lbui). Center kuning third layer, center putih first layer
+Lihat [layer](#layer). Center kuning third layer, center putih first layer
 
 Algoritma Utama:
 
