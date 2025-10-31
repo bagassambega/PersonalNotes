@@ -53,6 +53,15 @@ A distributed ledger designed for the Internet of Things (IoT), using the Tangle
 ---
 
 
+# K
+
+---
+
+## Keystream
+
+Bit-bit aliran kunci untuk enkripsi/dekripsi
+
+
 # L
 
 ---

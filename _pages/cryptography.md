@@ -588,17 +588,19 @@ $$C_2 \equiv mP_2 + b \pmod n$$
 
 - Kriptografi setelah menemukan komputer digital
 
-- Representasi data dan informasi dalam bentuk [biner](https://docs.google.com/document/d/1IS3ZYiWKAOwm_tbL2iZwnQh6amLIpN1ZiSLYdkCY92o/edit?tab=t.jpr3u1wrmv9s#heading=h.c6c7bk15vt3i)
+- Representasi data dan informasi dalam bentuk [biner]({{ "/computer-architecture#biner" | relative_url }})
 
-- Menggunakan operasi [bitwise](https://docs.google.com/document/d/1IS3ZYiWKAOwm_tbL2iZwnQh6amLIpN1ZiSLYdkCY92o/edit?tab=t.jpr3u1wrmv9s#heading=h.totf3uqow7h) (kunci, plaintext, ciphertext diproses dalam rangkaian bit, dan operasi yang biasa digunakan adalah XOR)
+- Menggunakan operasi [bitwise]({{ "/computer-architecture#aritmatika-bitwise" | relative_url }}) (kunci, plaintext, ciphertext diproses dalam rangkaian bit, dan operasi yang biasa digunakan adalah XOR)
 
 ![Algoritma kriptografi modern](https://i.imgur.com/4xl2Yel.png)
 
-- Teknik dasar yang digunakan tetap sama: teknik [substitusi](https://docs.google.com/document/d/1IS3ZYiWKAOwm_tbL2iZwnQh6amLIpN1ZiSLYdkCY92o/edit?tab=t.2dxd14c185hr#heading=h.j5sznqfcf6uw) dan teknik [transposisi](https://docs.google.com/document/d/1IS3ZYiWKAOwm_tbL2iZwnQh6amLIpN1ZiSLYdkCY92o/edit?tab=t.2dxd14c185hr#heading=h.oxatpjuoieao)
+- Teknik dasar yang digunakan tetap sama: teknik [substitusi](#cipher-substitusi) dan teknik [transposisi](#cipher-transposisi)
 
 - Teknik lain yang digunakan: rotasi, kompresi, ekspansi, penjumlahan modulo, dll
 
 - Contoh cipher sederhana memakai XOR untuk operasi bitwise:
+
+![Operasi XOR cipher](https://i.imgur.com/zZCuld3.png)
 
 - Cipher bitwise dibagi 2:
 
@@ -610,33 +612,30 @@ $$C_2 \equiv mP_2 + b \pmod n$$
 	- Operasinya dilakukan per sekumpulan bit (blok-blok bit)
 	- Enkripsi/dekripsi pesan dilakukan secara blok per blok bit (misal setiap 128-bit)
 
-## Stream Cipher
+## Stream Cipher {#stream-cipher}
 
 - Enkripsi plaintext menjadi ciphertext setiap bit per bit atau byte per byte
 
-- Keystream: bit-bit aliran kunci untuk enkripsi/dekripsi
+- <term href="/PersonalNotes/glossary#keystream">Keystream</term>: bit-bit aliran kunci untuk enkripsi/dekripsi
 
-- Keystream dibangkitkan oleh keystream generator berdasarkan umpan (seed) U
+- Keystream dibangkitkan oleh **keystream generator** berdasarkan umpan (**seed**) *U*
 
 - Umpan yang sama akan menghasilkan keystream yang sama baik di pengirim maupun penerima
 
-- Enkripsi: ci  = pi ⊕ ki
+- **Enkripsi**: $c_i  = p_i \oplus k_i$
 
-- Dekripsi: pi = ci ⊕ ki
+- **Dekripsi**: $p_i = c_i \oplus k_i$
 
-- Ada 3 kasus keystream yang dihasilkan:
-
-1. Jika keystream yang dihasilkan = 00000…, maka ciphertext yang dihasilkan akan sama dengan plaintext
-
-2. Jika keystream yang dihasilkan berulang secara periodik (mis. 11000110…), maka keamanannya rendah dan bisa ditebak polanya pakai [Kasiski method](https://docs.google.com/document/d/1IS3ZYiWKAOwm_tbL2iZwnQh6amLIpN1ZiSLYdkCY92o/edit?tab=t.2dxd14c185hr#heading=h.eyzfqlpnlywp)
-
-3. Jika keystream pure random, maka algoritmanya [one time pad](https://docs.google.com/document/d/1IS3ZYiWKAOwm_tbL2iZwnQh6amLIpN1ZiSLYdkCY92o/edit?tab=t.2dxd14c185hr#heading=h.ooczhm571v2n) dan tingkat keamanan sempurna
+- Ada 3 kasus keystream yang dih
+	1. Jika keystream yang dihasilkan = 00000…, maka ciphertext yang dihasilkan akan sama dengan plaintext
+	2. Jika keystream yang dihasilkan berulang secara periodik (mis. 11000110…), maka keamanannya rendah dan bisa ditebak polanya pakai [Kasiski method](#vigenere-cipher-kasiski-method)
+	3. Jika keystream pure random, maka algoritmanya [one time pad](#one-time-pad) dan tingkat keamanan sempurna
 
 - Tingkat keamanan stream cipher didapatkan dari cipher XOR sederhana yang dihasilkan antara kasus 2 (keystream berulang) dan kasus 3 (keystream pure random)
 
 - Stream cipher cocok untuk enkripsi aliran data yang terus menerus, misalnya saluran komunikasi saat telepon, streaming, dll
 
-### Keystream Generator
+### Keystream Generator {#keystream-generator}
 
 - Keystream generator dapat membangkitkan keystream bit per bit byte per byte, atau blok-blok bit
 
@@ -646,25 +645,27 @@ $$C_2 \equiv mP_2 + b \pmod n$$
 
 - Di bawah ini algoritma-algoritmanya
 
-### Feedback Shift Register
+### Feedback Shift Register {#feedback-shift-register}
 
 - Biasa diimplementasikan di level hardware
 
-- Terdiri dari dua bagian: register geser (n bit) dan fungsi umpan balik
+- Terdiri dari dua bagian: **register geser** (n bit) dan **fungsi umpan balik**
 
-- Awalnya diinisiasi oleh bit-bit bn, bn-1, …, b2, b1. Lalu untuk setiap ki, bentuk nilai bn yang baru dari fungsi umpan balik sehingga bn’ = f(bn, bn-1, … b2, b1)
+![FSR](https://i.imgur.com/esvHF8q.png)
 
-- Bit luaran (yang akan jadi ki) akan berasal dari b1, dan b2 digeser ke b1, bn digeser ke bn-1, dst. Nilai bn yang kini kosong akan diisi oleh bn’
+- Awalnya diinisiasi oleh bit-bit $b_n, b_{n-1}, …, b_2, b_1$. Lalu untuk setiap $k_i$, bentuk nilai $b_n$ yang baru dari fungsi umpan balik sehingga $b_{n}’ = f(b_n, b_{n-1}, … b_2, b_1)$
 
-#### Linear Feedback Shift Register
+- Bit luaran (yang akan jadi ki) akan berasal dari $b_1$, dan $b_2$ digeser ke $b_1$, bn digeser ke $b_{n-1}$, dst. Nilai $b_n$ yang kini kosong akan diisi oleh $b_n’$
+
+#### Linear Feedback Shift Register {#linear-feedback-shift-register}
 
 - Bit-bit di dalam register digeser satu bit ke kanan setiap kali pembangkitan bit luaran (= bit kunci alir atau keystream)
 
-- Fungsi umpan balik: bn’ = f(bn, bn-1, … b2, b1) = bn ⊕ bn-1 ⊕ … ⊕ b2 ⊕ b1
+- Fungsi umpan balik: $b_n’ = f(b_n, b_{n-1}, … b_2, b_1) = b_n \oplus b_{n-1} \oplus … \oplus b_2 \oplus b_1$
 
-- Terjadi perulangan pola bit luaran setiap 2n - 1 bit
+- Terjadi perulangan pola bit luaran setiap $2^{n} - 1$ bit
 
-### RC4
+### RC4 {#rc4}
 
 - Ron code/rivest cipher, cipher stream paling populer
 
