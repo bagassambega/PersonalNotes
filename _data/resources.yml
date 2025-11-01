@@ -4,16 +4,6 @@
   url: "/algorithm-strategy/"
   icon: "algorithm"
 
-- title: "Discrete Mathematics"
-  description: "Essential mathematical concepts for computer science including number theory and graph theory"
-  url: "/discrete-math/"
-  icon: "math"
-
-- title: "Development & Operations"
-  description: "Modern software development practices including DevOps, MLOps, and DataOps"
-  url: "/devops/"
-  icon: "devops"
-
 - title: "Blockchain & DLT"
   description: "Notes on blockchain and distributed ledger technologies."
   url: "/blockchain-dlt/"
@@ -38,6 +28,16 @@
   description: "Cybersecurity best practices and concepts."
   url: "/cybersecurity/"
   icon: "security"
+
+- title: "Development & Operations"
+  url: "/devops/"
+  icon: "devops"
+  description: "Modern software development practices including DevOps, MLOps, and DataOps"
+
+- title: "Discrete Mathematics"
+  description: "Essential mathematical concepts for computer science including number theory and graph theory"
+  url: "/discrete-math/"
+  icon: "math"
 
 - title: "Distributed App & System Architecture"
   description: "Distributed application and system architecture notes."

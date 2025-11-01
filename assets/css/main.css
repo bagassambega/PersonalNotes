@@ -192,8 +192,17 @@
   }
 
   /* TOC Sidebar scrollbar */
-  #toc-sidebar {
+  #toc-sidebar,
+  #mobile-toc-sidebar {
     @apply custom-scrollbar;
+  }
+
+  /* TOC Navigation scrollable area */
+  #toc-nav,
+  #mobile-toc-nav {
+    @apply custom-scrollbar;
+    overflow-y: auto;
+    overflow-x: hidden;
   }
 
   /* Custom scrollbar */
@@ -211,6 +220,16 @@
 
   .custom-scrollbar::-webkit-scrollbar-thumb:hover {
     @apply bg-gray-400 dark:bg-gray-500;
+  }
+
+  /* Firefox scrollbar styling */
+  .custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(209, 213, 219) rgb(243, 244, 246);
+  }
+
+  .dark .custom-scrollbar {
+    scrollbar-color: rgb(75, 85, 99) rgb(31, 41, 55);
   }
 
   /* Button styles */
