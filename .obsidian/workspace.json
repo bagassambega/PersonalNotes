@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_pages/algorithm-strategy.md",
+                "file": "_pages/glossary.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "algorithm-strategy"
+              "title": "glossary"
             }
           },
           {
@@ -271,6 +271,7 @@
   },
   "active": "0905780f4d570e2c",
   "lastOpenFiles": [
+    "_pages/algorithm-strategy.md",
     "_pages/rubic.md",
     "_pages/resources.md",
     "_pages/parallel-distributed-system.md",
@@ -286,7 +287,6 @@
     "_pages/cryptography.md",
     "_pages/computer-network.md",
     "_pages/blockchain-dlt.md",
-    "_pages/algorithm-strategy.md",
     "_pages/computer-architecture.md",
     "Pasted image 20251031200303.png",
     "().md",

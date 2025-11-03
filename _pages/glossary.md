@@ -20,6 +20,10 @@ github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/
 
 A distributed ledger technology for recording transactions across multiple computers in a way that ensures security, transparency, and immutability.
 
+## Bounce Rate {#bounce-rate}
+
+Persentase visitor mengunjungi sebuah web/aplikasi kemudian langsung leave tanpa melakukan klik/interaksi di dalam web/aplikasi tersebut
+
 # C
 
 ---
@@ -32,6 +36,14 @@ Plainteks (teks asli) yang sudah dienkripsi dan diamankan
 
 A patient's authorization for sharing medical data with healthcare providers or third parties.
 
+## CVE
+
+Common Vulnerability and Exposure. Daftar vulnerability yang ditemukan di sistem-sistem, lingkungan/bahasa pengembangan, dikelola oleh pemerintah US
+
+## CVSS
+
+Common Vulnerability Scoring System. Scoring system dari 0-10 (0 paling aman, 10 paling tidak aman). Detail: [CVSS](https://www.first.org/cvss/v4-0/specification-document)
+
 # F
 
 ---
@@ -39,6 +51,12 @@ A patient's authorization for sharing medical data with healthcare providers or 
 ## Finality {#finality}
 
 Keadaan ketika suatu blok dianggap tidak dapat dibatalkan atau digantikan oleh cabang lain. Setelah blok mencapai finality, seluruh transaksi di dalamnya dianggap permanen dan tidak bisa di-reorganize.
+
+# G
+
+---
+
+
 
 # I
 
