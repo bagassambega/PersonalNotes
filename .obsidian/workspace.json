@@ -105,7 +105,8 @@
               "title": "discrete-math"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -268,8 +269,9 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "d6bbcb76f30b9977",
+  "active": "0905780f4d570e2c",
   "lastOpenFiles": [
+    "_pages/rubic.md",
     "_pages/resources.md",
     "_pages/parallel-distributed-system.md",
     "_pages/operating-system.md",
@@ -314,7 +316,6 @@
     "parallel-distributed.md",
     "README.md",
     "Block.md",
-    "node_modules/mathjax/README.md",
     "assets/favicon_io/android-chrome-512x512.png",
     "Untitled.canvas"
   ]
