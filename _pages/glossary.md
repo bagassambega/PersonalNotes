@@ -56,7 +56,13 @@ Keadaan ketika suatu blok dianggap tidak dapat dibatalkan atau digantikan oleh c
 
 ---
 
+# H
 
+---
+
+## Hard Delete
+
+Menghapus entry/pointer item sekaligus objek aslinya juga. Kebalikan:  [soft delete](#soft-delete")
 
 # I
 
@@ -97,5 +103,14 @@ Antonim: [MSB](#msb)
 
 **Most significant bit**. Bagian dari bit yang nilainya paling besar (signifikan) dan perubahannya membuat value berubah drastis. Contoh: $255 \;(1111 \;1111) \rightarrow 127 \;(0111 \;1111)$, digit paling kiri adalah MSB.
 Antonim: [LSB](#lsb)
+
+# S
+
+---
+
+## Soft Delete
+
+Menghapus entry/pointer item tapi tidak menghapus objek sebenarnya. Kebalikan: [hard-delete](#hard-delete)
+
 
 </div>
