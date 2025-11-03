@@ -152,6 +152,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "bases:Create new base": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
@@ -166,5 +167,22 @@
     }
   },
   "active": "3190cf5d069d8483",
-  "lastOpenFiles": []
+  "lastOpenFiles": [
+    "/assets/css/main.css",
+    "/assets/css",
+    "/assets",
+    "/_pages/rubic.md",
+    "/_pages/linear-geometry-algebra.md",
+    "/_pages/glossary.md",
+    "/_pages/discrete-math.md",
+    "/_pages/cybersecurity.md",
+    "/_pages/cryptography.md",
+    "/_pages/computer-architecture.md",
+    "/_pages/algorithm-strategy.md",
+    "/_pages",
+    "/_layouts/page-with-toc.html",
+    "/_layouts",
+    "/_data/resources.yml",
+    "/_data"
+  ]
 }
