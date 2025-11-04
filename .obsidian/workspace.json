@@ -106,7 +106,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -269,8 +269,9 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "0905780f4d570e2c",
+  "active": "95c247f2dc80f877",
   "lastOpenFiles": [
+    "_pages/glossary.md",
     "_pages/algorithm-strategy.md",
     "_pages/rubic.md",
     "_pages/resources.md",
@@ -278,7 +279,6 @@
     "_pages/operating-system.md",
     "_pages/native-dev.md",
     "_pages/linear-geometry-algebra.md",
-    "_pages/glossary.md",
     "_pages/dsa.md",
     "_pages/distributed-app-system-architecture.md",
     "_pages/discrete-math.md",

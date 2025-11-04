@@ -550,6 +550,15 @@ function withdraw(uint amount) public {
 - Dengan menulis kode yang mendefinisikan: total supply, saldo setiap akun, aturan transfer, dan event transaksi, kontrak dapat membuat token yang sifatnya fungible (setiap unit bernilai sama seperti pada standar ERC-20 (Ethereum) atau IRC-20 (IOTA Smart Contract Protocol).
 - Contoh:
 
+# Implementasi Blockchain
+## Kriteria Pemilihan Platform
+
+1. Technological innovation
+	Memilih teknologi dengan inovasi baru. Memperhatikan daya tahan dari si sistem. Kalau sistemnya ga tahan lama atau ga di-maintenance, maka akan sulit dikelola atau tidak stabil. Atau misalkan tidak banyak orang yang mengembangkan si sistem dasarnya, maka akan sulit mengembangkan sistem menggunakan basis teknologi tersebut.
+	
+2. User adoption
+	Lihat seberapa banyak sistem atau orang yang menggunakan teknologi tersebut. Misalnya
+
 # Bitcoin {#bitcoin}
 
 - Memakai [proof-of-work consensus](#proof-of-work)
