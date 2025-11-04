@@ -557,7 +557,7 @@ function withdraw(uint amount) public {
 	Memilih teknologi dengan inovasi baru. Memperhatikan daya tahan dari si sistem. Kalau sistemnya ga tahan lama atau ga di-maintenance, maka akan sulit dikelola atau tidak stabil. Atau misalkan tidak banyak orang yang mengembangkan si sistem dasarnya, maka akan sulit mengembangkan sistem menggunakan basis teknologi tersebut.
 	
 2. User adoption
-	Lihat seberapa banyak sistem atau orang yang menggunakan teknologi tersebut. Misalnya
+	Lihat seberapa banyak sistem atau orang yang menggunakan teknologi tersebut. 
 
 # Bitcoin {#bitcoin}
 
@@ -568,6 +568,8 @@ function withdraw(uint amount) public {
 
 - Implementasi atau ekstensi terhadap konsensus [Proof of Stake](#proof-of-stake), untuk me-enhance keamanan
 - Menggunakan Solidity
+- Account based model (externally owned account (milik user) dan contract account (nyimpen account)). 
+- Dijalankan oleh EVM (compiler)
 
 ## Meta Consensus (Protokol)
 
