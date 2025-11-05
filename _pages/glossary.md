@@ -44,6 +44,10 @@ Common Vulnerability and Exposure. Daftar vulnerability yang ditemukan di sistem
 
 Common Vulnerability Scoring System. Scoring system dari 0-10 (0 paling aman, 10 paling tidak aman). Detail: [CVSS](https://www.first.org/cvss/v4-0/specification-document)
 
+## Closed Review (Journal) {#closed-review-journal}
+
+Proses review hanya bisa dilakukan oleh authorized/verified reviewer. Kebalikan: [open review](#open-review-journal)
+
 # F
 
 ---
@@ -103,6 +107,15 @@ Antonim: [MSB](#msb)
 
 **Most significant bit**. Bagian dari bit yang nilainya paling besar (signifikan) dan perubahannya membuat value berubah drastis. Contoh: $255 \;(1111 \;1111) \rightarrow 127 \;(0111 \;1111)$, digit paling kiri adalah MSB.
 Antonim: [LSB](#lsb)
+
+
+# O
+
+---
+
+## Open Review (Journal) {#open-review-journal}
+
+Siapapun bisa melakukan review jurnal, meskipun tidak verified/authorized. Kekurangan: bisa saja ada review palsu/asal-asalan/salah. Kebalikan: [closed review](#closed-review-journal)
 
 # S
 

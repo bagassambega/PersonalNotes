@@ -106,7 +106,7 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -269,8 +269,9 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "95c247f2dc80f877",
+  "active": "0905780f4d570e2c",
   "lastOpenFiles": [
+    "_pages/blockchain-dlt.md",
     "_pages/glossary.md",
     "_pages/algorithm-strategy.md",
     "_pages/rubic.md",
@@ -286,7 +287,6 @@
     "_pages/cybersecurity.md",
     "_pages/cryptography.md",
     "_pages/computer-network.md",
-    "_pages/blockchain-dlt.md",
     "_pages/computer-architecture.md",
     "Pasted image 20251031200303.png",
     "().md",
