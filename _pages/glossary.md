@@ -129,8 +129,17 @@ Operasi dan data dilakukan di luar jaringan blockchain. Jadi terkoneksi dengan b
 
 ---
 
+## Permissioned Blockchain
+
+Blockchain dengan akses terbatas, dengan adanya pengaturan role dan pembatasan akses untuk role tertentu
+
 ## Private Blockchain
 
+Hanya orang-orang tertentu saja/yang diundang yang bisa akses. Kebalikan: [public blockchain](#public-blockchain)
+
+## Public Blockchain
+
+Seluruh orang bisa berpartisipasi dalam blockchain. Kebalikan: [private blockchain](#private-blockchain)
 
 # S
 
