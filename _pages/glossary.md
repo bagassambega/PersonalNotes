@@ -32,7 +32,7 @@ Persentase visitor mengunjungi sebuah web/aplikasi kemudian langsung leave tanpa
 
 Plainteks (teks asli) yang sudah dienkripsi dan diamankan
 
-## Consent {#consent}
+## Consent (Medical Record) {#consent-medical-record}
 
 A patient's authorization for sharing medical data with healthcare providers or third parties.
 
@@ -116,6 +116,21 @@ Antonim: [LSB](#lsb)
 ## Open Review (Journal) {#open-review-journal}
 
 Siapapun bisa melakukan review jurnal, meskipun tidak verified/authorized. Kekurangan: bisa saja ada review palsu/asal-asalan/salah. Kebalikan: [closed review](#closed-review-journal)
+
+## On-Chain (Blockchain) {#on-chain-blockchain}
+
+Operasi dan data dilakukan/disimpan di dalam jaringan blockchain. Data bisa diakses oleh semua peserta jaringan, dan data bersifat *immutable* (lihat [blockchain]({{ "/blockchain/" | relative_url }}))
+
+## Off-Chain (Blockchain {#off-chain-blockchain)
+
+Operasi dan data dilakukan di luar jaringan blockchain. Jadi terkoneksi dengan blockchain, tapi eksekusi dan penyimpanan datanya tidak di jaringan blockchain (lihat [blockchain]({{ "/blockchain/" | relative_url }}))
+
+# P
+
+---
+
+## Private Blockchain
+
 
 # S
 
