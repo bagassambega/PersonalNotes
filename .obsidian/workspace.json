@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_pages/computer-architecture.md",
+                "file": "_pages/rubic.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "computer-architecture"
+              "title": "rubic"
             }
           },
           {
@@ -105,7 +105,8 @@
               "title": "discrete-math"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -268,25 +269,25 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "d6bbcb76f30b9977",
+  "active": "e59ce6e98a9d2207",
   "lastOpenFiles": [
-    "_pages/rubic.md",
-    "_pages/glossary.md",
+    "_pages/linear-geometry-algebra.md",
     "_pages/cryptography.md",
+    "_pages/rubic.md",
+    "_pages/computer-architecture.md",
+    "_pages/glossary.md",
     "_pages/blockchain-dlt.md",
     "_pages/algorithm-strategy.md",
     "_pages/resources.md",
     "_pages/parallel-distributed-system.md",
     "_pages/operating-system.md",
     "_pages/native-dev.md",
-    "_pages/linear-geometry-algebra.md",
     "_pages/dsa.md",
     "_pages/distributed-app-system-architecture.md",
     "_pages/discrete-math.md",
     "_pages/devops.md",
     "_pages/cybersecurity.md",
     "_pages/computer-network.md",
-    "_pages/computer-architecture.md",
     "Pasted image 20251031200303.png",
     "().md",
     "Pasted image 20251031134253.png",

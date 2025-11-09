@@ -5,6 +5,7 @@ description: Linear algebra + geometry algebra
 permalink: /linear-geometry-algebra/
 github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/linear-geometry-algebra.md
 ---
+
 # Matriks
 
 ## Perkenalan dan Operasi

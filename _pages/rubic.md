@@ -6,6 +6,7 @@ permalink: /rubik/
 github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/rubic.md
 ---
 
+
 # Istilah Rubik
 
 - Terdiri dari 6 sisi, berbentuk kubus
@@ -136,132 +137,142 @@ Algoritma Utama:
 
 - Dot
 
-|     |     |     |
-| --- | --- | --- |
-|     |     |     |
-|     |     |     |
-|     |     |     |
+<table>
+<tr><td></td><td></td><td></td></tr>
+<tr><td></td><td style="background-color:yellow;"></td><td></td></tr>
+<tr><td></td><td></td><td></td></tr>
+</table>
 
 - Horizontal (kalau vertikal, tinggal rotate jadi horizontal dulu)
 
-|     |     |     |
-| --- | --- | --- |
-|     |     |     |
-|     |     |     |
-|     |     |     |
+<table>
+<tr><td></td><td></td><td></td></tr>
+<tr><td style="background-color:yellow;"></td><td style="background-color:yellow;"></td><td style="background-color:yellow;"></td></tr>
+<tr><td></td><td></td><td></td></tr>
+</table>
 
 - L (posisi kaya di gambar, L ada di kiri atas)
 
-|     |     |     |
-| --- | --- | --- |
-|     |     |     |
-|     |     |     |
-|     |     |     |
+<table>
+<tr><td></td><td style="background-color:yellow;"></td><td></td></tr>
+<tr><td style="background-color:yellow;"></td><td style="background-color:yellow;"></td><td></td></tr>
+<tr><td></td><td></td><td></td></tr>
+</table>
 
-Catatan: warna abu berarti boleh aja warna lain apapun bebas, kuning juga bisa. Yang penting posisi dan arah pola sesuai dengan di gambar
+**Catatan**: warna abu berarti boleh aja warna lain apapun bebas, kuning juga bisa. Yang penting posisi dan arah pola sesuai dengan di gambar
 
-16. Lakukan: F R U R’ U’ F’ berulang kali sampai bentuknya seperti cross. Misal di awal itu bentuknya dot, kemudian kita pakai formula dan ketemu bentuk L, maka pertama sesuain lagi posisi si pola kaya di nomor 15, lalu lanjut ulang formula-nya
+16. Lakukan: **F R U R’ U’ F’ berulang kali sampai bentuknya seperti cross**. Misal di awal itu bentuknya dot, kemudian kita pakai formula dan ketemu bentuk L, maka pertama sesuain lagi posisi si pola kaya di nomor 15, lalu lanjut ulang formula-nya
 
-|     |     |     |
-| --- | --- | --- |
-|     |     |     |
-|     |     |     |
-|     |     |     |
+<table>
+<tr><td></td><td style="background-color:yellow;"></td><td></td></tr>
+<tr><td style="background-color:yellow;"></td><td style="background-color:yellow;"></td><td style="background-color:yellow;"></td></tr>
+<tr><td></td><td style="background-color:yellow;"></td><td></td></tr>
+</table>
 
-17. Setelah membuat yellow cross, kita harus solve corner nya supaya yellow semua atasnya. Ada 3 state kemungkinan:
+17. Setelah membuat yellow cross, **kita harus solve corner nya supaya yellow semua atasnya**. Ada 3 state kemungkinan:
 
-- 0 yellow corner, pure cross, pergi ke step 18
+- **0 yellow corner**, pure cross, pergi ke step 18
 
-|     |     |     |
-| --- | --- | --- |
-|     |     |     |
-|     |     |     |
-|     |     |     |
+<table>
+<tr><td></td><td style="background-color:yellow;"></td><td></td></tr>
+<tr><td style="background-color:yellow;"></td><td style="background-color:yellow;"></td><td style="background-color:yellow;"></td></tr>
+<tr><td></td><td style="background-color:yellow;"></td><td></td></tr>
+</table>
 
-- Ikan, cross kuning dengan 1 corner kuning, pergi ke step 19
+- **Ikan**, cross kuning dengan 1 corner kuning, pergi ke step 19
 
-|     |     |     |
-| --- | --- | --- |
-|     |     |     |
-|     |     |     |
-|     |     |     |
+<table>
+<tr><td></td><td style="background-color:yellow;"></td><td></td></tr>
+<tr><td style="background-color:yellow;"></td><td style="background-color:yellow;"></td><td style="background-color:yellow;"></td></tr>
+<tr><td style="background-color:yellow;"></td><td style="background-color:yellow;"></td><td></td></tr>
+</table>
 
-- Cross kuning dengan 2 corner kuning, pergi ke step 20
+- **Cross kuning dengan 2 corner kuning**, pergi ke step 20
 
 Possibility 1:
 
-|     |     |     |
-| --- | --- | --- |
-|     |     |     |
-|     |     |     |
-|     |     |     |
+<table>
+<tr><td></td><td style="background-color:yellow;"></td><td></td></tr>
+<tr><td style="background-color:yellow;"></td><td style="background-color:yellow;"></td><td style="background-color:yellow;"></td></tr>
+<tr><td style="background-color:yellow;"></td><td style="background-color:yellow;"></td><td style="background-color:yellow;"></td></tr>
+</table>
 
 Possibility 2:
 
-|     |     |     |
-| --- | --- | --- |
-|     |     |     |
-|     |     |     |
-|     |     |     |
+<table>
+<tr><td></td><td style="background-color:yellow;"></td><td style="background-color:yellow;"></td></tr>
+<tr><td style="background-color:yellow;"></td><td style="background-color:yellow;"></td><td style="background-color:yellow;"></td></tr>
+<tr><td style="background-color:yellow;"></td><td style="background-color:yellow;"></td><td></td></tr>
+</table>
 
-18. Pada state yellow cross with 0 yellow corner, pertama posisikan top layer supaya ada pojok kuning di sebelah kiri (dan di lapisan terdepan). Sebagai ilustrasi (dilihat dari atas), kaya gini:
+18. Pada **state yellow cross with 0 yellow corner**, pertama **posisikan top layer supaya ada pojok kuning di sebelah kiri (dan di lapisan terdepan)**. Sebagai ilustrasi (dilihat dari atas), kaya gini:
 
-|     |     |     |
-| --- | --- | --- |
-|     |     |     |
-|     |     |     |
-|     |     |     |
 
-Solve dengan: R U R’ U R U2 R’
+<table>
+<tr><td></td><td style="background-color:yellow;"></td><td></td></tr>
+<tr><td style="background-color:yellow;"></td><td style="background-color:yellow;"></td><td style="background-color:yellow;"></td></tr>
+<tr><td style="border-left:2px solid yellow;"></td><td style="background-color:yellow;"></td><td></td></tr>
+</table>
 
-19. Pada state ikan, posisikan si kepala ikan di kiri bawah (dilihat dari perspektif atas). Ilustrasi:
 
-|     |     |     |
-| --- | --- | --- |
-|     |     |     |
-|     |     |     |
-|     |     |     |
+Solve dengan: **R U R’ U R U2 R’**
 
-Solve dengan: R U R’ U R U2 R’
+19. Pada **state ikan, posisikan si kepala ikan di kiri bawah** (dilihat dari perspektif atas). Ilustrasi:
 
-20. Pada state 2 pojok yellow, posisikan top layer supaya ada pojok kuning di depan dan di bagian kiri, sebagai ilustrasi:
+**<table>
+<tr><td></td><td style="background-color:yellow;"></td><td></td></tr>
+<tr><td style="background-color:yellow;"></td><td style="background-color:yellow;"></td><td style="background-color:yellow;"></td></tr>
+<tr><td style="background-color:yellow;"></td><td style="background-color:yellow;"></td><td></td></tr>
+</table>**
 
-|     |     |     |
-| --- | --- | --- |
-|     |     |     |
-|     |     |     |
-|     |     |     |
+Solve dengan: **R U R’ U R U2 R’**
 
-Solve dengan: R U R’ U R U2 R’
+20. Pada **state 2 pojok yellow**, **posisikan top layer supaya ada pojok kuning di depan dan di bagian kiri**, sebagai ilustrasi:
 
-21. Selanjutnya, benerin posisi corner di top layer (yang menghadap ke sisi-sisi) supaya ada di blok yang sesuai dan sama warnanya dengan center). Ada 2 state:
+<table>
+<tr><td style="background-color:yellow;"></td><td style="background-color:yellow;"></td><td style="background-color:yellow;"></td></tr>
+<tr><td style="background-color:yellow;"></td><td style="background-color:yellow;"></td><td style="background-color:yellow;"></td></tr>
+<tr><td style="border-bottom:2px solid yellow;"></td><td style="background-color:yellow;"></td><td></td></tr>
+</table>
 
-- Kalau udah ada salah satu sisi yang dua dua corner atasnya udah bener, posisiin corner itu sesuai dengan center nya (misal ada sisi yang corner atasnya sama2 hijau, pindahin 2 corner itu ke sisi yang center nya hijau), kemudian pindahkan sisi yang corner nya udah bener itu ke sebelah kiri, jalankan rumus:
+Solve dengan: **R U R’ U R U2 R’**
 
-R U2 R’ U’ R U2 L’ U R’ U’ L
+21. Selanjutnya, **benerin posisi corner di top layer (yang menghadap ke sisi-sisi) supaya ada di blok yang sesuai dan sama warnanya dengan center)**. Ada 2 state:
 
-- Kalau belum ada sisi yang corner nya betul dua duanya, jalankan rumus ini dua kali:
+	- Kalau **udah ada salah satu sisi yang dua dua corner atasnya udah bener, posisiin corner itu sesuai dengan center nya** (misal ada sisi yang corner atasnya sama2 hijau, pindahin 2 corner itu ke sisi yang center nya hijau), kemudian **pindahkan sisi yang corner nya udah bener itu ke sebelah kiri**, jalankan rumus:
 
-R U2 R’ U’ R U2 L’ U R’ U’ L
+		**R U2 R’ U’ R U2 L’ U R’ U’ L**
 
-22. Sekarang pojoknya udah bener, tinggal benerin edge nya. Ada 2 state:
+	- Kalau **belum ada sisi yang corner nya betul dua duanya**, jalankan **rumus ini dua kali**:
+	
+		**R U2 R’ U’ R U2 L’ U R’ U’ L**
 
-- Ada satu sisi yang udah bener secara keseluruhan (edge, corner udah bener juga). Posisiin sisi ini di belakang. Kemudian lihat sisi di depannya, dan lihat warna edge nya.
+22. Sekarang pojoknya udah bener, tinggal **benerin edge nya**. Ada 2 state:
 
-1. Kalau misal warna edge itu harusnya di sisi sebelah kanan, jalankan
+	- **Ada satu sisi yang udah bener secara keseluruhan** (edge, corner udah bener juga). **Posisiin sisi ini di belakang. Kemudian lihat sisi di depannya, dan lihat warna edge nya.**
+	
+	1. Kalau misal warna **edge itu harusnya di sisi sebelah kanan**, jalankan
+	
+		**F2 U’ L R’ F2 L’ R U’ F2**
+	
+	1. Kalau warna **edge itu harusnya di sisi sebelah kiri**, jalankan
+	
+		**F2 U L R’ F2 L’ R U F2**
 
-F2 U’ L R’ F2 L’ R U’ F2
-
-2. Kalau warna edge itu harusnya di sisi sebelah kiri, jalankan
-
-F2 U L R’ F2 L’ R U F2
-
-- Kalau ga ada sisi yang bener, tinggal ikutin rumus di atas (bebas mau kiri atau kanan), kemudian setelah ada satu sisi yang bener, ulang sesuai dengan arah menggunakan rumus di atas.
+	- Kalau **ga ada sisi yang bener**, tinggal **ikutin rumus di atas (bebas mau kiri atau kanan), kemudian setelah ada satu sisi yang bener, ulang sesuai dengan arah menggunakan rumus di atas.**
 
 ## Special Move
 
 ### Sexy Move
 
-R U R’ U
+**R U R’ U**
 
 Kalau dilakukan 6 kali berturut-turut, bakal balik ke state awal
+
+
+<style>
+td {
+width: 10px;
+height: 10px;
+}
+</style>
