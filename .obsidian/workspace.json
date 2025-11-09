@@ -106,7 +106,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -269,13 +269,13 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "0905780f4d570e2c",
+  "active": "e59ce6e98a9d2207",
   "lastOpenFiles": [
+    "_pages/glossary.md",
     "_pages/rubic.md",
     "_pages/linear-geometry-algebra.md",
     "_pages/cryptography.md",
     "_pages/computer-architecture.md",
-    "_pages/glossary.md",
     "_pages/blockchain-dlt.md",
     "_pages/algorithm-strategy.md",
     "_pages/resources.md",

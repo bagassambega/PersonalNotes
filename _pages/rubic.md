@@ -219,11 +219,11 @@ Solve dengan: **R U R’ U R U2 R’**
 
 19. Pada **state ikan, posisikan si kepala ikan di kiri bawah** (dilihat dari perspektif atas). Ilustrasi:
 
-**<table>
+<table>
 <tr><td></td><td style="background-color:yellow;"></td><td></td></tr>
 <tr><td style="background-color:yellow;"></td><td style="background-color:yellow;"></td><td style="background-color:yellow;"></td></tr>
 <tr><td style="background-color:yellow;"></td><td style="background-color:yellow;"></td><td></td></tr>
-</table>**
+</table>
 
 Solve dengan: **R U R’ U R U2 R’**
 
@@ -273,6 +273,6 @@ Kalau dilakukan 6 kali berturut-turut, bakal balik ke state awal
 <style>
 td {
 width: 10px;
-height: 10px;
+height: 20px;
 }
 </style>
