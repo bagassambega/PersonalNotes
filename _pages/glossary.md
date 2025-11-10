@@ -12,6 +12,14 @@ github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/
 
 ---
 
+## Authentication
+
+Mengautentikasi dengan cara:
+- Something that you know (password)
+- Something that you have (token)
+- Something that you are (biometrics)
+Autentikasi bisa dipakai untuk men
+
 # B
 
 ---
@@ -47,6 +55,14 @@ Common Vulnerability Scoring System. Scoring system dari 0-10 (0 paling aman, 10
 ## Closed Review (Journal) {#closed-review-journal}
 
 Proses review hanya bisa dilakukan oleh authorized/verified reviewer. Kebalikan: [open review](#open-review-journal)
+
+# D
+
+---
+
+## Digital Signature
+
+Menyelesaikan masalah Accountability dan Non Repudiation. Enkripsi dari hash/digest dari suatu message. Enkripsi menggunakan private key, validasi pakai public key (kebalikan *asymmetric encryption*)
 
 # F
 
@@ -108,6 +124,9 @@ Antonim: [MSB](#msb)
 **Most significant bit**. Bagian dari bit yang nilainya paling besar (signifikan) dan perubahannya membuat value berubah drastis. Contoh: $255 \;(1111 \;1111) \rightarrow 127 \;(0111 \;1111)$, digit paling kiri adalah MSB.
 Antonim: [LSB](#lsb)
 
+## Message Digest
+
+Menyelesaikan masalah integrity.
 
 # O
 
