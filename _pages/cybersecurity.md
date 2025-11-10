@@ -170,6 +170,12 @@ Setup maintain dan inspect tabel dari paket filter rules untuk IP di Linux Kerne
 
 - Sistem mekanisme antrian untuk mengatur cara paket diterima dan dikirimkan pada perangkat jaringan
 
+### TLS Verification Process
+
+1. Verifikasi signature
+2. Verifikasi CA
+3. Verifikasi expiration
+4. Verifikasi revocation
 
 # LAMPIRAN: Type of Attacks {#type-of-attacks}
 

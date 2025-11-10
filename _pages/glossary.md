@@ -148,6 +148,10 @@ Operasi dan data dilakukan di luar jaringan blockchain. Jadi terkoneksi dengan b
 
 ---
 
+## Passkey
+
+
+
 ## Permissioned Blockchain
 
 Blockchain dengan akses terbatas, dengan adanya pengaturan role dan pembatasan akses untuk role tertentu
@@ -160,9 +164,25 @@ Hanya orang-orang tertentu saja/yang diundang yang bisa akses. Kebalikan: [publi
 
 Seluruh orang bisa berpartisipasi dalam blockchain. Kebalikan: [private blockchain](#private-blockchain)
 
+# R
+
+---
+
+## Rainbow Attack
+
+Attacker menyimpan list of strings (password, etc) dan juga hash-nya. Kalau tau hash-nya, bisa di-reverse dan tau password-nya
+
 # S
 
 ---
+
+## Salt
+
+Tambahan value random ke dalam teks (misal ditempel di awal password) yang akan di-hash supaya hash-nya tidak sama terus setiap saat di-hash. Menghindari [rainbow attack](#rainbow-attack)
+
+## Seed
+
+Value random yang digunakan untuk me-generate suatu value baru
 
 ## Soft Delete
 
