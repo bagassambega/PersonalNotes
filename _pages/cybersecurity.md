@@ -232,6 +232,26 @@ Same wifi name and password: orang2 bisa ketipu dengan wifi dan password yang sa
 
 [https://builtwith.com/](https://builtwith.com/)
 
+# Lampiran: Authorization Framework 
+
+## OAuth2.0
+
+- Dulu ketika kita akan mengakses sebuah aplikasi atau website Y dari website X, maka jika X pengen akses sebagian data kita di aplikasi Y, kita harus login menggunakan akun dan password kita di akun Y dari website X, memaksa aplikasi X untuk mengetahui password dari aplikasi Y.
+- Untuk mengatasi hal ini, kita bisa membuat semacam token yang memberikan aplikasi X akses ke resource/aplikasi Y secara terbatas, jadi kita tidak perlu login dan memberikan password kita di aplikasi Y ke aplikasi X. 
+- Token ini bisa di-revoke atau cabut kapan saja
+
+### Pihak Terlibat
+
+- Sebagai contoh, kita menyimpan foto-foto kita di Google Drive. Lalu kita berniat print foto-foto tersebut melalui online printing application bernama HPrinter. Instead of kita nge-upload foto-foto kita manual ke HPrint, kita bisa kasih akses ke sebagian foto kita di Google Drive kepada HPrint.
+- Dalam hal ini, kita sebagai pemilik asli data adalah **resource owner**
+- Google Drive adalah **resource server**, yaitu tempat yang menyimpan data kita
+- HPrint adalah **client**, pihak luar yang ingin mengakses data kita
+- Lalu bagaimana cara kita memberikan token kepada HPint supaya kita bisa membuat HPrint mengakses foto-foto di Google Drive kita? Di sinilah ada **authorization server**, yaitu server yang bertugas memberikan akses token ke client yang akan mengakses data kita
+
+### Alur
+
+- Kita (user) menginstruksikan HPrint (client) untuk print foto $\rightarrow$ HPrint meminta akses ke Google Auth agar bisa akses foto yang ingin kita print dari Google Drive, dengan parameter permintaan client ID dari HPrint dan permission/scope yang diminta $\rightarrow$ Google Auth request permission dari kita untuk memberikan HPrint akses yang diminta scope-nya $\rightarrow$ Kita memberikan akses dan menyetujui permintaan Google Auth $\rightarrow$ Google Auth memberitahukan izin diterima kepada HPrint $\rightarrow$ HPrint meminta accesss token ke Google Auth $\rightarrow$ Google Auth memberikan akses token ke HPrint $\rightarrow$ HPrint bisa mengakses foto di Google Drive
+
 # Istilah
 
 GDPR: mengatur kepemilikan atas hak data pribadi (UU PDP di Indonesia)
