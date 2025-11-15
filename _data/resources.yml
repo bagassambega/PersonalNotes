@@ -14,9 +14,9 @@
   url: "/computer-architecture/"
   icon: "architecture"
 
-- title: "Computer Network"
-  description: "Computer networking principles and protocols."
-  url: "/computer-network/"
+- title: "Network System"
+  description: "Computer networking principles and protocols and system."
+  url: "/network-system/"
   icon: "network"
 
 - title: "Cryptography"
@@ -29,6 +29,11 @@
   url: "/cybersecurity/"
   icon: "security"
 
+- title: "Database"
+  url: "/database/"
+  icon: "database"
+  description: "Database system and optimization"
+  
 - title: "Development & Operations"
   url: "/devops/"
   icon: "devops"
@@ -69,11 +74,6 @@
   url: "/native-dev/"
   icon: "native"
 
-- title: "Network System"
-  description: "Network system architecture and protocols."
-  url: "/network-system/"
-  icon: "network"
-
 - title: "Operating System"
   description: "Operating system concepts and notes."
   url: "/operating-system/"
@@ -84,12 +84,7 @@
   url: "/parallel-distributed/"
   icon: "parallel"
 
-- title: "Resources"
-  description: "Resource links and references."
-  url: "/resources/"
-  icon: "resources"
-
-- title: "Web-based Development"
-  description: "Web-based development notes."
-  url: "/web-based-dev/"
-  icon: "web"
+- title: "Platform Based Application"
+  description: "Platform based application and system development."
+  url: "/platform-app/"
+  icon: "app"
