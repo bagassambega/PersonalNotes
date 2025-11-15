@@ -15,5 +15,8 @@ github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/
 #### Instalasi
 
 1. Arch
-	- 
+	- `yay -S mongodb`
 2. Windows
+
+#### Basic syntax
+
