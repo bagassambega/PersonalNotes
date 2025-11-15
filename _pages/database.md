@@ -49,7 +49,7 @@ github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/
 	- `db.dropCollection("{nama_collection}")`
 8. Insert one data to collection
 	```mongo
-	db.{collection_name}.insertOne({
+	db.collectionName.insertOne({
 	  name: "John",
 	  age: 29,
 	  gpa: 3.2
@@ -58,7 +58,7 @@ github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/
 	- Berhasil: acknowledged = true
 9. Insert many data to collection
 	```mongo
-	db.{collection_name}.insertMany([{
+	db.collectionName.insertMany([{
 	  name: "John",
 	  age: 29,
 	  gpa: 3.2
@@ -72,5 +72,31 @@ github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/
 	```
 10. Select all data from collection
 	- `db.{collection_name}.find()`
-11. Select data from collection
+11. Select data from collection with condition
+	- Equality condition: 
+	```mongodb
+	db.collectionName.find({ fieldName: "value" });
+	```
+	- Multiple condition (AND):
+	```mongodb
+	db.collectionName.find({ field1: "value1", field2: "value2" });
+	```
+	- Non-equality condition (misal di sini greater than, dilambangkan `$gt`, artinya price yang lebih besar dari 100):
+	```mongodb
+	db.collectionName.find({ price: { $gt: 100 } });
+	```
+	- OR condition (pakai tag `$or):
+	```mongodb
+	db.collectionName.find({ 
+		$or: [{ status: "active" }, { quantity: { $lt: 10 } }] 
+	});
+	```
+	- Select specific fields:
+	```mongodb
+	db.collectionName.find(
+		{ fieldName: "value" }, { fieldToInclude: 1, _id: 0 }
+	); 
+	// Includes 'fieldToInclude', excludes '_id'
+	```
+	- By default `_id` sudah pasti masuk, jadi kalau mau di-exclude harus dispesifikkan `_id = 0`
 12. Delete one data from collection
