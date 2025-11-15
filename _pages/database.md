@@ -73,6 +73,7 @@ github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/
 10. Select all data from collection
 	- `db.{collection_name}.find()`
 11. Select data from collection with condition
+	- Syntax: `db.collectionName.find({condition}, {projection})`
 	- Equality condition: 
 	```mongodb
 	db.collectionName.find({ fieldName: "value" });
@@ -97,15 +98,62 @@ github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/
 		{ fieldName: "value" }, { fieldToInclude: 1, _id: 0 }
 	); 
 	// Includes 'fieldToInclude', excludes '_id'
+	// Other format
+	db.collectionName.find(
+		{ fieldName: "value" }, { fieldToInclude: true, _id: false }
+	); 
 	```
 	- By default `_id` sudah pasti masuk, jadi kalau mau di-exclude harus dispesifikkan `_id = 0`
 12. Select data with limit and sort
 	- Sort
 	```mongodb
-	db.collectionName.find({name: -1}) // dari rendah ke tinggi (menaik)
+	db.collectionName.find().sort({name: -1}) // dari rendah ke tinggi (menaik, ascending)
 	```
 	- Limit
-13. Delete one data from collection
+	```mongodb
+	db.collectionName.find().limit(5)
+	```
+13. Update one data
+	- Syntax: `db.collectionName.updateOne({condition/filter}, {update})`
+	- Contoh: 
+	```mongodb
+	db.students.updateOne(
+		{name: "Spongebob"}, 
+		{$set: {fullTime: true}}
+	)
+	```
+	```mongodb
+	db.students.updateOne(
+		{_id: ObjectId("374687326asd)},
+		{$set: {fullTime: false}}
+	)
+	```
+14. Update many data
+	```mongodb
+	db.students.updateMany(
+		{}, 
+		{$set: {fullTime: true}}
+	)
+	```
+15. Remove field
+	```mongodb
+	db.students.updateOne(
+		{name: "Spongebob"}, 
+		{$unset: {fullTime: ""}}
+	)
+	```
+16. Check if field exist
+	```mongodb
+	db.students.updateMany(
+		{fullTime: {$exists: false}}, 
+		{$set: {fullTime: true}}
+	)
+	```
+17. Delete one data from collection
+	```mongodb
+	db.collectionName.deleteOne({name: "Larry"})
+	```
+18. Delete multiple data from collection
 
 #### Data type
 
