@@ -157,7 +157,6 @@ github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/
 	```mongodb
 	db.collectionName.deleteMany({fullTime: false})
 	```
-19. 
 
 #### Data type
 
