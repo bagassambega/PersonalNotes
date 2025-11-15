@@ -154,6 +154,10 @@ github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/
 	db.collectionName.deleteOne({name: "Larry"})
 	```
 18. Delete multiple data from collection
+	```mongodb
+	db.collectionName.deleteMany({fullTime: false})
+	```
+19. 
 
 #### Data type
 
