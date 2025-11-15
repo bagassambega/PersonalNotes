@@ -99,4 +99,29 @@ github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/
 	// Includes 'fieldToInclude', excludes '_id'
 	```
 	- By default `_id` sudah pasti masuk, jadi kalau mau di-exclude harus dispesifikkan `_id = 0`
-12. Delete one data from collection
+12. Select data with limit and sort
+	- Sort
+	```mongodb
+	db.collectionName.find({name: -1}) // dari rendah ke tinggi (menaik)
+	```
+	- Limit
+13. Delete one data from collection
+
+#### Data type
+
+```mongodb
+db.collectionName.insertOne({
+	name: "Larry", // string
+	age: 24, // integer
+	gpa: 3.9 // float
+	isWorking: false, // boolean
+	registerDate: new Date(), // date
+	wife: null, // null object
+	courses: ["Biology", "Math", "Physics"], // array
+	address: {
+		city: "Queens",
+		province: "New York",
+		zip: 12789
+	} // nested document
+})
+```
