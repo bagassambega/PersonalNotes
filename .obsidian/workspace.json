@@ -92,7 +92,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -149,7 +149,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "eae7378820369924",
@@ -255,11 +256,12 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "0905780f4d570e2c",
+  "active": "aabb736cf66d9237",
   "lastOpenFiles": [
+    "_pages/discrete-math.md",
+    "_pages/database.md",
     "_pages/cybersecurity.md",
     "_pages/algorithm-strategy.md",
-    "_pages/database.md",
     "_pages/distributed-app-system-architecture.md",
     "_pages/platform-based-app.md",
     "_pages/network-system.md",
@@ -274,7 +276,6 @@
     "_pages/operating-system.md",
     "_pages/native-dev.md",
     "_pages/dsa.md",
-    "_pages/discrete-math.md",
     "_pages/devops.md",
     "_pages/computer-network.md",
     "Pasted image 20251031200303.png",

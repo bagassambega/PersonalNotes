@@ -315,6 +315,16 @@ Cara lain: pakai [invers modulo](#invers-modulo) dan [sifat modulo](#sifat-kekon
 
 ## Teorema Euler {#teorema-euler-modulo}
 
+# Grup
+
+> Sistem aljabar yang terdiri dari:
+> 1. Sebuah himpunan ***G***
+> 2. Sebuah operasi biner (operasi antara dua *item*) ***\****
+> 
+> sedemikian sehingga untuk semua elemen *a, b*, dan *c* di dalam *G* berlaku aksioma berikut,
+> 1. Closure: 
+
+
 # Graf
 
 ## Jenis Graf
