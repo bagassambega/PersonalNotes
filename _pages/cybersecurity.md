@@ -243,9 +243,8 @@ Same wifi name and password: orang2 bisa ketipu dengan wifi dan password yang sa
 	3. Third party app ketika telah mendapatkan password dan akses ke akun kita, memiliki akses tidak terbatas terhadap resources
 	4. Tidak bisa revoke atau cabut akses third-party terhadap server
 	5. Kalau data password di third party ter-compromise, password kita di server juga compromised dan begitupun dengan data-datanya
-- 
-- Untuk mengatasi hal ini, kita bisa membuat semacam token yang memberikan aplikasi X akses ke resource/aplikasi Y secara terbatas, jadi kita tidak perlu login dan memberikan password kita di aplikasi Y ke aplikasi X. 
-- Token ini bisa di-revoke atau cabut kapan saja
+- OAuth mengatasi masalah ini dengan memperkenalkan authorization layer dan memisahkan role dari client dengan resource owner, di mana **client** (client di sini siapapun yang ingin mengakses **server**, bisa saja third party app) melakukan **request access** ke **resource controlled** dan di-hosting oleh **resource server** dan diberikan set of credential yang diberikan oleh **resource owner**.
+- Jadi dengan ini 
 
 ### Pihak Terlibat
 
