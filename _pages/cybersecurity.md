@@ -237,6 +237,13 @@ Same wifi name and password: orang2 bisa ketipu dengan wifi dan password yang sa
 ## OAuth2.0
 
 - Dulu ketika kita akan mengakses sebuah aplikasi atau meminta data yang disimpan di website Y dari website X, maka jika X pengen akses sebagian data kita di aplikasi Y, kita harus login menggunakan akun dan password kita di akun Y via website X, memaksa aplikasi X untuk mengetahui password dari aplikasi Y.
+- Masalah yang muncul dari mekanisme client-server normal dan mekanisme requesting access biasa adalah:
+	1. Third party app yang meminta data harus menyimpan kredensial kita
+	2. Server harus menyediakan mekanisme autentikasi memakai password
+	3. Third party app ketika telah mendapatkan password dan akses ke akun kita, memiliki akses tidak terbatas terhadap resources
+	4. Tidak bisa revoke atau cabut akses third-party terhadap server
+	5. Kalau data password di third party ter-compromise, password kita di server juga compromised dan begitupun dengan data-datanya
+- 
 - Untuk mengatasi hal ini, kita bisa membuat semacam token yang memberikan aplikasi X akses ke resource/aplikasi Y secara terbatas, jadi kita tidak perlu login dan memberikan password kita di aplikasi Y ke aplikasi X. 
 - Token ini bisa di-revoke atau cabut kapan saja
 
