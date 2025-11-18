@@ -236,7 +236,7 @@ Same wifi name and password: orang2 bisa ketipu dengan wifi dan password yang sa
 
 ## OAuth2.0
 
-- Dulu ketika kita akan mengakses sebuah aplikasi atau website Y dari website X, maka jika X pengen akses sebagian data kita di aplikasi Y, kita harus login menggunakan akun dan password kita di akun Y dari website X, memaksa aplikasi X untuk mengetahui password dari aplikasi Y.
+- Dulu ketika kita akan mengakses sebuah aplikasi atau meminta data yang disimpan di website Y dari website X, maka jika X pengen akses sebagian data kita di aplikasi Y, kita harus login menggunakan akun dan password kita di akun Y via website X, memaksa aplikasi X untuk mengetahui password dari aplikasi Y.
 - Untuk mengatasi hal ini, kita bisa membuat semacam token yang memberikan aplikasi X akses ke resource/aplikasi Y secara terbatas, jadi kita tidak perlu login dan memberikan password kita di aplikasi Y ke aplikasi X. 
 - Token ini bisa di-revoke atau cabut kapan saja
 
