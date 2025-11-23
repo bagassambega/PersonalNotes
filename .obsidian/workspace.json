@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_pages/glossary.md",
+                "file": "_pages/database.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "glossary"
+              "title": "database"
             }
           },
           {
@@ -257,8 +257,8 @@
   },
   "active": "402d4b17059052d2",
   "lastOpenFiles": [
-    "_pages/tools.md",
     "_pages/glossary.md",
+    "_pages/tools.md",
     "_pages/database.md",
     "_pages/blockchain-dlt.md",
     "_pages/cryptography.md",

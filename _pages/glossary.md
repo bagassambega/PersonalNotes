@@ -144,7 +144,7 @@ Siapapun bisa melakukan review jurnal, meskipun tidak verified/authorized. Kekur
 
 Operasi dan data dilakukan/disimpan di dalam jaringan blockchain. Data bisa diakses oleh semua peserta jaringan, dan data bersifat *immutable* (lihat [blockchain]({{ "/blockchain/" | relative_url }}))
 
-## Off-Chain (Blockchain {#off-chain-blockchain)
+## Off-Chain (Blockchain) {#off-chain-blockchain}
 
 Operasi dan data dilakukan di luar jaringan blockchain. Jadi terkoneksi dengan blockchain, tapi eksekusi dan penyimpanan datanya tidak di jaringan blockchain (lihat [blockchain]({{ "/blockchain/" | relative_url }}))
 
@@ -178,7 +178,7 @@ Attacker menyimpan list of strings (password, etc) dan juga hash-nya. Kalau tau 
 
 ## Rate Limiting
 
-
+Membatasi jumlah request untuk setiap user, IP, atau token dikirim ke server untuk jangka waktu tertentu. Hal ini untuk melindungi server dari overload, menghindari DoS dan memastikan setiap orang bisa mengakses resources secara adil
 
 # S
 

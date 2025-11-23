@@ -5,6 +5,14 @@ description: "Database concept, implementation, and optimization"
 permalink: /database/
 github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/database.md
 ---
+# Optimization
+
+## Index
+
+- Query get ke database adalah proses yang sangat resource consuming, terutama jika tabel memiliki data yang sangat banyak
+- Database index adalah collection of pointers, di mana tiap pointer merujuk pada sebuah full data record yang dijadikan acuan
+- 
+
 
 # Application
 
