@@ -92,7 +92,7 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -237,8 +237,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -256,11 +255,11 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "aabb736cf66d9237",
+  "active": "402d4b17059052d2",
   "lastOpenFiles": [
+    "_pages/tools.md",
     "_pages/glossary.md",
     "_pages/database.md",
-    "_pages/tools.md",
     "_pages/blockchain-dlt.md",
     "_pages/cryptography.md",
     "_pages/algorithm-strategy.md",

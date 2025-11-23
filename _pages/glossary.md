@@ -176,6 +176,10 @@ Seluruh orang bisa berpartisipasi dalam blockchain. Kebalikan: [private blockcha
 
 Attacker menyimpan list of strings (password, etc) dan juga hash-nya. Kalau tau hash-nya, bisa di-reverse dan tau password-nya
 
+## Rate Limiting
+
+
+
 # S
 
 ---
