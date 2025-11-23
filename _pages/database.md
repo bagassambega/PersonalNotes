@@ -9,9 +9,9 @@ github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/
 
 ## Index
 
-- Query get ke database adalah proses yang sangat resource consuming, terutama jika tabel memiliki data yang sangat banyak
+- Query get ke database adalah proses yang sangat resource consuming, terutama jika tabel memiliki data yang sangat banyak. Database perlu melakukan query satu per satu pada setiap row-nya
 - Database index adalah collection of pointers, di mana tiap pointer merujuk pada sebuah full data record yang dijadikan acuan
-- 
+- Saat kita mencari sebuah data dari database, kita akan mencari ke index terlebih dahulu. Ingat seharusnya index tidak berukuran sama atau lebih besar daripada database/tabel itu sendiri. Program akan menemukan indeks yang paling mendekati ke data yang kita cari, lalu database tinggal mencari memakai linear search biasa dimulai dari data yang ditunjuk pointer indeks tersebut
 
 
 # Application
