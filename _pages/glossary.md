@@ -18,7 +18,11 @@ Mengautentikasi dengan cara:
 - Something that you know (password)
 - Something that you have (token)
 - Something that you are (biometrics)
-Autentikasi bisa dipakai untuk men
+Autentikasi bisa dipakai untuk mengidentifikasi apakah seseorang yang ingin mengakses resource adalah orang yang valid atau bukan
+
+## Authorization
+
+Memeriksa apakah seseorang memiliki akses atau otorisasi yang cukup untuk mengakses resources. Biasanya dilakukan setelah proses [autentikasi](#autentikasi) selesai
 
 # B
 

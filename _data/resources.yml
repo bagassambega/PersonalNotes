@@ -88,3 +88,8 @@
   description: "Platform based application and system development."
   url: "/platform-app/"
   icon: "app"
+
+- title: "Programming Concept"
+  description: "Basic and concept of programming"
+  url: "/programming-concept/"
+  icon: "code"

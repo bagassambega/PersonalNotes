@@ -2,3 +2,8 @@
   description: "Complete guide to solving Rubik's cube including terminology and algorithms"
   url: "/rubik/"
   icon: "cube"
+  
+- title: "Tools"
+  description: "List of useful tools. Beware of virus or malicious contents"
+  url: "/tools/"
+  icon: "tool"

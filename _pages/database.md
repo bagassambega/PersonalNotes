@@ -1,7 +1,7 @@
 ---
 layout: page-with-toc
 title: Database
-description: ",llk"
+description: "Database concept, implementation, and optimization"
 permalink: /database/
 github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/database.md
 ---
