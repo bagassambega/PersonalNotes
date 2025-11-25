@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_pages/database.md",
+                "file": "_pages/tools.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "database"
+              "title": "tools"
             }
           },
           {
@@ -257,9 +257,9 @@
   },
   "active": "402d4b17059052d2",
   "lastOpenFiles": [
+    "_pages/database.md",
     "_pages/glossary.md",
     "_pages/tools.md",
-    "_pages/database.md",
     "_pages/blockchain-dlt.md",
     "_pages/cryptography.md",
     "_pages/algorithm-strategy.md",
