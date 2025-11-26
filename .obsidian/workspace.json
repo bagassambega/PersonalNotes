@@ -76,21 +76,9 @@
               "icon": "lucide-file",
               "title": "tools"
             }
-          },
-          {
-            "id": "531224008d3b1dec",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.10.6"
-              },
-              "icon": "lucide-book-up",
-              "title": "Release Notes 1.10.6"
-            }
           }
         ],
-        "currentTab": 5
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -253,7 +241,7 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "531224008d3b1dec",
+  "active": "aabb736cf66d9237",
   "lastOpenFiles": [
     "_pages/cryptography.md",
     "_pages/tools.md",

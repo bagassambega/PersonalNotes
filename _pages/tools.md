@@ -25,7 +25,8 @@ github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/
 | Perplexity    | [https://www.perplexity.ai/](https://www.perplexity.ai/)                                | AI tools best for finding journal (use research and change mode to academic, disable web)                |
 | Elicit        | [https://elicit.com/](https://elicit.com/)                                              | AI tools for finding journal                                                                             |
 | Litmaps       | [https://www.litmaps.com/](https://www.litmaps.com/)                                    | AI tools for finding journal and their correlation with other journals by finding citation (graph-based) |
-|               |                                                                                         |                                                                                                          |
+| IEEE Xplore   | [https://ieeexplore.ieee.org/](https://ieeexplore.ieee.org/)                            | Tools to find IEEE journal                                                                               |
+
 # Learning, Tutorial, and Certification
 
 
