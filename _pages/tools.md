@@ -13,7 +13,7 @@ github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/
 | ------ | ---------------------------------------- | ------------------------------- |
 | FileCR | [https://filecr.com](https://filecr.com) | Download premium apps and games |
 
-# Article, Joiurnal and Book
+# Article, Journal and Book
 
 | Name          | URL                                                                                     | Description                                                                                              |
 | ------------- | --------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
@@ -25,3 +25,10 @@ github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/
 | Perplexity    | [https://www.perplexity.ai/](https://www.perplexity.ai/)                                | AI tools best for finding journal (use research and change mode to academic, disable web)                |
 | Elicit        | [https://elicit.com/](https://elicit.com/)                                              | AI tools for finding journal                                                                             |
 | Litmaps       | [https://www.litmaps.com/](https://www.litmaps.com/)                                    | AI tools for finding journal and their correlation with other journals by finding citation (graph-based) |
+|               |                                                                                         |                                                                                                          |
+# Learning, Tutorial, and Certification
+
+
+| Name            | URL                                                                      | Description                                                                    |
+| --------------- | ------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| Microsoft Learn | [https://learn.microsoft.com/en-us/](https://learn.microsoft.com/en-us/) | Microsoft platform to learning  about AI, system design, and Microsoft product |
