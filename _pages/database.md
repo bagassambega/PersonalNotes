@@ -26,6 +26,27 @@ github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/
 | Style             | Rigid, karena formatnya sudah hardcoded dan sudah didefinisikan schemanya                       | Fleksibel                                                                                                                                                                   |
 | Data format       | Row-based                                                                                       | BSON, JSON yang dikonversi ke binary via Mongo driver                                                                                                                       |
 | Struktur komponen | Sebuah database terdiri dari kumpulan **tabel**, dan sebuah tabel terdiri dari kumpulan **row** | Sebuah database terdiri dari kumpulan **collection** (ekuivalen dengan table), dan setiap collection terdiri dari kumpulan **dokumen/BSON document** (ekuivalen dengan row) |
+## SQL
+
+# PostgreSQL
+
+### Instalasi
+
+1. Arch
+	- `yay -S postgresql`
+	- `initdb -D /var/lib/postgres/data`
+
+### Basic Syntax
+
+1. Connect to Psql shell
+	- `psql`
+2. Show/list databases
+	- `\l`
+3. Switch between databases
+	- `\c database_name`
+4. Lists /show tables/relations
+	- `\dt`
+5. 
 
 ## NoSQL
 
@@ -46,16 +67,18 @@ github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/
 	- `show dbs`
 3. Switch between database
 	- `use {database_name}`
-4. Create database
+4. Show/list collections
+	- `show collections`
+5. Create database
 	- `use {non-existing_database_name}`
 	- NOTE: database empty ga bakal muncul saat `show dbs`
-5. Delete/drop database
+6. Delete/drop database
 	- `db.dropDatabase()`
-6. Create collection
+7. Create collection
 	- `db.createCollection("{nama_collection}")`
-7. Delete collection
+8. Delete collection
 	- `db.dropCollection("{nama_collection}")`
-8. Insert one data to collection
+9. Insert one data to collection
 	```mongo
 	db.collectionName.insertOne({
 	  name: "John",
@@ -64,7 +87,7 @@ github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/
 	})
 	```
 	- Berhasil: acknowledged = true
-9. Insert many data to collection
+10. Insert many data to collection
 	```mongo
 	db.collectionName.insertMany([{
 	  name: "John",
@@ -78,9 +101,9 @@ github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/
 	}
 	])
 	```
-10. Select all data from collection
+11. Select all data from collection
 	- `db.{collection_name}.find()`
-11. Select data from collection with condition
+12. Select data from collection with condition
 	- Syntax: `db.collectionName.find({condition}, {projection})`
 	- Equality condition: 
 	```mongodb
@@ -112,7 +135,7 @@ github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/
 	); 
 	```
 	- By default `_id` sudah pasti masuk, jadi kalau mau di-exclude harus dispesifikkan `_id = 0`
-12. Select data with limit and sort
+13. Select data with limit and sort
 	- Sort
 	```mongodb
 	db.collectionName.find().sort({name: -1}) // dari rendah ke tinggi (menaik, ascending)
@@ -121,7 +144,7 @@ github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/
 	```mongodb
 	db.collectionName.find().limit(5)
 	```
-13. Update one data
+14. Update one data
 	- Syntax: `db.collectionName.updateOne({condition/filter}, {update})`
 	- Contoh: 
 	```mongodb
@@ -136,32 +159,32 @@ github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/
 		{$set: {fullTime: false}}
 	)
 	```
-14. Update many data
+15. Update many data
 	```mongodb
 	db.students.updateMany(
 		{}, 
 		{$set: {fullTime: true}}
 	)
 	```
-15. Remove field
+16. Remove field
 	```mongodb
 	db.students.updateOne(
 		{name: "Spongebob"}, 
 		{$unset: {fullTime: ""}}
 	)
 	```
-16. Check if field exist
+17. Check if field exist
 	```mongodb
 	db.students.updateMany(
 		{fullTime: {$exists: false}}, 
 		{$set: {fullTime: true}}
 	)
 	```
-17. Delete one data from collection
+18. Delete one data from collection
 	```mongodb
 	db.collectionName.deleteOne({name: "Larry"})
 	```
-18. Delete multiple data from collection
+19. Delete multiple data from collection
 	```mongodb
 	db.collectionName.deleteMany({fullTime: false})
 	```

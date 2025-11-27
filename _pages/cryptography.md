@@ -419,7 +419,7 @@ $$C_2 \equiv mP_2 + b \pmod n$$
 
 ## Enigma Cipher {#enigma-cipher}
 
-# One Time Pad dan Keamanan Kriptografi {otp-dan-keamanan-kriptografi}
+# One Time Pad dan Keamanan Kriptografi {#otp-dan-keamanan-kriptografi}
 
 ## One Time Pad {#one-time-pad}
 
