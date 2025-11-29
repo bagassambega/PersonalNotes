@@ -36,6 +36,14 @@ github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/
 	- `yay -S postgresql`
 	- `initdb -D /var/lib/postgres/data`
 
+
+### Data type
+
+| Data type | Name in PostgreSQL | Description |
+| --------- | ------------------ | ----------- |
+| UUID      | uuid               |             |
+
+
 ### Basic Syntax
 
 1. Connect to Psql shell
