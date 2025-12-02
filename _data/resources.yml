@@ -1,9 +1,3 @@
-
-- title: "Algorithm Strategy"
-  description: "Comprehensive notes on algorithmic strategies, complexity analysis, and problem-solving techniques"
-  url: "/algorithm-strategy/"
-  icon: "algorithm"
-
 - title: "Blockchain & DLT"
   description: "Notes on blockchain and distributed ledger technologies."
   url: "/blockchain-dlt/"
@@ -33,7 +27,7 @@
   url: "/database/"
   icon: "database"
   description: "Database system and optimization"
-  
+
 - title: "Development & Operations"
   url: "/devops/"
   icon: "devops"
@@ -44,13 +38,8 @@
   url: "/discrete-math/"
   icon: "math"
 
-- title: "Distributed App & System Architecture"
-  description: "Distributed application and system architecture notes."
-  url: "/distributed-app-system-architecture/"
-  icon: "distributed"
-
 - title: "DSA (Data Structures & Algorithms)"
-  description: "Data structures and algorithms notes."
+  description: "Comprehensive notes on data structures, algorithms, algorithmic strategies, complexity analysis, and problem-solving techniques"
   url: "/dsa/"
   icon: "dsa"
 
@@ -69,24 +58,19 @@
   url: "/linux/"
   icon: "linux"
 
-- title: "Native Development"
-  description: "Native development topics."
-  url: "/native-dev/"
-  icon: "native"
-
 - title: "Operating System"
   description: "Operating system concepts and notes."
   url: "/operating-system/"
   icon: "os"
 
-- title: "Parallel & Distributed System"
-  description: "Parallel and distributed system notes."
-  url: "/parallel-distributed/"
-  icon: "parallel"
+- title: "System Design"
+  description: "System design principles including parallel, distributed systems, and application architecture"
+  url: "/system-design/"
+  icon: "distributed"
 
-- title: "Platform Based Application"
-  description: "Platform based application and system development."
-  url: "/platform-app/"
+- title: "App and System Development"
+  description: "Application and system development across web and native platforms"
+  url: "/app-system-dev/"
   icon: "app"
 
 - title: "Programming Concept"
