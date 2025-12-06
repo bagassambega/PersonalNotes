@@ -66,3 +66,6 @@ Incremental delta deployment: deploy tahap demi tahap dari awal dev. Supaya kala
 - Tool untuk task/ticket management (mis. Jira, jadi keliatan tugas2nya siapa dan bisa dianalisis seberapa lama dan banyak tasknya)
 - Cek hot spot pada engineer tertentu (cek siapa yang paling sering mengerjakan toil)
 - Identifikasi hasil apa yang bisa ditingkatkan kalau toil bisa dikurangi (opportunities for high impact toil reduction)
+
+# Event Streaming
+

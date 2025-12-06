@@ -29,3 +29,9 @@ github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/
 - Availability: persentase sistem berada dalam kondisi berfungsi baik
 
 - Tapi ada masalah baru yang muncul saat sistem tidak terpusat: koordinasi antar mesin
+
+# Streaming Processing
+
+- Stream adalah unbounded data; data yang dikirim mengalir terus menerus, infinitely
+- 
+
