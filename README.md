@@ -114,3 +114,11 @@ If you need to deploy manually:
 ### Navigation
 
 Update the navigation in `_includes/header.html` to add new main sections.
+
+### Linking to Glossary
+
+Use tag of:
+
+```html
+<term href="/PersonalNotes/glossary#name_of_terms">Name of terms</term>
+```

@@ -8,31 +8,31 @@
         "type": "tabs",
         "children": [
           {
-            "id": "d6bbcb76f30b9977",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "_pages/algorithm-strategy.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "algorithm-strategy"
-            }
-          },
-          {
             "id": "0905780f4d570e2c",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_pages/database.md",
+                "file": "_pages/system-design.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "database"
+              "title": "system-design"
+            }
+          },
+          {
+            "id": "9030bfcea34bee57",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "_pages/system-design.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "system-design"
             }
           },
           {
@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "_pages/cryptography.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "README"
+              "title": "cryptography"
             }
           },
           {
@@ -69,16 +69,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_pages/glossary.md",
+                "file": "README.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "glossary"
+              "title": "README"
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -110,7 +110,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#name",
+                "query": "glossary",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -242,16 +242,17 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "95c247f2dc80f877",
+  "active": "9030bfcea34bee57",
   "lastOpenFiles": [
-    "_pages/blockchain-dlt.md",
+    "_pages/database.md",
     "_pages/cryptography.md",
+    "README.md",
     "_pages/glossary.md",
+    "_pages/blockchain-dlt.md",
     "_pages/system-design.md",
     "_pages/tools.md",
     "_pages/devops.md",
     "_pages/cybersecurity.md",
-    "_pages/database.md",
     "_pages/algorithm-strategy.md",
     "_pages/computer-architecture.md",
     "_pages/distributed-app-system-architecture.md",
@@ -272,7 +273,6 @@
     "Pasted image 20251031134253.png",
     "{{.md",
     "Pasted image 20251031095104.png",
-    "index.md",
     "_site/feed.xml",
     "_site/_pages/resources/index.html",
     "_site/_pages/resources",
