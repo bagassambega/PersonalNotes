@@ -32,6 +32,11 @@ github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/
 
 # Streaming Processing
 
-- Stream adalah unbounded data; data yang dikirim mengalir terus menerus, infinitely
-- 
+- Stream adalah unbounded data; data yang dikirim **mengalir terus menerus**, infinitely
+- Menggunakan **model push**, jadi produksi data dikendalikan oleh sumber, bukan di-request oleh penerima
+- Disebut **publish/subscribe model**
+
+| Perbedaan | Database                                                                     | Data Stream                                             |
+| --------- | ---------------------------------------------------------------------------- | ------------------------------------------------------- |
+| **Model** | **Pull**. Data ditarik dari sumber untuk kemudian disimpan di dalam database | **Push**. Data dikirim dari sumber data meskipun tanpa  |
 
