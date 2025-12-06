@@ -68,6 +68,15 @@ Proses review hanya bisa dilakukan oleh authorized/verified reviewer. Kebalikan:
 
 Menyelesaikan masalah Accountability dan Non Repudiation. Enkripsi dari hash/digest dari suatu message. Enkripsi menggunakan private key, validasi pakai public key (kebalikan *asymmetric encryption*)
 
+# E
+
+---
+
+## Ephemeral {#ephemeral}
+
+Tidak statik. Berganti-ganti
+
+
 # F
 
 ---

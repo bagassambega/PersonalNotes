@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_pages/blockchain-dlt.md",
+                "file": "README.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "blockchain-dlt"
+              "title": "README"
             }
           },
           {
@@ -69,16 +69,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_pages/system-design.md",
+                "file": "_pages/glossary.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "system-design"
+              "title": "glossary"
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -242,15 +242,16 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "aabb736cf66d9237",
+  "active": "95c247f2dc80f877",
   "lastOpenFiles": [
+    "_pages/blockchain-dlt.md",
+    "_pages/cryptography.md",
+    "_pages/glossary.md",
+    "_pages/system-design.md",
     "_pages/tools.md",
     "_pages/devops.md",
     "_pages/cybersecurity.md",
     "_pages/database.md",
-    "_pages/blockchain-dlt.md",
-    "_pages/cryptography.md",
-    "_pages/glossary.md",
     "_pages/algorithm-strategy.md",
     "_pages/computer-architecture.md",
     "_pages/distributed-app-system-architecture.md",
@@ -272,7 +273,6 @@
     "{{.md",
     "Pasted image 20251031095104.png",
     "index.md",
-    "_site/README.md",
     "_site/feed.xml",
     "_site/_pages/resources/index.html",
     "_site/_pages/resources",

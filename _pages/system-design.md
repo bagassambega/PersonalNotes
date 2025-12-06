@@ -36,7 +36,9 @@ github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/
 - Menggunakan **model push**, jadi produksi data dikendalikan oleh sumber, bukan di-request oleh penerima
 - Disebut **publish/subscribe model**
 
-| Perbedaan | Database                                                                     | Data Stream                                             |
-| --------- | ---------------------------------------------------------------------------- | ------------------------------------------------------- |
-| **Model** | **Pull**. Data ditarik dari sumber untuk kemudian disimpan di dalam database | **Push**. Data dikirim dari sumber data meskipun tanpa  |
+| Perbedaan      | Database                                                                                | Data Stream                                                                  |
+| -------------- | --------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| **Model**      | **Pull**. Data ditarik secara manual atau berdasarkan request penerima dari sumber data | **Push**. Data dikirim dari sumber data meskipun tanpa diminta oleh penerima |
+| **Trigger**    | **Manual**. Di-invoke oleh penerima dengan request                                      | **Tidak ada trigger**. Data dikirim terus menerus oleh pengirim data         |
+| **Sifat Data** | Menyimpan state saat ini saja, disimpan di dalam database (persistent collection)       | Realtime. Ephemeral stream (ephemeral: berganti-ganti)                       |
 
