@@ -69,12 +69,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_pages/database.md",
+                "file": "_pages/cybersecurity.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "database"
+              "title": "cybersecurity"
             }
           }
         ],
@@ -243,9 +243,9 @@
   },
   "active": "aabb736cf66d9237",
   "lastOpenFiles": [
+    "_pages/database.md",
     "_pages/blockchain-dlt.md",
     "_pages/cryptography.md",
-    "_pages/database.md",
     "_pages/tools.md",
     "_pages/glossary.md",
     "_pages/algorithm-strategy.md",
