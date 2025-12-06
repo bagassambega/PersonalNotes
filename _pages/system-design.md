@@ -41,4 +41,14 @@ github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/
 | **Model**      | **Pull**. Data ditarik secara manual atau berdasarkan request penerima dari sumber data | **Push**. Data dikirim dari sumber data meskipun tanpa diminta oleh penerima |
 | **Trigger**    | **Manual**. Di-invoke oleh penerima dengan request                                      | **Tidak ada trigger**. Data dikirim terus menerus oleh pengirim data         |
 | **Sifat Data** | Menyimpan state saat ini saja, disimpan di dalam database (persistent collection)       | Realtime. Ephemeral stream (ephemeral: berganti-ganti)                       |
+|                |                                                                                         |                                                                              |
+## Apache Kafka
+
+### Struktur Data
+
+- Sebuah message berisi sebuah record data terdiri dari:
+	- Header (informasi topik dan partisi)
+	- Key
+	- Value
+- Sebuah message tidak dikirimkan begitu saja ke Kafka. Mereka di-organize berdasarkan **topic**-nya. Setiap topic dipecah lagi menjadi partitions.
 
