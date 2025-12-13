@@ -25,6 +25,8 @@ Menjamin kerahasiaan, keutuhan, ketersediaan (CIA triads: confidentiality, integ
 - Vulnerability: retakan di dinding
 - Tinggi air: level of threat/risk
 
+- CIA-AAA-NR
+
 - Ibarat: energi potensial: threat, energi kinetik: attack. Semakin tinggi threat, kalau berhasil berubah jadi attack, semakin besar dampaknya
 - APT tipe serangan juga, hanya emang istilahnya aja yang salah
 
