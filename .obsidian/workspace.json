@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_pages/tools.md",
+                "file": "_pages/blockchain-dlt.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "tools"
+              "title": "blockchain-dlt"
             }
           }
         ],
@@ -116,8 +116,24 @@
               "icon": "lucide-bookmark",
               "title": "Bookmarks"
             }
+          },
+          {
+            "id": "283ac6fc3289819e",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "_pages/blockchain-dlt.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of blockchain-dlt"
+            }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -188,21 +204,6 @@
               "icon": "git-pull-request",
               "title": "Source Control"
             }
-          },
-          {
-            "id": "283ac6fc3289819e",
-            "type": "leaf",
-            "state": {
-              "type": "outline",
-              "state": {
-                "file": "_pages/cryptography.md",
-                "followCursor": false,
-                "showSearch": false,
-                "searchQuery": ""
-              },
-              "icon": "lucide-list",
-              "title": "Outline of cryptography"
-            }
           }
         ],
         "currentTab": 3
@@ -227,12 +228,12 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "6cb370eef117d42d",
+  "active": "283ac6fc3289819e",
   "lastOpenFiles": [
+    "_pages/tools.md",
     "_pages/cryptography.md",
     "Untitled.base",
     "_pages/cybersecurity.md",
-    "_pages/tools.md",
     "README.md",
     "_pages/system-design.md",
     "_pages/database.md",

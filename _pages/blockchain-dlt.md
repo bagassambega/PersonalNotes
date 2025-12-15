@@ -240,7 +240,7 @@ github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/
 
 - Motivasi: [proof of work](#proof-of-work) sangat energy-exhausting. Dibuat algoritma yang less energy-intensive. Selain itu, ada juga konsep mining pool: beberapa orang mengumpulkan resource yang dimilikinya supaya computational power-nya lebih besar, alhasil kemungkinan dapetnya lebih besar juga, nanti reward-nya dibagi rata ke orang-orang itu. Tapi hal ini malah merusak esensi decentralized itu sendiri karena malah jadi tersentralisasi di suatu pool
 - Di proof-of-stake, tidak ada miner, adanya validator. Tidak ada mining block, adanya mint/forge block
-- Mekanismenya: validator adalah orang yang akan membuat block. Validator dipilih oleh sistem secara pseudo-random dengan pertimbangan utama yaitu banyak koin yang di-deposit/disimpan oleh validator di dalam sistem (stake, kepemilikan). Semakin banyak koin yang dimiliki oleh validator, peluangnya terpilih menjadi validator suatu block semakin besar.
+- Mekanismenya: validator adalah orang yang akan membuat block. Validator dipilih oleh sistem secara pseudo-random dengan pertimbangan utama yaitu banyak koin yang di-deposit/disimpan oleh validator di dalam sistem (stake, kepemilikan). Semakin banyak koin/uang yang dimiliki oleh validator, peluangnya terpilih menjadi validator suatu block semakin besar.
 - Contoh: Ethereum
 - Genesys block dibuat oleh developer dan berisi total token awal
 - <b><term href="/PersonalNotes/glossary#finality">Finality</term></b> adalah keadaan ketika suatu blok dianggap tidak dapat dibatalkan atau digantikan oleh cabang lain. Setelah blok mencapai finality, seluruh transaksi di dalamnya dianggap permanen dan tidak bisa di-reorganize.
@@ -536,7 +536,7 @@ function withdraw(uint amount) public {
 1. Fungible token: token yang nilainya sama semua, bisa dipertukarkan dan identikal (mirip seperti currency biasa). Standard: ERC-20, contoh: DAI dan USDC
 2. Non-Fungible Token (NFT): token yang bersifat unik dan tidak bisa digantikan atau ditukar dengan yang sama. Biasanya merepresentasikan ownership dan unique items seperti digital art dan collectible items. Standard: ERC-721 dan ERC-1155
 
-### Hubungan Token dan Smart Contract {#tokeno-blockchain-dan-smart-contract}
+### Hubungan Token dan Smart Contract {#token-blockchain-dan-smart-contract}
 
 - Smart contract adalah dasar pembentuk token.  
    Token tidak berdiri sendiri; ia ada karena dibuat dan dikelola oleh smart contract yang menentukan aturan seperti minting, transfer, dan burning. Dengan kata lain, token hanyalah representasi digital dari nilai atau hak yang dikontrol oleh program (smart contract)
@@ -570,6 +570,55 @@ function withdraw(uint amount) public {
 - Menggunakan Solidity
 - Account based model (externally owned account (milik user) dan contract account (nyimpen account)). 
 - Dijalankan oleh EVM (compiler)
+
+## Struktur Ethereum
+
+- A peer-to-peer network
+- A blockchain (perlu diingat bahwa blockchain hanyalah "tipe data"-nya saja, dan blockchain inilah yang diduplikasi ke seluruh nodes di dalam peer-to-peer network)
+- A **virtual machine** called **EVM (Ethereum Virtual Machine)**
+- A **global state** stored as key-value mappings
+
+### Ethereum Network
+
+#### Mainnet (Public)
+
+- Mainnet adalah production-based dari Ethereum 
+- Fully decentralized, secured by Proof of Stake consensus validators yang asli
+- Di sini tempat seluruh real-life aplikasi diimplementasikan
+- Menggunakan currency ETH betulan (memiliki nilai ekonomi)
+
+#### Testnet (Public)
+
+- Public Ethereum tanpa nilai ekonomi
+- Contoh: Sepolia, Holesky
+- Ciri: sama dengan mainnet, tapi memakai fake money dan validatornya berasal dari developer, tim Ethereum foundation, dll. Dan seperti yang kita ketahui kalau PoS memerlukan uang palsu, uang inilah yang di-generate oleh faucet
+- 
+
+#### Private Network
+
+- Ethereum yang aksesnya restricted dan validatornya bukan orang umum
+- Kita yang mengontrol validator, kita yang mengontrol aturan konsensus, tidak ada ETH betulan, kita bisa modifikasi biaya untuk transaksi (gas money), block time, permissions
+- Contoh: Geth, Hyperledger Besu
+- 
+
+### EVM (Ethereum Virtual Machine)
+
+- **Ethereum Virtual Machine (EVM)** adalah **mesin eksekusi deterministik** yang menjalankan _smart contract bytecode_ secara **identik di semua node Ethereum**, terlepas dari sistem operasi, hardware, atau implementasi klien.
+- EVM adalah yang membuat Ethereum menjadi _programmable blockchain_.
+- Fungsi:
+	1. Menjalankan Smart Contract Secara Deterministik. Masalah yang diselesaikan:
+		- Node Ethereum berjalan di: Linux, Windows, macOS, CPU berbeda
+		- Implementasi klien berbeda (Geth, Nethermind, Besu)
+	2. Sandbox
+	3. Menjadi Target Kompilasi Universal. Alur:
+	```markdown
+	Solidity / Vyper
+      ↓
+   EVM Bytecode
+      ↓
+   Dieksekusi semua node
+
+	```
 
 ## Meta Consensus (Protokol)
 
