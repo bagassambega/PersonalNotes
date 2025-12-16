@@ -116,6 +116,8 @@ COPY app /app          # layer 3
 docker build -t image --no-cache
 ```
 
+## Registry
+
 
 
 # TOIL
