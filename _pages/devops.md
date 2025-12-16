@@ -23,9 +23,8 @@ Incremental delta deployment: deploy tahap demi tahap dari awal dev. Supaya kala
 
 - Service level agreement adalah janji layanan atau kualitas layanan yang diberikan
 - Komponen utama SLA biasanya terdiri atas:
-
-- Service scope: layanan apa saja yang disediakan
-- Tingkat kinerja (performance metrics): indikator kinerja sistem yang terukur, misalnya uptime/availability 99.9% per bulan, response time < 200ms untuk setiap request API, throughput minimal 1000 request per second
+	- Service scope: layanan apa saja yang disediakan
+	- Tingkat kinerja (performance metrics): indikator kinerja sistem yang terukur, misalnya uptime/availability 99.9% per bulan, response time < 200ms untuk setiap request API, throughput minimal 1000 request per second
 
 
 # Container
@@ -118,7 +117,12 @@ docker build -t image --no-cache
 
 ## Registry
 
-
+- Registry adalah service penyimpanan dan distribusi image
+- Contoh: Gitlab Container Registry, Github Container Registry, Docker Hub
+- Fungsi utama:
+	- Menyimpan image dalam bentuk [layers](#layer)
+	- Image distribution (misal `docker push` untuk upload image ke registry, dan `docker pull` untuk pull image dari registry)
+	- Versioning system
 
 # TOIL
 
