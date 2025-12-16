@@ -27,6 +27,97 @@ Incremental delta deployment: deploy tahap demi tahap dari awal dev. Supaya kala
 - Service scope: layanan apa saja yang disediakan
 - Tingkat kinerja (performance metrics): indikator kinerja sistem yang terukur, misalnya uptime/availability 99.9% per bulan, response time < 200ms untuk setiap request API, throughput minimal 1000 request per second
 
+
+# Container
+
+- Container adalah konsep virtualisasi di mana seluruh aplikasi, termasuk environment dan dependencies-nya berada di satu package yang sama
+![Arsitektur container](https://www.docker.com/app/uploads/2021/11/container-what-is-container-1110x961.png)
+
+- Container berbeda dengan VM, di mana kalau VM itu betul-betul satu OS full untuk menjalankannya, kalau container hanya melakukan packaging terhadap code, runtime, system tools, system libraries and settings yang dibutuhkan saja
+
+![VM vs Container. Source: Programming Zaman Now](https://i.imgur.com/yB3RejM.png)
+
+- Untuk catatan ini, mainly akan dibuat untuk Docker
+## Image
+
+- Image adalah base yang dipakai untuk container, ibaratnya tuh base class atau template yang nanti kita pakai untuk nyimpen container dan konfigurasinya
+- Contoh image: Node, Ubuntu, PostgreSQL, AlpineLinux, lalu nanti kita isi dan configure si image ini supaya bisa menjalankan aplikasi yang kita masukin ke container yang pakai base image ini
+- Dockerfile adalah sebuah script untuk membangun image custom
+- Biasanya kita awalnya pakai base image dulu (misal Node), lalu kita konfigurasi via Dockerfile ini untuk mengkonfigurasi image kita yang baru nanti. Misalnya untuk build sebuah image untuk server kita, kita membuat Dockerfile yang isinya:
+
+```Dockerfile
+FROM node:20-alpine
+RUN apk add --no-cache openssl
+RUN apk add --no-cache postgresql postgresql-contrib redis
+RUN mkdir -p /home/node/app/node_modules && chown -R node:node /home/node/app
+WORKDIR /home/node/app
+USER node
+COPY --chown=node:node package.json ./
+COPY --chown=node:node prisma ./prisma/
+# COPY package*.json ./
+# RUN npm install
+RUN npm cache clean --force && \
+    npm install --loglevel verbose
+#COPY prisma ./prisma/
+RUN npx prisma generate
+COPY --chown=node:node . .
+EXPOSE ${PORT} 5432 6379
+COPY start.sh /home/node/app/start.sh
+COPY ./.env.example ./.env
+USER root
+RUN chmod +x /home/node/app/start.sh
+USER node
+# CMD ["/usr/src/app/start.sh"]
+HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 \
+    CMD node -e "console.log('healthcheck lagi')" || exit 1
+CMD ["npm", "run", "dev"]
+```
+
+- Dapat dilihat dari sana kalau kita menggunakan base image Node, lalu kita modifikasi untuk kebutuhan server kita
+
+## Layer
+
+- Layer adalah setiap lapisan yang dijalankan saat mengkonfigurasi sebuah image
+- **Layer** adalah **filesystem snapshot immutable** yang dihasilkan dari **setiap instruksi Dockerfile** yang memodifikasi filesystem.
+- Contoh instruksi yang membuat layer:
+	- `RUN`
+	- `COPY`
+	- `ADD`
+- Instruksi yang **tidak** membuat layer:
+	- `CMD`
+	- `ENTRYPOINT`
+    - `ENV` (metadata only)
+- Docker image disusun sebagai **stack of layers** menggunakan **Union Filesystem (UnionFS)** (contoh: OverlayFS)
+
+```markdown
+[ App Layer ]
+[ Dependency Layer ]
+[ OS Base Layer ]
+```
+
+- Untuk melakukan building dengan ignore caches di semua layer, jalankan:
+- Ketika container dijalankan:
+	- Image layers → **read-only**
+	- Container mendapat **writable layer** di atasnya
+
+- Contoh:
+
+```Dockerfile
+FROM ubuntu:22.04      # base layer
+RUN apt update         # layer 1
+RUN apt install -y curl# layer 2
+COPY app /app          # layer 3
+```
+
+- Penggunaan layer memudahkan caching, di mana jika suatu layer di atasnya tidak berubah, maka seluruh layer di atasnya pun tidak akan di-rebuild ulang untuk mempercepat proses building image
+- Hanya layer yang berubah dan layer di bawahnya yang akan di-rebuild
+
+```bash
+docker build -t image --no-cache
+```
+
+
+
 # TOIL
 
 ## Definition
