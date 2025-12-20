@@ -104,7 +104,8 @@
               "title": "Outline of cybersecurity"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -199,7 +200,7 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "95c247f2dc80f877",
+  "active": "283ac6fc3289819e",
   "lastOpenFiles": [
     "_pages/cryptography.md",
     "_pages/cybersecurity.md",

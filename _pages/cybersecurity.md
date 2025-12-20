@@ -10,14 +10,20 @@ github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/
 
 Menjamin kerahasiaan, keutuhan, ketersediaan (CIA triads: confidentiality, integrity, availability). Harus tau kapan confidentiality penting, dan availability penting. Misal saat sistem negara kebobolan, mending sistem dimatiin (tapi orang2 ga bisa akses semua) atau enggak. Contoh lain: di sistem pemilu itu integrity, karena datanya harus terjamin ga berubah. Contoh lain: e-commerce seperti Tokopedia itu availability, karena yang penting tuh pertama bisa jualan dulu, bank itu confidentiality
 
+## Mitigasi Keamanan
+
 - Prevention: cegah sebelum terjadi
 - Detection: misal saat masuk ke payload API, langsung di drop di sana
 - Response: misal saat udah mau dieksekusi database, ketauan ada SQL injection, langsung ngasih response di situ
+
+## Kejadian Keamanan
 
 - Incident: terjadi compromise/kebobolan terhadap CIA (membuat CIA gagal. Ini sudah terjadi. Sudah pasti ada konsekuensi)
 - Threat: potensi pelanggaran keamanan, punya kemungkinan. Bisa disengaja atau disengaja
 - Attack: serangan terhadap keamanan. Ini belum tentu berhasil. Kalau sudah berhasil, itu jadi incident.
 - Zero-day attack: serangan baru yang memanfaatkan vulnerability yang baru dan belum ada fix/patch dari developernya
+
+## Tipe Ancaman Keamanan
 
 - Vulnerability: celah keamanan, kelemahan sistem
 - Threat: memiliki potensi pengrusakan
@@ -25,7 +31,9 @@ Menjamin kerahasiaan, keutuhan, ketersediaan (CIA triads: confidentiality, integ
 - Vulnerability: retakan di dinding
 - Tinggi air: level of threat/risk
 
-- CIA-AAA-NR
+## Prinsip dan Atribut Keamanan (CIA-AAA-NR)
+
+- **CIA-AAA-NR**
 
 - Ibarat: energi potensial: threat, energi kinetik: attack. Semakin tinggi threat, kalau berhasil berubah jadi attack, semakin besar dampaknya
 - APT tipe serangan juga, hanya emang istilahnya aja yang salah
