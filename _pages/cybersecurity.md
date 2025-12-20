@@ -184,6 +184,34 @@ Setup maintain dan inspect tabel dari paket filter rules untuk IP di Linux Kerne
 
 
 
+# Authorization Framework 
+
+## OAuth2.0
+
+- Dulu ketika kita akan mengakses sebuah aplikasi atau meminta data yang disimpan di website Y dari website X, maka jika X pengen akses sebagian data kita di aplikasi Y, kita harus login menggunakan akun dan password kita di akun Y via website X, memaksa aplikasi X untuk mengetahui password dari aplikasi Y.
+- Masalah yang muncul dari mekanisme client-server normal dan mekanisme requesting access biasa adalah:
+	1. Third party app yang meminta data harus menyimpan kredensial kita
+	2. Server harus menyediakan mekanisme autentikasi memakai password
+	3. Third party app ketika telah mendapatkan password dan akses ke akun kita, memiliki akses tidak terbatas terhadap resources
+	4. Tidak bisa revoke atau cabut akses third-party terhadap server
+	5. Kalau data password di third party ter-compromise, password kita di server juga compromised dan begitupun dengan data-datanya
+- OAuth mengatasi masalah ini dengan memperkenalkan authorization layer dan memisahkan role dari client dengan resource owner, di mana **client** (client di sini siapapun yang ingin mengakses **server**, bisa saja third party app) melakukan **request access** ke **resource controlled** dan di-hosting oleh **resource server** dan diberikan set of credential yang diberikan oleh **resource owner**.
+- Jadi dengan ini 
+
+### Pihak Terlibat
+
+- Sebagai contoh, kita menyimpan foto-foto kita di Google Drive. Lalu kita berniat print foto-foto tersebut melalui online printing application bernama HPrinter. Instead of kita nge-upload foto-foto kita manual ke HPrint, kita bisa kasih akses ke sebagian foto kita di Google Drive kepada HPrint.
+- Dalam hal ini, kita sebagai pemilik asli data adalah **resource owner**
+- Google Drive adalah **resource server**, yaitu tempat yang menyimpan data kita
+- HPrint adalah **client**, pihak luar yang ingin mengakses data kita
+- Lalu bagaimana cara kita memberikan token kepada HPint supaya kita bisa membuat HPrint mengakses foto-foto di Google Drive kita? Di sinilah ada **authorization server**, yaitu server yang bertugas memberikan akses token ke client yang akan mengakses data kita
+
+### Alur
+
+- Kita (user) menginstruksikan HPrint (client) untuk print foto $\rightarrow$ HPrint meminta akses ke Google Auth agar bisa akses foto yang ingin kita print dari Google Drive, dengan parameter permintaan client ID dari HPrint dan permission/scope yang diminta $\rightarrow$ Google Auth request permission dari kita untuk memberikan HPrint akses yang diminta scope-nya $\rightarrow$ Kita memberikan akses dan menyetujui permintaan Google Auth $\rightarrow$ Google Auth memberitahukan izin diterima kepada HPrint $\rightarrow$ HPrint meminta accesss token ke Google Auth $\rightarrow$ Google Auth memberikan akses token ke HPrint $\rightarrow$ HPrint bisa mengakses foto di Google Drive
+
+
+
 # LAMPIRAN: Type of Attacks {#type-of-attacks}
 
 ## STRIDE Attack {#stride-attack}
@@ -238,32 +266,6 @@ Same wifi name and password: orang2 bisa ketipu dengan wifi dan password yang sa
 # LAMPIRAN: Tools
 
 [https://builtwith.com/](https://builtwith.com/)
-
-# Lampiran: Authorization Framework 
-
-## OAuth2.0
-
-- Dulu ketika kita akan mengakses sebuah aplikasi atau meminta data yang disimpan di website Y dari website X, maka jika X pengen akses sebagian data kita di aplikasi Y, kita harus login menggunakan akun dan password kita di akun Y via website X, memaksa aplikasi X untuk mengetahui password dari aplikasi Y.
-- Masalah yang muncul dari mekanisme client-server normal dan mekanisme requesting access biasa adalah:
-	1. Third party app yang meminta data harus menyimpan kredensial kita
-	2. Server harus menyediakan mekanisme autentikasi memakai password
-	3. Third party app ketika telah mendapatkan password dan akses ke akun kita, memiliki akses tidak terbatas terhadap resources
-	4. Tidak bisa revoke atau cabut akses third-party terhadap server
-	5. Kalau data password di third party ter-compromise, password kita di server juga compromised dan begitupun dengan data-datanya
-- OAuth mengatasi masalah ini dengan memperkenalkan authorization layer dan memisahkan role dari client dengan resource owner, di mana **client** (client di sini siapapun yang ingin mengakses **server**, bisa saja third party app) melakukan **request access** ke **resource controlled** dan di-hosting oleh **resource server** dan diberikan set of credential yang diberikan oleh **resource owner**.
-- Jadi dengan ini 
-
-### Pihak Terlibat
-
-- Sebagai contoh, kita menyimpan foto-foto kita di Google Drive. Lalu kita berniat print foto-foto tersebut melalui online printing application bernama HPrinter. Instead of kita nge-upload foto-foto kita manual ke HPrint, kita bisa kasih akses ke sebagian foto kita di Google Drive kepada HPrint.
-- Dalam hal ini, kita sebagai pemilik asli data adalah **resource owner**
-- Google Drive adalah **resource server**, yaitu tempat yang menyimpan data kita
-- HPrint adalah **client**, pihak luar yang ingin mengakses data kita
-- Lalu bagaimana cara kita memberikan token kepada HPint supaya kita bisa membuat HPrint mengakses foto-foto di Google Drive kita? Di sinilah ada **authorization server**, yaitu server yang bertugas memberikan akses token ke client yang akan mengakses data kita
-
-### Alur
-
-- Kita (user) menginstruksikan HPrint (client) untuk print foto $\rightarrow$ HPrint meminta akses ke Google Auth agar bisa akses foto yang ingin kita print dari Google Drive, dengan parameter permintaan client ID dari HPrint dan permission/scope yang diminta $\rightarrow$ Google Auth request permission dari kita untuk memberikan HPrint akses yang diminta scope-nya $\rightarrow$ Kita memberikan akses dan menyetujui permintaan Google Auth $\rightarrow$ Google Auth memberitahukan izin diterima kepada HPrint $\rightarrow$ HPrint meminta accesss token ke Google Auth $\rightarrow$ Google Auth memberikan akses token ke HPrint $\rightarrow$ HPrint bisa mengakses foto di Google Drive
 
 # Istilah
 
