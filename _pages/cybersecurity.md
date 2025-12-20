@@ -179,6 +179,11 @@ Setup maintain dan inspect tabel dari paket filter rules untuk IP di Linux Kerne
 3. Verifikasi expiration
 4. Verifikasi revocation
 
+
+# Access Control
+
+
+
 # LAMPIRAN: Type of Attacks {#type-of-attacks}
 
 ## STRIDE Attack {#stride-attack}
