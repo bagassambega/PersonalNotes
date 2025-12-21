@@ -67,7 +67,9 @@ Menjamin kerahasiaan, keutuhan, ketersediaan (CIA triads: confidentiality, integ
 - Access control mendefinisikan three-tuples berikut: {User, Resources, Privileges}
 - Secara umum dan dasar, ada tiga model utama access control models:
 	1. Mandatory: computer system yang menentukan siapa yang memiliki akses ke resources
-	2. Discretionary: 
+	2. Discretionary: user dapat menentukan user lain mana yang dapat mengakses data/resources
+	3. Role-based (non-discretionary): akses dan privilege user ditentukan oleh role
+	4. Lain-lain: ABAC, ReBAC, Location-Based
 
 - Contoh kasus: Concerns for a digital marketplace:
 
@@ -80,7 +82,6 @@ Menjamin kerahasiaan, keutuhan, ketersediaan (CIA triads: confidentiality, integ
 
 - **Accountability**: bisa mengetahui siapa yang melakukan sesuatu
 - Contoh: logging, audit trails
-
 
 - **Non-repudiation**: transaction yang tidak bisa ditolak lagi. Misal saat di kelas, buat bukti kehadiran ada TTD, yang bisa TTD itu hanya orangnya sendiri dan sebagai bukti kalau dia itu hadir
 
@@ -256,7 +257,46 @@ Setup maintain dan inspect tabel dari paket filter rules untuk IP di Linux Kerne
 
 # Security Monitoring and Analytics
 
+## SOC, SIEM, SOAR
 
+1. **SIEM**: Security Information and Event Management
+	- Security event analysis tools untuk membantu investigasi, early threat detection, dan incident response
+	- Platform sentralisasi log dari banyak sumber seperti server, firewall, dll
+	- Digunakan oleh tim SOC
+	- Kelemahan: Deteksi cenderung reaktif, Respons masih manual (tanpa SOAR), deteksi berbasis pattern/rule
+	- Contoh: Microsoft Sentinel, IBM QRadar
+
+2. **SOC**: Security Operation Center
+	- Tim/fungsi organisasi yang bertanggung jawab untuk monitoring, detection, analysis, response, dan recovery terhadap insiden keamanan.
+	- Semua tool (SIEM, SOAR, EDR, XDR, dll.) digunakan oleh SOC
+
+3. **SOAR**: Security Orchestration, Automation, and Response
+	- Platform otomasi dan orkestrasi respons insiden
+	- Hubungan dengan SIEM: SIEM > deteksi dan alert, SOAR: eksekusi respons
+	- Contoh: IBM Resilient, Tines
+
+## XDR, EDR, MDR
+
+1. **EDR**: Endpoint Detection and Response
+2. **XDR**: 
+
+## IDS
+
+- **Intrusion Detection System**
+- Sistem untuk mendeteksi aktivitas mencurigakan atau serangan pada jaringan atau host dengan analisis traffic atau event tanpa melakukan respons aktif
+
+### Network IDS
+
+- Memantau traffic jaringan
+- Tidak
+
+## UEBA
+
+- **User and Entity Behaviour Analysis**
+- Pengecekan menggunakan machine learning, analisis perilaku dari user untuk melihat tindakan perilaku mencurigakan atau abnormal user atau device
+- Cara kerja: ambil dan analisis data dari berbagai sumber untuk membuat baseline dari normal behaviour, kemudian ML menyaring dan meng-enhance baseline, dan nanti digunakan untuk mendeteksi deviasi atau tindakan user yang jauh dari baseline
+- Sumber data: network equipment, security tools, authentication database, threat intelligence feeds
+- Use case: insider threat detection, monitoring device (servers, routers, IoT devices)
 
 # LAMPIRAN: Type of Attacks {#type-of-attacks}
 

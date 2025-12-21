@@ -196,7 +196,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -217,8 +218,9 @@
   },
   "active": "7c4b74a7be7f197a",
   "lastOpenFiles": [
-    "_pages/cryptography.md",
+    "Untitled.md",
     "_pages/cybersecurity.md",
+    "_pages/cryptography.md",
     "assets/images/lectures/cybersecurity_20251221-212504.png",
     "assets/images/lectures/cybersecurity_20251221-211801.png",
     "assets/images/lectures/cybersecurity_20251221-211451.png",
