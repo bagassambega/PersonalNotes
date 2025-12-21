@@ -255,6 +255,9 @@ Setup maintain dan inspect tabel dari paket filter rules untuk IP di Linux Kerne
 
 ![](../assets/images/lectures/cybersecurity_20251221-211451.png)
 
+# Digital Forensic
+
+
 # Security Monitoring and Analytics
 
 ## SOC, SIEM, SOAR
@@ -278,7 +281,13 @@ Setup maintain dan inspect tabel dari paket filter rules untuk IP di Linux Kerne
 ## XDR, EDR, MDR
 
 1. **EDR**: Endpoint Detection and Response
-2. **XDR**: 
+	- Hanya deteksi dan react terhadap suspicious behaviour dan malicious activity di level endpoint
+2. **XDR**: Extended Detection and Response
+	- Deteksi dan respons cyberthreat di seluruh security stack
+3. **MDR**: Managed Detection and Response
+	- Sebuah layanan, bukan produk
+	- Mengelola tools dan menyediakan analisis SOC
+	- Umumnya dilakukan oleh eksternal team
 
 ## IDS
 
@@ -287,8 +296,18 @@ Setup maintain dan inspect tabel dari paket filter rules untuk IP di Linux Kerne
 
 ### Network IDS
 
-- Memantau traffic jaringan
-- Tidak
+- Memantau traffic jaringan dari seluruh device yang terhubung ke network
+
+### Host IDS
+
+- Monitor aktivitas dari sebuah host dan scan seluruh security policy violations dan aktivitasnya
+
+### Hybrid IDS
+
+- Kombinasi host-based dan network-based. Jadi monitor di host system dan monitor network traffic
+- Bisa monitor sistem dan events aplikasi dan verifikasi integritas file system seperti host-based IDS, tapi hanya bisa menyajikan analisis network traffic ke device tersebut saja
+
+![](../assets/images/lectures/cybersecurity_20251222-063246.png)
 
 ## UEBA
 
