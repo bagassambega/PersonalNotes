@@ -16,17 +16,17 @@ Menjamin kerahasiaan, keutuhan, ketersediaan (CIA triads: confidentiality, integ
 - Detection: misal saat masuk ke payload API, langsung di drop di sana
 - Response: misal saat udah mau dieksekusi database, ketauan ada SQL injection, langsung ngasih response di situ
 
-## Kejadian Keamanan
+## Insiden, Threat, Attack
 
 - Incident: terjadi compromise/kebobolan terhadap CIA (membuat CIA gagal. Ini sudah terjadi. Sudah pasti ada konsekuensi)
 - Threat: potensi pelanggaran keamanan, punya kemungkinan. Bisa disengaja atau disengaja
 - Attack: serangan terhadap keamanan. Ini belum tentu berhasil. Kalau sudah berhasil, itu jadi incident.
 - Zero-day attack: serangan baru yang memanfaatkan vulnerability yang baru dan belum ada fix/patch dari developernya
 
-## Tipe Ancaman Keamanan
+## Vulnerability dan Threat
 
 - Vulnerability: celah keamanan, kelemahan sistem
-- Threat: memiliki potensi pengrusakan
+- Threat: memiliki potensi pengrusakan/dirusak
 
 - Vulnerability: retakan di dinding
 - Tinggi air: level of threat/risk
