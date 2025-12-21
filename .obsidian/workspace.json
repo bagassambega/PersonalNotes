@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "2dc1ecdf935c0c69",
+        "id": "e13c8ffab3da35ba",
         "type": "tabs",
         "children": [
           {
-            "id": "ca7af83d114d6db4",
+            "id": "7c4b74a7be7f197a",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "_pages/cybersecurity.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "cybersecurity"
+              "title": "New tab"
             }
           }
         ]
@@ -80,13 +76,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "_pages/cybersecurity.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of cybersecurity"
+              "title": "Outline"
             }
           }
         ]
@@ -184,7 +179,7 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "19c9ba006b16019b",
+  "active": "7c4b74a7be7f197a",
   "lastOpenFiles": [
     "_pages/cybersecurity.md",
     "scripts/sync-all.sh",
