@@ -18,6 +18,8 @@ Menjamin kerahasiaan, keutuhan, ketersediaan (CIA triads: confidentiality, integ
 
 ## Insiden, Threat, Attack
 
+![[cybersecurity_20251221-200312.png]]
+
 - Incident: terjadi compromise/kebobolan terhadap CIA (membuat CIA gagal. Ini sudah terjadi. Sudah pasti ada konsekuensi)
 - Threat: potensi pelanggaran keamanan, punya kemungkinan. Bisa disengaja atau disengaja
 - Attack: serangan terhadap keamanan. Ini belum tentu berhasil. Kalau sudah berhasil, itu jadi incident.

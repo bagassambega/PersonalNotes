@@ -10,6 +10,8 @@ github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/
 
 - Penyebab distributed technology:
 
+
+
 1. Geografi tersebar
 
 2. Parallelism: multicore process
