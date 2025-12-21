@@ -202,6 +202,7 @@
   },
   "active": "19c9ba006b16019b",
   "lastOpenFiles": [
+    "assets/images",
     "assets/images/screenshots",
     "assets/images/diagrams",
     "assets/images/lectures",
@@ -242,7 +243,6 @@
     "_site/feed.xml",
     "_site/_pages/resources/index.html",
     "_site/_pages/resources",
-    "_site/_pages",
     "_site/assets/images/screenshots/mathematics/Logo_Institut_Teknologi_Bandung.png",
     "_site/assets/favicon_io/favicon-32x32.png",
     "_site/assets/favicon_io/favicon-16x16.png",
