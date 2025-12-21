@@ -3,7 +3,17 @@ set -e
 
 SUBMODULE="assets/images"
 
-echo "== Syncing assets repository =="
+echo "== Step 1: Commit and push main repo content =="
+
+git add .
+if [[ -n "$(git status --porcelain)" ]]; then
+  git commit -m "Update notes"
+  git push
+else
+  echo "No main repo changes"
+fi
+
+echo "== Step 2: Commit and push assets submodule =="
 
 cd "$SUBMODULE"
 git checkout main
@@ -16,18 +26,17 @@ if [[ -n "$(git status --porcelain)" ]]; then
 else
   echo "No asset changes"
 fi
-
 cd - >/dev/null
 
-echo "== Syncing main repository =="
+echo "== Step 3: Update submodule pointer =="
 
 git add "$SUBMODULE"
-
 if [[ -n "$(git status --porcelain)" ]]; then
-  git commit -m "Update assets submodule"
+  git commit -m "Update assets submodule pointer"
+  git push
+else
+  echo "Submodule pointer unchanged"
 fi
-
-git push
 
 echo "== Sync complete =="
 

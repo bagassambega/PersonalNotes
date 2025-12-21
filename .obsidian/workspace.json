@@ -89,8 +89,7 @@
               "title": "Outline of cybersecurity"
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -218,13 +217,14 @@
   },
   "active": "7c4b74a7be7f197a",
   "lastOpenFiles": [
+    "_pages/cryptography.md",
+    "_pages/cybersecurity.md",
     "assets/images/lectures/cybersecurity_20251221-212504.png",
     "assets/images/lectures/cybersecurity_20251221-211801.png",
     "assets/images/lectures/cybersecurity_20251221-211451.png",
     "scripts/sync-all.sh",
     "assets/images/lectures/cybersecurity_20251221-204503.png",
     "assets/images/lectures/cybersecurity_20251221-203201.png",
-    "_pages/cybersecurity.md",
     "assets/images/lectures/cybersecurity_20251221-200312.png",
     "_pages/system-design.md",
     "assets/images/diagrams",
@@ -238,7 +238,6 @@
     "assets/lectures",
     "Pasted image 20251221192149.png",
     "Pasted image 20251221100635.png",
-    "_pages/cryptography.md",
     "README.md",
     "vendor/bundle/ruby/3.4.0/gems/octokit-4.25.1/README.md",
     "_pages/devops.md",
@@ -263,7 +262,6 @@
     "_pages/dsa.md",
     "Pasted image 20251031200303.png",
     "Pasted image 20251031134253.png",
-    "Pasted image 20251031095104.png",
     "Untitled.canvas"
   ]
 }

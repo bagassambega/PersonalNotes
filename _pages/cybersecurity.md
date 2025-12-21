@@ -216,10 +216,6 @@ Setup maintain dan inspect tabel dari paket filter rules untuk IP di Linux Kerne
 - OAuth mengatasi masalah ini dengan memperkenalkan authorization layer dan memisahkan role dari client dengan resource owner, di mana **client** (client di sini siapapun yang ingin mengakses **server**, bisa saja third party app) melakukan **request access** ke **resource controlled** dan di-hosting oleh **resource server** dan diberikan set of credential yang diberikan oleh **resource owner**.
 - Jadi dengan ini 
 
-### OpenID
-
-![](../assets/images/lectures/cybersecurity_20251221-211451.png)
-
 ### Pihak Terlibat
 
 - Sebagai contoh, kita menyimpan foto-foto kita di Google Drive. Lalu kita berniat print foto-foto tersebut melalui online printing application bernama HPrinter. Instead of kita nge-upload foto-foto kita manual ke HPrint, kita bisa kasih akses ke sebagian foto kita di Google Drive kepada HPrint.
@@ -231,6 +227,13 @@ Setup maintain dan inspect tabel dari paket filter rules untuk IP di Linux Kerne
 ### Alur
 
 - Kita (user) menginstruksikan HPrint (client) untuk print foto $\rightarrow$ HPrint meminta akses ke Google Auth agar bisa akses foto yang ingin kita print dari Google Drive, dengan parameter permintaan client ID dari HPrint dan permission/scope yang diminta $\rightarrow$ Google Auth request permission dari kita untuk memberikan HPrint akses yang diminta scope-nya $\rightarrow$ Kita memberikan akses dan menyetujui permintaan Google Auth $\rightarrow$ Google Auth memberitahukan izin diterima kepada HPrint $\rightarrow$ HPrint meminta accesss token ke Google Auth $\rightarrow$ Google Auth memberikan akses token ke HPrint $\rightarrow$ HPrint bisa mengakses foto di Google Drive
+
+### OpenID
+
+![](../assets/images/lectures/cybersecurity_20251221-211451.png)
+
+
+# Security Monitoring and Analytics
 
 
 
