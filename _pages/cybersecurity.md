@@ -232,7 +232,6 @@ Setup maintain dan inspect tabel dari paket filter rules untuk IP di Linux Kerne
 
 ![](../assets/images/lectures/cybersecurity_20251221-211451.png)
 
-
 # Security Monitoring and Analytics
 
 
