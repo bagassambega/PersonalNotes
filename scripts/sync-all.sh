@@ -1,28 +1,33 @@
 #!/usr/bin/env bash
 set -e
 
-ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+SUBMODULE="assets/images"
 
-echo "[1/3] Sync images submodule"
-cd "$ROOT/assets/images"
+echo "== Syncing assets repository =="
+
+cd "$SUBMODULE"
+git checkout main
+git pull
 
 if [[ -n "$(git status --porcelain)" ]]; then
   git add .
-  git commit -m "Auto-sync images"
+  git commit -m "Update images"
   git push
 else
-  echo "No image changes"
+  echo "No asset changes"
 fi
 
-echo "[2/3] Sync main repo"
-cd "$ROOT"
+cd - >/dev/null
 
-git add -u   # critical: does NOT recurse into submodules
+echo "== Syncing main repository =="
+
+git add "$SUBMODULE"
+
 if [[ -n "$(git status --porcelain)" ]]; then
-  git commit -m "Auto-sync notes"
-  git push
-else
-  echo "No note changes"
+  git commit -m "Update assets submodule"
 fi
 
-echo "[3/3] Done"
+git push
+
+echo "== Sync complete =="
+

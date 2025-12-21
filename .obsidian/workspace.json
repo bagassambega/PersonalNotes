@@ -161,6 +161,36 @@
               "icon": "git-pull-request",
               "title": "Source Control"
             }
+          },
+          {
+            "id": "e005543051674846",
+            "type": "leaf",
+            "state": {
+              "type": "SC-custom-variables-view",
+              "state": {},
+              "icon": "code-glyph",
+              "title": "Shell commands: Custom variables"
+            }
+          },
+          {
+            "id": "33c9282ee9c28e4b",
+            "type": "leaf",
+            "state": {
+              "type": "SC-custom-variables-view",
+              "state": {},
+              "icon": "code-glyph",
+              "title": "Shell commands: Custom variables"
+            }
+          },
+          {
+            "id": "4544dd9007f43264",
+            "type": "leaf",
+            "state": {
+              "type": "SC-custom-variables-view",
+              "state": {},
+              "icon": "code-glyph",
+              "title": "Shell commands: Custom variables"
+            }
           }
         ],
         "currentTab": 3
@@ -182,15 +212,18 @@
       "markdown-importer:Open format converter": false,
       "table-editor-obsidian:Advanced Tables Toolbar": false,
       "obsidian-git:Open Git source control": false,
-      "obsidian-excalidraw-plugin:New drawing": false
+      "obsidian-excalidraw-plugin:New drawing": false,
+      "obsidian-shellcommands:Shell commands: Custom variables": false
     }
   },
-  "active": "7c4b74a7be7f197a",
+  "active": "19c9ba006b16019b",
   "lastOpenFiles": [
+    "assets/images/lectures/cybersecurity_20251221-211801.png",
+    "assets/images/lectures/cybersecurity_20251221-211451.png",
+    "scripts/sync-all.sh",
     "assets/images/lectures/cybersecurity_20251221-204503.png",
     "assets/images/lectures/cybersecurity_20251221-203201.png",
     "_pages/cybersecurity.md",
-    "scripts/sync-all.sh",
     "assets/images/lectures/cybersecurity_20251221-200312.png",
     "_pages/system-design.md",
     "assets/images/diagrams",
@@ -231,8 +264,6 @@
     "Pasted image 20251031134253.png",
     "Pasted image 20251031095104.png",
     "_site/assets/images/screenshots/mathematics/Logo_Institut_Teknologi_Bandung.png",
-    "_site/assets/favicon_io/favicon-32x32.png",
-    "_site/assets/favicon_io/favicon-16x16.png",
     "Untitled.canvas"
   ]
 }

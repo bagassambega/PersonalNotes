@@ -18,7 +18,7 @@ Menjamin kerahasiaan, keutuhan, ketersediaan (CIA triads: confidentiality, integ
 
 ## Insiden, Threat, Attack
 
-![[cybersecurity_20251221-200312.png]]
+![](cybersecurity_20251221-200312.png)
 
 - Incident: terjadi compromise/kebobolan terhadap CIA (membuat CIA gagal. Ini sudah terjadi. Sudah pasti ada konsekuensi)
 - Threat: potensi pelanggaran keamanan, punya kemungkinan. Bisa disengaja atau disengaja
@@ -132,7 +132,7 @@ Message digest: [https://www.geeksforgeeks.org/computer-networks/message-digest-
 
 ### Attack Tree
 
-![[cybersecurity_20251221-203201.png]]
+![cybersecurity_20251221-203201.png](cybersecurity_20251221-203201.png)
 
 - Evaluasi based on various threats.
 - Dibangun berdasarkan dekomposisi threat yang besar menjadi threat-threat yang kecil
@@ -196,6 +196,10 @@ Setup maintain dan inspect tabel dari paket filter rules untuk IP di Linux Kerne
 
 # Authorization Framework 
 
+## SAML
+
+![](../assets/images/lectures/cybersecurity_20251221-211801.png)
+
 ## OAuth2.0
 
 - Dulu ketika kita akan mengakses sebuah aplikasi atau meminta data yang disimpan di website Y dari website X, maka jika X pengen akses sebagian data kita di aplikasi Y, kita harus login menggunakan akun dan password kita di akun Y via website X, memaksa aplikasi X untuk mengetahui password dari aplikasi Y.
@@ -210,7 +214,7 @@ Setup maintain dan inspect tabel dari paket filter rules untuk IP di Linux Kerne
 
 ### OpenID
 
-![[cybersecurity_20251221-204503.png]]
+![](../assets/images/lectures/cybersecurity_20251221-211451.png)
 
 ### Pihak Terlibat
 

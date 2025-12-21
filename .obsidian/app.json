@@ -1,4 +1,6 @@
 {
   "spellcheck": false,
-  "attachmentFolderPath": "assets/images/lectures"
+  "attachmentFolderPath": "assets/images/lectures",
+  "newLinkFormat": "relative",
+  "useMarkdownLinks": true
 }
