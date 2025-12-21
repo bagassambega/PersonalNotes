@@ -33,29 +33,43 @@ Menjamin kerahasiaan, keutuhan, ketersediaan (CIA triads: confidentiality, integ
 - Vulnerability: retakan di dinding
 - Tinggi air: level of threat/risk
 
-## Prinsip dan Atribut Keamanan (CIA-AAA-NR)
-
-- **CIA-AAA-NR**
-
 - Ibarat: energi potensial: threat, energi kinetik: attack. Semakin tinggi threat, kalau berhasil berubah jadi attack, semakin besar dampaknya
 - APT tipe serangan juga, hanya emang istilahnya aja yang salah
 
-- Interception: ada komunikasi dicegat diambil datanya (confidentiality)
-- Interruption: mengganggu komunikasi (availability)
-- Modification: mengubah data (dari ada ke ada lagi tapi bentuk berbeda) (integrity)
-- Fabrication: menambahkan/insert sesuatu, dari yang sebelumnya ga ada jadi ada (integrity)
 - Contoh kasus: di kebocoran data SatuSehat, mereka hanya validasi cookies nya ada atau enggak, tapi ga validasi cookies itu harusnya bisa akses mana aja. Misal kita login dengan NIM 13522001, nah kalau URL nya kita ganti ke 13522002, harusnya ga boleh karena kita ga login sebagai 002, tapi karena hanya validasi ada cookies atau enggak, jadi tetep bisa akses
-- Authentication: proses memastikan yang mau masuk itu orang yang betul atau bukan
+
+## Prinsip dan Atribut Keamanan (CIA-AAA-NR)
+
+### CIA Triads
+
+- **Confidentiality**: Kerahasiaan data
+- **Integrity**: message/data integrity, data tidak berubah atau dimanipulasi
+- **Availability**: ketersediaan. Kalau kita pengen mengakses data, data tersebut bisa diakses kapanpun
+
+### Triple-A
+
+- **Authentication**: proses memastikan yang mau masuk itu orang yang betul atau bukan
+
+- Verification of claim of identity. Verifikasi identitas kita (bagaimana cara Bob mengetahui kalau dia sebetulnya sedang berkomunikasi dengan Alice?)
+- Tiga cara verifikasi
+1. Something that you know: sesuatu yang kamu tahu sendiri, misalnya password
+2. Something that you have: sesuatu yang kamu miliki sendiri, misalnya token session
+3. Something that you are: sesuatu yang menunjukkan itu kamu, misalnya biometrics seperti fingerprint
 
 - Person to computer: misal kode OTP yang dikirim ke user lewat SMS. Diminta buat masukin lagi
 - Computer to computer: Google login
 
-- Cara autentikasi: something that you know (password), something that you have (token), something what you are (biometrics) (ingat muka/fingerprint cuman analisis pola sidik jari atau muka, atau jarak antar fitur di pola. Bisa ditiru atau kalau orang yang mukanya mirip atau polanya mirip, malah bisa akses)
 - Contoh two factor authentication: mesin ATM, what you have (kartu ATM) + PIN ATM
 - OTP: one time password
-- Authorization: proses memastikan orang yang mau akses itu punya hak akses atau enggak
 
-- Concerns for a digital marketplace:
+- **Authorization**: proses memastikan orang yang mau akses itu punya hak akses atau enggak
+- Cara pengecekan authorization: access control
+- Access control mendefinisikan three-tuples berikut: {User, Resources, Privileges}
+- Secara umum dan dasar, ada tiga model utama access control models:
+	1. Mandatory: computer system yang menentukan siapa yang memiliki akses ke resources
+	2. Discretionary: 
+
+- Contoh kasus: Concerns for a digital marketplace:
 
 - Availability of service: DDoS
 - Security of accounts: account takeover
@@ -64,10 +78,18 @@ Menjamin kerahasiaan, keutuhan, ketersediaan (CIA triads: confidentiality, integ
 - Confidentiality of payment data: jangan sampai data pribadi/transaksi diketahui oleh pihak lain
 - Integrity of marketplace goods: jangan sampai ada penjualan palsu, barang palsu, toko palsu, dsb
 
-- Accountability: bisa mengetahui siapa yang melakukan sesuatu
-- Non-repudiation: transaction yang tidak bisa ditolak lagi. Misal saat di kelas, buat bukti kehadiran ada TTD, yang bisa TTD itu hanya orangnya sendiri dan sebagai bukti kalau dia itu hadir
+- **Accountability**: bisa mengetahui siapa yang melakukan sesuatu
+- Contoh: logging, audit trails
 
-Tugas: masalah apa saja yang bisa muncul kalau kita punya marketplace namanya Black
+
+- **Non-repudiation**: transaction yang tidak bisa ditolak lagi. Misal saat di kelas, buat bukti kehadiran ada TTD, yang bisa TTD itu hanya orangnya sendiri dan sebagai bukti kalau dia itu hadir
+
+## Information Security Threat
+
+- **Interception**: ada komunikasi dicegat diambil datanya (**confidentiality**)
+- **Interruption**: mengganggu komunikasi (**availability**)
+- **Modification**: mengubah data (dari ada ke ada lagi tapi bentuk berbeda) (**integrity**)
+- **Fabrication**: menambahkan/insert sesuatu, dari yang sebelumnya ga ada jadi ada (**integrity**)
 
 # Threat Analysis
 
