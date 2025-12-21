@@ -132,7 +132,7 @@ Message digest: [https://www.geeksforgeeks.org/computer-networks/message-digest-
 
 ### Attack Tree
 
-- Attack tree
+![[cybersecurity_20251221-203201.png]]
 
 - Evaluasi based on various threats.
 - Dibangun berdasarkan dekomposisi threat yang besar menjadi threat-threat yang kecil
