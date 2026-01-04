@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_pages/app-system-dev.md",
+                "file": "_pages/programming-concept.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "app-system-dev"
+              "title": "programming-concept"
             }
           }
         ]
@@ -218,6 +218,7 @@
   },
   "active": "7c4b74a7be7f197a",
   "lastOpenFiles": [
+    "_pages/app-system-dev.md",
     "_pages/cybersecurity.md",
     "assets/images/lectures/cybersecurity_20251222-063246.png",
     "Untitled.md",

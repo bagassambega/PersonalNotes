@@ -6,7 +6,3 @@ permalink: /app-system-dev/
 github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/app-system-dev.md
 ---
 
-# Functional Programming
-
-## Higher-Order Level Function
-
