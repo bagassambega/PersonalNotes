@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_pages/cybersecurity.md",
+                "file": "_pages/app-system-dev.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "cybersecurity"
+              "title": "app-system-dev"
             }
           }
         ]
@@ -218,9 +218,9 @@
   },
   "active": "7c4b74a7be7f197a",
   "lastOpenFiles": [
+    "_pages/cybersecurity.md",
     "assets/images/lectures/cybersecurity_20251222-063246.png",
     "Untitled.md",
-    "_pages/cybersecurity.md",
     "_pages/cryptography.md",
     "assets/images/lectures/cybersecurity_20251221-212504.png",
     "assets/images/lectures/cybersecurity_20251221-211801.png",
@@ -263,7 +263,6 @@
     "_pages/operating-system.md",
     "_pages/native-dev.md",
     "Pasted image 20251031200303.png",
-    "Pasted image 20251031134253.png",
     "Untitled.canvas"
   ]
 }
