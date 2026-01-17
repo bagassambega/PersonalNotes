@@ -55,3 +55,14 @@ github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/
 | Supabase      | [https://supabase.com/](https://supabase.com/)                 | PostgreSQL online database provider. Free tier available                                                                                      |
 | AppWrite      | [https://appwrite.io/](https://appwrite.io/)                   | Cloud provider. Free tier available                                                                                                           |
 | Coolify       | [https://coolify.io/](https://coolify.io/)                     | Hosting platform and simple cloud services PaaS. Free tier available                                                                          |
+
+# Entertainment
+
+| Name        | URL                                                                | Genre             | Description                                   |
+| ----------- | ------------------------------------------------------------------ | ----------------- | --------------------------------------------- |
+| fmhy        | [https://fmhy.net](https://fmhy.net)                               | List of resources | List of free and (probably) pirated resources |
+| PStream     | [https://pstream.mov](https://pstream.mov)                         | Movie             | Streaming movies                              |
+| Aether      | [https://aether.mom](https://aether.mom)                           | Movie             | Streaming movies                              |
+| Comix       | [https://comix.to](https://comix.to)                               | Manga comic       | Manga reading, replacement for Comick         |
+| Anikai      | [https://anikai.to](https://anikai.to)                             | Anime             | Watch anime                                   |
+| NontonAnime | [https://s7.nontonanimeid.boats/](https://s7.nontonanimeid.boats/) | Anime             | Watch anime (Indonesian subtitle)             |
