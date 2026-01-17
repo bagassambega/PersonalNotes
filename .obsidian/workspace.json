@@ -20,8 +20,21 @@
               "icon": "lucide-file",
               "title": "programming-concept"
             }
+          },
+          {
+            "id": "947602eee6c5ef79",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.11.4"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.11.4"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -216,7 +229,7 @@
       "obsidian-shellcommands:Shell commands: Custom variables": false
     }
   },
-  "active": "7c4b74a7be7f197a",
+  "active": "947602eee6c5ef79",
   "lastOpenFiles": [
     "_pages/app-system-dev.md",
     "_pages/cybersecurity.md",
