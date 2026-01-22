@@ -33,8 +33,7 @@
               "title": "Release Notes 1.11.5"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -228,7 +227,7 @@
       "obsidian-shellcommands:Shell commands: Custom variables": false
     }
   },
-  "active": "6470f1dc7322f71a",
+  "active": "fa07c3af61998e8e",
   "lastOpenFiles": [
     "_pages/tools.md",
     "_pages/programming-concept.md",

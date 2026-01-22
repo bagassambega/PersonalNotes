@@ -5,13 +5,25 @@ description: "List of useful tools. Beware of virus or malicious contents"
 permalink: "/tools/"  
 github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/tools.md
 ---
-# Software
+# Software Store
 
 ## Windows
 
 | Name   | URL                                      | Description                     |
 | ------ | ---------------------------------------- | ------------------------------- |
 | FileCR | [https://filecr.com](https://filecr.com) | Download premium apps and games |
+
+# Software Tools
+
+## File Manipulation
+
+| Name           | Functionality                                    | Compatibility  | Source                                                                       |
+| -------------- | ------------------------------------------------ | -------------- | ---------------------------------------------------------------------------- |
+| zbar           | Scan QR code in an image                         | Linux          | [https://github.com/mchehab/zbar](https://github.com/mchehab/zbar)           |
+| yt-dlp         | Audio/video downloader                           | Linux, Windows | [https://github.com/yt-dlp/yt-dlp](https://github.com/yt-dlp/yt-dlp)         |
+| exiftool       | Manipulate file metadata, especially image       | Linux, Windows | [https://github.com/exiftool/exiftool](https://github.com/exiftool/exiftool) |
+| GraphicsMagick | Forks of ImageMagick, for edit, manipulate image | Linux          | [http://www.graphicsmagick.org/](http://www.graphicsmagick.org/)             |
+
 
 # Article, Journal and Book
 
