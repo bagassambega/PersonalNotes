@@ -120,5 +120,5 @@ Update the navigation in `_includes/header.html` to add new main sections.
 Use tag of:
 
 ```html
-<term href="/PersonalNotes/glossary#name_of_terms">Name of terms</term>
+<term href="/glossary#name_of_terms">Name of terms</term>
 ```
