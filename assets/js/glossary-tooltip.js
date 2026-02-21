@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   let glossaryTerms = {};
 
   try {
-    const response = await fetch("/PersonalNotes/glossary/");
+    const response = await fetch("/glossary/");
     const html = await response.text();
 
     // Parse the glossary page
