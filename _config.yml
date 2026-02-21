@@ -22,8 +22,8 @@ title: Personal Notes
 email: bagassambega.dev@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Personal notes contain all of college and IT knowledge resource needed to understanding IT world
-baseurl: "/PersonalNotes" # the subpath of your site, e.g. /blog
-url: "https://bagassambega.github.io" # the base hostname & protocol for your site
+baseurl: "" # custom domain serves from root, no subpath needed
+url: "https://hackasticcrow.my.id" # the base hostname & protocol for your site
 github_username: bagassambega
 
 # Repository information for GitHub Pages
@@ -106,7 +106,6 @@ exclude:
   - tailwind.config.js
   - postcss.config.js
   - assets/css/main.css
-
 
 # Include files
 include:
