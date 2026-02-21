@@ -20,7 +20,7 @@ github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/
 
 - **Key** (K): kunci buat melakukan enkripsi
 
-- **Kriptogram**: Potongan <term href="/PersonalNotes/glossary#ciphertext">ciphertext</term>
+- **Kriptogram**: Potongan <term href="/glossary#ciphertext">ciphertext</term>
 
 - **Cryptanalysis**: Analisis untuk mencari kunci/plaintext dari ciphertext yang diketahui, tapi plaintext dan key nya ga diketahui
 
@@ -79,10 +79,12 @@ Berdasarkan tekniknya:
 - Biasa disebut cipher permutasi
 
 #### Columnar Transposition Cipher {#columnar-transposition-cipher}
+
 ![Columnar cipher transposition 1](https://i.imgur.com/JGyzX8h.png)
 ![Columnar cipher transposition 2](https://i.imgur.com/w7i1zuB.png)
 
 #### Rail Fence Transposition Cipher {#rail-fence-transposition-cipher}
+
 ![Rail fence transposition cipher](https://i.imgur.com/8r3plV3.png)
 
 ### Super-enkripsi {#super-enkripsi}
@@ -198,13 +200,13 @@ Maka kunci yang digunakan: kuncikuncik
 
 - **Algoritma**:
 
-	1. Tentukan semua kriptogram berulang yang ada di ciphertext
-	
-	2. Hitung jarak antar kriptogram yang berulang
-	
-	3. Hitung semua faktor dari jarak tersebut
-	
-	4. Tentukan irisan dari semua faktor pembagi tersebut. Nilai irisan tersebut kemungkinan adalah panjang kunci
+ 1. Tentukan semua kriptogram berulang yang ada di ciphertext
+ 
+ 2. Hitung jarak antar kriptogram yang berulang
+ 
+ 3. Hitung semua faktor dari jarak tersebut
+ 
+ 4. Tentukan irisan dari semua faktor pembagi tersebut. Nilai irisan tersebut kemungkinan adalah panjang kunci
 
 - Contoh:
 
@@ -299,7 +301,6 @@ Maka kunci yang digunakan: kuncikuncik
 - Jika dua huruf terdapat pada kolom yang sama maka tiap huruf diganti dengan huruf di bawahnya
 
 ![Matriks siklik 2](https://i.imgur.com/vFr9jrF.png)
-
 
 - Jika dua huruf tidak terletak di baris dan kolkom yang sama, maka:
 
@@ -495,7 +496,6 @@ $$C_2 \equiv mP_2 + b \pmod n$$
 
 ### Proses Pembuatan {#proses-pembuatan-steganografi}
 
-
 ![Diagram pembuatan steganografi](https://i.imgur.com/OpuRryN.png)
 
 ### Kriteria Steganografi {#kriteria-steganografi}
@@ -510,9 +510,9 @@ $$C_2 \equiv mP_2 + b \pmod n$$
 
 ## Metode LSB {#metode-lsb-steganografi}
 
-- <b>Menyimpan satu data di bagian <term href="/PersonalNotes/glossary#lsb">least significant byte</term></b> (byte yang kalau diubah nilainya, paling kecil pengaruhnya). Misal ada byte 1001 0011. Maka LSB nya adalah angka 1 di paling kanan, karena kalau kita ubah value nya jadi 1001 0010, awalnya 147 → 146
+- <b>Menyimpan satu data di bagian <term href="/glossary#lsb">least significant byte</term></b> (byte yang kalau diubah nilainya, paling kecil pengaruhnya). Misal ada byte 1001 0011. Maka LSB nya adalah angka 1 di paling kanan, karena kalau kita ubah value nya jadi 1001 0010, awalnya 147 → 146
 
-- Kebalikan: <term href="/PersonalNotes/glossary#msb">MSB</term> (most significant byte). Byte yang pengaruhnya paling besar (kalau contoh di atas angka 1 di paling kiri, selisihnya 128 kalau diubah: 1001 0010 → 0001 0010 berarti 147 → 18)
+- Kebalikan: <term href="/glossary#msb">MSB</term> (most significant byte). Byte yang pengaruhnya paling besar (kalau contoh di atas angka 1 di paling kiri, selisihnya 128 kalau diubah: 1001 0010 → 0001 0010 berarti 147 → 18)
 
 ### LSB pada Citra Digital {#lsb-citra-digital}
 
@@ -604,19 +604,19 @@ $$C_2 \equiv mP_2 + b \pmod n$$
 
 - Cipher bitwise dibagi 2:
 
-	1. Cipher alir (stream cipher)
-	- Beroperasi pada bit individual
-	- Enkripsi/dekripsi pesan secara bit per bit memakai operasi XOR
+ 1. Cipher alir (stream cipher)
+ 	- Beroperasi pada bit individual
+ 	- Enkripsi/dekripsi pesan secara bit per bit memakai operasi XOR
 
-	2. Cipher block (block cipher)
-	- Operasinya dilakukan per sekumpulan bit (blok-blok bit)
-	- Enkripsi/dekripsi pesan dilakukan secara blok per blok bit (misal setiap 128-bit)
+ 2. Cipher block (block cipher)
+ 	- Operasinya dilakukan per sekumpulan bit (blok-blok bit)
+ 	- Enkripsi/dekripsi pesan dilakukan secara blok per blok bit (misal setiap 128-bit)
 
 ## Stream Cipher {#stream-cipher}
 
 - Enkripsi plaintext menjadi ciphertext setiap bit per bit atau byte per byte
 
-- <term href="/PersonalNotes/glossary#keystream">Keystream</term>: bit-bit aliran kunci untuk enkripsi/dekripsi
+- <term href="/glossary#keystream">Keystream</term>: bit-bit aliran kunci untuk enkripsi/dekripsi
 
 - Keystream dibangkitkan oleh **keystream generator** berdasarkan umpan (**seed**) *U*
 
@@ -627,9 +627,9 @@ $$C_2 \equiv mP_2 + b \pmod n$$
 - **Dekripsi**: $p_i = c_i \oplus k_i$
 
 - Ada 3 kasus keystream yang dih
-	1. Jika keystream yang dihasilkan = 00000…, maka ciphertext yang dihasilkan akan sama dengan plaintext
-	2. Jika keystream yang dihasilkan berulang secara periodik (mis. 11000110…), maka keamanannya rendah dan bisa ditebak polanya pakai [Kasiski method](#vigenere-cipher-kasiski-method)
-	3. Jika keystream pure random, maka algoritmanya [one time pad](#one-time-pad) dan tingkat keamanan sempurna
+ 1. Jika keystream yang dihasilkan = 00000…, maka ciphertext yang dihasilkan akan sama dengan plaintext
+ 2. Jika keystream yang dihasilkan berulang secara periodik (mis. 11000110…), maka keamanannya rendah dan bisa ditebak polanya pakai [Kasiski method](#vigenere-cipher-kasiski-method)
+ 3. Jika keystream pure random, maka algoritmanya [one time pad](#one-time-pad) dan tingkat keamanan sempurna
 
 - Tingkat keamanan stream cipher didapatkan dari cipher XOR sederhana yang dihasilkan antara kasus 2 (keystream berulang) dan kasus 3 (keystream pure random)
 
@@ -675,7 +675,7 @@ $$C_2 \equiv mP_2 + b \pmod n$$
 
 - Secret key (sebagai umpan) memiliki panjang maksimal 256 karakter (dengan 1 karakter = 1 byte). Jika secret key yang digunakan panjangnya < 256, akan diulang secara periodik (kaya [Vigenere](#vigenere-cipher))
 
-- RC4 menghasilkan <term href="/PersonalNotes/glossary#keystream">keystream</term> dalam satuan byte setiap kalinya, lalu di XOR dengan byte plaintext memakai operasi bitwise XOR
+- RC4 menghasilkan <term href="/glossary#keystream">keystream</term> dalam satuan byte setiap kalinya, lalu di XOR dengan byte plaintext memakai operasi bitwise XOR
 
 ![Alur RC4 dasar](https://i.imgur.com/2WS593y.png)
 
@@ -732,7 +732,7 @@ $$C_2 \equiv mP_2 + b \pmod n$$
 
 - A5 terdiri dari 3 buah [LFSR](#linear-feedback-shift-register), masing-masing panjangnya 19, 22, dan 23 bit (total 19+22+23 = 64 bit)
 
-- Bit-bit di dalam register diindeks di mana bit paling tidak penting (<term href="/PersonalNotes/glossary#lsb">LSB</term>) diindeks dengan 0 (elemen paling kanan, yang akan keluar duluan)
+- Bit-bit di dalam register diindeks di mana bit paling tidak penting (<term href="/glossary#lsb">LSB</term>) diindeks dengan 0 (elemen paling kanan, yang akan keluar duluan)
 
 - Luaran dari A5 adalah hasil XOR ketiga buah LSFR ini
 
@@ -803,22 +803,22 @@ $$ed \equiv 1 \pmod{\phi(n)}$$
 $$d \equiv e^{-1} \pmod{\phi(n)}$$
 
 - Hasil dari pembangkitan kunci:
-	- **Kunci publik** adalah pasangan (***e**, **n***)
-	- **Kunci privat** adalah pasangan (***d**, **n***)
+ 	- **Kunci publik** adalah pasangan (***e**, **n***)
+ 	- **Kunci privat** adalah pasangan (***d**, **n***)
 
 - Komponen:
-	- *p* dan *q* adalah bilangan prima (*rahasia*)
-	- *n = pq* (tidak rahasia)
-	
-	- $\phi(n) = (p - 1)(q - 1)$ (*rahasia*)
-	
-	- *e* (kunci enkripsi, [PBB]({{ "/discrete-math#pbb" | relative_url }})(e, ϕ(n)) = 1) (antara e dan ϕ(n) relatif prima) (tidak rahasia)
-	
-	- *d* (kunci dekripsi), didapat dari $d \equiv e^{-1} \pmod{\phi(n)}$) (*rahasia*)
-	
-	- *m* (plainteks) (*rahasia*)
-	
-	- *c* (ciphertext) (*tidak rahasia*)
+ 	- *p* dan *q* adalah bilangan prima (*rahasia*)
+ 	- *n = pq* (tidak rahasia)
+ 
+ 	- $\phi(n) = (p - 1)(q - 1)$ (*rahasia*)
+ 
+ 	- *e* (kunci enkripsi, [PBB]({{ "/discrete-math#pbb" | relative_url }})(e, ϕ(n)) = 1) (antara e dan ϕ(n) relatif prima) (tidak rahasia)
+ 
+ 	- *d* (kunci dekripsi), didapat dari $d \equiv e^{-1} \pmod{\phi(n)}$) (*rahasia*)
+ 
+ 	- *m* (plainteks) (*rahasia*)
+ 
+ 	- *c* (ciphertext) (*tidak rahasia*)
 
 ### Enkripsi {#algoritma-rsa-enkripsi}
 
@@ -826,14 +826,14 @@ $$d \equiv e^{-1} \pmod{\phi(n)}$$
 
 - Hitung cipherteks $c_i$ untuk plainteks $m_i$ menggunakan kunci publik *e* dengan persamaan:
 
-$$c_i = {m_{i}}^{e} \pmod{n}$$ 
+$$c_i = {m_{i}}^{e} \pmod{n}$$
 dengan *m* adalah plainteks, *c* adalah cipherteks, *e* adalah kunci publik, dan *n* adalah *pq*
 
 ### Dekripsi {#algoritma-rsa-dekripsi}
 
 - Misalkan cipherteks $c_1, c_2, c_3, …$
 
-- Plainteks 
+- Plainteks
 $$m_i = {c_i}^d \pmod n$$
 , di mana *m* adalah plainteks, *c* adalah cipherteks, *d* adalah kunci privat, dan *n* adalah *pq*
 
@@ -860,17 +860,17 @@ $$m_i = {c_i}^d \pmod n$$
 - Memakai persoalan [logaritma diskrit]({{ "discrete-math#logaritma-diskrit" | relative_url }}) dan [akar primitif]({{ "/discrete-math#akar-primitif" | relative_url }})
 
 - Properti algoritma Elgamal:
-	- Bilangan prima *p* (*tidak rahasia*)
+ 	- Bilangan prima *p* (*tidak rahasia*)
 
-	- Bilangan acak *g* ($g \lt p$, *g* adalah [akar primitif]({{ "/discrete-math#akar-primitif" | relative_url }}) dari *p*) (tidak rahasia)
-	
-	- Bilangan acak *x* ($2 \le x \le p - 2$) (*rahasia*, **kunci privat**)
+ 	- Bilangan acak *g* ($g \lt p$, *g* adalah [akar primitif]({{ "/discrete-math#akar-primitif" | relative_url }}) dari *p*) (tidak rahasia)
+ 
+ 	- Bilangan acak *x* ($2 \le x \le p - 2$) (*rahasia*, **kunci privat**)
 
-	- $y = gx \pmod p$ (tidak rahasia, **kunci publik**)
+ 	- $y = gx \pmod p$ (tidak rahasia, **kunci publik**)
 
-	- *m* (plainteks) (*rahasia*)
-	
-	- *a* dan *b* (ciphertext) (tidak rahasia)
+ 	- *m* (plainteks) (*rahasia*)
+ 
+ 	- *a* dan *b* (ciphertext) (tidak rahasia)
 
 ### Pembangkitan Kunci {#algoritma-elgamal-pembangkitan-kunci}
 
@@ -882,9 +882,9 @@ $$m_i = {c_i}^d \pmod n$$
 
 - Hasil dari pembangkitan kunci:
 
-	- **Kunci publik**: tripel (*y, g, p*)
-	
-	- **Kunci privat:** pasangan (*x, p*)
+ 	- **Kunci publik**: tripel (*y, g, p*)
+ 
+ 	- **Kunci privat:** pasangan (*x, p*)
 
 ### Enkripsi {#algoritma-elgamal-enkripsi}
 
@@ -894,9 +894,9 @@ $$m_i = {c_i}^d \pmod n$$
 
 - Setiap blok *m* dienkripsi dengan rumus
 
-	1. $a = g^k \pmod p$
-	
-	2. $b = y^km \pmod p$
+ 1. $a = g^k \pmod p$
+ 
+ 2. $b = y^km \pmod p$
 
 - Pasangan *a* dan *b* adalah ciphertext hasil blok pesan *m*, jadi ukuran ciphertext 2 kali ukuran plaintext nya
 
@@ -935,13 +935,13 @@ $$m_i = {c_i}^d \pmod n$$
 
 - Algoritma penyelesaian:
 
-	1. Jumlahkan semua bobot di dalam barisan
-	
-	2. Bandingkan bobot total dengan bobot terbesar di dalam barisan. Jika bobot terbesar lebih kecil atau sama dengan bobot total, maka ia dimasukkan ke dalam knapsack, jika tidak, maka ia tidak dimasukkan (jadi lihat dari paling belakang)
-	
-	3. Kurangi bobot total dengan bobot yang telah dimasukkan, kemudian bandingkan bobot total sekarang dengan bobot terbesar selanjutnya. Demikian seterusnya sampai seluruh bobot di dalam barisan selesai dibandingkan
-	
-	4. Jika bobot total menjadi nol, maka terdapat solusi persoalan superincreasing knapsack , tetapi jika tidak nol, maka tidak ada solusinya
+ 1. Jumlahkan semua bobot di dalam barisan
+ 
+ 2. Bandingkan bobot total dengan bobot terbesar di dalam barisan. Jika bobot terbesar lebih kecil atau sama dengan bobot total, maka ia dimasukkan ke dalam knapsack, jika tidak, maka ia tidak dimasukkan (jadi lihat dari paling belakang)
+ 
+ 3. Kurangi bobot total dengan bobot yang telah dimasukkan, kemudian bandingkan bobot total sekarang dengan bobot terbesar selanjutnya. Demikian seterusnya sampai seluruh bobot di dalam barisan selesai dibandingkan
+ 
+ 4. Jika bobot total menjadi nol, maka terdapat solusi persoalan superincreasing knapsack , tetapi jika tidak nol, maka tidak ada solusinya
 
 - Contoh: Misalkan bobot-bobot yang membentuk barisan superincreasing adalah {2, 3, 6, 13, 27, 52}, dan diketahui bobot knapsack (*M*) = 70. Kita akan mencari $b_1, b_2, …, b_6$ sedemikian sehingga $70 = 2b_1 + 3b_2 + 6b_3 + 13b_4 + 27b_5 + 52b_6$
 
@@ -1023,7 +1023,7 @@ $$m_i = {c_i}^d \pmod n$$
 
 - **Hybrid cryptography**: menggabungkan kriptografi kunci-simetri (misalkan AES) dengan kriptografi kunci-publik (misalkan RSA)
 
-- Jadi **yang dienkripsi pakai kunci publik-privat itu kunci simetrinya**. 
+- Jadi **yang dienkripsi pakai kunci publik-privat itu kunci simetrinya**.
 - Nanti si **encrypted kunci simetri** (*CK*) dikirim bersamaan dengan encrypted **message nya** (*CM*, *CM* dienkripsi pakai kunci simetri)
 
 ## Algoritma Umum {#algoritma-dasar-hybrid-cryptography}
@@ -1066,19 +1066,19 @@ $$D_{AES(K)}(CM) = M$$
 
 - Nilai *g* dan *p* tidak perlu rahasia (warna kuning)
 
-	1. Alice membangkitkan bilangan bulat acak *a* dan mengirim hasil perhitungan 
-	   $$A = g^a \pmod p$$
-	   , di mana *a* adalah **kunci privat Alice** dan *A* adalah **kunci publik Alice**
-	
-	2. Bob membangkitkan bilangan bulat acak *b* dan mengirim hasil perhitungan 
-	   $$B = g^b \pmod p$$
-	   , di mana *b* adalah **kunci privat Bob** dan *B* adalah **kunci publik Bob**
-	
-	3. Alice menerima *B* kemudian menghitung 
-	   $$K = B^a \pmod p$$
-	   Hal ini sama dengan $K = g^{ab} \pmod p$
-	
-	4. Bob menerima *A* kemudian menghitung $K = A^b \pmod p$
+ 1. Alice membangkitkan bilangan bulat acak *a* dan mengirim hasil perhitungan
+    $$A = g^a \pmod p$$
+    , di mana *a* adalah **kunci privat Alice** dan *A* adalah **kunci publik Alice**
+ 
+ 2. Bob membangkitkan bilangan bulat acak *b* dan mengirim hasil perhitungan
+    $$B = g^b \pmod p$$
+    , di mana *b* adalah **kunci privat Bob** dan *B* adalah **kunci publik Bob**
+ 
+ 3. Alice menerima *B* kemudian menghitung
+    $$K = B^a \pmod p$$
+    Hal ini sama dengan $K = g^{ab} \pmod p$
+ 
+ 4. Bob menerima *A* kemudian menghitung $K = A^b \pmod p$
 
 - *K* ini adalah kunci simetri yang dihasilkan (bisa dipakai sebagai seed untuk pembangkitan kunci simetri dengan algoritma apapun)
 
