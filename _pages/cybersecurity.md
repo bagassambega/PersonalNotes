@@ -52,6 +52,7 @@ Menjamin kerahasiaan, keutuhan, ketersediaan (CIA triads: confidentiality, integ
 
 - Verification of claim of identity. Verifikasi identitas kita (bagaimana cara Bob mengetahui kalau dia sebetulnya sedang berkomunikasi dengan Alice?)
 - Tiga cara verifikasi
+
 1. Something that you know: sesuatu yang kamu tahu sendiri, misalnya password
 2. Something that you have: sesuatu yang kamu miliki sendiri, misalnya token session
 3. Something that you are: sesuatu yang menunjukkan itu kamu, misalnya biometrics seperti fingerprint
@@ -66,10 +67,10 @@ Menjamin kerahasiaan, keutuhan, ketersediaan (CIA triads: confidentiality, integ
 - Cara pengecekan authorization: access control
 - Access control mendefinisikan three-tuples berikut: {User, Resources, Privileges}
 - Secara umum dan dasar, ada tiga model utama access control models:
-	1. Mandatory: computer system yang menentukan siapa yang memiliki akses ke resources
-	2. Discretionary: user dapat menentukan user lain mana yang dapat mengakses data/resources
-	3. Role-based (non-discretionary): akses dan privilege user ditentukan oleh role
-	4. Lain-lain: ABAC, ReBAC, Location-Based
+ 1. Mandatory: computer system yang menentukan siapa yang memiliki akses ke resources
+ 2. Discretionary: user dapat menentukan user lain mana yang dapat mengakses data/resources
+ 3. Role-based (non-discretionary): akses dan privilege user ditentukan oleh role
+ 4. Lain-lain: ABAC, ReBAC, Location-Based
 
 - Contoh kasus: Concerns for a digital marketplace:
 
@@ -189,12 +190,12 @@ Penyalahgunaan sistem namun sebetulnya tidak ada larangan untuk melakukan hal te
 - Penyalahgunaan sistem yang merusak atau mengganggu sistem. Contoh: DDoS, hijacking
 - Contoh: nge-hack ke akun orang lain
 
-
 # Firewall
 
 ## Firewall Rules pfSense
 
 ## IPTables
+
 Setup maintain dan inspect tabel dari paket filter rules untuk IP di Linux Kernel
 
 ## Virtual Firewall
@@ -212,32 +213,29 @@ Setup maintain dan inspect tabel dari paket filter rules untuk IP di Linux Kerne
 3. Verifikasi expiration
 4. Verifikasi revocation
 
-
 # Access Control
 
-
-
-# Authorization Framework 
+# Authorization Framework
 
 ## SAML
 
-![](../assets/images/lectures/cybersecurity_20251221-211801.png)
+![](cybersecurity_20251221-211801.png)
 
 ### SSO
 
-![](../assets/images/lectures/cybersecurity_20251221-212504.png)
+![](cybersecurity_20251221-212504.png)
 
 ## OAuth2.0
 
 - Dulu ketika kita akan mengakses sebuah aplikasi atau meminta data yang disimpan di website Y dari website X, maka jika X pengen akses sebagian data kita di aplikasi Y, kita harus login menggunakan akun dan password kita di akun Y via website X, memaksa aplikasi X untuk mengetahui password dari aplikasi Y.
 - Masalah yang muncul dari mekanisme client-server normal dan mekanisme requesting access biasa adalah:
-	1. Third party app yang meminta data harus menyimpan kredensial kita
-	2. Server harus menyediakan mekanisme autentikasi memakai password
-	3. Third party app ketika telah mendapatkan password dan akses ke akun kita, memiliki akses tidak terbatas terhadap resources
-	4. Tidak bisa revoke atau cabut akses third-party terhadap server
-	5. Kalau data password di third party ter-compromise, password kita di server juga compromised dan begitupun dengan data-datanya
+ 1. Third party app yang meminta data harus menyimpan kredensial kita
+ 2. Server harus menyediakan mekanisme autentikasi memakai password
+ 3. Third party app ketika telah mendapatkan password dan akses ke akun kita, memiliki akses tidak terbatas terhadap resources
+ 4. Tidak bisa revoke atau cabut akses third-party terhadap server
+ 5. Kalau data password di third party ter-compromise, password kita di server juga compromised dan begitupun dengan data-datanya
 - OAuth mengatasi masalah ini dengan memperkenalkan authorization layer dan memisahkan role dari client dengan resource owner, di mana **client** (client di sini siapapun yang ingin mengakses **server**, bisa saja third party app) melakukan **request access** ke **resource controlled** dan di-hosting oleh **resource server** dan diberikan set of credential yang diberikan oleh **resource owner**.
-- Jadi dengan ini 
+- Jadi dengan ini
 
 ### Pihak Terlibat
 
@@ -253,41 +251,40 @@ Setup maintain dan inspect tabel dari paket filter rules untuk IP di Linux Kerne
 
 ### OpenID
 
-![](../assets/images/lectures/cybersecurity_20251221-211451.png)
+![](cybersecurity_20251221-211451.png)
 
 # Digital Forensic
-
 
 # Security Monitoring and Analytics
 
 ## SOC, SIEM, SOAR
 
 1. **SIEM**: Security Information and Event Management
-	- Security event analysis tools untuk membantu investigasi, early threat detection, dan incident response
-	- Platform sentralisasi log dari banyak sumber seperti server, firewall, dll
-	- Digunakan oleh tim SOC
-	- Kelemahan: Deteksi cenderung reaktif, Respons masih manual (tanpa SOAR), deteksi berbasis pattern/rule
-	- Contoh: Microsoft Sentinel, IBM QRadar
+ - Security event analysis tools untuk membantu investigasi, early threat detection, dan incident response
+ - Platform sentralisasi log dari banyak sumber seperti server, firewall, dll
+ - Digunakan oleh tim SOC
+ - Kelemahan: Deteksi cenderung reaktif, Respons masih manual (tanpa SOAR), deteksi berbasis pattern/rule
+ - Contoh: Microsoft Sentinel, IBM QRadar
 
 2. **SOC**: Security Operation Center
-	- Tim/fungsi organisasi yang bertanggung jawab untuk monitoring, detection, analysis, response, dan recovery terhadap insiden keamanan.
-	- Semua tool (SIEM, SOAR, EDR, XDR, dll.) digunakan oleh SOC
+ - Tim/fungsi organisasi yang bertanggung jawab untuk monitoring, detection, analysis, response, dan recovery terhadap insiden keamanan.
+ - Semua tool (SIEM, SOAR, EDR, XDR, dll.) digunakan oleh SOC
 
 3. **SOAR**: Security Orchestration, Automation, and Response
-	- Platform otomasi dan orkestrasi respons insiden
-	- Hubungan dengan SIEM: SIEM > deteksi dan alert, SOAR: eksekusi respons
-	- Contoh: IBM Resilient, Tines
+ - Platform otomasi dan orkestrasi respons insiden
+ - Hubungan dengan SIEM: SIEM > deteksi dan alert, SOAR: eksekusi respons
+ - Contoh: IBM Resilient, Tines
 
 ## XDR, EDR, MDR
 
 1. **EDR**: Endpoint Detection and Response
-	- Hanya deteksi dan react terhadap suspicious behaviour dan malicious activity di level endpoint
+ - Hanya deteksi dan react terhadap suspicious behaviour dan malicious activity di level endpoint
 2. **XDR**: Extended Detection and Response
-	- Deteksi dan respons cyberthreat di seluruh security stack
+ - Deteksi dan respons cyberthreat di seluruh security stack
 3. **MDR**: Managed Detection and Response
-	- Sebuah layanan, bukan produk
-	- Mengelola tools dan menyediakan analisis SOC
-	- Umumnya dilakukan oleh eksternal team
+ - Sebuah layanan, bukan produk
+ - Mengelola tools dan menyediakan analisis SOC
+ - Umumnya dilakukan oleh eksternal team
 
 ## IDS
 
@@ -307,7 +304,7 @@ Setup maintain dan inspect tabel dari paket filter rules untuk IP di Linux Kerne
 - Kombinasi host-based dan network-based. Jadi monitor di host system dan monitor network traffic
 - Bisa monitor sistem dan events aplikasi dan verifikasi integritas file system seperti host-based IDS, tapi hanya bisa menyajikan analisis network traffic ke device tersebut saja
 
-![](../assets/images/lectures/cybersecurity_20251222-063246.png)
+![](cybersecurity_20251222-063246.png)
 
 ## UEBA
 
