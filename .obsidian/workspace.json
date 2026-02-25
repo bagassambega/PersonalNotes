@@ -20,8 +20,21 @@
               "icon": "lucide-file",
               "title": "devops"
             }
+          },
+          {
+            "id": "32ffbe1c8cf1eb76",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.11.7"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.11.7"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -215,7 +228,7 @@
       "obsidian-shellcommands:Shell commands: Custom variables": false
     }
   },
-  "active": "fa07c3af61998e8e",
+  "active": "32ffbe1c8cf1eb76",
   "lastOpenFiles": [
     "_pages/tools.md",
     "_pages/programming-concept.md",
