@@ -39,10 +39,12 @@ Under the hood, web request bekerja dengan cara berikut,
 
 1. **Client mempersiapkan HTTP/S request**, berisi seperti resource yang akan diminta (URL), request method (GET, POST), additional headers, body
 2. JIka menggunakan **HTTPS**, akan dilakukan **SSL/TLS handshake** terlebih dahulu. SSL/TLS handshake adalah operasi pertukaran parameter atau nilai kriptografis sebagai key untuk membangun secure connection. Tahap-tahap:
-   - Client mengirim "ClientHello" ke servers, memberitahu server algoritma enkripsi yang di-support client, random generated value, dan konfigurasi lainnya
-   - Server menjawab "ServerHello", mengkonfirmasi settings yang disetujui kedua belah pihak
-   - Dalam kedua proses di atas juga server dan client memeriksa certificate, dan setelahnya secure connection established
-   3. 
+      - Client mengirim "ClientHello" ke servers, memberitahu server algoritma enkripsi yang di-support client, random generated value, dan konfigurasi lainnya
+	   - Server menjawab "ServerHello", mengkonfirmasi settings yang disetujui kedua belah pihak
+	   - Dalam kedua proses di atas juga server dan client memeriksa certificate, dan setelahnya secure connection established
+3. Client akan mengubah nama domain menjadi IP address menggunakan local cached domain-IP mappings. Local DNS resolver akan 
+
+
 
 ### HTTPS Certificate
 
