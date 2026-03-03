@@ -49,6 +49,8 @@ github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/
 | Scrimba         | [https://scrimba.com/](https://scrimba.com/)                             | Learning and getting certification about programming language and doing live coding directly on the website           |
 | Netacad         | [https://www.netacad.com/](https://www.netacad.com/)                     | Learning and getting certification about network, cybersecurity, and system design from Cisco                         |
 | Fortinet        | [https://training.fortinet.com/](https://training.fortinet.com/)         | Learning and getting certification about network and cybersecurity from Fortinet                                      |
+| Alkademi        | [https://alkademi.id](https://alkademi.id)                               | Learning and getting certification about programming in Indonesia                                                     |
+| EdX             | [https://learning.edx.org/](https://learning.edx.org/)                   | Learning and getting certification from many large companies                                                          |
 
 # Server, Database and Data Storage
 
