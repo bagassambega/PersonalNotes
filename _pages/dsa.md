@@ -23,6 +23,9 @@ $x \notin A$: x bukan merupakan anggota dari himpunan A
 
 ### Bagian Dari
 
+$x \subset A$ : x merupakan himpunan bagian dari A
+$x \subsetin A$ 
+
 # NP-Complete Problem {#np-complete-problem}
 
 Non-polynomial problem: persoalan yang tidak bisa diselesaikan dengan kompleksitas waktu linear (mis. O(n) = 2n)
