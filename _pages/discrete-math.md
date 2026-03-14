@@ -5,6 +5,15 @@ description: Essential mathematical concepts for computer science including numb
 permalink: /discrete-math/
 github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/discrete-math.md
 ---
+# Bilangan
+
+## Himpunan Bilangan
+
+1. $\mathbb{N}$ : bilangan natural (1, 2, 3, ...)
+2. $\mathbb{P}$ : bilangan bulat positif (0, 1, 2, 3, ...)
+3. $\mathbb{Z}$ : bilangan bulat (..., -2, -1, 0, 1, 2, ...)
+4. $\mathbb{R}$: bilangan real
+5. $\mathbb{C}$ : billangan kompleks ($2 + 3i$)
 
 # Teori Bilangan {#teori-bilangan}
 
