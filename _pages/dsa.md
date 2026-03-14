@@ -5,6 +5,23 @@ description: Comprehensive notes on data structures, algorithms, algorithmic str
 permalink: /dsa/
 github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/dsa.md
 ---
+# Set / Himpunan
+
+- Sekumpulan objek unik/objek yang berbeda-beda
+- Tidak ada objek yang sama atau muncul lebih dari sekali pada sebuah himpunan
+- Anggota himpunan: **elemen/unsur/anggota**
+- Dalam himpunan, urutan tidak berpengaruh
+
+## Notasi
+
+A = {1, 2, 3, 4}, B = {"Satu", "Dua", "TIga"}
+
+### Keanggotaan
+
+$x \in A$ : x merupakan anggota dari himpunan A
+$x \notin A$: x bukan merupakan anggota dari himpunan A
+
+### Bagian Dari
 
 # NP-Complete Problem {#np-complete-problem}
 
