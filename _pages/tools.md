@@ -69,6 +69,7 @@ github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/
 | Supabase      | [https://supabase.com/](https://supabase.com/)                 | PostgreSQL online database provider. Free tier available                                                                                      |
 | AppWrite      | [https://appwrite.io/](https://appwrite.io/)                   | Cloud provider. Free tier available                                                                                                           |
 | Coolify       | [https://coolify.io/](https://coolify.io/)                     | Hosting platform and simple cloud services PaaS. Free tier available                                                                          |
+| Free For Dev  | [https://free-for.dev](https://free-for.dev/)                  | List of free resources for IT developer                                                                                                       |
 
 # Entertainment
 

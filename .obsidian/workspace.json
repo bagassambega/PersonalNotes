@@ -64,7 +64,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -258,10 +258,10 @@
       "obsidian-shellcommands:Shell commands: Custom variables": false
     }
   },
-  "active": "e3b95e964c0ffd52",
+  "active": "ca26796fd910653e",
   "lastOpenFiles": [
-    "_pages/discrete-math.md",
     "_pages/dsa.md",
+    "_pages/discrete-math.md",
     "_pages/network-system.md",
     "_pages/tools.md",
     "_pages/cryptography.md",
