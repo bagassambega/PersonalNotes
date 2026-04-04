@@ -23,12 +23,13 @@ Menjamin kerahasiaan, keutuhan, ketersediaan (CIA triads: confidentiality, integ
 - Incident: terjadi compromise/kebobolan terhadap CIA (membuat CIA gagal. Ini sudah terjadi. Sudah pasti ada konsekuensi)
 - Threat: potensi pelanggaran keamanan, punya kemungkinan. Bisa disengaja atau disengaja
 - Attack: serangan terhadap keamanan. Ini belum tentu berhasil. Kalau sudah berhasil, itu jadi incident.
+- Control: proactive measure (mitigasi aktif)
 - Zero-day attack: serangan baru yang memanfaatkan vulnerability yang baru dan belum ada fix/patch dari developernya
 
 ## Vulnerability dan Threat
 
-- Vulnerability: celah keamanan, kelemahan sistem
-- Threat: memiliki potensi pengrusakan/dirusak
+- **Vulnerability**: celah keamanan, kelemahan sistem
+- **Threat**: memiliki potensi pengrusakan/dirusak
 
 - Vulnerability: retakan di dinding
 - Tinggi air: level of threat/risk
@@ -49,8 +50,8 @@ Menjamin kerahasiaan, keutuhan, ketersediaan (CIA triads: confidentiality, integ
 ### Triple-A
 
 - **Authentication**: proses memastikan yang mau masuk itu orang yang betul atau bukan
-
 - Verification of claim of identity. Verifikasi identitas kita (bagaimana cara Bob mengetahui kalau dia sebetulnya sedang berkomunikasi dengan Alice?)
+
 - Tiga cara verifikasi
 
 1. Something that you know: sesuatu yang kamu tahu sendiri, misalnya password
@@ -64,7 +65,7 @@ Menjamin kerahasiaan, keutuhan, ketersediaan (CIA triads: confidentiality, integ
 - OTP: one time password
 
 - **Authorization**: proses memastikan orang yang mau akses itu punya hak akses atau enggak
-- Cara pengecekan authorization: access control
+- Salah satu cara pengecekan authorization: access control
 - Access control mendefinisikan three-tuples berikut: {User, Resources, Privileges}
 - Secara umum dan dasar, ada tiga model utama access control models:
  1. Mandatory: computer system yang menentukan siapa yang memiliki akses ke resources
@@ -73,13 +74,12 @@ Menjamin kerahasiaan, keutuhan, ketersediaan (CIA triads: confidentiality, integ
  4. Lain-lain: ABAC, ReBAC, Location-Based
 
 - Contoh kasus: Concerns for a digital marketplace:
-
-- Availability of service: DDoS
-- Security of accounts: account takeover
-- Authorization of user actions: jangan sampai ada customer yang bisa melakukan activity dari seller
-- Integrity of financial transactions: jangan sampai ada transaksi yang malah merugikan pengguna
-- Confidentiality of payment data: jangan sampai data pribadi/transaksi diketahui oleh pihak lain
-- Integrity of marketplace goods: jangan sampai ada penjualan palsu, barang palsu, toko palsu, dsb
+	- Availability of service: DDoS
+	- Security of accounts: account takeover
+	- Authorization of user actions: jangan sampai ada customer yang bisa melakukan activity dari seller
+	- Integrity of financial transactions: jangan sampai ada transaksi yang malah merugikan pengguna
+	- Confidentiality of payment data: jangan sampai data pribadi/transaksi diketahui oleh pihak lain
+	- Integrity of marketplace goods: jangan sampai ada penjualan palsu, barang palsu, toko palsu, dsb
 
 - **Accountability**: bisa mengetahui siapa yang melakukan sesuatu
 - Contoh: logging, audit trails
@@ -109,25 +109,23 @@ Menjamin kerahasiaan, keutuhan, ketersediaan (CIA triads: confidentiality, integ
 ## Threat Model
 
 - Threat model:
-
-- Deskripsi dari subjek yang dimodelkan (benda, orang atau sistem yang akan dimodelkan)
-- Asumsi yang harus dicek
-- Potensi threat ke sistem
-- Action yang bisa dilakukan untuk memitigasi threat
-- Validasi model dan threat, dan verifikasi apakah hal2 yang dilakukan sudah tepat terhadap threat yang akan datang\
+	- Deskripsi dari subjek yang dimodelkan (benda, orang atau sistem yang akan dimodelkan)
+	- Asumsi yang harus dicek
+	- Potensi threat ke sistem
+	- Action yang bisa dilakukan untuk memitigasi threat
+	- Validasi model dan threat, dan verifikasi apakah hal2 yang dilakukan sudah tepat terhadap threat yang akan datang\
 
 - Threat model biasanya dipakai untuk memodelkan security threats. Sebaiknya threat modelling dilakukan saat melakukan desain arsitektur, implementasinya, dsb. Bisa saja setiap tahap muncul threat baru
 
 - Anything valuable can be vulnerabilities
 
 - Asset type:
-
-- Human
-- Software
-- Hardware, komputer, mesin, dsb
-- Infrastructure: data center, network, dsb
-- Data (intangible)
-- Document, etc
+	- Human
+	- Software
+	- Hardware, komputer, mesin, dsb
+	- Infrastructure: data center, network, dsb
+	- Data (intangible)
+	- Document, etc
 
 \*PII: Personally Identifiable Information
 
@@ -136,14 +134,12 @@ Menjamin kerahasiaan, keutuhan, ketersediaan (CIA triads: confidentiality, integ
 - Technique for threat analysis:
 
 1. [STRIDE](#stride)
-2. Attack tree
+2. [Attack tree](#attack-tree)
 3. Attack surface
 4. Abuse case
 5. Misuse case
 
 ### STRIDE
-
-- STRIDE:
 
 - Spoofing: problem of authentication (a situation in which a person or program successfully identifies as another by falsifying data, to gain an illegitimate advantage)
 - Tampering: problem of integrity (manipulation of data)
@@ -154,7 +150,7 @@ Menjamin kerahasiaan, keutuhan, ketersediaan (CIA triads: confidentiality, integ
 
 Message digest: [https://www.geeksforgeeks.org/computer-networks/message-digest-in-information-security/](https://www.geeksforgeeks.org/computer-networks/message-digest-in-information-security/)
 
-### Attack Tree
+### Attack Tree {#attack-tree}
 
 ![cybersecurity_20251221-203201.png](cybersecurity_20251221-203201.png)
 
@@ -313,6 +309,12 @@ Setup maintain dan inspect tabel dari paket filter rules untuk IP di Linux Kerne
 - Cara kerja: ambil dan analisis data dari berbagai sumber untuk membuat baseline dari normal behaviour, kemudian ML menyaring dan meng-enhance baseline, dan nanti digunakan untuk mendeteksi deviasi atau tindakan user yang jauh dari baseline
 - Sumber data: network equipment, security tools, authentication database, threat intelligence feeds
 - Use case: insider threat detection, monitoring device (servers, routers, IoT devices)
+
+# Software Security
+
+- Berbeda dengan network security, di sini kita fokusnya mengamankan custom code yang men-deliver aplikasi, mengamankan dependency, libraries, sistem, dan server aplikasi
+- Percuma kita sudah mengamankan network, tapi aplikasinya dari segi kode ga aman
+- 
 
 # LAMPIRAN: Type of Attacks {#type-of-attacks}
 
