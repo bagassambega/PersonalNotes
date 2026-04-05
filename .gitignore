@@ -6,3 +6,5 @@ vendor
 node_modules
 assets/images/*
 !assets/images
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
