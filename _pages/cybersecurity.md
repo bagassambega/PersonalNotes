@@ -267,7 +267,22 @@ Penyalahgunaan sistem namun sebetulnya tidak ada larangan untuk melakukan hal te
 ## CVSS (Common Vulnerability Scoring System)
 
 - Standar industri untuk technical vulnerabilities
-- 
+- Dihitung berdasarkan:
+1. Base metrics
+	- Attack vector (mis. melalui network, adjacent, physical, local)
+	- Attack complexity (tingkat kesulitan untuk menemukan/memakai vulnerability)
+	- Privilege required (low/med/high)
+	- User interaction (none/required)
+	- Scope (unchanged/changed)
+	- Impact (CIA, none/low/high)
+2. Temporal metrics: seberapa mature atau well-maintained/well used kodenya, report confidence
+3. Environmental metrics: context dari organisasi/perusahaan yang maintain code
+
+- Ranking:
+
+![](../assets/images/lectures/cybersecurity_20260405-211740.png)
+
+- Scoring: 0.0 - 10.0
 
 # Firewall
 
