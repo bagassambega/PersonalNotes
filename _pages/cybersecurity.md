@@ -169,6 +169,7 @@ Message digest: [https://www.geeksforgeeks.org/computer-networks/message-digest-
 ![cybersecurity_20251221-203201.png](cybersecurity_20251221-203201.png)
 
 - Evaluasi based on various threats.
+- Satu atau lebih vulnerabilities bisa dimanfaatkan untuk membangun sebuah attack tree
 - Dibangun berdasarkan dekomposisi threat yang besar menjadi threat-threat yang kecil
 - Sebuah serangan menunjukkan berbagai vulnerabilities dan compromises
 - Akar pohon menunjukkan insiden atau kehancuran yang terjadi
