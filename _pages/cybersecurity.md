@@ -362,7 +362,31 @@ Honeypot
 
 - Serangan terhadap kriptografi [stream cipher](https://docs.google.com/document/d/1IS3ZYiWKAOwm_tbL2iZwnQh6amLIpN1ZiSLYdkCY92o/edit?tab=t.2dxd14c185hr#heading=h.rv1ybovolip1)
 - Mengubah bit tertentu sehingga hasil dekripsinya berubah (dengan membolak-balikkan value bit nya)
+## Injection
 
+- Mengelabui aplikasi supaya bisa mengeksekusi atau memasukkan unitended (malicious atau tidak sesuai peruntukannya) command atau data, ke interpreter-nya
+- Contoh paling lazim: **SQL Injection**
+### SQL Injection
+
+- Paling lazim, namun sebetulnya mudah dihindari
+- Dampaknya severe, seluruh database bisa diakses atau dimodifikasi
+- Tahapan-tahapannya biasanya:
+1. Application presents a form to the attacker
+2. Attacker sends an attack in the form data
+3. Application forwards attack to the database in a SQL query
+4. Database runs query containing attack and sends encrypted results back to application
+5. Application decrypts data as normal and sends results to the user
+
+- Pada umumnya database berjalan di port-port ini:
+	- TCP/1433 in Microsoft SQL Server
+	- TCP/1521 in Oracle
+	- TCP/523 in IBM DB2
+	- TCP/3306 in MySQL
+- Karakteristik aplikasi atau sistem yang memiliki celah seperti ini:
+	- Mengambil user input
+	- Tidak melakukan validasi terhadap user input
+	- User-input data dieksekusi atau dimasukkan ke query database
+	- Menggunakan mekanisme string concatination atau replacement untuk membangun query
 # LAMPIRAN: Threat Vectors
 
 Same wifi name and password: orang2 bisa ketipu dengan wifi dan password yang sama
