@@ -96,26 +96,38 @@ Menjamin kerahasiaan, keutuhan, ketersediaan (CIA triads: confidentiality, integ
 # Threat Analysis
 
 - Mengevaluasi sistem, asset dan security tools untuk mendapatkan informasi penting, dengan tujuan akhir melakukan asesmen terhadap risiko tersebut, dan menentukan apakah threat itu perlu diurus atau tidak, perlu dimitigasi atau tidak
+- Tujuan:
+	- Mengevaluasi sistem, aset dan security tools terhadap informasi yang diterima
+	- Mengidentifikasi potential threat, melakukan assessment probabilitas hal itu terjadi, dan memperkirakan dampaknya jika terjadi
+	- Mengidentifikasi attack vector (bagaimana threat bisa sampai atau masuk ke device, system, atau network)
+
 - General flow:
 
-1. Apa yang berharga dari organisasi kalian
-2. Threat apa saja yang perlu diidentifikasi
-3. Modelkan menjadi sebuah struktur dan analisis vulnerability nya
+1. Apa yang berharga dari organisasi kalian (**asset identification**)
+2. Threat apa saja yang perlu diidentifikasi (**threat identification**)
+3. Modelkan menjadi sebuah struktur dan analisis vulnerability nya (**threat modelling**)
 4. Decision making
-5. Desain mitigasi atau penanganan
+5. Desain mitigasi atau penanganan (control/countermeasure design)
 
 - Threat bisa mengurangi value dari asset. Control berfungsi untuk melindungi aset, dan control berfungsi untuk mengurangi tingkat kesuksesan dari threat
 
 ## Threat Model
 
-- Threat model:
-	- Deskripsi dari subjek yang dimodelkan (benda, orang atau sistem yang akan dimodelkan)
-	- Asumsi yang harus dicek
-	- Potensi threat ke sistem
-	- Action yang bisa dilakukan untuk memitigasi threat
-	- Validasi model dan threat, dan verifikasi apakah hal2 yang dilakukan sudah tepat terhadap threat yang akan datang\
+- Cara untuk mengidentifikasi, mengkomunikasikan, dan memahami threats dan mitigasi pada konteks melindungi asset
+- Threat model berisi:
+	- Deskripsi dari subjek yang dimodelkan (benda, orang atau sistem yang akan dimodelkan) (asset identification)
+	- Asumsi yang harus dicek di kemudian hari karena threat bisa saja berubah
+	- Potensi threat ke sistem (threat identification, structuring, vulnerability analysis)
+	- Action yang bisa dilakukan untuk memitigasi threat (risk based, trade-off)
+	- Validasi model dan threat, dan verifikasi apakah hal2 yang dilakukan sudah tepat terhadap threat yang akan datang
 
 - Threat model biasanya dipakai untuk memodelkan security threats. Sebaiknya threat modelling dilakukan saat melakukan desain arsitektur, implementasinya, dsb. Bisa saja setiap tahap muncul threat baru
+- Komponen dari threat model:
+1. Asset (yang akan kita protect)
+2. Vulnerabilities (kelemahan dari sistem)
+3. Threat (kemungkinan terjadinya hal yang tidak diinginkan/ancaman terjadinya incident)
+4. Exploit/attack (serangan, ketika threat terjadi)
+5. Countermeasures (tindakan atau hal yang dilakukan untuk menghilangkan vulnerabilities atau mengurangi attack surface atau dampak dari attack)
 
 - Anything valuable can be vulnerabilities
 
@@ -136,8 +148,10 @@ Menjamin kerahasiaan, keutuhan, ketersediaan (CIA triads: confidentiality, integ
 1. [STRIDE](#stride)
 2. [Attack tree](#attack-tree)
 3. Attack surface
-4. Abuse case
-5. Misuse case
+4. Kill chain
+5. Diamond method
+6. Abuse case
+7. Misuse case
 
 ### STRIDE
 
@@ -314,8 +328,111 @@ Setup maintain dan inspect tabel dari paket filter rules untuk IP di Linux Kerne
 
 - Berbeda dengan network security, di sini kita fokusnya mengamankan custom code yang men-deliver aplikasi, mengamankan dependency, libraries, sistem, dan server aplikasi
 - Setiap layer dari sebuah sistem harus diamankan, bukan hanya network dan infrastructure nya saja, tapi juga aplikasinya, dari segi kode, implementasi, dll
-- 
 
+- Contoh kasus: simple web server
+1. `main.java`
+```java
+/* This method is called when the program is run from the command
+line. */
+public static void main (String argv[]) throws Exception {
+	/* Create a SimpleWebServer object, and run it */
+	SimpleWebServer sws = new SimpleWebServer();
+	sws.run();
+}
+```
+
+2. `SimpleWebServer.java`
+```java
+public class SimpleWebServer {
+/* Run the HTTP server on this TCP port. */
+	private static final int PORT = 8080;
+	/* The socket used to process incoming connections
+	from web clients */
+	private static ServerSocket dServerSocket;
+	
+	public SimpleWebServer () throws Exception {
+		dServerSocket = new ServerSocket (PORT);
+	}
+	
+	public void run() throws Exception {
+		while (true) {
+			/* wait for a connection from a client */
+			Socket s = dServerSocket.accept();
+		}
+		/* then process the client's request */
+		processRequest(s);
+	}
+	
+	/* Reads the HTTP request from the client, and
+	responds with the file the user requested or
+	a HTTP error code. */
+	public void processRequest(Socket s) throws Exception {
+		/* used to read data from the client */
+		BufferedReader br =
+		new BufferedReader (new InputStreamReader (s.getInputStream()));
+		/* used to write data to the client */
+		OutputStreamWriter osw = new OutputStreamWriter (s.getOutputStream());
+		/* read the HTTP request from the client */
+		String request = br.readLine();
+		String command = null;
+		String pathname = null;
+		
+		/* parse the HTTP request */
+		StringTokenizer st = new StringTokenizer (request, " ");
+		command = st.nextToken();
+		pathname = st.nextToken();
+		if (command.equals("GET")) {
+			/* if the request is a GET
+			try to respond with the file
+			the user is requesting */
+			serveFile (osw,pathname);
+		}
+		else {
+			/* if the request is a NOT a GET,
+			return an error saying this server
+			does not implement the requested command */
+			osw.write ("HTTP/1.0 501 Not Implemented\n\n");
+		}
+		/* close the connection to the client */
+		osw.close();
+	}
+	
+	public void serveFile (OutputStreamWriter osw, String pathname) throws Exception {
+		FileReader fr=null;
+		int c=-1;
+		StringBuffer sb = new StringBuffer();
+		/* remove the initial slash at the beginning
+		of the pathname in the request */
+		if (pathname.charAt(0)=='/')
+			pathname=pathname.substring(1);
+		/* if there was no filename specified by the
+		client, serve the "index.html" file */
+		if (pathname.equals(""))
+			pathname="index.html";
+		/* try to open file specified by pathname */
+		try {
+			fr = new FileReader (pathname);
+			c = fr.read();
+		}
+		catch (Exception e) {
+			/* if the file is not found,return the
+			appropriate HTTP response code */
+			osw.write ("HTTP/1.0 404 Not Found\n\n");
+			return;
+		}
+		/* if the requested file can be successfully opened and read, then return an OK response code and send the contents of the file */
+		osw.write ("HTTP/1.0 200 OK\n\n");
+		while (c != -1) {
+			sb.append((char)c);
+			c = fr.read();
+		}
+		osw.write (sb.toString());
+	}
+}
+```
+
+- Analisis kode kasus:
+1. 
 # LAMPIRAN: Type of Attacks {#type-of-attacks}
 
 ## STRIDE Attack {#stride-attack}
