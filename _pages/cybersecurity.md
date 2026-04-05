@@ -13,8 +13,8 @@ Menjamin kerahasiaan, keutuhan, ketersediaan (CIA triads: confidentiality, integ
 ## Mitigasi Keamanan
 
 - Prevention: cegah sebelum terjadi
-- Detection: misal saat masuk ke payload API, langsung di drop di sana
-- Response: misal saat udah mau dieksekusi database, ketauan ada SQL injection, langsung ngasih response di situ
+- Detection: deteksi (aktif), misal saat suatu attack masuk ke payload API, langsung di drop di sana
+- Response: misal saat udah mau dieksekusi database, ketauan ada SQL injection, langsung ngasih response di situ (aktif)
 
 ## Insiden, Threat, Attack
 
@@ -313,7 +313,7 @@ Setup maintain dan inspect tabel dari paket filter rules untuk IP di Linux Kerne
 # Software Security
 
 - Berbeda dengan network security, di sini kita fokusnya mengamankan custom code yang men-deliver aplikasi, mengamankan dependency, libraries, sistem, dan server aplikasi
-- Percuma kita sudah mengamankan network, tapi aplikasinya dari segi kode ga aman
+- Setiap layer dari sebuah sistem harus diamankan, bukan hanya network dan infrastructure nya saja, tapi juga aplikasinya, dari segi kode, implementasi, dll
 - 
 
 # LAMPIRAN: Type of Attacks {#type-of-attacks}
