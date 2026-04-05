@@ -185,9 +185,33 @@ If you want to attack an enemy target, the target must be visible or exposed
 - Attack surface: bagian dari program, kode, interface, service, protocol, sistem dkk yang exposed ke public dan bisa diakses/di-attack oleh orang. Misalnya API
 - Dengan attack surface, kita bisa tau top level tackle dan vulnerability nya, tapi dengan attack tree, kita bisa melihat ketergantungan sebuah vulnerability atau threat terhadap insiden
 
-- Relative attack surface is a comparative measure, such as Howard's Relative Attack Surface Quotient (RASQ), that quantifies the "attackability" of a system by measuring its exposed entry points, channels, protocols, and access rights, enabling a comparison between different versions of a system or between separate systems to identify which is more vulnerable. It provides a way to assess how much more difficult or easier it is to attack one system versus another based on its components and interfaces that are available to potential threats
-- Bisa saja saat kita mau meminimalisir attack surface, kita malah menambahkan attack surface lain karena menambah library atau fungsi baru. Makanya usahakan kita semakin menutup attack surface, bukan menambahkan
+![](../assets/images/lectures/cybersecurity_20260405-192634.png)
 
+- Terdiri dari tiga dimensi:
+	- Channel dan protocols (bagaimana attack di-deliver)
+	- Target dan enablers (target untuk di-attack dan bagaimana attack dieksekusi)
+	- Access rights (principals, object, dan rights apa yang di-violate)
+
+- Relative attack surface is a comparative measure, such as Howard's Relative Attack Surface Quotient (RASQ), that quantifies the "attackability" of a system by measuring its exposed entry points, channels, protocols, and access rights, enabling a comparison between different versions of a system or between separate systems to identify which is more vulnerable. It provides a way to assess how much more difficult or easier it is to attack one system versus another based on its components and interfaces that are available to potential threats
+
+- Untuk melakukan attack surface analysis: petakan sistem/software, lalu untuk setiap layer/level/komponen, analisis apa saja yang ada di sana vulnerabilities-nya
+- Tahapan:
+1. Identify entrypoints
+2. Klasifikasikan apakah termasuk internal (hanya bisa diakses dari lingkungan dan orang-orang dalam sistem/dev/ops) atau eksternal (bisa diakses pengguna umum atau user biasa)
+3. Mapping trust boundaries (access rights atau trust level-nya)
+4. Mapping access controls-nya
+
+- Contoh:
+![](../assets/images/lectures/cybersecurity_20260405-193507.png)
+![](../assets/images/lectures/cybersecurity_20260405-193523.png)
+
+- Bisa saja saat kita mau meminimalisir attack surface, kita malah menambahkan attack surface lain karena menambah library atau fungsi baru. Makanya usahakan kita semakin menutup attack surface, bukan menambahkan
+- Untuk mengurangi attack surface, lakukan analisis ini:
+	- Apakah fitur ini betul-betul dibutuhkan?
+	- Apakah fitur ini memang dibutuhkan untuk diakses secara remote/online?
+	- Siapa user dan tipe user yang berhak mengakses fitur ini?
+	- Privilege/apa yang bisa dilakukan user terhadap fitur ini?
+	- Apa interfaces/hubungan fitur ini dengan fitur lainnya?
 ### Abuse and Misuse Case
 
 Abuse and misuse cases are security techniques that document how an application or system could be used maliciously or incorrectly to exploit vulnerabilities, leading to a negative outcome for the system or users. They involve defining scenarios from an attacker's perspective, contrasting with traditional "use cases" that focus on legitimate operations, to uncover security weaknesses and drive the design of robust security controls and countermeasures.
