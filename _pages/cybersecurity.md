@@ -234,6 +234,41 @@ Penyalahgunaan sistem namun sebetulnya tidak ada larangan untuk melakukan hal te
 - Penyalahgunaan sistem yang merusak atau mengganggu sistem. Contoh: DDoS, hijacking
 - Contoh: nge-hack ke akun orang lain
 
+# Threat Evaluation
+
+- Terdapat tiga kategori vulnerabilities:
+1. Human vulnerabilities (social engineering, phishing)
+2. Technical vulnerabilities (weak encryption, security misconfiguration)
+3. Physical vulnerabilities (server, computer)
+
+- Vulnerability evaluation bisa dilakukan dengan cara kualitatif (low, high), kuantitatif (estimasi kerugian), atau hybrid (scoring + business context)
+## Risk Based Evaluation
+
+![](../assets/images/lectures/cybersecurity_20260405-204154.png)
+
+- Tahapan:
+1. Lakukan penenetuan level risk (misal low = 1, medium = 2, high = 3)
+2. Buat matriks yang berisi likelihood (kemungkinan terjadi) x impact (akibat dari kejadian) untuk setiap vulnerability
+3. Urutkan berdasarkan ranking/nilai
+
+## DREAD
+
+![](../assets/images/lectures/cybersecurity_20260405-204540.png)
+
+- Menghitung total DREAD factors (bisa 1-3, atau 0-10, dll)
+- DREAD berisi:
+	- Damage potential (Seberapa parah efek jika terjadi)
+	- Reproducibility (Seberapa sering attack bisa dilakukan lagi)
+	- Exploitability (Seberapa sulit/effort yang dibutuhkan untuk melakukan attack)
+	- Affected users (Berapa banyak user yang akan terdampak)
+	- Discoverability (Seberapa mudah vulnerable ditemukan oleh attacker)
+- Score DREAD $= \frac{D + R + E + A + D}{5}$
+
+## CVSS (Common Vulnerability Scoring System)
+
+- Standar industri untuk technical vulnerabilities
+- 
+
 # Firewall
 
 ## Firewall Rules pfSense

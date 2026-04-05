@@ -330,6 +330,7 @@
     // Toggle mobile sidebar
     mobileToggle.addEventListener("click", () => {
       mobileSidebar.classList.remove("hidden");
+      mobileSidebar.classList.add("flex");
       mobileOverlay.classList.remove("hidden");
       setTimeout(() => {
         mobileSidebar.classList.remove("-translate-x-full");
@@ -340,6 +341,7 @@
     const closeSidebar = () => {
       mobileSidebar.classList.add("-translate-x-full");
       setTimeout(() => {
+        mobileSidebar.classList.remove("flex");
         mobileSidebar.classList.add("hidden");
         mobileOverlay.classList.add("hidden");
       }, 300);
