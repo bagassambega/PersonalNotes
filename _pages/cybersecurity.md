@@ -212,9 +212,18 @@ If you want to attack an enemy target, the target must be visible or exposed
 	- Siapa user dan tipe user yang berhak mengakses fitur ini?
 	- Privilege/apa yang bisa dilakukan user terhadap fitur ini?
 	- Apa interfaces/hubungan fitur ini dengan fitur lainnya?
+
+### Cyber Kill Chain
+
+- Dikembangkan oleh Lockheed Martin
+
+![](../assets/images/lectures/cybersecurity_20260405-194953.png)
+
 ### Abuse and Misuse Case
 
 Abuse and misuse cases are security techniques that document how an application or system could be used maliciously or incorrectly to exploit vulnerabilities, leading to a negative outcome for the system or users. They involve defining scenarios from an attacker's perspective, contrasting with traditional "use cases" that focus on legitimate operations, to uncover security weaknesses and drive the design of robust security controls and countermeasures.
+
+Pertama identifikasi use case-nya dulu, baru analisis misuse dan abuse case-nya
 
 #### Misuse Cases
 
