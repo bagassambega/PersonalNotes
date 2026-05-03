@@ -9,24 +9,24 @@ github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/
 
 - Random Access Memory. Digunakan untuk menyimpan data sementara (volatile memory), kecepatan akses tinggi, dan digunakan oleh CPU untuk menyimpan data ketika aplikasi berjalan. 
 - Jadi ketika aplikasi membutuhkan data, data disimpan di RAM supaya nanti aplikasi bisa ambil data langsung, tidak perlu I/O latency karena ke disk.
-- RAM disebut random karena
+- RAM disebut random karena bisa diakses oleh CPU secara random (dalam artian bisa mengakses address data manapun dengan jumlah waktu yang sama, terlepas di manapun posisinya, tidak seperti di storage lainnya yang perlu seek dulu)
 
 ## SRAM
 
 - Static RAM. 
 - Sangat cepat, **digunakan oleh cache** CPU untuk menyimpan data untuk direct access dari CPU
-- Harganya sangat mahal
+- Harganya sangat mahal, bahkan dibandingkan DRAM
 
 ## DRAM
 
 - Dynamic RAM
 - RAM inilah yang ukurannya lebih besar dari SRAM, ukurannya bergiga-giga
-- Kecepatannya jauh lebih lambat dibandingkan SRAM, dan berfungsi sebagai main system memory
+- Kecepatannya lebih lambat dibandingkan SRAM, dan berfungsi sebagai main system memory
 
 ### ROM
 
 - Read-only memory. Disebut read-only karena tidak ada mekanisme untuk write. 
-- Disebut
+- 
 
 # IoT: ESP32 Board
 
