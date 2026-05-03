@@ -9,4 +9,9 @@ github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/
 
 ![](../assets/images/lectures/iot-hardware_20260503-153339.png)
 
+## Specification
+
+### Processor and System
+
+
 # IoT: Breadboard
