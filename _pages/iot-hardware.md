@@ -8,3 +8,5 @@ github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/
 # IoT: ESP32 Board
 
 ![](../assets/images/lectures/iot-hardware_20260503-153339.png)
+
+# IoT: Breadboard
