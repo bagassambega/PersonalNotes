@@ -593,14 +593,12 @@ function withdraw(uint amount) public {
 - Public Ethereum tanpa nilai ekonomi
 - Contoh: Sepolia, Holesky
 - Ciri: sama dengan mainnet, tapi memakai fake money dan validatornya berasal dari developer, tim Ethereum foundation, dll. Dan seperti yang kita ketahui kalau PoS memerlukan uang palsu, uang inilah yang di-generate oleh faucet
--
 
 #### Private Network
 
 - Ethereum yang aksesnya restricted dan validatornya bukan orang umum
 - Kita yang mengontrol validator, kita yang mengontrol aturan konsensus, tidak ada ETH betulan, kita bisa modifikasi biaya untuk transaksi (gas money), block time, permissions
 - Contoh: Geth, Hyperledger Besu
--
 
 ### EVM (Ethereum Virtual Machine)
 
