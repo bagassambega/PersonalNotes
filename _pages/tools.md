@@ -24,6 +24,16 @@ github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/
 | exiftool       | Manipulate file metadata, especially image       | Linux, Windows | [https://github.com/exiftool/exiftool](https://github.com/exiftool/exiftool) |
 | GraphicsMagick | Forks of ImageMagick, for edit, manipulate image | Linux          | [http://www.graphicsmagick.org/](http://www.graphicsmagick.org/)             |
 
+# Diagram and Notes
+
+
+| Name                 | Functionality                                | Platform        | URL                                               |
+| -------------------- | -------------------------------------------- | --------------- | ------------------------------------------------- |
+| Excalidraw           | Whiteboard tool                              | Web and PWA     | [https://excalidraw.com](https://excalidraw.com/) |
+| AFFINE               | Knowledge based tool for docs and whiteboard | Web and Desktop | [https://app.affine.pro](https://app.affine.pro/) |
+| Microsoft OneNote    | Knowledge based tool for docs and whiteboard | Desktop         | Office 365                                        |
+| Microsoft Whiteboard | Whiteboard tool                              | Desktop         | Microsoft Windows                                 |
+
 
 # Article, Journal and Book
 
