@@ -18,33 +18,33 @@ github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/
 
 ## SQL vs MongoDB
 
-| Aspect            | MySQL                                                                                           | MongoDB                                                                                                                                                                     |
-| ----------------- | ----------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Bentuk            | Tabel                                                                                           | Document                                                                                                                                                                    |
-| Acronym           | Standard query language                                                                         | Humongouos database (bisa menyimpan data berukuran sangat besar)                                                                                                            |
-| Formatting        | **Schema**, karena setiap Row akan memiliki format data dan kolom yang sama                     | **JSON**, karena object based                                                                                                                                               |
-| Style             | Rigid, karena formatnya sudah hardcoded dan sudah didefinisikan schemanya                       | Fleksibel                                                                                                                                                                   |
-| Data format       | Row-based                                                                                       | BSON, JSON yang dikonversi ke binary via Mongo driver                                                                                                                       |
-| Struktur komponen | Sebuah database terdiri dari kumpulan **tabel**, dan sebuah tabel terdiri dari kumpulan **row** | Sebuah database terdiri dari kumpulan **collection** (ekuivalen dengan table), dan setiap collection terdiri dari kumpulan **dokumen/BSON document** (ekuivalen dengan row) |
+| Aspect            | MySQL                                                                                   | MongoDB                                                                                                                                                                 |
+| ----------------- | --------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Bentuk            | Tabel                                                                                   | Document                                                                                                                                                                |
+| Acronym           | Standard query language                                                                 | Humongouos database (bisa menyimpan data berukuran sangat besar)                                                                                                        |
+| Formatting        | Schema, karena setiap Row akan memiliki format data dan kolom yang sama                 | JSON, karena object based                                                                                                                                               |
+| Style             | Rigid, karena formatnya sudah hardcoded dan sudah didefinisikan schemanya               | Fleksibel                                                                                                                                                               |
+| Data format       | Row-based                                                                               | BSON, JSON yang dikonversi ke binary via Mongo driver                                                                                                                   |
+| Struktur komponen | Sebuah database terdiri dari kumpulan tabel, dan sebuah tabel terdiri dari kumpulan row | Sebuah database terdiri dari kumpulan **collection** (ekuivalen dengan table), dan setiap collection terdiri dari kumpulan dokumen/BSON document (ekuivalen dengan row) |
 ## SQL
 
-# PostgreSQL
+### PostgreSQL
 
-### Instalasi
+#### Instalasi
 
 1. Arch
 	- `yay -S postgresql`
 	- `initdb -D /var/lib/postgres/data`
 
 
-### Data type
+#### Data type
 
 | Data type | Name in PostgreSQL | Description |
 | --------- | ------------------ | ----------- |
 | UUID      | uuid               |             |
 
 
-### Basic Syntax
+#### Basic Syntax
 
 1. Connect to Psql shell
 	- `psql`
@@ -54,7 +54,6 @@ github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/
 	- `\c database_name`
 4. Lists /show tables/relations
 	- `\dt`
-5. 
 
 ## NoSQL
 
