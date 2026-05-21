@@ -17,12 +17,13 @@ github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/
 
 ## File Manipulation
 
-| Name           | Functionality                                    | Compatibility  | Source                                                                       |
-| -------------- | ------------------------------------------------ | -------------- | ---------------------------------------------------------------------------- |
-| zbarimg        | Scan QR code in an image                         | Linux          | [https://github.com/mchehab/zbar](https://github.com/mchehab/zbar)           |
-| yt-dlp         | Audio/video downloader                           | Linux, Windows | [https://github.com/yt-dlp/yt-dlp](https://github.com/yt-dlp/yt-dlp)         |
-| exiftool       | Manipulate file metadata, especially image       | Linux, Windows | [https://github.com/exiftool/exiftool](https://github.com/exiftool/exiftool) |
-| GraphicsMagick | Forks of ImageMagick, for edit, manipulate image | Linux          | [http://www.graphicsmagick.org/](http://www.graphicsmagick.org/)             |
+| Name                  | Functionality                                    | Compatibility  | Source                                                                                               |
+| --------------------- | ------------------------------------------------ | -------------- | ---------------------------------------------------------------------------------------------------- |
+| zbarimg               | Scan QR code in an image                         | Linux          | [https://github.com/mchehab/zbar](https://github.com/mchehab/zbar)                                   |
+| yt-dlp                | Audio/video downloader                           | Linux, Windows | [https://github.com/yt-dlp/yt-dlp](https://github.com/yt-dlp/yt-dlp)                                 |
+| exiftool              | Manipulate file metadata, especially image       | Linux, Windows | [https://github.com/exiftool/exiftool](https://github.com/exiftool/exiftool)                         |
+| GraphicsMagick        | Forks of ImageMagick, for edit, manipulate image | Linux          | [http://www.graphicsmagick.org/](http://www.graphicsmagick.org/)                                     |
+| Calibre Ebook Convert | Convert EPUB or any other file into PDF          | Linux          | [https://man.archlinux.org/man/ebook-convert.1.en](https://man.archlinux.org/man/ebook-convert.1.en) |
 
 # Diagram and Notes
 
@@ -37,18 +38,20 @@ github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/
 
 # Article, Journal and Book
 
-| Name            | URL                                                                                     | Description                                                                                              |
-| --------------- | --------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| Freedium        | [https://freedium.cfd](https://freedium.cfd)                                            | Unlock premium Medium articles                                                                           |
-| SciHub          | [https://sci-hub.se/](https://sci-hub.se)<br>[https://sci-hub.ru/](https://sci-hub.ru/) | Unlock journals or scientific articles                                                                   |
-| Libgen          | [https://libgen.li](https://libgen.li)                                                  | Access journals and books                                                                                |
-| Annas-archive   | [[https://annas-archive.gl](https://annas-archive.gl/)]                                 | Access books                                                                                             |
-| Unpaywall       | [https://unpaywall.org/](https://unpaywall.org/)                                        | Access journal or scientific articles                                                                    |
-| Perplexity      | [https://www.perplexity.ai/](https://www.perplexity.ai/)                                | AI tools best for finding journal (use research and change mode to academic, disable web)                |
-| Elicit          | [https://elicit.com/](https://elicit.com/)                                              | AI tools for finding journal                                                                             |
-| Litmaps         | [https://www.litmaps.com/](https://www.litmaps.com/)                                    | AI tools for finding journal and their correlation with other journals by finding citation (graph-based) |
-| IEEE Xplore     | [https://ieeexplore.ieee.org/](https://ieeexplore.ieee.org/)                            | Tools to find IEEE journal                                                                               |
-| CitationMachine | [https://www.citationmachine.net/bibtex](https://www.citationmachine.net/bibtex)        | Tools to generate BibTex citation                                                                        |
+| Name            | URL                                                                                                   | Description                                                                                              |
+| --------------- | ----------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| Freedium        | [https://freedium.cfd](https://freedium.cfd)                                                          | Unlock premium Medium articles                                                                           |
+| SciHub          | [https://sci-hub.se/](https://sci-hub.se)<br>[https://sci-hub.ru/](https://sci-hub.ru/)               | Unlock journals or scientific articles                                                                   |
+| Libgen          | [https://libgen.li](https://libgen.li)                                                                | Access journals and books                                                                                |
+| Annas-archive   | [[https://annas-archive.gl](https://annas-archive.gl/)]                                               | Access books                                                                                             |
+| Unpaywall       | [https://unpaywall.org/](https://unpaywall.org/)                                                      | Access journal or scientific articles                                                                    |
+| Perplexity      | [https://www.perplexity.ai/](https://www.perplexity.ai/)                                              | AI tools best for finding journal (use research and change mode to academic, disable web)                |
+| Elicit          | [https://elicit.com/](https://elicit.com/)                                                            | AI tools for finding journal                                                                             |
+| Litmaps         | [https://www.litmaps.com/](https://www.litmaps.com/)                                                  | AI tools for finding journal and their correlation with other journals by finding citation (graph-based) |
+| IEEE Xplore     | [https://ieeexplore.ieee.org/](https://ieeexplore.ieee.org/)                                          | Tools to find IEEE journal                                                                               |
+| CitationMachine | [https://www.citationmachine.net/bibtex](https://www.citationmachine.net/bibtex)                      | Tools to generate BibTex citation                                                                        |
+| GetBibtex       | [https://www.getbibtex.com](https://www.getbibtex.com/)                                               | Tools to generate BibTex citation from URL/website                                                       |
+| BibTex.com      | [https://www.bibtex.com/c/doi-to-bibtex-converter](https://www.bibtex.com/c/doi-to-bibtex-converter/) | Tools to generate BibTex citation                                                                        |
 
 # Learning, Tutorial, and Certification
 
