@@ -87,11 +87,14 @@ github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/
 
 # Entertainment
 
-| Name        | URL                                                                | Genre             | Description                                   |
-| ----------- | ------------------------------------------------------------------ | ----------------- | --------------------------------------------- |
-| fmhy        | [https://fmhy.net](https://fmhy.net)                               | List of resources | List of free and (probably) pirated resources |
-| PStream     | [https://pstream.mov](https://pstream.mov)                         | Movie             | Streaming movies                              |
-| Aether      | [https://aether.mom](https://aether.mom)                           | Movie             | Streaming movies                              |
-| Comix       | [https://comix.to](https://comix.to)                               | Manga comic       | Manga reading, replacement for Comick         |
-| Anikai      | [https://anikai.to](https://anikai.to)                             | Anime             | Watch anime                                   |
-| NontonAnime | [https://s7.nontonanimeid.boats/](https://s7.nontonanimeid.boats/) | Anime             | Watch anime (Indonesian subtitle)             |
+| Name        | URL                                                                        | Genre             | Description                                                                  |
+| ----------- | -------------------------------------------------------------------------- | ----------------- | ---------------------------------------------------------------------------- |
+| fmhy        | [https://fmhy.net](https://fmhy.net)                                       | List of resources | List of free and (probably) pirated resources                                |
+| PStream     | [https://pstream.mov](https://pstream.mov)                                 | Movie             | Streaming movies                                                             |
+| Aether      | [https://aether.mom](https://aether.mom)                                   | Movie             | Streaming movies                                                             |
+| Comix       | [https://comix.to](https://comix.to)                                       | Manga comic       | Manga reading, replacement for Comick                                        |
+| Anikai      | [https://anikai.to](https://anikai.to)                                     | Anime             | Watch anime                                                                  |
+| NontonAnime | [https://s7.nontonanimeid.boats/](https://s7.nontonanimeid.boats/)         | Anime             | Watch anime (Indonesian subtitle)                                            |
+| AllManga    | [https://allmanga.to](https://allmanga.to/)                                | Anime & manga     | Watch anime and manga                                                        |
+| ani-cli     |                                                                            | Anime             | CLI based for anime watch                                                    |
+| PlayIMDB    | [https://www.playimdb.com/title/{id}](https://www.playimdb.com/title/{id}) | Movie             | Go to any movie with IMDB, modify the URL by changing `imdb` with `playimdb` |
