@@ -3,6 +3,7 @@ module.exports = {
   content: [
     "./_layouts/**/*.html",
     "./_includes/**/*.html",
+    "./_pages/**/*.{html,markdown,md}",
     "./_posts/**/*.{html,markdown,md}",
     "./*.{html,markdown,md}",
     "./docs/**/*.{html,markdown,md}",

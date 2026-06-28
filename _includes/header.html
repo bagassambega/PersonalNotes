@@ -41,6 +41,13 @@
           Home
         </a>
 
+        <a
+          href="{{ '/search/' | relative_url }}"
+          class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors duration-200 {% if page.url contains 'search' %}text-primary-600 dark:text-primary-400{% endif %}"
+        >
+          Search
+        </a>
+
         <!-- Resources Dropdown -->
         <div class="relative group">
           <button
@@ -259,6 +266,13 @@
           class="block px-3 py-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors duration-200 {% if page.url == '/' %}bg-gray-100 dark:bg-gray-700 text-primary-600 dark:text-primary-400{% endif %}"
         >
           Home
+        </a>
+
+        <a
+          href="{{ '/search/' | relative_url }}"
+          class="block px-3 py-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-primary-600 dark:text-primary-400 font-medium transition-colors duration-200 {% if page.url contains 'search' %}bg-gray-100 dark:bg-gray-700 text-primary-600 dark:text-primary-400{% endif %}"
+        >
+          Search
         </a>
 
         <!-- Mobile Resources Section - Collapsible -->

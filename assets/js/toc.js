@@ -499,7 +499,12 @@
           const targetElement = document.getElementById(targetId);
 
           if (targetElement) {
-            const headerOffset = 80; // Account for sticky header
+            const headerOffset =
+              parseFloat(
+                getComputedStyle(document.documentElement).getPropertyValue(
+                  "--anchor-offset"
+                )
+              ) * 16 || 80;
             const elementPosition = targetElement.getBoundingClientRect().top;
             const offsetPosition =
               elementPosition + window.pageYOffset - headerOffset;

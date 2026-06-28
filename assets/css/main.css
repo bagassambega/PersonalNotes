@@ -44,16 +44,71 @@
 }
 
 @layer base {
+  :root {
+    --anchor-offset: 5rem;
+  }
+
   html {
     font-family: "Helvetica", system-ui, sans-serif;
+    scroll-padding-top: var(--anchor-offset);
+    max-width: 100%;
+    overflow-x: hidden;
   }
 
   body {
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  [id] {
+    scroll-margin-top: var(--anchor-offset);
+  }
+
+  @media (max-width: 1023px) {
+    :root {
+      --anchor-offset: 8.5rem;
+    }
   }
 }
 
 @layer components {
+  .content-scroll {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .prose {
+    overflow-wrap: break-word;
+  }
+
+  .prose :where(table):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+    display: block;
+    width: max-content;
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+  }
+
+  .prose :where(pre):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .prose :where(img, video, iframe, object, embed, svg):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+    max-width: 100%;
+  }
+
+  .prose :where(iframe, object, embed):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+    display: block;
+  }
+
   /* Table of Contents specific styles */
   .toc-item {
     @apply mb-1;
