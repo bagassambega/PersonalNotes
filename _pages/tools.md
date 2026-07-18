@@ -65,6 +65,7 @@ github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/
 | Fortinet        | [https://training.fortinet.com/](https://training.fortinet.com/)         | Learning and getting certification about network and cybersecurity from Fortinet                                      |
 | Alkademi        | [https://alkademi.id](https://alkademi.id)                               | Learning and getting certification about programming in Indonesia                                                     |
 | EdX             | [https://learning.edx.org/](https://learning.edx.org/)                   | Learning and getting certification from many large companies                                                          |
+| MIT             | [https://ocw.mit.edu/](https://ocw.mit.edu/)                             | Learning free video course                                                                                            |
 
 # Server, Database and Data Storage
 
