@@ -14,7 +14,15 @@ Header file berisi deklarasi dan inisiasi fungsi, struct, dan global variabel. H
 
 Sebagai contoh, kita memiliki file `math.c` yang berisi implementasi operasi matematika (misalnya fungsi `int add(int a, int b)`, dan salah satu operasinya dipanggil oleh `main.c`. Ketika file `main.c` di-compile, maka jika compiler belum pernah membaca atau compile `math.c`, ini akan menghasilkan error karena implementasi tidak ditemukan. Namun jika menggunakan header, yaitu menambahkan `#include math.h` di file `main.c`, kita dapat memberitahu compiler bahwa fungsi `int add` itu ada dan sudah diimplementasikan.
 
-Pertanyaan klasik, bagaimana jika ternyata di header ada, tapi implementasinya tidak ada? Maka nanti linker sebagai
+Pertanyaan klasik, bagaimana jika ternyata di header ada, tapi implementasinya tidak ada? Maka nanti linker akan memberitahu error: `undefined reference to add`, yang artinya tidak ada implementasi dari fungsi `add`. 
+
+Lalu mengapa kita tidak memastikan compiler membaca file `math.cpp` dulu saja sebelum membaca file `main.cpp`? Karena proses compiling nantinya tidak bisa paralel. Kedua, bisa mengakibatkan circular dependency. Misalnya A.c memakai fungsi dari B.c, B.c memakai fungsi dari C.c, C.c memakai fungsi dari A.c. Oleh karenanya, dengan header, setiap file hanya membutuhkan **interface** (deklarasi), bukan implementasi.
+
+### Struktur Header File
+
+#### Include Guard
+
+Header file biasanya berisi deklarasi tipe data khusus seperti struct, fungsi, variabel global, dan lain-lain. Biasanya dalam header file ada **include guard**, yang berisi struktur sebagai berikut,
 
 ```c
 #ifndef OBJECT_H
@@ -22,5 +30,8 @@ Pertanyaan klasik, bagaimana jika ternyata di header ada, tapi implementasinya t
 
 datatype function(type a, type b);
 
+// Deklarasi lainnya....
 #endif
 ```
+
+Include guard 
