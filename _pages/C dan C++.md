@@ -34,4 +34,40 @@ datatype function(type a, type b);
 #endif
 ```
 
-Include guard 
+Include guard digunakan agar tidak ada redefinition jika misalkan kita melakukan include header file dua kali atau lebih, apalagi ketika adanya circular dependency.
+
+#### Typedef
+
+``typedef`` atau type definition adalah proses untuk membuat alias terhadap suatu tipe data. Sebagai contoh:
+`unsigned int a` dapat ditulis sebagai `uint a` jika kita menggunakan typedef berikut:
+```c
+typedef unsigned int uint;
+```
+
+Contoh lain yang lebih eksplisit adalah ketika kita mendefinisikan sebuah tipe data baru menggunakan struct, misalnya Time. Jika tanpa typedef atau alias, kita harus melakukan penulisan berikut ketika mendefinisikan variabel baru:
+
+```c
+struct Time
+{
+    int hours;
+    int minutes;
+    int seconds;
+};
+
+// penggunaan di variabel harus selalu menggunakan 'struct Time'
+struct Time t1;
+```
+
+Tetapi jika kita menggunakan typedef alias, kita cukup menggunakan alias terseebut ketika menginisialisasi variabel:
+
+```c
+typedef struct Time
+{
+    int hours;
+    int minutes;
+    int seconds;
+} time;
+
+// inisialisasi variabel cukup tulis tipe data 'time'
+time t1;
+```
