@@ -314,6 +314,109 @@
     @apply bg-transparent text-gray-100 p-0;
   }
 
+  .prose .highlight {
+    @apply my-6 rounded-md bg-gray-900;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .prose .highlight pre {
+    margin: 0;
+    background: transparent;
+  }
+
+  .prose .highlight code {
+    color: #e5e7eb;
+    background: transparent;
+  }
+
+  .prose .highlighter-rouge {
+    max-width: 100%;
+  }
+
+  .prose .highlight .c,
+  .prose .highlight .cm,
+  .prose .highlight .cp,
+  .prose .highlight .c1,
+  .prose .highlight .cs {
+    color: #8b949e;
+    font-style: italic;
+  }
+
+  .prose .highlight .k,
+  .prose .highlight .kc,
+  .prose .highlight .kd,
+  .prose .highlight .kn,
+  .prose .highlight .kp,
+  .prose .highlight .kr,
+  .prose .highlight .kt {
+    color: #ff7b72;
+  }
+
+  .prose .highlight .s,
+  .prose .highlight .sb,
+  .prose .highlight .sc,
+  .prose .highlight .sd,
+  .prose .highlight .s1,
+  .prose .highlight .s2,
+  .prose .highlight .se,
+  .prose .highlight .sh,
+  .prose .highlight .si,
+  .prose .highlight .sx {
+    color: #a5d6ff;
+  }
+
+  .prose .highlight .m,
+  .prose .highlight .mb,
+  .prose .highlight .mf,
+  .prose .highlight .mh,
+  .prose .highlight .mi,
+  .prose .highlight .mo,
+  .prose .highlight .il {
+    color: #79c0ff;
+  }
+
+  .prose .highlight .na,
+  .prose .highlight .nb,
+  .prose .highlight .nc,
+  .prose .highlight .nd,
+  .prose .highlight .ne,
+  .prose .highlight .nf,
+  .prose .highlight .nx,
+  .prose .highlight .py {
+    color: #d2a8ff;
+  }
+
+  .prose .highlight .nt,
+  .prose .highlight .nv,
+  .prose .highlight .vc,
+  .prose .highlight .vg,
+  .prose .highlight .vi {
+    color: #7ee787;
+  }
+
+  .prose .highlight .o,
+  .prose .highlight .ow,
+  .prose .highlight .p {
+    color: #c9d1d9;
+  }
+
+  .prose .highlight .gd {
+    color: #ffdcd7;
+    background-color: #67060c;
+  }
+
+  .prose .highlight .gi {
+    color: #aff5b4;
+    background-color: #033a16;
+  }
+
+  .prose .highlight .err {
+    color: #ffdcd7;
+    background-color: #67060c;
+  }
+
   /* Ensure code blocks are displayed as blocks, not tables */
   .prose pre,
   .prose code {

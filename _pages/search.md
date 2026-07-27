@@ -12,7 +12,7 @@ show_nav: false
     id="heading-search-input"
     type="search"
     class="w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-4 py-3 text-base text-gray-900 dark:text-gray-100 shadow-sm focus:outline-none focus:ring-2 focus:ring-primary-500"
-    placeholder="Search H1, H2, and H3 headings..."
+    placeholder="Search H1 through H5 headings..."
     autocomplete="off"
     disabled
   />

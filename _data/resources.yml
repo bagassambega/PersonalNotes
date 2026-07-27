@@ -72,8 +72,3 @@
   description: "Application and system development across web and native platforms"
   url: "/app-system-dev/"
   icon: "app"
-
-- title: "Programming Concept"
-  description: "Basic and concept of programming"
-  url: "/programming-concept/"
-  icon: "code"

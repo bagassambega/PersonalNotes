@@ -109,7 +109,11 @@
     const pageTitle =
       page.title || doc.querySelector("title")?.textContent?.split("|")[0]?.trim() || "Untitled";
 
-    return Array.from(doc.querySelectorAll("article.prose h1, article.prose h2, article.prose h3"))
+    return Array.from(
+      doc.querySelectorAll(
+        "article.prose h1, article.prose h2, article.prose h3, article.prose h4, article.prose h5"
+      )
+    )
       .map((heading, index) => {
         const title = heading.textContent.trim();
         const level = Number(heading.tagName.slice(1));
