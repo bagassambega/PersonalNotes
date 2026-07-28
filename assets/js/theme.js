@@ -14,6 +14,8 @@
   let darkIcon;
   let mobileMenuButton;
   let mobileMenu;
+  let siteHeader;
+  let mobileTocBar;
 
   // Initialize theme on page load
   function initTheme() {
@@ -226,6 +228,121 @@
     });
   }
 
+  function initMobileChromeVisibility() {
+    siteHeader = document.getElementById("site-header");
+    mobileTocBar = document.getElementById("mobile-toc-bar");
+
+    if (!siteHeader) return;
+
+    let lastScrollY = window.scrollY;
+    let ticking = false;
+    const hideAfter = 140;
+    const minDelta = 8;
+    const mobileQuery = window.matchMedia("(max-width: 1023px)");
+
+    function showChrome() {
+      document.body.classList.remove("mobile-chrome-hidden");
+    }
+
+    function hideChrome() {
+      if (mobileMenu && !mobileMenu.classList.contains("hidden")) return;
+      document.body.classList.add("mobile-chrome-hidden");
+    }
+
+    function updateChrome() {
+      const currentScrollY = window.scrollY;
+      const delta = currentScrollY - lastScrollY;
+
+      if (!mobileQuery.matches || currentScrollY <= hideAfter) {
+        showChrome();
+      } else if (Math.abs(delta) >= minDelta) {
+        if (delta > 0) {
+          hideChrome();
+        } else {
+          showChrome();
+        }
+      }
+
+      lastScrollY = currentScrollY;
+      ticking = false;
+    }
+
+    window.addEventListener(
+      "scroll",
+      function () {
+        if (!ticking) {
+          window.requestAnimationFrame(updateChrome);
+          ticking = true;
+        }
+      },
+      { passive: true }
+    );
+
+    mobileQuery.addEventListener("change", showChrome);
+  }
+
+  function fallbackCopyText(text) {
+    const textarea = document.createElement("textarea");
+    textarea.value = text;
+    textarea.setAttribute("readonly", "");
+    textarea.style.position = "fixed";
+    textarea.style.opacity = "0";
+    document.body.appendChild(textarea);
+    textarea.select();
+
+    try {
+      document.execCommand("copy");
+      return Promise.resolve();
+    } finally {
+      textarea.remove();
+    }
+  }
+
+  function copyText(text) {
+    if (navigator.clipboard && window.isSecureContext) {
+      return navigator.clipboard
+        .writeText(text)
+        .catch(() => fallbackCopyText(text));
+    }
+
+    return fallbackCopyText(text);
+  }
+
+  function initCodeBlockCopy() {
+    const proseBlocks = document.querySelectorAll(
+      ".prose .highlight, .prose > pre"
+    );
+
+    proseBlocks.forEach((block) => {
+      if (block.closest(".code-block-shell")) return;
+
+      const code = block.querySelector("code");
+      if (!code) return;
+
+      const shell = document.createElement("div");
+      shell.className = "code-block-shell not-prose";
+      block.parentNode.insertBefore(shell, block);
+      shell.appendChild(block);
+
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "code-copy-button";
+      button.textContent = "Copy";
+      button.setAttribute("aria-label", "Copy code block");
+
+      button.addEventListener("click", function () {
+        copyText(code.innerText).then(() => {
+          button.textContent = "Copied";
+          setTimeout(() => {
+            button.textContent = "Copy";
+          }, 1600);
+        });
+      });
+
+      shell.appendChild(button);
+    });
+  }
+
   // Initialize on DOM content loaded
   function init() {
     // Get DOM elements
@@ -234,6 +351,8 @@
     darkIcon = document.getElementById("theme-toggle-dark-icon");
     mobileMenuButton = document.getElementById("mobile-menu-button");
     mobileMenu = document.getElementById("mobile-menu");
+    siteHeader = document.getElementById("site-header");
+    mobileTocBar = document.getElementById("mobile-toc-bar");
 
     // Initialize theme
     initTheme();
@@ -265,6 +384,8 @@
     // Initialize additional features
     initSmoothScrolling();
     initScrollToTop();
+    initMobileChromeVisibility();
+    initCodeBlockCopy();
 
     // Add page load animation
     document.body.classList.add("animate-fade-in");
