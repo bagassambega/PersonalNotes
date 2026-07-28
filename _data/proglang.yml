@@ -2,3 +2,13 @@
   description: "Basic and concept of programming"
   url: "/programming-concept/"
   icon: "code"
+
+- title: "C dan C++"
+  description: "Pedoman proglang C dan C++"
+  url: "/c-cpp/"
+  icon: "c"
+
+- title: "Makefile"
+  description: "Pedoman menggunakan Make build tools"
+  url: "/makefile/"
+  icon: "make"
