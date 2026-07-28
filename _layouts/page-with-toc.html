@@ -6,7 +6,7 @@ layout: default
   <!-- Sidebar for Table of Contents -->
   <aside
     id="toc-sidebar"
-    class="hidden lg:sticky lg:top-16 lg:flex lg:flex-col lg:self-start lg:flex-shrink-0 lg:w-64 xl:w-72 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 h-[calc(100vh-4rem)] overflow-hidden"
+    class="hidden lg:fixed lg:left-0 lg:top-16 lg:bottom-0 lg:z-30 lg:flex lg:flex-col lg:w-64 xl:w-72 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 overflow-hidden"
   >
     <!-- Sidebar Header -->
     <div
@@ -50,7 +50,7 @@ layout: default
   </aside>
 
   <!-- Main Content Area -->
-  <div class="flex-1 min-w-0">
+  <div class="flex-1 min-w-0 lg:ml-64 xl:ml-72">
     <!-- Mobile TOC Toggle -->
     <div
       class="lg:hidden sticky top-16 z-10 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 px-4 py-3"
