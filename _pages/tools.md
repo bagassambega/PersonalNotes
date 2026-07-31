@@ -99,3 +99,4 @@ github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/
 | AllManga    | [https://allmanga.to](https://allmanga.to/)                                | Anime & manga     | Watch anime and manga                                                        |
 | ani-cli     |                                                                            | Anime             | CLI based for anime watch                                                    |
 | PlayIMDB    | [https://www.playimdb.com/title/{id}](https://www.playimdb.com/title/{id}) | Movie             | Go to any movie with IMDB, modify the URL by changing `imdb` with `playimdb` |
+| mkissa      | [https://mkissa.to](https://mkissa.to)                                     | Anime & manga     | Watch anime and manga                                                        |
