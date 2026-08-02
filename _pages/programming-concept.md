@@ -10,4 +10,8 @@ github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/
 
 ## Higher-Order Level Function
 
-- Fungsi yang menerima fungsi lainnya sebagai input atau 
+- Fungsi yang menerima fungsi lainnya sebagai input atau return type-nya juga function, atau keduanya
+
+# Object-Oriented Programming
+- Object oriented programming (OOP) adalah konsep pemrograman di mana setiap item/variabel di-treat sebagai objek.
+- Dalam OOP, object merupakan instance dari sebuah kelas, dan kelas adalah blueprint/cetakan dari object yang akan dibuat.
