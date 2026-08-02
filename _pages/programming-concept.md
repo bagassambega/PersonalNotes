@@ -15,3 +15,8 @@ github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/
 # Object-Oriented Programming
 - Object oriented programming (OOP) adalah konsep pemrograman di mana setiap item/variabel di-treat sebagai objek.
 - Dalam OOP, object merupakan instance dari sebuah kelas, dan kelas adalah blueprint/cetakan dari object yang akan dibuat.
+- Enkapsulasi: melindungi data dari direct access, melindungi internal state of object dari luar. Ada beberapa level dari enkapsulasi:
+1. Private: member/item tidak dapat diakses dari luar kelas
+2. Protected: member/item hanya bisa diakses di dalam kelas dan juga turunannya
+3. Public: member/item yang bisa diakses dari manapun
+- 
