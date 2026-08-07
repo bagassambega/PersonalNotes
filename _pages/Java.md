@@ -10,6 +10,6 @@ github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/
 
 - Inisialisasi variabel menggunakan format:
 ```java
-tipeVaria
+tipeVariabel data = 
 ```
 - 
