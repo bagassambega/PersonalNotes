@@ -43,7 +43,9 @@ x = 12.45;
 - Integer: bilangan bulat
 - Float: bilangan desimal
 - Char: karakter (misalkan 'A' atau '@')
-- 
+- Double: float dengan kapasitas lebih besar
+- String: kumpulan karakter yang berbentuk teks
+- Boolean: True/False
 ### Konstanta
 
 - Konstanta (variabel final yang tidak bisa diubah) bisa diinisialisasi dengan menambahkan keyword `final` sebelum nama variabel.
