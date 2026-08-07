@@ -38,7 +38,16 @@ float x;
 x = 12.45;
 ```
 - Penulisan nama variabel, fungsi menggunakan camelCase.
-- Konstanta (variabel final yang tidak bisa diubah) bisa diinisialisasi dengan menambahkan keyword `final` sebelum inisialisasi. Tapi inisialisasi tidak bisa dipisah dengan 
+### Tipe Data
+
+- Integer: bilangan bulat
+- Float: bilangan desimal
+- Char: karakter (misalkan 'A' atau '@')
+- 
+### Konstanta
+
+- Konstanta (variabel final yang tidak bisa diubah) bisa diinisialisasi dengan menambahkan keyword `final` sebelum nama variabel.
 ```java
 final int x = 12;
 ```
+- 
