@@ -1,9 +1,9 @@
 ---
 layout: page-with-toc
-title: Java
-description: Java programming language notes
-permalink: /java/
-github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/java.md
+title: Javascript
+description: Javascript programming language notes
+permalink: /javascript/
+github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/javascript.md
 ---
 # Basic
 ## Perkenalan
