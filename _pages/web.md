@@ -1,9 +1,9 @@
 ---
 layout: page-with-toc
 title: Web
-description: Javascript programming language notes
-permalink: /javascript/
-github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/javascript.md
+description: Web development notes
+permalink: /web/
+github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/web.md
 ---
 # Basic
 ## Perkenalan

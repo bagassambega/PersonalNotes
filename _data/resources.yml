@@ -48,6 +48,11 @@
   url: "/glossary/"
   icon: "glossary"
 
+- title: "Internet of Things and Hardware"
+  description: "Notes on hardware and internet of things related"
+  url: "/iot-hardware/"
+  icon: "hardware"
+
 - title: "Linear Geometry & Algebra"
   description: "Linear geometry and algebra notes."
   url: "/linear-geometry-algebra/"

@@ -8,6 +8,26 @@
   url: "/c-cpp/"
   icon: "c"
 
+- title: "Java"
+  description: "Java programming language notes"
+  url: "/java/"
+  icon: "java"
+
+- title: "Javascript"
+  description: "Javascript programming language notes"
+  url: "/javascript/"
+  icon: "javascript"
+
+- title: "CSS"
+  description: "CSS notes"
+  url: "/css/"
+  icon: "css"
+
+- title: "Web"
+  description: "Web development notes"
+  url: "/web/"
+  icon: "web"
+
 - title: "Makefile"
   description: "Pedoman menggunakan Make build tools"
   url: "/makefile/"

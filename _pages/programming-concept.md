@@ -10,7 +10,8 @@ github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/
 ## Higher-Order Level Function
 
 - Fungsi yang menerima fungsi lainnya sebagai input atau return type-nya juga function, atau keduanya
-
+## First-Class Function
+- First class function adalah 
 # Object-Oriented Programming
 - Object oriented programming (OOP) adalah konsep pemrograman di mana setiap item/variabel di-treat sebagai objek.
 - Dalam OOP, object merupakan instance dari sebuah kelas, dan kelas adalah blueprint/cetakan dari object yang akan dibuat.
@@ -18,4 +19,3 @@ github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/
 1. Private: member/item tidak dapat diakses dari luar kelas
 2. Protected: member/item hanya bisa diakses di dalam kelas dan juga turunannya
 3. Public: member/item yang bisa diakses dari manapun
-- 
