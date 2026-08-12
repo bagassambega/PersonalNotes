@@ -5,15 +5,14 @@ description: Javascript programming language notes
 permalink: /javascript/
 github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/javascript.md
 ---
-# Basic
-## Perkenalan
+# Perkenalan
 
 - Javascript adalah bahasa pemrograman cross-platform, object-oriented 
 - Tujuan awal Javascript dikembangkan untuk membuat website/webpage menjadi interaktif, misalkan memiliki animasi yang kompleks, tombol yang memiliki custom behaviour, popup menu, mengubah webpage (DOM, domain object model) dll. Hal ini disebut **client-side JS**
 - Namun Javascript juga bisa digunakan untuk mengembangkan server-side code, misalnya dengan Node.js yang memungkinkan kita untuk mengembangkan aplikasi server. Hal ini disebut **server-side JS**
 - Standar JavaScript adalah Ecma International melalui [ECMAScript specification](https://ecma-international.org/publications-and-standards/standards/ecma-262/)
 
-## Assignment dan Tipe Data
+# Assignment dan Tipe Data
 
 - JS **case-sensitive** dan memakai unicode character set.
 - Sebuah instruction di Javascript bisa disebut sebagai **statement**, dan setiap statement dipisahkan oleh semikolon atau baris baru. **Semicolon optional**, tapi merupakan best practive
@@ -26,13 +25,13 @@ github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/
  */
 ```
 
-### Variabel
+## Variabel
 
 - `var`: inisialisasi variabel, nilai awal opsional jadi bisa declare biasa dulu. Bisa digunakan untuk declare variabel local maupun global, tergantung posisi inisialisasi
 - `let`: variabel local, terikat block-scoped, nilai awal opsional
 - `const`: konstanta, block-scoped, harus diinisialisasi di awal nilainya
 - Naming variable umumnya **`camelCase`**
-#### Scope Variabel
+## Scope Variabel
 
 - Global: scope default untuk code yang running di script mode
 - Module scope: scope code yang hanya berjalan di suatu module
@@ -54,9 +53,9 @@ if (true) {
 }
 console.log(x); // x is 5
 ```
-### Tipe Data
+## Tipe Data
 
-#### Primitif
+## Primitif
 
 - Boolean: true/false
 - null value
@@ -71,4 +70,147 @@ const sym2 = Symbol("foo");
 const sym3 = Symbol("foo");
 ```
 
-#### Konversi Tipe Data
+## Konversi Tipe Data
+
+- JS adalah dynamically typed language, jadi kita tidak perlu specify tipe data ketika di-declare, JS akan otomatis convert dan infer tipe datanya
+- Kode seperti ini tidak akan error meskipun tipe datanya berubah
+```js
+let answer = 42;
+answer = "String pengganti";
+```
+
+- Konversi tipe data bisa dilakukan misalnya dengan fungsi berikut: `parseInt`, `parseFloat`, `Number`, `String`, atau `Number.toString`
+```js
+console.log(parseInt("123")); // 123
+console.log(parseInt("077")); // 77 (leading zeros are ignored)
+
+console.log(Number("12")); // 12
+console.log(String(12)); // "12"
+
+let num = 12;
+console.log(num.toString()); // "12"
+```
+
+- Kombinasi number dengan string menggunakan `+` operator akan menghasilkan string
+```js
+x = "The answer is " + 42; // "The answer is 42"
+y = 42 + " is the answer"; // "42 is the answer"
+z = "37" + 7; // "377"
+```
+
+- Kombinasi number dengan string menggunakan operator lain tidak akan mengkonversi number menjadi string, misalnya:
+```js
+"37" - 7; // 30
+"37" * 7; // 259
+```
+
+## Literals
+
+### Array
+
+- Array bisa menampung berbagai tipe data berbeda di dalam satu array, karena setiap variabel di JS di-treat sebagai object, dan array adalah kumpulan object
+```js
+let array = [Date.now(), "cars", 1, 2];
+```
+
+- Bisa memberikan space kosong juga di array agar nantinya bisa diisi
+```js
+const myList = ["home", , "school", ,]; // Array index ke-1, 3 bisa diisi
+```
+
+### Numbers
+
+- Format utama: `[digits].[digits][(E|e)[(+|-)]digits]`
+- Contoh:
+```js
+3.1415926
+.123456789
+3.1E+12
+.1e-23
+```
+
+### Objects
+
+- Objects adalah list of zero atau lebih pairs antara property name dengan value-nya. Bentuk umum:
+```js
+obj = { key: value }
+```
+
+- Contoh:
+```js
+const sales = "Toyota";
+
+function carTypes(name) {
+  return name === "Honda" ? name : `Sorry, we don't sell ${name}.`;
+}
+
+const car = { myCar: "Saturn", getCar: carTypes("Honda"), special: sales };
+
+console.log(car.myCar); // Saturn
+console.log(car.getCar); // Honda
+console.log(car.special); // Toyota
+```
+
+- Kita juga bisa nest object dan assign key dalam bentuk angka
+```js
+const car = { manyCars: { a: "Saab", b: "Jeep" }, 7: "Mazda" };
+
+console.log(car.manyCars.b); // Jeep
+console.log(car[7]); // Mazda
+```
+
+- Object property name (key) bisa berbentuk empty string, tapi untuk mengakses arbitrary name harus menggunakan bracket notation (\[\]])
+```js
+const unusualPropertyNames = {
+  "": "An empty string",
+  "!": "Bang!",
+};
+console.log(unusualPropertyNames.""); // SyntaxError: Unexpected string
+console.log(unusualPropertyNames.!); // SyntaxError: Unexpected token !
+
+console.log(unusualPropertyNames[""]); // An empty string
+console.log(unusualPropertyNames["!"]); // Bang!
+```
+
+- Semenjak ES6, sebuah key bisa dibuat dyamic
+```js
+const dynamicKey = "name"
+const index = 1
+
+const person = {
+	[dynamicKey]: "John", // "name": "John"
+	["age" + index]: 25, // "age1": 25
+}
+```
+
+### Strings
+
+- String literal:
+```js
+// Basic literal string creation
+`In JavaScript '\n' is a line-feed.`;
+
+// Multiline strings
+`In JavaScript, template strings can run
+ over multiple lines, but double and single
+ quoted strings cannot.`;
+
+// String interpolation
+const name = "Lev",
+  time = "today";
+`Hello ${name}, how are you ${time}?`;
+```
+
+### Regex
+
+- Bentuk contoh:
+```js
+const re = /ab+c/;
+```
+
+# Control Flow
+
+
+# Object
+
+Referensi utama: [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
