@@ -356,22 +356,22 @@
   }
 
   .prose .code-block-shell {
-    @apply relative my-8 rounded-lg border border-gray-700 bg-gray-950 shadow-md;
+    @apply relative my-7 rounded-md border border-gray-700 bg-gray-950 shadow-md;
     max-width: 100%;
+    overflow: hidden;
   }
 
   .prose .code-block-shell::before {
     content: "";
     display: block;
-    height: 0.375rem;
-    border-radius: 0.5rem 0.5rem 0 0;
+    height: 0.25rem;
     background: linear-gradient(90deg, #60a5fa, #22c55e, #f59e0b);
   }
 
   .prose .code-block-shell .highlight,
   .prose .code-block-shell > pre {
     margin: 0 !important;
-    border-radius: 0 0 0.5rem 0.5rem;
+    border-radius: 0;
   }
 
   .prose .code-block-shell .highlight {
@@ -379,7 +379,7 @@
   }
 
   .prose .code-copy-button {
-    @apply absolute right-3 top-3 rounded-md border border-gray-600 bg-gray-800 px-2.5 py-1 text-xs font-medium text-gray-200 shadow-sm transition-colors duration-200;
+    @apply absolute right-2.5 top-2.5 rounded border border-gray-600 bg-gray-800/95 px-2 py-0.5 text-[11px] font-medium text-gray-200 shadow-sm transition-colors duration-200;
     z-index: 2;
   }
 
@@ -389,22 +389,23 @@
   }
 
   .prose .highlight {
-    @apply my-6 rounded-md bg-gray-900;
+    @apply my-6 rounded-md bg-gray-950;
     max-width: 100%;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
-    border: 1px solid rgb(55, 65, 81);
   }
 
   .prose .highlight pre {
     margin: 0;
     background: transparent;
-    padding-top: 2.75rem;
+    padding: 1rem 3.75rem 1rem 1rem;
   }
 
   .prose .highlight code {
     color: #e5e7eb;
     background: transparent;
+    font-size: 0.8125rem;
+    line-height: 1.6;
   }
 
   .prose .highlighter-rouge {
@@ -497,8 +498,9 @@
   .prose pre,
   .prose code {
     display: block;
-    font-family: ui-monospace, SFMono-Regular, "SF Mono", Consolas,
+    font-family: "SFMono-Regular", "Cascadia Code", "JetBrains Mono", Consolas,
       "Liberation Mono", Menlo, monospace;
+    font-variant-ligatures: none;
   }
 
   .prose :not(pre) > code {

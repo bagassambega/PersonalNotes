@@ -17,6 +17,7 @@ github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/
 - JS **case-sensitive** dan memakai unicode character set.
 - Sebuah instruction di Javascript bisa disebut sebagai **statement**, dan setiap statement dipisahkan oleh semikolon atau baris baru. **Semicolon optional**, tapi merupakan best practive
 - Comments:
+
 ```js
 // a one line comment
 
@@ -47,6 +48,7 @@ console.log(y); // ReferenceError: y is not defined
 ```
 
 - Tetapi `var` itu tidak block scoped, dia local terhadap fungsi atau global
+
 ```js
 if (true) {
   var x = 5;
@@ -64,6 +66,7 @@ console.log(x); // x is 5
 - BigInt: integer dengan batas besar
 - String: sekumpulan karakter
 - Symbol: tipe data unik dan immutable. Contoh:
+
 ```js
 const sym1 = Symbol();
 const sym2 = Symbol("foo");
@@ -74,12 +77,14 @@ const sym3 = Symbol("foo");
 
 - JS adalah dynamically typed language, jadi kita tidak perlu specify tipe data ketika di-declare, JS akan otomatis convert dan infer tipe datanya
 - Kode seperti ini tidak akan error meskipun tipe datanya berubah
+
 ```js
 let answer = 42;
 answer = "String pengganti";
 ```
 
 - Konversi tipe data bisa dilakukan misalnya dengan fungsi berikut: `parseInt`, `parseFloat`, `Number`, `String`, atau `Number.toString`
+
 ```js
 console.log(parseInt("123")); // 123
 console.log(parseInt("077")); // 77 (leading zeros are ignored)
@@ -92,6 +97,7 @@ console.log(num.toString()); // "12"
 ```
 
 - Kombinasi number dengan string menggunakan `+` operator akan menghasilkan string
+
 ```js
 x = "The answer is " + 42; // "The answer is 42"
 y = 42 + " is the answer"; // "42 is the answer"
@@ -99,6 +105,7 @@ z = "37" + 7; // "377"
 ```
 
 - Kombinasi number dengan string menggunakan operator lain tidak akan mengkonversi number menjadi string, misalnya:
+
 ```js
 "37" - 7; // 30
 "37" * 7; // 259
@@ -109,11 +116,13 @@ z = "37" + 7; // "377"
 ### Array
 
 - Array bisa menampung berbagai tipe data berbeda di dalam satu array, karena setiap variabel di JS di-treat sebagai object, dan array adalah kumpulan object
+
 ```js
 let array = [Date.now(), "cars", 1, 2];
 ```
 
 - Bisa memberikan space kosong juga di array agar nantinya bisa diisi
+
 ```js
 const myList = ["home", , "school", ,]; // Array index ke-1, 3 bisa diisi
 ```
@@ -122,6 +131,7 @@ const myList = ["home", , "school", ,]; // Array index ke-1, 3 bisa diisi
 
 - Format dasar: `[digits].[digits][(E|e)[(+|-)]digits]`
 - Contoh:
+
 ```js
 3.1415926
 .123456789
@@ -132,12 +142,14 @@ const myList = ["home", , "school", ,]; // Array index ke-1, 3 bisa diisi
 ### Objects
 
 - Objects adalah list of zero atau lebih pairs antara property name dengan value-nya. Bentuk umum:
+
 ```js
 obj = { key: value }
 ```
 
-- Contoh:
-```js
+Contoh:
+
+````js
 const sales = "Toyota";
 
 function carTypes(name) {
@@ -149,9 +161,10 @@ const car = { myCar: "Saturn", getCar: carTypes("Honda"), special: sales };
 console.log(car.myCar); // Saturn
 console.log(car.getCar); // Honda
 console.log(car.special); // Toyota
-```
+````
 
-- Kita juga bisa nest object dan assign key dalam bentuk angka
+Kita juga bisa nest object dan assign key dalam bentuk angka:
+
 ```js
 const car = { manyCars: { a: "Saab", b: "Jeep" }, 7: "Mazda" };
 
@@ -159,7 +172,8 @@ console.log(car.manyCars.b); // Jeep
 console.log(car[7]); // Mazda
 ```
 
-- Object property name (key) bisa berbentuk empty string, tapi untuk mengakses arbitrary name harus menggunakan bracket notation (\[\]])
+Object property name (key) bisa berbentuk empty string, tapi untuk mengakses arbitrary name harus menggunakan bracket notation (`[]`):
+
 ```js
 const unusualPropertyNames = {
   "": "An empty string",
@@ -172,7 +186,8 @@ console.log(unusualPropertyNames[""]); // An empty string
 console.log(unusualPropertyNames["!"]); // Bang!
 ```
 
-- Semenjak ES6, sebuah key bisa dibuat dyamic
+Semenjak ES6, sebuah key bisa dibuat dynamic:
+
 ```js
 const dynamicKey = "name"
 const index = 1
@@ -185,8 +200,9 @@ const person = {
 
 ### Strings
 
-- String literal:
-```js
+String literal:
+
+````js
 // Basic literal string creation
 `In JavaScript '\n' is a line-feed.`;
 
@@ -199,11 +215,12 @@ const person = {
 const name = "Lev",
   time = "today";
 `Hello ${name}, how are you ${time}?`;
-```
+````
 
 ### Regex
 
 - Bentuk contoh:
+
 ```js
 const re = /ab+c/;
 ```
@@ -211,6 +228,7 @@ const re = /ab+c/;
 # Control Flow
 
 - Sebuah block didefinisikan sebagai sekumpulan statement yang berada di antara curly braces, baik itu di dalam sebuah function, if-else, dll
+
 ```js
 {
   statement1;
@@ -284,12 +302,14 @@ try {
 ## `for`
 
 - Sintaks dasar:
+
 ```js
 for (initialization; condition; afterthought)
   statement
 ```
 
 - Contoh:
+
 ```js
 for (let step = 0; step < 5; step++) {
   // Runs 5 times, with values of step 0 through 4.
@@ -298,6 +318,7 @@ for (let step = 0; step < 5; step++) {
 ```
 
 - Contoh lain di HTML DOM manipulation:
+
 ```html
 <form name="selectForm">
   <label for="musicTypes"
@@ -315,7 +336,7 @@ for (let step = 0; step < 5; step++) {
 </form>
 ```
 
-```js
+````js
 function countSelected(selectObject) {
   let numberSelected = 0;
   for (let i = 0; i < selectObject.options.length; i++) {
@@ -332,18 +353,20 @@ btn.addEventListener("click", () => {
   const musicTypes = document.selectForm.musicTypes;
   console.log(`You have selected ${countSelected(musicTypes)} option(s).`);
 });
-```
+````
 
 ## `for`..`in`
 
 - Iterasi objek dengan mengakses objek secara langsung. Sintaks dasar:
+
 ```js
 for (variable in object)
   statement
 ```
 
 - Contoh:
-```js
+
+````js
 const fruits = ["Apple", "Oranges", "Blueberry"];
 for (fruit in fruits) {
 	console.log(fruit + " "); // "Apple Oranges Blueberry "
@@ -364,13 +387,14 @@ function dumpProps(obj, objName) {
   // car.make = Ford
   // car.model = Mustang
 }
-```
+````
 
 - `for in` mengiterasi key atau property name, jadi `i` di situ adalah iterasi terhadap property name-nya
 
 ## `for`..`of`
 
 - Jika `for in` mengiterasi key/property name, maka `for of` mengiterasi value-nya
+
 ```js
 const arr = [3, 5, 7];
 arr.foo = "hello";
@@ -388,6 +412,7 @@ for (const i of arr) { // for of
 Pada kode di atas, "hello" tidak di-print karena ketika diinisialisasi. `arr` merupakan sebuah  array, dan ketika kita menambahkan `arr.foo = "hello"`, kita menambahkan properti, bukan menambahkan item. Jadi sebetulnya panjang `arr` tetap 3 dengan index 0,1,2, tapi ada tambahan properti (bukan isi array) yaitu foo.
 
 - `for in` juga digunakan untuk destructuring object. Di sini baru object bisa mengakses key dan value
+
 ```js
 const obj = { foo: 1, bar: 2 };
 
@@ -401,12 +426,14 @@ for (const [key, val] of Object.entries(obj)) {
 ## `while`
 
 - Sintaks dasar:
+
 ```js
 while (condition)
   statement
 ```
 
 - Akan berjalan sampai condition bernilai false atau mencapai break. Contoh:
+
 ```js
 let n = 0;
 let x = 0;
@@ -417,6 +444,7 @@ while (n < 3) {
 ```
 
 - Infinite loop
+
 ```js
 while (true) {
   console.log("Hello, world!");
@@ -427,6 +455,7 @@ while (true) {
 
 - Perbedaan dengan `while` adalah kalau `while` itu cek kondisi dulu sebelum kode berjalan, tapi `do`..`while` itu berjalan dulu baru cek kondisi. Jadi `while` mungkin saja tidak pernah menjalankan kode block sama sekali. tapi `do`..`while` pasti minimal sekali berjalan code block-nya
 - Sintaks dasar:
+
 ```js
 do {
 	statement
@@ -434,6 +463,7 @@ do {
 ```
 
 - Contoh:
+
 ```js
 let i = 0;
 do {
