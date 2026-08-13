@@ -47,7 +47,7 @@ function sayHello() {
 }
 ```
 
-## Callback Function
+## Callback Function {#callback-function}
 
 - Callback function adalah fungsi yang dimasukkan ke dalam fungsi lain sebagai argumen, yang kemudian di-invoke di dalam fungsi tersebut.
 - Pengguna yang akan memakai callback API akan menulis sebuah fungsi yang nantinya akan dimasukkan ke dalam fungsi API. Fungsi API ini disebut sebagai **caller**

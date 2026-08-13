@@ -625,6 +625,233 @@ const square = function (n) {
 };
 ```
 
+## Immediately Invoked Function Expression (IIFE)
+
+- IIFE adalah code pattern yang memungkinkan fungsi didefinisikan dalam bentuk expression dan **langsung di-call saat itu juga**
+- Jadi instead of mendefinisikan fungsi terlebih dahulu dan kemudian dipanggil di code lain atau menyimpan value-nya melalui variabel lain, IIFE mendefinisikan fungsi di saat itu juga, dan dipanggil saat itu juga, tanpa intermediate definition/storing
+
+```js
+(function () {
+  // Do something
+})(); // Fungsi ini akan langsung di-call dan di-execute saat line ini dieksekusi
+
+const value = (function () {
+  // Do something
+  return someValue;
+})(); // Fungsi langsung di-call, dan akan langsung dijalankan saat kode ini berjalan
+```
+
+## Function Scope
+
+- Variabel di dalam scope function (local) tidak akan bisa diakses dari luar function (global, tetapi function otomatis inherits dan bisa mengakses variabel dari luar function
+
+```js
+// The following variables are defined in the global scope
+const num1 = 20;
+const num2 = 3;
+const name = "Chamakh";
+
+// This function is defined in the global scope
+function multiply() {
+  return num1 * num2;
+}
+
+console.log(multiply()); // 60
+
+// A nested function example
+function getScore() {
+  const num1 = 2;
+  const num2 = 3;
+
+  function add() {
+    return `${name} scored ${num1 + num2}`;
+  }
+
+  return add();
+}
+
+console.log(getScore()); // "Chamakh scored 5"
+```
+
+## Closures
+
+- Ingat scope di atas, sebuah fungsi bisa mengakses variabel yang satu level scope berada di atasnya. Misalkan:
+
+```js
+let counter = 0;
+function increase() {
+	counter++;
+}
+
+increase();
+console.log(counter); // 1
+```
+
+kode di atas valid dan bisa dijalankan.
+
+- Masalah dari kode di atas adalah, variabel counter bisa dimodifikasi dari fungsi atau kode lain di manapun itu, jadi tidak safe. Misalkan kita tambahkan kode `counter = 12`, maka nilai counter akan dimodifikasi ulang
+- Untuk itu, konsep closure diperkenalkan. Ketika sebuah fungsi didefinisikan dalam sebuah fungsi, inner function akan memiliki akses terhadap variabel yang ada di outer function, tetapi yang ada di luar function outer tidak akan bisa mengakses variabel di outer function tersebut. Berikut contohnya:
+
+```js
+function outer() {
+	let message = "hello";
+	
+	function inner() {
+		console.log(message);
+	}
+	
+	inner(); // Fungsi inner di-invoke
+}
+
+message = "overridden";
+outer(); // Output: hello
+```
+
+- Selain itu, kita juga bisa membuat inner function di-return, sehingga jika kita invoke outer function, inner function otomatis di-invoke juga.
+
+```js
+const getCode = (function () {
+  const apiCode = "0]Eal(eh&2"; // A code we do not want outsiders to be able to modify…
+
+  return function () {
+    return apiCode;
+  };
+})();
+
+console.log(getCode()); // "0]Eal(eh&2"
+```
+
+Atau variasinya:
+
+```js
+const getCode = (function () {
+  const apiCode = "0]Eal(eh&2";
+  
+  function getApi() {
+	  return apiCode;
+  }
+
+  return getApi;
+})();
+
+console.log(getCode()); // "0]Eal(eh&2"
+```
+
+- Variasi lain, kita bisa return beberapa fungsi sekaligus, jadi ketika kita akan mengakses inner function, kita bisa mengaksesnya seperti layaknya kelas
+
+```js
+function pet() {
+  let name = "default";
+
+  function getName() {
+    return name;
+  }
+
+  function setName(newName) {
+    name = newName;
+  }
+
+  return {getName, setName};
+}
+
+const myPet = pet();
+console.log(myPet.getName()); // default
+
+myPet.setName("New name");
+console.log(myPet.getName()); // New name
+```
+
+- Jika kita hanya return satu inner function, function itu yang akan di-trigger
+
+```js
+// The outer function defines a variable called "name"
+const pet = function (name) {
+  const getName = function () {
+    // The inner function has access to the "name" variable of the outer function
+    return name;
+  };
+  return getName; // Return the inner function, thereby exposing it to outer scopes
+};
+const myPet = pet("Vivie");
+
+console.log(myPet()); // "Vivie"
+```
+
+## Argument
+
+- Seperti halnya di Python ada `args`, di JS juga ada, namanya adalah `arguments`. `arguments` ini tidak perlu ditulis di dalam parameter function-nya, karena menjadi reserved keyword
+
+```js
+function myConcat(separator) {
+  let result = ""; // initialize list
+  // iterate through arguments
+  for (let i = 1; i < arguments.length; i++) {
+    result += arguments[i] + separator;
+  }
+  return result;
+}
+
+console.log(myConcat(", ", "red", "orange", "blue"));
+// "red, orange, blue, "
+
+console.log(myConcat("; ", "elephant", "giraffe", "lion", "cheetah"));
+// "elephant; giraffe; lion; cheetah; "
+
+console.log(myConcat(". ", "sage", "basil", "oregano", "pepper", "parsley"));
+// "sage. basil. oregano. pepper. parsley. "
+```
+
+- Kalau dari kode di atas, parameter yang diwajibkan adalah `separator`, yang muncul di argument pertama (`arguments[0]`). Oleh karenanya di penggunaannya, argumen pertama yang digunakan adalah separatornya, lalu barulah di argumen-argumen setelahnya, diiterasi argument mulai dari indeks ke-1 (karena indeks ke-0 adalah separator-nya)
+
+### Default Parameter
+
+- Argument juga bisa memakai default value seperti bahasa pemrograman lainnya
+
+```js
+function multiply(a, b = 1) {
+  return a * b;
+}
+
+console.log(multiply(5)); // 5
+```
+
+### Rest Parameters
+
+- Konsep ini yang paling dekat dengan arguments di atas, yaitu kita mendefinisikan bahwa function ini bisa menerima input parameter sebanyak apapun itu.
+
+```js
+function multiply(multiplier, ...theArgs) {
+  return theArgs.map((x) => multiplier * x);
+}
+
+const arr = multiply(2, 1, 2, 3);
+console.log(arr); // [2, 4, 6]
+```
+
+
+## Arrow/Lambda Function
+
+- Arrow function adalah cara lain untuk mendefinisikan fungsi
+
+```js
+const print = ((name) => {
+  console.log(name)
+})
+
+print("halo") // halo
+
+// Ekuivalen dengan
+
+const print = (function(name) {
+  console.log(name)
+})
+
+print("halo") // halo
+```
+
+## Callback Function
+
+Refer ke [callback function](/programming-concept#callback-function)
 
 # Object
 
