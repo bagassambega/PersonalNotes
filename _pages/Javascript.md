@@ -847,6 +847,12 @@ const print = (function(name) {
 })
 
 print("halo") // halo
+
+const sumThree = ((a, b, c) => {
+	return a + b + c;
+})
+
+console.log(sumThree(1, 2, 3)); // 6
 ```
 
 ## Callback Function
@@ -883,14 +889,18 @@ const arr4 = Array(arrayLength);
 
 - Panjang array: `arr.length` atau `arr["length"]`
 - Akses: `arr[n]`
-- Iterasi array: method `forEach(function)`, dengan masukan berupa callback function
+- Iterasi:
 
 ```js
-const colors = ["red", "green", "blue"];
-colors.forEach((color) => console.log(color));
-// red
-// green
-// blue
+let arr = [1, 2, 3, 4];
+
+for (let item in arr) {
+	console.log(item);
+}
+
+for (let i = 0; i < arr.length; i++) {
+	console.log(arr[i]);
+}
 ```
 
 - Tidak disarankan mengiterasi item dalam array menggunakan `for in` karena nantinya normal element dan seluruh property yang enumerable akan di-list juga
@@ -966,4 +976,95 @@ console.log(arr2.flat(2));
 // expected output: Array [0, 1, 2, 3, Array [4, 5]]
 ```
 
-- `sort`: Sort array
+- `sort`: Sort array, default ascending (dari kecil ke besar). Bisa passing function untuk membuat custom sorting. Jika ingin sort descending, bisa menggunakan `.sort()` baru `.reverse`
+
+```js
+const myArray = ["Wind", "Rain", "Fire"];
+myArray.sort();
+// sorts the array so that myArray = ["Fire", "Rain", "Wind"]
+```
+
+Descending order:
+
+```js
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+// Method A: Quick sort and reverse
+fruits.sort().reverse(); 
+
+// Method B: Robust comparison (handles accents/case)
+fruits.sort((a, b) => b.localeCompare(a));
+
+console.log(fruits); 
+// Output: ["Orange", "Mango", "Banana", "Apple"]
+
+const numbers = [40, 100, 1, 5, 25, 10]; // Sorts the array in place 
+numbers.sort((a, b) => b - a);
+
+```
+
+Custom sorting syntax:
+
+```js
+sort(compareFn)
+
+function compareFn(a, b) {
+  if (a is less than b by some ordering criterion) {
+    return -1; // Jadi a duluan baru b
+  } else if (a is greater than b by the ordering criterion) {
+    return 1; // Jadi b duluan baru a
+  }
+  // a must be equal to b
+  return 0;
+}
+```
+
+Contoh custom sorting (diurutkan berdasarkan panjang elemen string, dari yang terpendek ke terpanjang):
+```js
+const sortFn = (a, b) => {
+  if (a[a.length - 1] < b[b.length - 1]) {
+    return -1; // Negative number => a < b, a comes before b
+  } else if (a[a.length - 1] > b[b.length - 1]) {
+    return 1; // Positive number => a > b, a comes after b
+  }
+  return 0; // Zero => a = b, a and b keep their original order
+};
+myArray.sort(sortFn);
+// sorts the array so that myArray = ["Wind","Fire","Rain"]
+```
+
+- `indexOf`: search posisi elemen dan return first occurence. Opsional: tambahkan mulai search dari index ke berapa
+
+```js
+const a = ["a", "b", "a", "b", "a"];
+console.log(a.indexOf("b")); // 1
+
+// Now try again, starting from after the last match
+console.log(a.indexOf("b", 2)); // 3
+console.log(a.indexOf("z")); // -1, because 'z' was not found
+```
+
+- `lastIndexOf`: kebalikan `indexOf`, search dimulai dari akhir array
+
+```js
+const a = ["a", "b", "c", "d", "a", "b"];
+console.log(a.lastIndexOf("b")); // 5
+
+// Now try again, starting from before the last match
+console.log(a.lastIndexOf("b", 4)); // 1
+console.log(a.lastIndexOf("z")); // -1
+```
+
+### Iterative Methods
+
+- Method yang mengiterasi item satu per satu dan menggunakan callback function terhadap setiap item yang di-iterate
+
+- `forEach`: Iterasi array: method `forEach(function)`, dengan masukan berupa callback function
+
+```js
+const colors = ["red", "green", "blue"];
+colors.forEach((color) => console.log(color));
+// red
+// green
+// blue
+```
