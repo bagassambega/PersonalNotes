@@ -502,6 +502,130 @@ labelCancelLoops: while (true) {
 }
 ```
 
+# Functions
+
+```js
+function square(number) {
+  return number * number;
+}
+```
+
+- Parameter fungsi di JS itu di-pass by value, jadi kalau kita ubah value parameter di dalam fungsi, perubahan itu tidak akan di-reflect di luar fungsi
+
+```js
+let val = 12;
+
+function changeVal(value) {
+	value = 10;
+}
+
+changeVal(val);
+console.log(val); //12
+```
+
+- Tetapi jika kita pass object, maka jika kita passing object itu ke fungsi, dan ubah propertinya, change akan reflected di luar fungsi
+
+```js
+let obj = {
+  "param1": 12,
+  "param2": 10,
+};
+
+function changeObj(obj) {
+  obj.param1 = 0;
+}
+
+changeObj(obj);
+console.log(obj); // {param1: 0, param2: 10}
+```
+
+- Jika kita passing array sebagai parameter, perubahan terhadap value di dalam array akan reflected di luar fungsi juga
+
+```js
+function myFunc(theArr) {
+  theArr[0] = 30;
+}
+
+const arr = [45];
+
+console.log(arr[0]); // 45
+myFunc(arr);
+console.log(arr[0]); // 30
+```
+
+- Function juga bisa nested, membentuk scope chain
+
+```js
+function addSquares(a, b) {
+  function square(x) {
+    return x * x;
+  }
+  return square(a) + square(b);
+}
+```
+
+- Ingat juga di awal kalau parameter yang di-passing ke function juga bisa berupa function
+- Ini adalah contoh fungsi di-passing ke fungsi lain. Fungsi `cube()` akan menghitung pangkat tiga dari `val` yang di-input, dan fungsi `map()` bertugas untuk mengiterasi setiap elemen di dalam sebuah array, dan melakukan operasi f() yang di-input terhadap setiap elemen array itu. Fungsi map() ini juga jadi logika yang sama untuk fungsi map bawaan dari JS
+
+```js
+function map(f, a) {
+  const result = new Array(a.length);
+  for (let i = 0; i < a.length; i++) {
+    result[i] = f(a[i]);
+  }
+  return result;
+}
+
+function cube(x) {
+	return x * x * x;
+}
+
+const numbers = [0, 1, 2, 5, 10];
+const cubedNumbers = map(cube, numbers);
+console.log(cubedNumbers); // [0, 1, 8, 125, 1000]
+```
+
+- Atau kita bisa define sendiri fungsinya tanpa harus bikin fungsi dengan nama baru:
+
+```js
+const cubedNumbers = map(function (x) {
+  return x * x * x;
+}, numbers);
+```
+
+## Function Hoisting
+
+- Meskipun kita memanggil fungsi di line yang lebih awal dibandingkan deklarasi fungsi, Javascript tetap dapat memanggil fungsi tersebut. Hal ini dikarenakan adanya **function hoisting** (diangkat ke atas) oleh JS interpreter
+
+```js
+console.log(square(5)); // 25
+
+function square(n) {
+  return n * n;
+}
+```
+
+Kode di atas tidak akan error, karena interpreter akan mengubah menjadi
+
+```js
+// All function declarations are effectively at the top of the scope
+function square(n) {
+  return n * n;
+}
+
+console.log(square(5)); // 25
+```
+
+- Namun catatan penting, function hoisting hanya dapat berjalan untuk **function declaration**, bukan **function expression**. Jadi kode seperti ini tetap akan error:
+
+```js
+console.log(square(5)); // ReferenceError: Cannot access 'square' before initialization
+const square = function (n) {
+  return n * n;
+};
+```
+
+
 # Object
 
 Referensi utama: [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
