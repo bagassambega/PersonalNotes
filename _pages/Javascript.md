@@ -853,6 +853,117 @@ print("halo") // halo
 
 Refer ke [callback function](/programming-concept#callback-function)
 
+# Expression dan Operator
+
+- Bisa mengkombinasikan operator seperti: `x += y` yang ekuivalen dengan `x = x + y`
+- Operasi pangkat: `x ** y`
+- Operasi logical: `x && y` untuk logical AND, `x || y` untuk logical OR, dan `x ?? y` untuk mengecek nullish
+- Ternary operator: `condition ? if truthy : if falsy`
+
 # Object
 
 Referensi utama: [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
+
+# Tipe Data Khusus
+## Date Object
+
+- Tipe data tanggal dan waktu bisa menggunakan object `Date`, dengan inisialisasi default waktu saat ini: `const dateObjectName = new Date([parameters]);`
+
+## Indexed Collection
+
+- Koleksi yang setiap datanya terurut berdasarkan indeks, seperti Array.
+- Contoh inisialisasi array:
+
+```js
+const arr1 = new Array(element0, element1, /* …, */ elementN);
+const arr2 = Array(element0, element1, /* …, */ elementN);
+const arr3 = [element0, element1, /* …, */ elementN];
+const arr4 = Array(arrayLength);
+```
+
+- Panjang array: `arr.length` atau `arr["length"]`
+- Akses: `arr[n]`
+- Iterasi array: method `forEach(function)`, dengan masukan berupa callback function
+
+```js
+const colors = ["red", "green", "blue"];
+colors.forEach((color) => console.log(color));
+// red
+// green
+// blue
+```
+
+- Tidak disarankan mengiterasi item dalam array menggunakan `for in` karena nantinya normal element dan seluruh property yang enumerable akan di-list juga
+- `concat(...items)`: Join dua array:
+
+```js
+let myArray = ["1", "2", "3"];
+myArray = myArray.concat("a", "b", "c");
+// myArray is now ["1", "2", "3", "a", "b", "c"]
+```
+
+- `join(separator between items in string later)`: Convert array menjadi string
+
+```js
+const myArray = ["Wind", "Rain", "Fire"];
+const list = myArray.join(" - "); // list is "Wind - Rain - Fire"
+```
+
+- `push`: Append 1 atau lebih element
+- `pop`: Pop (remove last element dan return element itu)
+
+```js
+const myArray = ["1", "2"];
+myArray.push("3"); // myArray is now ["1", "2", "3"]
+
+const last = myArray.pop();
+// myArray is now ["1", "2"], last = "3"
+```
+
+- `shift`: Kebalikan dari pop, remove first element dan return element itu
+
+```js
+const myArray = ["1", "2", "3"];
+const first = myArray.shift();
+// myArray is now ["2", "3"], first is "1"
+```
+
+- `unshift`: Append satu atau lebih elemen ke awal array
+- `slice`: Extract section of array, dari indeks mulai ke indeks akhir - 1
+
+```js
+let myArray = ["a", "b", "c", "d", "e"];
+myArray = myArray.slice(1, 4); // [ "b", "c", "d"]
+// starts at index 1 and extracts all elements
+// until index 3
+```
+
+- `splice`: Mengganti atau menghapus item dari array, dimulai dari `indexStart` ke `indexEnd - 1`, lalu konten yang akan digantinya
+
+```js
+const myArray = ["1", "2", "3", "4", "5"];
+myArray.splice(1, 3, "a", "b", "c", "d");
+// myArray is now ["1", "a", "b", "c", "d", "5"]
+// This code started at index one (or where the "2" was),
+// removed 3 elements there, and then inserted all consecutive
+// elements in its place.
+```
+
+- `reverse`: Reverse an array
+- `flat`: Membuat array baru dengan menjadikan seluruh sub-array menjadi bagian dari array utama secara rekursif hingga depth tertentu (optional)
+
+```js
+let myArray = [1, 2, [3, 4]];
+myArray = myArray.flat();
+// myArray is now [1, 2, 3, 4], since the [3, 4] subarray is flattened
+
+const arr2 = [0, 1, [2, [3, [4, 5]]]];
+
+console.log(arr2.flat());
+// expected output: Array [0, 1, 2, Array [3, Array [4, 5]]]
+
+console.log(arr2.flat(2));
+// expected output: Array [0, 1, 2, 3, Array [4, 5]]
+```
+
+- `sort`: Sort array
