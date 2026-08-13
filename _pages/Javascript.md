@@ -357,7 +357,7 @@ btn.addEventListener("click", () => {
 
 ## `for`..`in`
 
-- Iterasi objek dengan mengakses objek secara langsung. Sintaks dasar:
+- Iterasi objek dengan mengakses property key objek secara langsung. Sintaks dasar:
 
 ```js
 for (variable in object)
@@ -870,12 +870,139 @@ Refer ke [callback function](/programming-concept#callback-function)
 
 Referensi utama: [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
+## Object Initialization
+
+### Object Initializer
+
+Inisialisasi object secara biasa
+
+```js
+const obj = {
+  property1: value1, // property name may be an identifier
+  2: value2, // or a number
+  "property n": value3, // or a string
+};
+```
+
+Kelebihan metode ini, kita juga bisa langsung definisikan method bawaan, namun perlu default value
+
+```js
+// Animal properties and method encapsulation
+const animalProto = {
+  type: "Invertebrates", // Default value of properties
+  displayType() {
+    // Method which will display the type of animal
+    console.log(this.type);
+  },
+};
+
+// Create a new animal type called `animal`
+const animal = Object.create(animalProto);
+animal.displayType(); // Logs: Invertebrates
+
+// Create a new animal type called fish
+const fish = Object.create(animalProto);
+fish.type = "Fishes";
+fish.displayType(); // Logs: Fishes
+```
+
+### Object Function Constructor
+
+Function itu juga object, jadi kita bisa treat layaknya object
+
+```js
+function Person(name, age, sex) {
+  this.name = name;
+  this.age = age;
+  this.sex = sex;
+}
+
+const rand = new Person("Rand McKinnon", 33, "M");
+
+console.log(rand.name); // Rand McKinnon
+```
+
+## Object Destructuring
+
+- Digunakan untuk unpack elements from an array atau properties of objects ke variabel-variabel berbeda
+
+```js
+let a, b, rest;
+
+arr = [1, 2, 3, 4, 5, 6];
+[a, b, ...rest] = arr;
+console.log(a); // 1
+console.log(b); // 2
+console.log(rest); // [3, 4, 5, 6]
+```
+```js
+const obj = { a, b, c };
+const { a, b, c } = obj;
+// Equivalent to:
+// const a = obj.a, b = obj.b, c = obj.c;
+
+const obj = { prop1: x, prop2: y, prop3: z };
+const { prop1: x, prop2: y, prop3: z } = obj;
+// Equivalent to:
+// const x = obj.prop1, y = obj.prop2, z = obj.prop3;
+```
+
+## Object Properties
+
+### Object Properties Enumeration
+
+- Kita bisa enumerating dan iterating object properties dengan `for in`
+
+```js
+function showProps(obj, objName) {
+  let result = "";
+  for (const i in obj) {
+      result += `${objName}.${i} = ${obj[i]}\n`;
+    }
+  }
+  console.log(result);
+}
+```
+
+- Kita bisa mengambil key-nya saja dengan `Object.keys(objectName)`
+- Kita bisa mengambil value-nya saja dengan `Object.values(objectName)`
+
+```js
+let obj = {
+  "prop1": 4,
+  "prop2": 5,
+  "prop3": 6
+}
+
+console.log(Object.values(obj)); // [4 5 6]
+console.log(Object.keys(obj)); // [prop1 prop2 prop3]
+
+for (const key of Object.keys(obj)) {
+	console.log(key, obj[key])
+}
+// Output: 
+// prop1 4
+// prop2 5
+// prop3 6
+
+// Equivalent to:
+for (const key in obj) {
+	console.log(key, obj[key])
+}
+```
+
+Catatan:
+- Di loop pertama, digunakan `for .. of` instead of `for .. in` karena `for in` iterate through the key, sementara `for of` iterate through the value. Ketika kita menggunakan `Object.keys`, akan menghasilkan array of keyname, jadi kalau kita memakai `for in` di situ, key-nya malah akan jadi indeks array. 
+- Masalah kedua, kenapa memakai `obj[key]`, bukan `obj.key`, karena memang tidak ada property pada object `obj` yang bernama `key`, jadi kita perlu isi si properti yang diiterasi dengan string dari loop, bukan string literal `key`
+
 # Tipe Data Khusus
 ## Date Object
 
 - Tipe data tanggal dan waktu bisa menggunakan object `Date`, dengan inisialisasi default waktu saat ini: `const dateObjectName = new Date([parameters]);`
 
 ## Indexed Collection
+
+### Array
 
 - Koleksi yang setiap datanya terurut berdasarkan indeks, seperti Array.
 - Contoh inisialisasi array:
@@ -1059,7 +1186,7 @@ console.log(a.lastIndexOf("z")); // -1
 
 - Method yang mengiterasi item satu per satu dan menggunakan callback function terhadap setiap item yang di-iterate
 
-- `forEach`: Iterasi array: method `forEach(function)`, dengan masukan berupa callback function
+- `forEach`: Iterasi array dan execute fungsi callback di dalam `forEach(function)`, returns undefined (tidak ada return apapun)
 
 ```js
 const colors = ["red", "green", "blue"];
@@ -1068,3 +1195,215 @@ colors.forEach((color) => console.log(color));
 // green
 // blue
 ```
+
+- `map`: iterasi array dan return array baru, di mana setiap value dalam array berasal dari operasi callback yang dieksekusi. Jadi return dari callback function untuk setiap masukan item array, akan menjadi item baru di array baru nanti
+
+```js
+const a1 = ["a", "b", "c"];
+const a2 = a1.map((item) => item.toUpperCase());
+console.log(a2); // ['A', 'B', 'C']
+```
+
+- `flatMap`: kombinasi `flat` dan fungsi `map` dengan depth default 1
+
+```js
+const a1 = ["a", "b", "c"];
+const a2 = a1.flatMap((item) => [item.toUpperCase(), item.toLowerCase()]);
+console.log(a2); // ['A', 'a', 'B', 'b', 'C', 'c']
+```
+
+Seperti yang Anda lihat, awalnya map akan return array untuk setiap item-nya, jadi bentuk:
+
+```js
+[['A', 'a'], ['B', 'b'], ['C', 'c']]
+```
+
+tapi kemudian di-flatten
+
+- `filter`: return array baru yang mengandung item dengan kondisi item diproses fungsi callback return true
+
+```js
+const arr = [10, 20, 30, 40, 50];
+const arr2 = arr.filter((item) => item > 30);
+
+console.log(arr2); // [40, 50]
+```
+
+- `find`: Cari first element yang sesuai dengan kondisi dari fungsi callback
+
+```js
+const a1 = ["a", 10, "b", 20, "c", 30];
+const i = a1.find((item) => typeof item === "number");
+console.log(i); // 10
+```
+
+- `findLast`: kebalikan dari `find`, jadi return last element yang sesuai dengan kondisi dari fungsi callback
+
+- `findIndex`: kalau `indexOf` itu return indeks dari elemen yang kita cari, `findIndex` itu menemukan index dari element yang kita cari sesuai dengan kondisi yang ada di fungsi callback. Kebalikannya simply `findLastIndex`
+
+```js
+const a1 = ["a", 10, "b", 20, "c", 30];
+const i = a1.findIndex((item) => typeof item === "number");
+console.log(i); // 1
+```
+
+- `every`: cek apakah seluruh item di array sesuai dengan kondisi di fungsi callback
+
+```js
+function isNumber(value) {
+  return typeof value === "number";
+}
+const a1 = [1, 2, 3];
+console.log(a1.every(isNumber)); // true
+const a2 = [1, "2", 3];
+console.log(a2.every(isNumber)); // false
+```
+
+- `some`: cek apakah at least 1 element di array sesuai dengan kondisi di fungsi callback
+
+```js
+function isNumber(value) {
+  return typeof value === "number";
+}
+const a1 = [1, 2, 3];
+console.log(a1.some(isNumber)); // true
+const a2 = [1, "2", 3];
+console.log(a2.some(isNumber)); // true
+const a3 = ["1", "2", "3"];
+console.log(a3.some(isNumber)); // false
+```
+
+- `reduce`: melakukan reduce atau mengurangi setiap item di dalam array sampai terakumulasi dalam satu item saja. Proses dilakukan dalam urutan menaik (ascending, indeks kecil ke besar). Sintaks dasar:
+
+```js
+reduce(callbackFn)
+reduce(callbackFn, initialValue)
+```
+
+dengan `callbackFn` berbentuk:
+
+```js
+callbackFn(accumulator, currentValue, currentIndex, array)
+```
+
+Keterangan:
+`accumulator`: hasil sementara/akhir dari call sebelumnya terhadap `callbackFn`. Jadi proses `reduce` dilakukan dengan memanggil fungsi `callbackFn` terus menerus hingga item di dalam array habis, di mana setiap satu kali callbackFn dipanggil, array akan di-`shift` (item elemen pertama di-pop) menjadi `currentValue`, lalu `currentValue` dioperasikan terhadap `accumulator` saat ini.
+
+Contoh:
+
+```js
+const array = [1, 2, 3, 4];
+
+// 0 + 1 + 2 + 3 + 4
+const initialValue = 0;
+const sumWithInitial = array.reduce(
+  (accumulator, currentValue) => accumulator + currentValue,
+  initialValue,
+);
+
+console.log(sumWithInitial);
+```
+
+Proses:
+1. Reduce pertama: `array` = `[1, 2, 3, 4]`, shift indeks ke-0, `currentValue` = 1, `accumulator` = `initialValue` = 0 + `currentValue` = 1
+2. Reduce kedua: `array` = `[1, 2, 3]`, shift indeks ke-1, `currentValue` = 2, `accumulator` = 1 + ``currentValue`` = 3
+3. Reduce ketiga: `array` = `[1, 2]`, shift indeks ke-2, `currentValue` = 3, `accumulator` = 3 + `currentValue` = 6
+4. Reduce keempat: `array` = `[1]`, shift indeks ke-3, `currentValue` = 4, `accumulator` = 6 + `currentValue` = 10
+5. Selesai
+
+### Array Transformations
+
+- Proses pengubahan dari dan ke array
+
+- `Object.groupBy`: melakukan grouping object berdasarkan callback function
+
+```js
+const inventory = [
+  { name: "asparagus", type: "vegetables" },
+  { name: "bananas", type: "fruit" },
+  { name: "goat", type: "meat" },
+  { name: "cherries", type: "fruit" },
+  { name: "fish", type: "meat" },
+];
+
+const result = Object.groupBy(inventory, ({ type }) => type);
+console.log(result);
+// Logs
+// {
+//   vegetables: [{ name: 'asparagus', type: 'vegetables' }],
+//   fruit: [
+//     { name: 'bananas', type: 'fruit' },
+//     { name: 'cherries', type: 'fruit' }
+//   ],
+//   meat: [
+//     { name: 'goat', type: 'meat' },
+//     { name: 'fish', type: 'meat' }
+//   ]
+// }
+```
+
+Pada contoh di atas, kita melakukan object destructuring, di mana kita meng-extract properties `type`, kemudian kita group `inventory` by `type`
+
+## Keyed Collections
+
+### Map
+
+- Object yang berisi key-value
+
+```js
+const sayings = new Map();
+sayings.set("dog", "woof");
+sayings.set("cat", "meow");
+sayings.set("elephant", "toot");
+console.log(sayings.size); // 3
+sayings.get("dog"); // woof
+sayings.get("fox"); // undefined
+sayings.has("bird"); // false
+sayings.delete("dog");
+sayings.has("dog"); // false
+
+for (const [key, value] of sayings) {
+  console.log(`${key} goes ${value}`);
+}
+// "cat goes meow"
+// "elephant goes toot"
+
+sayings.clear();
+sayings.size; // 0
+```
+
+### Set
+
+- Himpunan
+
+```js
+const mySet = new Set();
+mySet.add(1);
+mySet.add("some text");
+mySet.add("foo");
+
+mySet.has(1); // true
+mySet.delete("foo");
+mySet.size; // 2
+
+for (const item of mySet) {
+  console.log(item);
+}
+// 1
+// "some text"
+```
+
+### Konversi ke Array
+
+- Gunakan class `Array`
+
+```js
+// Convert set ke array
+Array.from(mySet);
+[...mySet2]; // destructuring first
+
+// Convert array ke set
+mySet2 = new Set([1, 2, 3, 4]);
+```
+
+# Promises
