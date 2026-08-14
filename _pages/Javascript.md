@@ -1410,6 +1410,62 @@ mySet2 = new Set([1, 2, 3, 4]);
 
 - Synchronous code: Kode yang berjalan secara sekuensial dan sinkron; kode berjalan di baris n-1 sebelum baris n (blocking, baris di bawah tidak akan dieksekusi sampai proses/baris di atasnya selesai)
 - Asynchronous code: Kode yang berjalan di proses yang lain (atau background) dan tidak mengganggun proses kode synchronous (non-blocking)
-- Javascript adalah bahasa pemrograman **single threaded**, jadi seluruh proses akan dijalankan melalui satu main thread saja
-- 
+- Javascript adalah bahasa pemrograman **single threaded**, jadi seluruh proses akan dijalankan melalui satu main thread saja. Kalau ada satu function/block code yang prosesnya lama, proses itu akan blocking whole program, karena program ke bawahnya tidak bisa berjalan sampai si code itu selesai dulu
+
+![](../assets/images/lectures/Javascript_20260814-214216.png)
+Sumber: Programmer Zaman Now
+
+- Pada contoh di atas, fungsi get product by ID harus tamat terlebih dahulu (meskipun waktu eksekusi/prosesnya lama) barulah show product, show header, show footer bisa dijalankan
 - Keuntungan async code: Misalkan ada kode yang proses eksekusinya panjang. Jika memakai synchronous, maka code itu akan blocking whole process (code di bawahnya tidak akan dijalankan sampai proses di kode itu selesai). Dengan async code, code itu akan berjalan secara asinkronus, dan program akan masih responsive dan berjalan seperti biasanya, hanya saja. Kode di baris selanjutnya akan tetap dieksekusi tanpa harus menunggu proses asynchronous selesai
+
+![](../assets/images/lectures/Javascript_20260814-214404.png)
+Sumber: Programmer Zaman Now
+
+- Contoh sebelumnya diganti jadi proses asynchronous. Fungsi get product by ID dibuat asynchronous, jadinya fungsi show header dan show footer bisa berjalan secara normal. Sementara itu, fungsi show product baru akan dieksekusi **jika** fungsi get product by id ini selesai secara asinkron. Inilah yang disebut sebagai promise
+- Dalam fungsi asynchronous tersebut, akan dibuat sebuah async process baru (ingat, process, bukan thread. Thread yang menjalankan process-nya, process adalah hal yang perlu dieksekusi)
+
+## Async Function
+
+- Ada banyak asynchronous function, contohnya adalah `setTimeout` untuk menjalankan proses asynchronous sekali setelah waktu tertentu, dan `setInterval` untuk menjalankan proses secara berulang (periodik) dalam interval waktu tertentu
+- Jika ingin menghapus timeout dari `setTimeout`, gunakan `clearTimeout`, dan untuk menghapus interval dari ``setInterval``, gunakan `clearInterval`
+
+- Kedua fungsi ini menggunakan parameter `callback` function, yaitu block code yang akan dieksekusi setelah timeout/interval, dan `time` dalam satuan milisekon, yaitu kapan code akan dieksekusi/setelah berapa lama interval diulang
+
+```js
+setTimeout(callback, timeInMilis)
+
+// Logs "Hello" once after 2000 milliseconds (2 seconds)
+const timeoutId = setTimeout(() => {
+  console.log("Hello");
+}, 2000);
+
+// If you change your mind and want to cancel it before 2 seconds pass:
+clearTimeout(timeoutId); // Sama dengan setInterval dan clearInterval
+
+// Contoh lain
+
+function addElement() {
+	const header = document.createElement("h1");
+	header.textContent = "Test";
+	
+	document.body.appendChild(header);
+}
+
+setTimeout(addElement, 3000); // Buat header dan append header baru akan dieksekusi 3 detik setelah code ini dijalankan
+```
+
+## Callback Hell
+
+- Sebuah kasus di mana kita memiliki 4 buah task, task pertama akan dijalankan 10 detik setelah kode berjalan. Task kedua akan dijalankan 20 detik setelah task pertama selesai. Task ketiga akan dijalankan 30 detik setelah task kedua selesai. Dan task keempat akan dijalankan 40 detik setelah task ketiga selesai
+- Mungkin kita malah akan berpikiran untuk menjalankan kode seperti ini:
+
+```js
+function task1() {
+	setTimeout
+}
+```
+
+## Promise
+
+- Promise (janji), jadi kita menjanjikan sebuah block code ini pasti akan dijalankan jika kondisi sebelumnya sudah terpenuhi
+- Dari analogi di penjelasan sebelumnya, show product promise akan dieksekusi setelah fungsi get product by id selesai dijalankan

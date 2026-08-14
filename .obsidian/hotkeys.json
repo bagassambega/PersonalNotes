@@ -17,8 +17,7 @@
   "editor:swap-line-down": [
     {
       "modifiers": [
-        "Alt",
-        "Shift"
+        "Alt"
       ],
       "key": "ArrowDown"
     }
@@ -26,10 +25,10 @@
   "editor:swap-line-up": [
     {
       "modifiers": [
-        "Alt",
-        "Shift"
+        "Alt"
       ],
       "key": "ArrowUp"
     }
-  ]
+  ],
+  "obsidian-excalidraw-plugin:save": []
 }
