@@ -1408,6 +1408,8 @@ mySet2 = new Set([1, 2, 3, 4]);
 
 # Asynchronous Code
 
-- Synchronous code: Kode yang berjalan secara sekuensial dan sinkron; kode berjalan di baris n-1 sebelum baris n
-- Asynchronous code: Kode yang berjalan di proses yang lain (atau background) dan tidak mengganggun proses kode synchronous
-- Keuntungan async code: Misalkan ada kode yang proses eksekusinya panjang. Jika memakai synchronous, maka code itu akan blocking whole process (code di bawahnya tidak akan dijalankan sampai proses di kode itu selesai). Dengan async code, code itu akan berjalan secara asinkronus, dan program akan masih responsive dan berjalan seperti biasanya, hanya saja 
+- Synchronous code: Kode yang berjalan secara sekuensial dan sinkron; kode berjalan di baris n-1 sebelum baris n (blocking, baris di bawah tidak akan dieksekusi sampai proses/baris di atasnya selesai)
+- Asynchronous code: Kode yang berjalan di proses yang lain (atau background) dan tidak mengganggun proses kode synchronous (non-blocking)
+- Javascript adalah bahasa pemrograman **single threaded**, jadi seluruh proses akan dijalankan melalui satu main thread saja
+- 
+- Keuntungan async code: Misalkan ada kode yang proses eksekusinya panjang. Jika memakai synchronous, maka code itu akan blocking whole process (code di bawahnya tidak akan dijalankan sampai proses di kode itu selesai). Dengan async code, code itu akan berjalan secara asinkronus, dan program akan masih responsive dan berjalan seperti biasanya, hanya saja. Kode di baris selanjutnya akan tetap dieksekusi tanpa harus menunggu proses asynchronous selesai
