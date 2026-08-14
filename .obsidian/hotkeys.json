@@ -30,5 +30,14 @@
       "key": "ArrowUp"
     }
   ],
-  "obsidian-excalidraw-plugin:save": []
+  "obsidian-excalidraw-plugin:save": [],
+  "duplicate-line:duplicate-line": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "D"
+    }
+  ],
+  "editor:delete-paragraph": []
 }

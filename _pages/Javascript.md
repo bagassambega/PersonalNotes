@@ -1456,16 +1456,130 @@ setTimeout(addElement, 3000); // Buat header dan append header baru akan dieksek
 
 ## Callback Hell
 
-- Sebuah kasus di mana kita memiliki 4 buah task, task pertama akan dijalankan 10 detik setelah kode berjalan. Task kedua akan dijalankan 20 detik setelah task pertama selesai. Task ketiga akan dijalankan 30 detik setelah task kedua selesai. Dan task keempat akan dijalankan 40 detik setelah task ketiga selesai
+- Sebuah kasus di mana kita memiliki 4 buah task, task pertama akan dijalankan 2 detik setelah kode berjalan. Task kedua pasti akan dijalankan 1,5 detik setelah task pertama selesai. Task ketiga pasti akan dijalankan 3 detik setelah task kedua selesai. Dan task keempat pasti akan dijalankan 1,5 detik setelah task ketiga selesai, dan terakhir notify user kalau seluruh proses sudah selesai
 - Mungkin kita malah akan berpikiran untuk menjalankan kode seperti ini:
 
 ```js
 function task1() {
-	setTimeout
+	setTimeout(() => {
+		console.log("Task 1 finished");
+	}, 2000)
 }
+
+function task2() {
+	setTimeout(() => {
+		console.log("Task 2 finished");
+	}, 1500)
+}
+
+function task3() {
+	setTimeout(() => {
+		console.log("Task 3 finished");
+	}, 3000)
+}
+
+function task4() {
+	setTimeout(() => {
+		console.log("Task 4 finished");
+	}, 1500)
+}
+
+task1();
+task2();
+task3();
+task4();
+console.log("All task completed");
 ```
+
+- Namun masalahnya, karena kode pemanggilan `task1` - `task4` dijalankan synchronous, maka output-nya malah akan seperti ini:
+
+```
+All task complete
+Task 2 complete
+Task 4 complete
+Task 1 complete
+Task 3 complete
+```
+
+- Hal ini dikarenakan pemanggilan task dijalankan secara synchronous, jadi task1 akan dibuat async, menunggu 2 detik, lalu lanjut ke task 2 tanpa menunggu task 1 selesai dulu, dijalankan langsung dengan menunggu 1,5 detik, kemudian tanpa menunggu task 2, task 3 dijalankan karena task 2 dijalankan secara async juga, dan seterusnya. Oleh karenanya, kita perlu chaining function agar task-task berjalan secara berurutan sesuai dengan selisih waktu antar task yang sesuai.
+
+- Untuk mengatasinya, kita bisa membuat setiap fungsi task otomatis memanggil fungsi task berikutnya, dengan membuat fungsi task menerima input fungsi berikutnya untuk dipanggil, sebagai contoh: fungsi task kedua harus dijalankan setelah task pertama, maka:
+
+```js
+function task1(callback) {
+	setTimeout(() => {
+		console.log("Task 1 finished");
+		callback();
+	}, 2000)
+}
+
+function task2() {
+	setTimeout(() => {
+		console.log("Task 2 finished");
+	}, 1500)
+}
+
+task1(() => task2);
+```
+
+akan menghasilkan output:
+
+```
+Task 1 finished
+Task 2 finished
+```
+
+Karena setelah timeout 2 detik untuk console log task 1 finished selesai, otomatis dipanggil line berikutnya yaitu fungsi callback, yang di code pemanggilan memanggil fungsi task 2
+
+- Kenapa di invocation (pemanggilan fungsi) `task1`, kita tidak memakai `task1(task2())`, karena hal ini berarti kita mengeksekusi dulu `task2` instead of giving reference atau definition `task2` ke callback function `task1`. Ditambah lagi masalahnya fungsi `task2` itu return nothing, jadinya return undefined. Basically jadi kalau kita memanggil `task1(task2())`, `task2` nya return undefined, kodenya malah jadi `task1(undefined)`. Jadinya kode yang benar seharusnya `task1(task2))`, dan `task2` baru akan dieksekusi di dalam fungsi `task1` di bagian `callback()`.
+- Tapi masalah muncul kalau mau chaining ke fungsi `task3` dan `task4`, karena kita tetap harus passing `task2(task3)`. Oleh karenanya, kita passing fungsinya dalam bentuk arrow function, seolah kita mendefinisikan fungsi baru, yang sebetulnya fungsi arrow itu mengeksekusi fungsi `task` selanjutnya.
+
+- Jika diterapkan ke seluruh kode task, akan menjadi:
+
+```js
+function task1(callback) {
+	setTimeout(() => {
+		console.log("Task 1 finished");
+		callback();
+	}, 2000)
+}
+
+function task2(callback) {
+	setTimeout(() => {
+		console.log("Task 2 finished");
+		callback();
+	}, 1500)
+}
+
+function task3(callback) {
+	setTimeout(() => {
+		console.log("Task 3 finished");
+		callback();
+	}, 3000)
+}
+
+function task4(callback) {
+	setTimeout(() => {
+		console.log("Task 4 finished");
+		callback();
+	}, 1500)
+}
+
+task1(() => {
+	task2(() => {
+		task3(() => {
+			task4(() => {
+				console.log("All task completed");
+			})
+		})
+	})
+});
+```
+
+- Kode itulah yang disebut **callback hell** atau pyramid of doom, karena kita keep stacking dan insert, indent the code untuk memastikan kode yang satu berjalan setelah kode sebelumnya selesai secara asinkronus.
 
 ## Promise
 
 - Promise (janji), jadi kita menjanjikan sebuah block code ini pasti akan dijalankan jika kondisi sebelumnya sudah terpenuhi
 - Dari analogi di penjelasan sebelumnya, show product promise akan dieksekusi setelah fungsi get product by id selesai dijalankan
+- Dari analogi sebelumnya
