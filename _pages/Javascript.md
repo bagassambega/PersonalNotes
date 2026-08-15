@@ -1581,5 +1581,12 @@ task1(() => {
 ## Promise
 
 - Promise (janji), jadi kita menjanjikan sebuah block code ini pasti akan dijalankan jika kondisi sebelumnya sudah terpenuhi
+- Promise **pasti** dijalankan, baik ketika operasi sebelumnya dianggap berhasil dijalankan (resolve) atau gagal dijalankan (reject)
+- Sintaks dasar:
+
+```js
+Promise(resolveCode, rejectCode);
+```
+
 - Dari analogi di penjelasan sebelumnya, show product promise akan dieksekusi setelah fungsi get product by id selesai dijalankan
-- Dari analogi sebelumnya
+- 
