@@ -1783,6 +1783,8 @@ task1()
 
 # Modules
 
+- Pemisahan code menjadi beberapa source file atau code placement yang berbeda
+
 ## Export dan Import Module
 
 - Agar bisa diakses oleh modul atau file lain, suatu objek/fungsi/variabel dapat di-expose dengan keyword `export`. Kemudian file lain bisa mengakses hal tersebut menggunakan `import`
@@ -1806,6 +1808,8 @@ export { name, draw, reportArea, reportPerimeter };
 import { name, draw, reportArea, reportPerimeter } from "./modules/square.js";
 ```
 
+### Export/Import Alias
+
 - Kita bisa menggunakan alias baik untuk export maupun untuk import
 
 ```js
@@ -1815,6 +1819,8 @@ import { name as squareName, draw } from "./shapes/square.js";
 export { name as circleName };
 ```
 
+### Export/Import Other Filetype
+
 - Jika ingin import dari file non-JS, gunakan `with {type: "fileType" }`:
 
 ```js
@@ -1823,4 +1829,41 @@ import styles from "./styles.css" with { type: "css" };
 ```
 
 - Di file HTML, jika kita declare `<script>` tag dengan menggunakan `type="module"`, maka kode tersebut akan di-treat sebagai module, memungkinkan menggunakan `import` dan `export`
-- 
+
+### Export/Import Default
+
+- Export/import sebelumnya disebut sebagai **named export/import**, karena kita melakukan export dan import harus menyebutkan nama yang fix dan sama. Misalkan kita `export var1` atau `export newvar as var1`, maka di file lain yang import variabel tersebut harus menyebutkan spesifik `import var1`, nama variabel yang dipanggil harus sama
+- Export/import default adalah satu buah export utama dari sebuah modul
+- Contoh:
+
+```js
+const var1 = 10;
+
+export default var1;
+```
+
+- Dan ketika import nantinya, nama variabelnya tidak harus sama karena itu merupakan default export-nya
+
+```js
+import abc from "./module.js"; // Tetap valid
+```
+
+- Kita juga bisa mengkombinasikan export named dengan export default
+
+```js
+// data.js
+
+const var1 = 10;
+const var2 = 20;
+const var3 = 30;
+
+export default var1;
+export { var2, var3 };
+```
+
+- Import-nya untuk default exported value tidak perlu pakai kurung kurawal {}, tapi untuk named wajib pakai
+
+```js
+import var1, { var2, var3 } from "./data.js";
+import newName, { var2, var3 } from "./data.js";
+```
