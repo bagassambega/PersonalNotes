@@ -1585,8 +1585,200 @@ task1(() => {
 - Sintaks dasar:
 
 ```js
-Promise(resolveCode, rejectCode);
+Promise(resolveCode, rejectCode (optional));
 ```
 
-- Dari analogi di penjelasan sebelumnya, show product promise akan dieksekusi setelah fungsi get product by id selesai dijalankan
-- 
+- Fungsi/block code `resolve` berarti menandakan jika fungsi asynchronous berhasil, fungsi itulah yang akan dieksekusi selanjutnya
+- Fungsi/block code `reject` berarti menandakan jika fungsi asynchronous gagal, fungsi itulah yang akan dieksekusi selanjutnya
+- Contoh:
+
+```js
+const checkServer = new Promise((resolve, reject) => {
+  let success = true; // Dummy, mensimulasikan network condition. Kita bisa ganti misalkan dengan operasi lain yang menandakan apakah success atau tidak. Di sini disimulasikan check server berhasil
+  if (success) {
+  // Jika berhasil, maka fungsi yang akan dipanggil berikutnya, akan di-passing-kan data string "Server is online"
+	console.log("Checking server success");
+    resolve("Server is online!");
+  } else {
+  // Jika gagal, maka fungsi yang akan dipanggil berikutnya, akan di-passing-kan data string "Server is offline"
+    console.log("Checking server failed");
+    reject("Server is offline.");
+  }
+});
+```
+
+- Kemudian kita akan handle operasi selanjutnya yang akan dieksekusi dengan fungsi `then()`. Fungsi ini digunakan untuk handle outcome atau hasil dari fungsi asynchronous sebelumnya. Sintaks dasar:
+
+```js
+promise.then(onFulfilled, onRejected (optional));
+```
+
+- Jadi sebetulnya fungsi `then()` akan memberikan fungsi yang akan dijalankan untuk promise sebelumnya, di bagian resolve reject tersebut.
+
+```js
+// Using .then() to handle both outcomes
+checkServer.then(
+  (data) => console.log("Success:", data), // Runs if resolved. Kode ini yang akan dijalankan di resolve promise sebelumnya
+  (error) => console.error("Error:", error) // Runs if rejected. Kode ini yang akan dijalankan di reject promise sebelumnya
+);
+```
+
+- Fungsi `then()` juga sebetulnya menjalankan Promise baru, jadi bisa di-chaining lagi:
+
+```js
+fetch("https://example.com")
+  .then((response) => response.json()) // step 1: parse JSON data. .json() itu return JSON data
+  .then((user) => {
+    console.log("User data retrieved:", user);
+    return user.id; // pass data to the next .then()
+  })
+  .then((userId) => console.log("User ID is:", userId)) // step 2: use the ID
+  .catch((err) => console.error("Something went wrong:", err)); // catches any error in the chain
+
+```
+
+- Contoh lain:
+
+```js
+function getUser() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            const success = true; // Dummy, kita bisa ganti misalkan dengan operasi lain yang menandakan apakah success atau tidak. Di sini disimulasikan fetch data berhasil
+
+            if (success) {
+            // Jika berhasil, maka fungsi yang akan dipanggil berikutnya, akan di-passing-kan data user berikut
+                resolve({
+                    id: 1,
+                    name: "Bagas"
+                });
+            } else {
+	            // Jika gagal, maka fungsi yang akan dipanggil berikutnya, akan mendapatkan throw error berikut
+                reject(new Error("Failed to get user"));
+            }
+        }, 2000);
+    });
+}
+```
+
+```js
+getUser()
+    .then((user) => { // then dipanggil
+        console.log(user);
+    })
+    .catch((error) => {
+        console.error(error);
+    });
+```
+
+- Dari analogi di penjelasan sebelumnya, `taskN+1` wajib dijalankan setelah `taskN` selesai dilakukan. Oleh karenanya, kita membutuhkan Promise untuk itu. Jadi jika diubah menjadi:
+
+```js
+function task1() {
+	return new Promise((resolve, reject) => {
+		setTimeout(() => {
+			console.log("Task 1 finished");
+			resolve(); // Pemanggilan fungsi berikutnya
+		}, 2000);
+	})
+}
+
+function task2() {
+	setTimeout(() => {
+		console.log("Task 2 finished");
+	}, 1500)
+}
+
+task1().then(() => { task2() })
+```
+
+- Alur dari kode sekarang:
+
+```
+task1()
+  │
+  ▼
+Promise created
+  │
+  ▼
+pending
+  │
+  │ 2 detik
+  ▼
+console.log(...)
+  │
+  ▼
+resolve()
+  │
+  ▼
+fulfilled
+```
+
+- Kalau misalkan kita chain seluruh kode, jadinya seperti ini:
+
+```js
+function task1() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            console.log("Task 1 finished");
+            resolve();
+        }, 2000);
+    });
+}
+
+function task2() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            console.log("Task 2 finished");
+            resolve();
+        }, 1500);
+    });
+}
+
+function task3() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            console.log("Task 3 finished");
+            resolve();
+        }, 3000);
+    });
+}
+
+function task4() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            console.log("Task 4 finished");
+            resolve();
+        }, 1500);
+    });
+}
+
+// Eksekusi
+// Tidak memakai task() kurung karena fungsi itulah yang dipanggil di resolve() di fungsi task sebelumnya, jadi tidak perlu pakai kurung lagi. 
+// Kemudian taskN+1 juga sudah otomatis return promise untuk digunakan di task selanjutnya juga
+task1()
+    .then(task2)
+    .then(task3)
+    .then(task4)
+    .then(() => {
+        console.log("All task completed");
+    });
+    
+// Bentuk lain
+// Memakai arrow function, kita akan return fungsi taskN+1 karena fungsi itu akan dieksekusi dulu, baru hasilnya yaitu Promise di-return
+// Contoh, return task2(), kita tahu task2() return Promise. Tapi karena dia bentuknya return task2(), task2() akan dieksekusi dulu, jadi return task2() -> return new Promise()
+task1()
+    .then(() => {
+        return task2();
+    })
+    .then(() => {
+        return task3();
+    })
+    .then(() => {
+        return task4();
+    })
+    .then(() => {
+        console.log("All task completed");
+    });
+```
+
+# Modules
