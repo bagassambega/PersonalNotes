@@ -1782,3 +1782,45 @@ task1()
 ```
 
 # Modules
+
+## Export dan Import Module
+
+- Agar bisa diakses oleh modul atau file lain, suatu objek/fungsi/variabel dapat di-expose dengan keyword `export`. Kemudian file lain bisa mengakses hal tersebut menggunakan `import`
+- Jika kita export atau import multiple parameters, bisa memakai {}
+
+```js
+// Export single
+export const name = "square";
+
+// Export single
+export function draw(ctx, length, x, y, color) {
+  ctx.fillStyle = color;
+  ctx.fillRect(x, y, length, length);
+
+  return { length, x, y, color };
+}
+
+// Export multiple
+export { name, draw, reportArea, reportPerimeter };
+
+import { name, draw, reportArea, reportPerimeter } from "./modules/square.js";
+```
+
+- Kita bisa menggunakan alias baik untuk export maupun untuk import
+
+```js
+import { name as circleName } from "https://example.com/shapes/circle.js";
+import { name as squareName, draw } from "./shapes/square.js";
+
+export { name as circleName };
+```
+
+- Jika ingin import dari file non-JS, gunakan `with {type: "fileType" }`:
+
+```js
+import colors from "./colors.json" with { type: "json" };
+import styles from "./styles.css" with { type: "css" };
+```
+
+- Di file HTML, jika kita declare `<script>` tag dengan menggunakan `type="module"`, maka kode tersebut akan di-treat sebagai module, memungkinkan menggunakan `import` dan `export`
+- 
