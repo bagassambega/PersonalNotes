@@ -1924,7 +1924,7 @@ import newName, { var2, var3 } from "./data.js";
 | Execution       | Run natively di browser dan Node.js environment | Harus di-compile dulu ke JS       |
 | Error detection | Dideteksi di eksekusi                           | Dideteksi di kompilasi            |
 
-## Type, Interface dan Enum
+## Data Type
 
 ### Type
 
@@ -1973,6 +1973,17 @@ type AdminUser = { id: ID } & { privileges: string[] };
 ### Interface
 
 - Interface adalah kontrak atau struktur yang wajib diikuti oleh suatu kelas/objek/data
+- Interface tidak bisa digunakan untuk mendefinisikan type alias terhadap primitif, jadi hanya bisa terhadap object saja
+
+```js
+interface UserRole {
+	name: string;
+	role: string;
+	status: "active" | "inactive";
+}
+```
+
+- Kita juga tidak bisa mendefinisikan union di interface
 
 ### Enum
 
@@ -1998,3 +2009,123 @@ const currentLog = LogLevel.Error; // Resolves to 2 in JavaScript
 console.log(UserType.Admin); // admin
 ```
 ## Generics
+
+- Generics adalah tipe data yang memungkinkan kita untuk tidak mendefinisikan tipe data dulu
+- Kenapa kita ingin memakai generics? Kenapa tidak ingin spesifik tipe datanya. Misalkan begini, kita ingin membuat tipe data stack, tapi masalahnya kalau kita ingin stack untuk integer, stack untuk string, stack untuk object User, kita tidak mungkin membuat 3 class stack untuk 3 tipe data yang berbeda. Oleh karenanya kita membuat generics
+- Generics ditandari dengan lambang `<T>`, di mana T adalah tipe data yang nanti akan di-passing dan bisa diganti-ganti (tidak harus T, biasanya tapi T atau K)
+- Sebetulnya di Typescript kita bisa menggunakan tipe data `any` jika kita tidak ingin spesifik menyebutkan tipe datanya apa, tapi `any` itu unsafe dan warned by Typescript
+- Contoh menggunakan `any`:
+
+```js
+function getFirstElement(arr: any[]): any {
+    return arr[0];
+}
+```
+
+- Jika menggunakan generics:
+
+```js
+function getFirstElement<T>(arr: T[]): T {
+    return arr[0];
+}
+```
+
+Nantinya kita akan bisa mengganti T dengan tipe data apapun ketika diinisialisasi dan digunakan. 
+
+- Berikut contohnya untuk kasus stack di atas:
+
+```js
+class Stack<T> {
+    private items: T[] = [];
+
+    push(item: T): void {
+        this.items.push(item);
+    }
+
+    pop(): T | undefined {
+        return this.items.pop();
+    }
+}
+
+const numberStack = new Stack<number>();
+numberStack.push(1);
+numberStack.push(2);
+console.log(numberStack.pop()); // Outputs: 2
+```
+
+- Dapat dilihat kita memberikan tipe number untuk stack tersebut, menggantikan placeholder T
+
+## Omit
+
+- Kembali ke type dan interface, misalkan kita memilki suatu tipe data `UserProps` sebagai berikut:
+
+```js
+type UserProps = {
+	ID: string;
+	name: string;
+	email: string;
+	age: number;
+	createdAt: Date;
+}
+```
+
+- Lalu kemudian kita ingin membuat sebuah tipe data baru, akun Guest, jadi dia cukup input nama dan email saja untuk menggunakan aplikasi. Kita bisa langsung membuat tipe data baru `GuestProps` dengan menulis ulang seluruh kode:
+
+```js
+type GuestProps = {
+	name: string;
+	email: string;
+	age: number;
+}
+```
+
+- Atau, kita bisa minta Typescript untuk membuang parameter yang tidak digunakan untuk `GuestProps` dengan `Omit<Original data type, data to remove>`, dalam kasus ini kita tidak memerlukan `createdAt` dan `ID`, jadi kita bisa buang itu
+
+```js
+type GuestProps = Omit<UserProps, "createdAt | "ID"> // Remove createdAt dan ID
+```
+
+- Jika ingin remove multiple field, gunakan | , jika tidak cukup tulis satu field nya saja
+
+## Pick
+
+- Kebalikan dengan Omit yang membuang field, Pick memilih field mana yang akan diambil untuk tipe data baru
+- Sama seperti Omit, jika kita ingin memilih multiple field, gunakan |
+
+```js
+type File = {
+	filename: string;
+	filesize: number;
+	extension: string;
+	createdAt: Date;
+	path: string;
+	updatedAt: Date;
+}
+
+type FileEssential = Pick<File, "filename" | "extension"> // Hanya ambil filename dan ekstensinya
+```
+
+## Extends
+
+- Sekarang bagaimana kalau kita ingin menambah parameter dari type? Gunakan extends
+- Untuk `interface` gunakan keyword `extends`, untuk `type` gunakan `&`
+
+```js
+type Person = {
+	name: string;
+	age: number;
+}
+
+type Employee = Person & {
+	employeeId: number;
+}
+
+interface Person {
+    name: string;
+    age: number;
+}
+
+interface Employee extends Person {
+    employeeId: number;
+}
+```
