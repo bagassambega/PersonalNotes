@@ -1924,6 +1924,56 @@ import newName, { var2, var3 } from "./data.js";
 | Execution       | Run natively di browser dan Node.js environment | Harus di-compile dulu ke JS       |
 | Error detection | Dideteksi di eksekusi                           | Dideteksi di kompilasi            |
 
-## Type dan Interface
+## Type, Interface dan Enum
 
-- 
+### Type
+
+- Type adalah pembuatan tipe data custom atau alias untuk tipe data primitif
+- Contoh:
+
+```js
+// Union Types (Cannot be built with interfaces)
+type Status = "pending" | "approved" | "rejected";
+
+// Primitive & Tuple Aliases
+type ID = string | number;
+type Coordinate = [number, number];
+
+// Object type
+type User = {
+	name: string
+	age: number
+	role?: string | undefined
+}
+
+// Object Shape Extension via Intersection
+type AdminUser = { id: ID } & { privileges: string[] };
+```
+
+### Interface
+
+- Interface adalah kontrak atau struktur yang wajib diikuti oleh suatu kelas/objek/data
+
+### Enum
+
+- Enumeration
+- Contoh:
+
+```js
+// Numeric Enum (Defaults to auto-incrementing integers: 0, 1, 2)
+enum LogLevel {
+  Debug, // 0
+  Info,  // 1
+  Error  // 2
+}
+
+// Bisa diisi juga dengan value
+enum UserType {  
+  Admin = “admin”,  
+  Customer = “customer”  
+}
+
+// Usage
+const currentLog = LogLevel.Error; // Resolves to 2 in JavaScript
+console.log(UserType.Admin); // admin
+```
