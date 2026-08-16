@@ -1969,6 +1969,52 @@ type AdminUser = { id: ID } & { privileges: string[] };
 - Kelebihan type dibanding interface:
 1. Bisa alias ke data primitif (string, number, dll)
 2. Bisa mendefinisikan union types (gabungan beberapa type, bisa salah satu type tersebut, contohnya yang APIResponse di atas)
+3. Lebih sederhana untuk array. Contoh:
+
+```js
+// Type
+type Address = [number, string];
+
+// Interface
+interface Address extends Array<number | string> {
+	0: number;
+	1: string;
+}
+```
+
+4. Kita bisa extract type dari dalam type itu sendiri. Contoh:
+
+```js
+const project = {
+	title: "Project 1",
+	specification: {
+		area: 100,
+		rooms: 3,
+	}
+}
+
+type Specification = typeof project.specification; // {area: number; rooms: number;}
+```
+
+Additional note: kita bisa menambahkan `as const` jika kita tidak ingin value itu berubah dari specification
+
+```js
+const project = {
+	title: "Project 1",
+	specification: {
+		area: 100,
+		rooms: 3,
+	}
+}
+
+type Specification = typeof project.specification; // {readonly area: 100; readonly rooms: 3;}
+```
+
+- Biasanya kita menggunakan nama type dengan huruf depan T sebelum inisialisasi tipe data, misalkan `TUser`, `TFile`
+
+```js
+class User implement TUser {}
+```
 
 ### Interface
 
@@ -1984,6 +2030,33 @@ interface UserRole {
 ```
 
 - Kita juga tidak bisa mendefinisikan union di interface
+- Kelebihan interface dibanding type:
+1. Kita bisa merge dan extend interface dengan cara declare interface dengan nama yang sama lebih dari sekali, meskipun ini bisa jadi bumerang kalau kita lupa kita sudah pernah inisialisasi interface itu
+
+```js
+interface User {
+	name: string;
+	age: number;
+}
+
+interface User {
+	role: string;
+}
+
+let user: User; // User {
+//	name: string;
+//	age: number;
+//	role: string;
+//}
+```
+
+2. Error message interface lebih singkat, tapi lebih detail dan presisi
+
+- Jika user menggunakan T, interface biasanya menggunakan I, jadi bentuknya `IUser` atau `IFile`
+
+```js
+class User implements IUser {}
+```
 
 ### Enum
 
