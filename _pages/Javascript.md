@@ -1807,7 +1807,25 @@ async function asyncCall() {
 asyncCall();
 ```
 
-- Di kode di atas dapat dilihat bahwa fungsi `resolveAfter2Seconds` akan menjalankan `resolve` dengan data string "resolved". Kemudian kita jalankan fungsi `asyncCall` secara asu
+- Di kode di atas dapat dilihat bahwa fungsi `resolveAfter2Seconds` akan menjalankan `resolve` dengan data string "resolved". Kemudian kita jalankan fungsi `asyncCall` secara async, di mana ada parameter `result` yang menunggu output menggunakan `await` dari fungsi `resolveAfter2Seconds`. Setelah fungsi `resolveAfter2Seconds` selesai dan return Promise berisi string "resolved", dengan menggunakan keyword `await`, Promise itu fulfilled dan akhirnya `const result` menyimpan string result = "resolved".
+- Contoh lain di Express:
+
+```js
+public async getFeedContent(req: Request, res: Response): Promise<void> {
+	try {
+		const id = parseInt(req.params.id);
+		if (!id) {
+			res.status(400).json({ error: 'ID is required' });
+			return;
+		}
+		const content = await feedService.getFeedContent(id);
+		res.json(content);
+	} catch (error: Error | any) {
+		res.status(500).json({ error: error.message });
+	}
+}
+```
+
 # Modules
 
 - Pemisahan code menjadi beberapa source file atau code placement yang berbeda
