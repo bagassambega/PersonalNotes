@@ -1915,7 +1915,15 @@ import newName, { var2, var3 } from "./data.js";
 
 # Typescript
 
-- Typescript memberikan type safety kepada Javascript
+- Typescript memberikan type safety kepada Javascript, di mana kita harus explicitly mendefinisikan tipe data
+- Perbedaan:
+
+| Features        | Javascript                                      | Typescript                        |
+| --------------- | ----------------------------------------------- | --------------------------------- |
+| Typesystem      | Dynamic (diperiksa di runtime)                  | Static (diperiksa di compilation) |
+| Execution       | Run natively di browser dan Node.js environment | Harus di-compile dulu ke JS       |
+| Error detection | Dideteksi di eksekusi                           | Dideteksi di kompilasi            |
 
 ## Type dan Interface
 
+- 
