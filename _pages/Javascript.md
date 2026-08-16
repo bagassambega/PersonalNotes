@@ -1933,22 +1933,42 @@ import newName, { var2, var3 } from "./data.js";
 
 ```js
 // Union Types (Cannot be built with interfaces)
-type Status = "pending" | "approved" | "rejected";
+type Status = "pending" | "approved" | "rejected"; // Jadi bisa salah satu dari ini
 
 // Primitive & Tuple Aliases
 type ID = string | number;
 type Coordinate = [number, number];
 
-// Object type
-type User = {
-	name: string
-	age: number
-	role?: string | undefined
-}
+type SuccessResponse = {
+    status: "success";
+    data: string;
+};
+
+type ErrorResponse = {
+    status: "error";
+    error: string;
+};
+
+type APIResponse = SuccessResponse | ErrorResponse;
+
+// Atau
+
+type APIResponse = {
+    status: "success";
+    data: string;
+} | {
+    status: "error";
+    error: string;
+};
+
 
 // Object Shape Extension via Intersection
 type AdminUser = { id: ID } & { privileges: string[] };
 ```
+
+- Kelebihan type dibanding interface:
+1. Bisa alias ke data primitif (string, number, dll)
+2. Bisa mendefinisikan union types (gabungan beberapa type, bisa salah satu type tersebut, contohnya yang APIResponse di atas)
 
 ### Interface
 
@@ -1977,3 +1997,4 @@ enum UserType {
 const currentLog = LogLevel.Error; // Resolves to 2 in JavaScript
 console.log(UserType.Admin); // admin
 ```
+## Generics
