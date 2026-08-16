@@ -1781,6 +1781,33 @@ task1()
     });
 ```
 
+## Async Await
+
+- Jika kita tidak ingin melakukan chaining method dan membuat kode seperti synchronous, maka dapat dilakukan chaining menggunakan `async/await`
+- `async` digunakan untuk membuat fungsi yang akan dijalankan secara asinkronus, dan akan return sebuah promise
+- `await` digunakan untuk menunggu hasil dari fungsi `async` return promise
+- Contoh:
+
+```js
+function resolveAfter2Seconds() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve("resolved");
+    }, 2000);
+  });
+}
+
+async function asyncCall() {
+  console.log("calling");
+  const result = await resolveAfter2Seconds();
+  console.log(result);
+  // Expected output: "resolved"
+}
+
+asyncCall();
+```
+
+- Di kode di atas dapat dilihat bahwa fungsi `resolveAfter2Seconds` akan menjalankan `resolve` dengan data string "resolved". Kemudian kita jalankan fungsi `asyncCall` secara asu
 # Modules
 
 - Pemisahan code menjadi beberapa source file atau code placement yang berbeda
