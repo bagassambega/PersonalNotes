@@ -2301,6 +2301,42 @@ const x: number = 10;
 const x = 10;
 ```
 
-- Namun
+- Namun, ada masalah jika misalkan kita menggunakan tipe data yang baru di-construct di runtime, misalnya seperti enum:
 
-#### ``
+```ts
+enum Role {
+  Admin,
+  User
+}
+
+const role = Role.Admin;
+```
+
+- Enum ini bukanlah type. Dia baru akan diubah menjadi type di runtime, misalnya menjadi:
+
+```js
+var Role;
+
+(function (Role) {
+  Role[Role["Admin"] = 0] = "Admin";
+  Role[Role["User"] = 1] = "User";
+})(Role || (Role = {}));
+
+const role = Role.Admin;
+```
+
+- Operasi yang baru dijalankan di runtime ini akan menghambat proses kompilasi ataupun transpilasi. Jadinya supaya lebih cepat, kita dapat set `erasableSyntaxOnly` ke True agar setiap pemakaian enum atau runtime construct lainnya di-detect sebagai error.
+
+#### `verbatimModuleOnly`
+
+- By default, Typescript melakukan **import elision**. Import elision adalah 
+- Opsi ini mengatur bagaimana TypeScript memperlakukan `import` dan `export`. Dengan opsi ini, TypeScript memakai aturan yang jauh lebih eksplisit:
+
+```ts
+import type { User } from "./user";
+```
+
+adalah import yang hanya dipakai untuk type, sehingga boleh dihapus saat transpilation.
+
+- TypeScript mendokumentasikan bahwa dengan `verbatimModuleSyntax`, import/export tanpa modifier `type` dipertahankan, sedangkan yang menggunakan `type` dihapus.
+- Ini berbeda dari perilaku TypeScript lama yang melakukan **import elision**. Import elision berarti TypeScript mencoba menganalisis apakah suatu import hanya digunakan sebagai type, lalu mungkin menghapusnya otomatis.
