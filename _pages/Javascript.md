@@ -270,7 +270,7 @@ switch (expression) {
 
 - Break digunakan supaya jika suatu case match, maka tidak akan cek case lain ke bawahnya
 
-### Try-Catch-Throw Exception
+## Try-Catch-Throw Exception
 
 ```js
 function getMonthName(mo) {
@@ -1913,6 +1913,24 @@ import var1, { var2, var3 } from "./data.js";
 import newName, { var2, var3 } from "./data.js";
 ```
 
+# Package Manager
+
+- Ekosistem Node.js sangat luas, dan dapat dikelola dengan mengekstensikan third party packages seperti Node Package Manager ataupun Bun
+
+## `npm`
+
+- Node package manager (npm) adalah package manager dengan penggunaan terluas saat ini
+- Untuk melihat daftar package, dapat melihat [https://www.npmjs.com/](https://www.npmjs.com/)
+
+- Untuk inisialisasi project, gunakan command `npm init`
+
+## `bun`
+
+- Bun dibuat dengan mengandalkan kecepatan, dan kelebihannya dalam integrasi dengan Typescript (dijelaskan di [Typescript](#Typescript))
+
+- Untuk inisialisasi project, gunakan command `bun init`. Akan ada 3 opsi:
+
+
 # Typescript
 
 - Typescript memberikan type safety kepada Javascript, di mana kita harus explicitly mendefinisikan tipe data
@@ -1923,6 +1941,7 @@ import newName, { var2, var3 } from "./data.js";
 | Typesystem      | Dynamic (diperiksa di runtime)                  | Static (diperiksa di compilation) |
 | Execution       | Run natively di browser dan Node.js environment | Harus di-compile dulu ke JS       |
 | Error detection | Dideteksi di eksekusi                           | Dideteksi di kompilasi            |
+
 
 ## Data Type
 
@@ -2202,3 +2221,86 @@ interface Employee extends Person {
     employeeId: number;
 }
 ```
+
+## Kompilasi dan Transpilasi
+
+- Typescript tidak dapat dijalankan secara native di browser atau Node.js. Oleh karenanya, agar dapat berjalan, Typescript biasanya di**kompilasi** terlebih dahulu dengan package `typescript` dari package manager, menjadi file-file Javascript di folder `dist`, dan di-run dengan menggunakan `node compiled-main-app.js`
+- Behavior tersebut default di npm, namun di Bun, Bun tidak perlu melakukan kompilasi terpisah menjadi file .js dulu baru dijalankan menggunakan Node. Bun melakukan **transpilasi**, yaitu proses kompilasi tapi tidak menjadi kode yang sepenuhnya berbeda
+- **Kompilasi** adalah menerjemahkan program dari satu representasi ke representasi lain. Kompilasi merujuk pada broader terms, intinya selama kode diubah jadi bentuk lain, itu adalah kompilasi
+- **Transpilasi** adalah proses menerjemahkan source code dari satu bahasa atau versi bahasa ke bahasa lain yang berada pada tingkat abstraksi yang kurang lebih sama. Jadi transpilasi adalah salah satu tipe kompilasi, tapi penerjemahan kodenya tidak terlalu jauh/memiliki abstraksi yang sangat mirip
+- Namun dalam konteks saat ini, proses kompilasi lebih sering disebut sebagai: "proses mengubah kode menjadi machine code", dan transpilasi adalah "source to source", yang berarti kode diubah menjadi kode lain
+- Kesamaan bun dan npm adalah mereka tetap menjalankan typecheck, yaitu pemeriksaan syntax sebelum file TS dikompilasi/ditranspilasi
+- Flow kompilasi di npm:
+
+```
+Node tradisional:
+
+app.ts
+  │
+  │ tsc
+  ▼
+app.js          ← file fisik dibuat
+  │
+  │ node
+  ▼
+JavaScript Engine
+  │
+  ▼
+Machine code
+```
+
+- Flow transpilasi di bun:
+
+```
+app.ts
+  │
+  │ Bun transpiler
+  ▼
+JavaScript      ← ditransformasi secara internal
+  │
+  ▼
+JavaScriptCore
+  │
+  │ JIT compilation
+  ▼
+Machine code
+```
+
+- Salah satu flow kompilasi dan transpilasi TS ke JS adalah **type erasure**, yaitu menghapus explicit type setelah type checking selesai. Contoh:
+
+```ts
+let name: string = 'Kealan';
+```
+
+dikompilasi/transpilasi menjadi:
+
+```js
+let name = 'Kealan';
+```
+
+### `tsconfig.json`
+
+- Berisi konfigurasi bagaimana file Typescript dicek, dibuat, dikompilasi, di-run
+- Informasi lengkap: [https://www.typescriptlang.org/tsconfig](https://www.typescriptlang.org/tsconfig)
+
+#### `noEmit`
+
+- Seperti yang dijelaskan sebelumnya, Typescript normalnya ketika dijalankan/dikompilasi akan melakukan typecheck barulah dikompilasi ke file JS
+- Dengan memakai  `noEmit`, Typescript hanya akan menjalankan typecheck dan syntax check saja, dan proses transformasi/kompilasi dijalankan oleh package manager/program lain
+- Value inilah yang direkomendasikan dan menjadi default di Bun, karena Bun tidak menjalankan kompilasi ke file JS dulu, jadi mereka menggunakan option ini di tsconfig.json
+
+#### `erasableSyntaxOnly`
+
+- Pada proses kompilasi TS ke JS, kita bisa mengkonfigurasi proses kompilasi agar sesegera mungkin melakukan type erasure, yaitu drop/hapus explicit type
+
+```js
+// Typescript
+const x: number = 10;
+
+// Javascript
+const x = 10;
+```
+
+- Namun
+
+#### ``
