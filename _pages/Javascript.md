@@ -2081,7 +2081,7 @@ enum UserType {
 const currentLog = LogLevel.Error; // Resolves to 2 in JavaScript
 console.log(UserType.Admin); // admin
 ```
-## Generics
+### Generics
 
 - Generics adalah tipe data yang memungkinkan kita untuk tidak mendefinisikan tipe data dulu
 - Kenapa kita ingin memakai generics? Kenapa tidak ingin spesifik tipe datanya. Misalkan begini, kita ingin membuat tipe data stack, tapi masalahnya kalau kita ingin stack untuk integer, stack untuk string, stack untuk object User, kita tidak mungkin membuat 3 class stack untuk 3 tipe data yang berbeda. Oleh karenanya kita membuat generics
@@ -2128,7 +2128,7 @@ console.log(numberStack.pop()); // Outputs: 2
 
 - Dapat dilihat kita memberikan tipe number untuk stack tersebut, menggantikan placeholder T
 
-## Omit
+### Omit
 
 - Kembali ke type dan interface, misalkan kita memilki suatu tipe data `UserProps` sebagai berikut:
 
@@ -2160,7 +2160,7 @@ type GuestProps = Omit<UserProps, "createdAt | "ID"> // Remove createdAt dan ID
 
 - Jika ingin remove multiple field, gunakan | , jika tidak cukup tulis satu field nya saja
 
-## Pick
+### Pick
 
 - Kebalikan dengan Omit yang membuang field, Pick memilih field mana yang akan diambil untuk tipe data baru
 - Sama seperti Omit, jika kita ingin memilih multiple field, gunakan |
@@ -2178,7 +2178,7 @@ type File = {
 type FileEssential = Pick<File, "filename" | "extension"> // Hanya ambil filename dan ekstensinya
 ```
 
-## Extends
+### Extends
 
 - Sekarang bagaimana kalau kita ingin menambah parameter dari type? Gunakan extends
 - Untuk `interface` gunakan keyword `extends`, untuk `type` gunakan `&`
