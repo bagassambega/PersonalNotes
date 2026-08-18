@@ -2340,3 +2340,8 @@ adalah import yang hanya dipakai untuk type, sehingga boleh dihapus saat transpi
 - TypeScript mendokumentasikan bahwa dengan `verbatimModuleSyntax`, import/export tanpa modifier `type` dipertahankan, sedangkan yang menggunakan `type` dihapus.
 - Ini berbeda dari perilaku TypeScript lama yang melakukan **import elision**. Import elision berarti TypeScript mencoba menganalisis apakah suatu import hanya digunakan sebagai type, apakah type itu di-export lagi atau tidak, barulah Typescript menentukan apakah import itu bisa dihapus dari compiled JS atau tidak.
 - Kalau menggunakan `verbatimModuleSyntax` sebagai True, maka kita dipaksa untuk menjadikan `import type` sebagai hal yang bisa dihapus di saat proses kompilasi, sementara import yang tidak memakai type adalah import penting yang bahkan diperlukan di runtime
+
+# Backend Library
+
+## Express
+
