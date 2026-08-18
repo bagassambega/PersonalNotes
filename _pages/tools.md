@@ -13,6 +13,13 @@ github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/
 | ------ | ---------------------------------------- | ------------------------------- |
 | FileCR | [https://filecr.com](https://filecr.com) | Download premium apps and games |
 
+## Android
+
+| Name   | URL                                      | Description                     |
+| ------ | ---------------------------------------- | ------------------------------- |
+| FileCR | [https://filecr.com](https://filecr.com) | Download premium apps and games |
+
+
 # Software Tools
 
 ## File Manipulation
