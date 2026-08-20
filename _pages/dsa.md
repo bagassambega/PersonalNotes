@@ -104,8 +104,6 @@ console.log(map["person2"]); // john
 
 # String
 
-## Substring
-
 ## Palindrome
 
 - Palindrom adalah tipe string yang ketika dibolak-balik/di-invers, hasilnya tetap sama
@@ -181,9 +179,16 @@ bool isPalyndrome(String s) {
 	return True;
 }
 ```
-```
 
-## Searching
+- Time complexity: O(n/2), tapi karena 1/2 itu konstan, jadi sebetulnya tetap O(n), tapi practically better
+- Space complexity: O(n)
+
+## Searching/Substring
+
+
+
+## Searching Palindromes in String/Substring
+
 
 
 
