@@ -1913,6 +1913,14 @@ import var1, { var2, var3 } from "./data.js";
 import newName, { var2, var3 } from "./data.js";
 ```
 
+# Object Oriented
+
+## Class
+
+### Constructor
+
+
+
 # Package Manager
 
 - Ekosistem Node.js sangat luas, dan dapat dikelola dengan mengekstensikan third party packages seperti Node Package Manager ataupun Bun

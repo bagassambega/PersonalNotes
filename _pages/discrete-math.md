@@ -5,6 +5,8 @@ description: Essential mathematical concepts for computer science including numb
 permalink: /discrete-math/
 github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/discrete-math.md
 ---
+**NOTE**: Tipe data dan algoritma disimpan khusus di [DSA](/dsa)
+
 # Bilangan
 
 ## Himpunan Bilangan
@@ -334,13 +336,4 @@ Cara lain: pakai [invers modulo](#invers-modulo) dan [sifat modulo](#sifat-kekon
 > 1. Closure: 
 
 
-# Graf
 
-## Jenis Graf
-
-### Graf Berarah {#graf-berarah}
-
-#### Graf Asiklik {#graf-asiklik}
-
-
-### Graf Tidak Berarah
