@@ -77,3 +77,8 @@
   description: "Application and system development across web and native platforms"
   url: "/app-system-dev/"
   icon: "app"
+
+- title: "Software Engineering"
+  description: "Software engineering concepts, software development lifecyle and all related process"
+  url: "/softeng"
+  icon: "app"
