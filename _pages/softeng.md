@@ -99,11 +99,11 @@ github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/
 
 #### Security Testing
 
-- 
+- Pemeriksaan keamanan, vulnerability dan weakness of the system
 
 #### Reliability Testing
 
-- 
+- Pemeriksaan apakah software/system berjalan konsisten tanpa failures dalam jangka waktu tertentu
 
 #### Compatibility Testing
 
@@ -120,7 +120,17 @@ github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/
 
 - Memeriksa sistem ketika bekerja di bawah tekanan/beban berat (bahkan sampai limit) untuk memeriksa batas/breaking points
 
+#### Spike Test
 
+- Pemeriksaan sistem/software ketika terjadi peningkatan/penurunan user load secara tiba-tiba
+
+#### Endurance (Soak) Test
+
+- Memeriksa apakah sistem dapat bekerja di bawah suatu load untuk waktu yang lama
+
+#### Volume Testing
+
+- Memeriksa apakah sistem bisa menangani volume data yang besar yang masuk ke dalam sistem
 
 ## Deployment/Rollout Testing
 
