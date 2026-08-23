@@ -10,8 +10,6 @@ github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/
 
 - Penyebab distributed technology:
 
-
-
 1. Geografi tersebar
 
 2. Parallelism: multicore process
@@ -54,3 +52,12 @@ github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/
 	- Value
 - Sebuah message tidak dikirimkan begitu saja ke Kafka. Mereka di-organize berdasarkan **topic**-nya. Setiap topic dipecah lagi menjadi partitions.
 
+# Case
+
+## Notification System
+
+## URL Shortener
+
+## Shopping Cart (Add to Cart vs Quota)
+
+## Live Chat (Individual and Group)
