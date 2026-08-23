@@ -14,3 +14,14 @@ github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/
 | Control flow | Kita yang mengontrol flow, kita yang menentukan kapan suatu fungsi/alur/parameter digunakan | Framework yang mengontrol flow dan memanggil code kita            |
 | Structure    | Tidak ada yang mengatur arsitektur dan struktur folder seperti apa                          | Ada arsitektur dan convention folder structure yang wajib diikuti |
 | Contoh       | ExpressJS                                                                                   | LaravelPHP                                                        |
+
+# Connection
+
+## Webhook
+
+## Websocket
+
+- Websocket adalah 
+
+## Server Sent Events (SSE)
+

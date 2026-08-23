@@ -30,6 +30,45 @@ github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/
 
 - Tapi ada masalah baru yang muncul saat sistem tidak terpusat: koordinasi antar mesin
 
+# Top Level Architectural
+
+## Layered Architecture
+
+- Memisahkan component menjadi beberapa bagian, seperti presentation, business logic, database layer, dll
+- Contoh: MVVM (Model - View - View Model)
+
+## Event Driven Architecture
+
+![](../assets/images/lectures/system-design_20260823-211120.png)
+
+- Setiap komponen berkomunikasi menggunakan event
+- Contoh: message broker seperti Kafka dengan mekanisme publish-subscribe
+- Contoh lain: CQRS (Command Query Responsibility Segregation), di mana kita memisahkan operasi read dan write
+
+![387](../assets/images/lectures/system-design_20260823-211139.png)
+
+## Microkernel Architecture
+
+- Core capabilities disimpan di core kernel/core module, sementara untuk menambahkan fungsionalitas dapat ditambahkan plugin
+- Contoh: IDE seperti VSCode, Jetbrains, Eclipse, dll
+
+## Microservice Architecture
+
+![219](../assets/images/lectures/system-design_20260823-211515.png)
+
+- Memecah aplikasi menjadi services-services kecil berbeda yang saling loosely coupled satu sama lain, memiliki data model, database, dan API-nya masing-masing
+- Contoh: Netflix, Gojek dengan berbagai layanan seperti Gopay, GoCar, GoSend, GoFood, dll
+
+## Monolithic Architecture
+
+- Membuat satu aplikasi dalam satu sistem besar, semuanya tergabung di sana
+
+## Modular Monolith Architecture
+
+- Tengah-tengah antara microservices dan monolithic
+- Masih di satu aplikasi besar yang sama, tapi source code nya yang dipisah setiap service/domain-nya
+- Jadi ketika aplikasi-nya di ship, itu masih satu aplikasi, tapi code nya itu dipisah setiap module-nya agar lebih mudah di maintenance
+
 # Streaming Processing
 
 - Stream adalah unbounded data; data yang dikirim **mengalir terus menerus**, infinitely
@@ -54,10 +93,18 @@ github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/
 
 # Case
 
-## Notification System
+## Notification System (App)
+
+
+
+## Notification System (Global)
 
 ## URL Shortener
 
 ## Shopping Cart (Add to Cart vs Quota)
 
 ## Live Chat (Individual and Group)
+
+## Purchase System
+
+Kita memiliki sebuah aplikasi marketplace, dan kita ingin 
