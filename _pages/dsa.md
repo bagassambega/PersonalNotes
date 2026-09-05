@@ -64,6 +64,13 @@ A = B sama dengan $A \subseteq B$ dan $B \subseteq A$
 
 Himpunan A dan B (A // B) saling lepas jika tidak ada satupun anggota himpunan A yang ada di himpunan B dan juga sebaliknya (tidak intersect sama sekali)
 
+## Kompleksitas Operasi
+
+- Kompleksitas dari operasi set sebetulnya tergantung pada implementasi dari set itu sendiri. Ada yang memakai hash table/hashmap, di mana average-nya bisa saja $O(1)$, ada yang memakai array biasa dengan average $O(n)$
+- **Insert**: bisa $O(1)$, worst case $O(n)$
+- **Search**: bisa $O(1)$, worst case $O(n)$
+- **Delete**: bisa $O(1)$, worst case $O(n)$
+
 # Map
 
 - Berisi sekumpulan pasangan **key-value**. Kita mengakses value menggunakan key tersebut
@@ -95,6 +102,25 @@ console.log(map["person2"]); // john
 - Penjelasan lebih lengkap mengenai hash dapat dilihat di [Matematika Diskrit](/discrete-math/hash)
 - Hashmap menggabungkan map dengan fungsi hash, tapi pembentukan key-nya menggunakan fungsi hash yang berasal dari value
 - Misal: value = "Hello world", hash = "ax78228", maka di map: `map["ax78228"] = "Hello world"`
+
+## Operasi dan Kompleksitas
+
+Sama seperti map:
+
+- Search: O(1), karena tinggal input key dan dapat value-nya
+- Insert: O(1), karena tinggal allocate menggunakan key
+- Delete: O(1)
+
+# Linked List
+
+- Linked list adalah tipe data seperti rantai. Linked list berisi sekumpulan node di mana setiap node  menyimpan value dia sendiri, dan kemudian pointer ke node berikutnya
+
+![593](../assets/images/lectures/dsa_20260829-194738.png)
+
+
+
+
+# Double Linked List
 
 # Queue
 
@@ -231,7 +257,7 @@ bool isPalyndrome(String s) {
 
 # NP-Complete Problem {#np-complete-problem}
 
-Non-polynomial problem: persoalan yang tidak bisa diselesaikan dengan kompleksitas waktu linear (mis. O(n) = 2n)
+Non-polynomial problem: persoalan yang tidak bisa diselesaikan dengan kompleksitas waktu linear (mis. $O(n) = 2^n$
 
 ## Knapsack Problem {#knapsack-problem}
 
@@ -459,11 +485,9 @@ Kita ingin mencari sebuah substring dari string tersebut yang merupakan palindro
 ```java
 String getLongestPal(String s) {
         int n = s.length();
-
         int start = 0, maxLen = 1;
 
         for (int i = 0; i < n; i++) {
-
             // this runs two times for both odd and even 
             // length palindromes. 
             // j = 0 means odd and j = 1 means even length
@@ -541,7 +565,16 @@ public ListNode removeNthFromEnd(ListNode head, int n) {
 ```
 
 
-## Breadth First Search (BFS)
-## Depth First Search (DFS)
+# Merge Intervals
 
-## Dynamic Programming (DP)
+- 
+
+# Breadth First Search (BFS)
+
+
+
+# Depth First Search (DFS)
+
+
+
+# Dynamic Programming (DP)

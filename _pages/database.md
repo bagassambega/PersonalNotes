@@ -72,6 +72,16 @@ psql
 \dt
 ```
 
+- Create database
+
+```
+CREATE DATABASE database_name;
+```
+
+#### Query
+
+
+
 ## NoSQL
 
 ### MongoDB

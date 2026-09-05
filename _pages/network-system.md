@@ -11,6 +11,13 @@ github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/
 
   
 
+# Parameters
+
+- Bandwidth:
+- Throughput:
+- Latency:
+- Jitter:
+
 # Presentation Layer
 
 ## SSL/TLS
@@ -97,3 +104,4 @@ Under the hood, web request bekerja dengan cara berikut,
 
 # Web
 ## World Wide Web
+

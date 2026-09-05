@@ -5,6 +5,28 @@ description: Software engineering concepts, software development lifecyle and al
 permalink: /softeng/
 github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/softeng.md
 ---
+e# Software Lifecycle: Waterfall
+
+
+
+# CI-CD
+
+- CI-CD merujuk pada proses automatisasi sistem/aplikasi/source code untuk proses build, testing, release/deployment secara aman dan langsung, tanpa harus di-invoke secara manual satu per satu oleh developer
+
+## Continuous Integration (CI)
+
+- ***Continuous integration*** (CI) adalah pengintegrasian kode ke dalam repositori kode kemudian menjalankan pengujian secara otomatis, cepat, dan sering.
+
+## Continuous Deployment/Delivery (CD)
+
+- ***Continous delivery*** atau *continuous deployment* (CD) adalah praktik yang dilakukan setelah proses CI selesai dan seluruh kode berhasil terintegrasi, sehingga aplikasi bisa dibangun lalu dirilis secara otomatis.
+
+## Tools
+
+### Jenkins
+
+- Jenkins bersifat open source dan menggunakan bahasa pemrograman Java. 
+
 # Software Testing
 
 - Bagian dari software development lifecycle untuk memastikan sistem/software berjalan tanpa ada masalah dengan mengetahui sumber masalah lebih awal dengan melakukan testing
@@ -156,3 +178,25 @@ github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/
 
 - Seperti blue-green strategy, dua buah env: env A dan env B (bisa lebih) akan dijalankan secara bersamaan tapi untuk kelompok user yang berbeda. User A mendapatkan env A, dan user B akan mendapatkan env B. Kemudian developer akan membandingkan performa dan juga keberjalanan env A terhadap user A dan env B terhadap user B
 - Metode ini digunakan untuk membandingkan/mendapatkan metrik mengenai bagaimana env A dan env B (atau fitur A dan fitur B) terhadap live user, bukan untuk memeriksa apakah sistem berjalan aman tanpa error
+
+## Testing Principles
+
+### FIRST
+
+Gunakan metode **FIRST**:
+
+1. **Fast**. Setiap test harus berjalan dengan cepat dan tidak boleh
+2. **Isolated**/Independent. Sebuah test tidak boleh mempengaruhi test lainnya, jangan ada shared state/cascading effect
+3. **Repeatable**. Hasil ketika diulang konsisten dan dapat diulang. Jangan sampai ketika test dilakukan sekali, kita ingin test lagi menggunakan test yang sama malah tidak bisa/hasilnya tidak sama
+4. **Self-validating**. Test harus langsung menunjukkan hasil, pass atau fail. Jangan harus membuat kita infer hasilnya apa dengan membaca dulu
+5. **Thorough**. Harus meng-cover seluruh "happy path", artinya bahkan kemungkinan alur data/proses yang tidak akan error pun/diekspektasikan berhasil, harus dicek juga
+
+### 3A
+ 
+- Bagaimana cara kita menyusun tests yang fokus dan bisa dikomunikasikan/distrukturkan dengan baik?
+- Gunakan **3A: Arrange, Act, Assert**
+
+1. **Arrange**:  setup object/bagian yang akan di-test.
+2. **Act**: lakukan sesuatu terhadap object tersebut, yaitu uji object tersebut
+3. **Assert**: buat klaim atau hasil pemeriksaan terhadap object tersebut
+
