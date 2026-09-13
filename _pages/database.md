@@ -5,6 +5,11 @@ description: "Database concept, implementation, and optimization"
 permalink: /database/
 github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/database.md
 ---
+# Relational Database
+
+- Relational database adalah basis data yang didasarkan pada fungsi relasi seperti pada matematika
+- Data modelnya berbentuk collections of table yang merepresentasikan data dan hubungannya (relasinya) dengan tabel/data yang lain
+- 
 # Optimization
 
 ## Index
@@ -27,7 +32,46 @@ github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/
 | Data format       | Row-based                                                                               | BSON, JSON yang dikonversi ke binary via Mongo driver                                                                                                                   |
 | Struktur komponen | Sebuah database terdiri dari kumpulan tabel, dan sebuah tabel terdiri dari kumpulan row | Sebuah database terdiri dari kumpulan **collection** (ekuivalen dengan table), dan setiap collection terdiri dari kumpulan dokumen/BSON document (ekuivalen dengan row) |
 
-## SQL
+# SQL
+
+- Terdapat dua jenis query/syntax dari SQL, yaitu DDL (Data Definition Language) dan DML (Data Manipulation Language)
+- DDL digunakan untuk mendefinisikan skema data, relasi antardata, dan juga mendefinisikan constraint terhadap data tersebut
+
+## Schema Definition
+
+- Secara umum, syntax penulisan skema database dapat ditulis sebagai berikut,
+
+```sql
+create table r
+	(A1 D1,
+	A2 D2,
+	...,
+	An Dn,
+	⟨integrity-constraint1⟩,
+	...,
+	⟨integrity-constraintk⟩);
+```
+
+- Dengan *r* adalah nama relation/table, $A_i$ adalah atribut atau kolom dari *r*, $D_i$ adalah domain atau tipe data dari $A_i$ beserta juga batasan/spesifikasi tipe data tersebut, dan integrity-constraint berarti batasan atau spesifikasi tabel tersebut
+
+- Contoh syntax:
+
+```sql
+create table department
+	(dept name varchar (20),
+	building varchar (15),
+	budget numeric (12,2),
+	primary key (dept name));
+```
+
+## Constraints
+
+- Constraint adalah regulasi atau hal yang mengikat database/column/key/row/data types
+
+### Domain Constraints
+
+
+
 
 ### PostgreSQL
 
@@ -42,9 +86,16 @@ initdb -D /var/lib/postgres/data
 
 #### Data type
 
-| Data type | Name in PostgreSQL | Description |
-| --------- | ------------------ | ----------- |
-| UUID      | uuid               |             |
+| Data type          | Name in PostgreSQL | Description                                                                                                                                                                                  |
+| ------------------ | ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| UUID               | `uuid`             | UUID                                                                                                                                                                                         |
+| Character          | `char(n)`          | List of character dengan panjang fixed *n* (harus betul-betul pas segitu)                                                                                                                    |
+| Variable character | `varchar(n)`       | List of character dengan maksimal panjang *n* dan bisa variatif selama tidak melebihi panjang maksimal karakter                                                                              |
+| Integer            | `int`              | Bilangan bulat                                                                                                                                                                               |
+| Small integer      | `smallint`         | Bilangan bulat yang range-nya lebih kecil agar lebih hemat memori                                                                                                                            |
+| Real               | `real/double`      | Bilangan real                                                                                                                                                                                |
+| Float              | `float(n)`         | Bilangan real, dengan presisi sampai *n* digit                                                                                                                                               |
+| Numerik            | `numeric(p,d)`     | Bilangan numerik dengan panjang *p*, dan *d* digit dari total *p* digit tersebut adalah kepresisian desimal. Misal numeric(3,1) memungkinkan 44.5 untuk disimpan, tapi 444.5 atau 0.32 tidak |
 
 #### Basic Syntax
 

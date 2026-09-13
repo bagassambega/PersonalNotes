@@ -5,7 +5,7 @@ description: Software engineering concepts, software development lifecyle and al
 permalink: /softeng/
 github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/softeng.md
 ---
-e# Software Lifecycle: Waterfall
+# Software Lifecycle: Waterfall
 
 
 
