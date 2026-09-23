@@ -70,7 +70,106 @@ create table department
 
 ### Domain Constraints
 
+- 
 
+## Select
+
+- Basic query to select column(s) data from a table:
+
+```sql
+-- Get single column
+SELECT column_name
+FROM table_name;
+
+SELECT name
+FROM users;
+
+-- Get multiple column
+SELECT column1, column2, column3
+FROM table_name;
+```
+
+- Select all column from a single table:
+
+```sql
+SELECT *
+FROM table_name;
+```
+
+- Select data uniquely, no duplicated data
+
+```sql
+SELECT DISTINCT column_name
+FROM table_name;
+
+-- Uniquely from a combination of multiple columns
+SELECT DISTINCT (column1, column2, column3)
+FROM table_name;
+```
+
+- Select with mathematical operation
+
+```sql
+SELECT ID, name, dept name, salary * 1.1 
+FROM instructor;
+```
+
+## Where (Filter) Condition
+
+- Using `WHERE` command to specify what data need to be filtered to do some operation
+
+```sql
+-- Select
+SELECT column1
+FROM table_name
+WHERE condition;
+
+SELECT name
+FROM users
+WHERE age > 20;
+
+-- Update
+UPDATE table_name
+SET column1 = newValue
+WHERE condition;
+
+UPDATE person
+SET salary = salary * 2
+WHERE salary < 100;
+
+-- Delete
+DELETE table_name
+WHERE condition;
+
+DELETE users
+WHERE is_active = FALSE;
+```
+
+## Combining Condition
+
+### AND
+
+- Combine two condition, where first condition and second condition must be fulfilled so the statement is true
+- True-ish table
+
+| S1  | S2  | AND |
+| --- | --- | --- |
+| T   | T   | T   |
+| T   | F   | F   |
+| F   | T   | F   |
+| F   | F   | F   |
+
+### OR
+
+- Combine two condition, if at least one of the condition is true, the statement is true
+- True-ish table:
+
+| S1  | S2  | OR  |
+| --- | --- | --- |
+| T   | T   | T   |
+| T   | F   | T   |
+| F   | T   | T   |
+| F   | F   | F   |
 
 
 ### PostgreSQL
