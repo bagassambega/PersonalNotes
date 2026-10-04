@@ -5,11 +5,68 @@ description: "Database concept, implementation, and optimization"
 permalink: /database/
 github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/database.md
 ---
+# Data
+
+- Data adalah representasi fakta dunia nyata yang mewakilkan suatu objek yang diwujudkan dalam angka, huruf, simbol, teks, gambar, bunyi, dan objek digital lainnya
+- Informasi:
+- Pengetahuan: 
+
+# Sistem Basis Data
+
+## Definisi
+
+- Basis adalah markas, tempat peenyimpanan, tempat berkumpul
+- **Basis data** (database) adalah kumpulan data yang saling berhubungan dalam media penyimpanan elektronis
+- Basis data diciptakan untuk menyimpan, mencari, memodifikasi, mengelola, dan mengatur data
+- Tujuan dari penggunaan basis data adalah,
+1. Kemudahan dan kecepatan. Mengakses data menjadi lebih mudah, karena kita tidak perlu membuka file dulu, mencari data di dalam file, atau dalam format lain
+2. Keakuratan dan pengaturan data. Dengan constraint dan properti seperti ACID, transaction, data type, keys, data tidak bisa sembarangan ditambahkan/dihapus/dimodifikasi, harus mengikuti aturan tertentu
+3. Keamanan. Basis data dapat diatur keamanan, level of privilege untuk access dan permissions terhadap data dan basis datanya
+4. Penggunaan data yang luas. Basis data bisa diakses oleh banyak aplikasi sekaligus dan dari berbagai tempat sekaligus
+
+- Sistem adalah sebuah tatanan dan keterpaduan yang terdiri  dari sejumlah komponen fungsional (dengan satuan dan fungsi khusus) dan secara bersama-sama bertujuan untuk memenuhi suatu proses tertentu
+- Basis data sebetulnya hanyalah penyimpanan biasa, pasif, oleh karenanya akan jadi lebih bermanfaat dan bisa lebih berguna jika ada aplikasi atau hal yang mengelolanya, mengaksesnya, dan menggerakannya. Hal inilah yang disebut sebagai **Database Management System** (DBMS)
+- DBMS hanyalah penggerak basis data. Kesatuan antara DBMS sebagai pengelola dan database yang dikelola disebut sebaga **Sistem Basis Data** (Database System)
+
+## Struktur Basis Data
+
+- Secara struktural, sistem basis data dapat dbagi menjadi beberapa layer:
+
+![](../assets/images/lectures/database_20261004-202219.png)
+
+- Setiap data akan disimpan dalam media penyimpanan fisik di hardware, seperti pada disk
+- Sistem operasi akan melakukan I/O (input/output) process ke level fisik, mengendalikan resources hardware, pengelolaan file dan threads, dll
+- Database akan menjadi abstraksi, format data, membentuk bagaimana data direpresentasikan kepada DBMS dan aplikasi
+- DBMS akan menggunakan fungsi-fungsi OS untuk mengakses data di level physical tersebut
+- DBMS mengelola data dalam level database management, mengakses data ke hardware melalui command OS, dan di-return/diolah dalam bentuk yang basis data inginkan/provide
+- App akan menggunakan DBMS tersebut untuk berkomunikasi dengan basis data, sehingga aplikasi dapat mengakses data dari basis data tersebut
+- Users akan mengakses data yang sudah diolah oleh aplkasi agar dapat disajikan kepada user dalam bentuk yang diinginkan oleh user/aplikasi
+
+## Abstraksi dan Representasi Data
+
+- Setiap data direpresentasikan dalam bentuk yang berbeda:
+1. Physical level, level terendah abstraksi data. Bentuk asli data akan disajikan di sini, yaitu binary, string, integer, JSON, dll
+2. Logical level, abstraksi yang menggambarkan data dan hubungan antardata, juga fungsional dari data, misalnya dalam bentuk tabel, relasi antartabel
+3. View level, data yang sudah diolah agar dipahami oleh user, misalnya dengan menggunakan aplikasi data diolah menjadi visualisasi, data integer diolah menjadi string, dll
+
+- Data sendiri dioperasikan dan diakses menggunakan 2 jenis bahasa, yaitu:
+1. **Data Definition Language** (DDL): bahasa yang digunakan untuk membuat skema, tabel, menentukan bagaimana format data disimpan dan diakses nantinya, constraint, batasan, pengaturan data, dan hubungan antar data, disimpan di sini. Format data, tabel, constraint, dll akan disimpan di **Data Dictionary** yang berisi metadata
+2. **Data Manipulation Language** (DML): bahasa yang digunakan untuk membuat dan menambahkan data, mengakses data, memodifikasi dan menghapus instance data
+
+## Struktur Sistem Basis Data
+
+- Suatu sistem basis data umumnya terdiri dari:
+1. File manager/data manager, yang mengelola alokasi dan struktur, format penyimpanan data
+2. Database manager, yang menyediakan interface dan menjadi connector antara low level data di database dengan aplikasi yang mengaksesnya
+3. Query processor, yang mengubah dan mentransformasikan perintah yang kita minta ke database manager menjadi perintah low-level untuk mengakses dan mengolah data di low-level
+4. DML precompiler: mengkonversi dan memeriksa perintah DML dari aplikasi ke database manager
+5. DDL compiiler: mengkonversi dan memeriksa perintah DDL dari aplikasi ke database manager dan data dictionary
+
 # Relational Database
 
 - Relational database adalah basis data yang didasarkan pada fungsi relasi seperti pada matematika
 - Data modelnya berbentuk collections of table yang merepresentasikan data dan hubungannya (relasinya) dengan tabel/data yang lain
-- 
+
 # Optimization
 
 ## Index
@@ -476,7 +533,7 @@ db.collectionName.insertOne({
   wife: null, // null object
   courses: ["Biology", "Math", "Physics"], // array
   address: {
-    city: "Queens",
+    city: "Queens",d
     province: "New York",
     zip: 12789
   } // nested document

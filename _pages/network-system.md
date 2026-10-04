@@ -5,11 +5,26 @@ description: Computer networks and internet system
 permalink: /network-system/
 github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/network-system.md
 ---
-
-
 # OSI Layer
 
-  
+  - OSI (Open System Interconnection) layers adalah standar model arsitektur komunikasi komputer dan framework pengembangan standar protokol
+  - OSI dikembangkan oleh ISO (International Organization for Standardization)
+  - Terdiri dari 7 layer utama berikut:
+
+| Layer        | Description                                                                                                                   |
+| ------------ | ----------------------------------------------------------------------------------------------------------------------------- |
+| Application  | Menyediakan akses ke lingkungan OSI oleh user dan juga menyediakan informasi distribusi, berhubungan langsung dengan end user |
+| Presentation | Menyediakan independensi untuk proses aplikasi dari perbedaan sintaks format data                                             |
+| Session      | Struktur kontrol komunikasi antara aplikasi dan session antar aplikasi bersama                                                |
+| Transport    | Menjaga keandalan transfer data antar *endpoints*, mengoreksi kesalahan data dan mengatur alrian data                         |
+| Network      | Upper layer dari transmisi data dan mekanisme switching untuk establishing, maintaining, dan terminating connection           |
+| Data-link    | Transfer data informasi pada hubungan fisik seperti sending data, blocking data, dll                                          |
+| Physical     | Peralatan fisik dari network itu sendiri, misalnya seperti komputer, hub, router, kabel, dll                                  |
+- OSI layer juga bisa dibagi lagi menjadi 2 subkategori, yaitu:
+1. **Upper layer** (application - session), berhubungan dengan aplikasi yang diimplementasikan dalam software
+2. **Lower layer** (transport - physical), berhubungan dan menangani data transport secara langsung
+
+- 
 
 # Parameters
 
