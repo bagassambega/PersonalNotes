@@ -9,7 +9,7 @@ github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/
 
 - Data adalah representasi fakta dunia nyata yang mewakilkan suatu objek yang diwujudkan dalam angka, huruf, simbol, teks, gambar, bunyi, dan objek digital lainnya
 - Informasi:
-- Pengetahuan: 
+- Pengetahuan: j
 
 # Sistem Basis Data
 
@@ -66,6 +66,7 @@ github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/
 
 - Relational database adalah basis data yang didasarkan pada fungsi relasi seperti pada matematika
 - Data modelnya berbentuk collections of table yang merepresentasikan data dan hubungannya (relasinya) dengan tabel/data yang lain
+- 
 
 # Optimization
 
