@@ -101,7 +101,7 @@ github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/
 | ----------- | -------------------------------------------------------------------------- | ----------------- | ---------------------------------------------------------------------------- |
 | fmhy        | [https://fmhy.net](https://fmhy.net)                                       | List of resources | List of free and (probably) pirated resources                                |
 | PStream     | [https://pstream.mov](https://pstream.mov)                                 | Movie             | Streaming movies                                                             |
-| Aether      | [https://aether.mom](https://aether.mom)                                   | Movie             | Streaming movies                                                             |
+| Aether      | [https://rentry.co/aetherdomains](https://rentry.co/aetherdomains)         | Movie             | Streaming movies                                                             |
 | Comix       | [https://comix.to](https://comix.to)                                       | Manga comic       | Manga reading, replacement for Comick                                        |
 | Anikai      | [https://anikai.to](https://anikai.to)                                     | Anime             | Watch anime                                                                  |
 | NontonAnime | [https://s7.nontonanimeid.boats/](https://s7.nontonanimeid.boats/)         | Anime             | Watch anime (Indonesian subtitle)                                            |

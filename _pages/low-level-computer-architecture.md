@@ -1,11 +1,21 @@
 ---
 layout: page-with-toc
-title: Computer Architecture and Organization
+title: Low-Level and Computer Architecture and Organization
 description: Concept of computer architecture, operation, and organization
 permalink: /computer-architecture/
 github_edit_url: https://github.com/bagassambega/PersonalNotes/edit/main/_pages/computer-architecture.md
 ---
+# Digital Abstraction of Data
+## Semiconductor
+
+- Semikonduktor adalah jenis bahan yang memiliki konduktivitas elektrik jika berada di antara insulator dan konduktor
+- Semikonduktor sebenarnya bukan konduktor maupun isolator. Dia baru akan bekerja mengalirkan listrik kalau dia diposisikan di antara konduktor dan isolator
+
 # Biner {#biner}
+
+- Biner merupakan sistem bilangan yang terdiri dari 2 digit saja, yaitu 0 dan 1
+- Contoh sistem bilangan lain: decimal (basis 10, digit dari 0 sampai 9)
+- Biner dibuat merepresentasikan kondisi arus listrik, 0 untuk arus mati, 1 untuk arus menyala
 
 ## Bit, Byte, Bytestream {#bit-byte-bytestream}
 
