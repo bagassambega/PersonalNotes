@@ -32,3 +32,8 @@
   description: "Pedoman menggunakan Make build tools"
   url: "/makefile/"
   icon: "make"
+
+- title: "Jira"
+  description: "Jira and JQL documentation"
+  url: "/jira/"
+  icon: "jira"
